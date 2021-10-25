@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Actualizar datos de paciente</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list line="full">
+        <ion-item>
+            <ion-label position="floating">Nombre:</ion-label>
+            <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Apellido:</ion-label>
+            <ion-input [(ngModel)]="apellido" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Cédula:</ion-label>
+            <ion-input [(ngModel)]="cedula" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Teléfono:</ion-label>
+            <ion-input [(ngModel)]="telefono" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Fecha de nacimiento:</ion-label>
+            <ion-datetime [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Alergias :</ion-label>
+            <ion-input [(ngModel)]="alergias" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tipo de sangre:</ion-label>
+            <ion-select [(ngModel)]="tipo_sangre" type="text">
+                <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
+                <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
+                <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
+                <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
+                <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
+                <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
+                <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
+                <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Padecimientos :</ion-label>
+            <ion-input [(ngModel)]="padecimientos" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Ocupación :</ion-label>
+            <ion-input [(ngModel)]="ocupacion" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Sexo:</ion-label>
+            <ion-select [(ngModel)]="sexo" type="text">
+                <ion-select-option value='Masculino'>Masculino</ion-select-option>
+                <ion-select-option value='Femenino'>Femenino</ion-select-option>
+                <ion-select-option value='Sin especificar'>Sin especificar</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>ARS:</ion-label>
+            <ion-select [(ngModel)]="ars" type="text">
+                <ion-select-option value='ARS BMI'>ARS BMI</ion-select-option>
+                <ion-select-option value='Primera ARS Humano'>Primera ARS Humano</ion-select-option>
+                <ion-select-option value='ARS Palic Salud'>ARS Palic Salud</ion-select-option>
+                <ion-select-option value='ARS La Colonial'>ARS La Colonial</ion-select-option>
+                <ion-select-option value='ARS Monumental'>ARS Monumental</ion-select-option>
+                <ion-select-option value='ARS Renacer'>ARS Renacer</ion-select-option>
+                <ion-select-option value='ARS Simag'>ARS Simag</ion-select-option>
+                <ion-select-option value='ARS Universal'>ARS Universal</ion-select-option>
+                <ion-select-option value='ARS Yunén'>ARS Yunén</ion-select-option>
+                <ion-select-option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</ion-select-option>
+                <ion-select-option value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</ion-select-option>
+                <ion-select-option value='ARS Futuro'>ARS Futuro</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Dirección :</ion-label>
+            <ion-input [(ngModel)]="direccion" type="text"></ion-input>
+        </ion-item>
+
+        <ion-row>
+            <ion-col>
+                <ion-button type="button" (click)="updatePaciente()" color="primary" shape="full" expand="block"> Actualizar paciente </ion-button>
+            </ion-col>
+        </ion-row>
+
+    </ion-list>
+
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Registro de usarios</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-card class="card-usuario" color="Dark">
+        <ion-card-header>
+            <ion-list>
+                <ion-item>
+                    <ion-label position="floating">Usuario:</ion-label>
+                    <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Posición</ion-label>
+                    <ion-select [(ngModel)]="rol" type="text">
+                        <ion-select-option value='Laboratorio'>Laboratorio</ion-select-option>
+                        <ion-select-option value='Odontología'>Odontología</ion-select-option>
+                        <ion-select-option value='Rayos X'>Rayos X</ion-select-option>
+                        <ion-select-option value='Recepción'>Recepción</ion-select-option>
+                        <ion-select-option value='Sonografía'>Sonografía</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Estado</ion-label>
+                    <ion-select [(ngModel)]="estado" type="text">
+                        <ion-select-option value='Activo'>Activo</ion-select-option>
+                        <ion-select-option value='Inactivo'>Inactivo</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-row>
+                    <ion-col>
+                        <ion-button type="button" (click)="addUsuario()" color="primary" shape="full" expand="block"> Add usuarios </ion-button>
+                    </ion-col>
+                </ion-row>
+
+            </ion-list>
+
+            <ion-list>
+
+                <ion-list-header>
+                    Usuarios registrados
+                </ion-list-header>
+
+                <ion-item lines="inset" *ngFor="let nombres of nombres">
+                    <ion-label>
+                        <h5>{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
+                    </ion-label>
+
+                    <div class="item-note">
+                        <ion-icon name="create-outline" style="zoom: 2.5;" [routerLink]="['/usuario-update/',nombres.id]"></ion-icon>
+                        <ion-icon name="trash-bin-outline" style="zoom: 2.5;" (click)="deleUsuarios(nombres.id)"></ion-icon>
+                    </div>
+
+                </ion-item>
+            </ion-list>
+
+        </ion-card-header>
+    </ion-card>
+
+</ion-content>

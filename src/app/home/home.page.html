@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Modulos
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card>
+        <ion-row>
+            <ion-col>
+                <ion-button [routerLink]="['/usuario-registro']" type="button" color="primary" shape="full" expand="block"> usuario registro </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button [routerLink]="['/paciente-registro']" type="button" color="primary" shape="full" expand="block"> paciente registro </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button [routerLink]="['/rayos-x']" type="button" color="primary" shape="full" expand="block"> rayos x </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button [routerLink]="['/sonografia']" type="button" color="primary" shape="full" expand="block"> sonografia </ion-button>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+</ion-content>

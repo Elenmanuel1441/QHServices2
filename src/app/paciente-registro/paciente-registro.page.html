@@ -1,0 +1,266 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Registro de pacientes</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card class="card-principal">
+        <ion-card class="datos-personales">
+
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nombres</span>
+                        <input type="text" [(ngModel)]="nombre" placeholder="Nombres">
+                      </label>
+                <label class="item item-input item-stacked-label">
+                        <span class="input-label">Apellidos</span>
+                        <input type="text" [(ngModel)]="apellido" placeholder="Apellidos">
+                      </label>
+                <label class="item item-input item-stacked-label">
+                        <span class="input-label">Cédula</span>
+                        <input type="text" [(ngModel)]="cedula" placeholder="Cédula">
+                      </label>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Teléfono</span>
+                          <input type="text" [(ngModel)]="telefono" placeholder="Teléfono">
+                        </label>
+            </div>
+            <br>
+            <div>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Alergias</span>
+                          <input type="text" [(ngModel)]="alergias" placeholder="Alergias">
+                        </label>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Padecimientos</span>
+                          <input type="text" [(ngModel)]="padecimientos" placeholder="Padecimientos">
+                        </label>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Ocupación</span>
+                          <input type="text" [(ngModel)]="ocupacion" placeholder="Ocupación">
+                        </label>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Dirección</span>
+                          <input type="text" [(ngModel)]="direccion" placeholder="Dirección">
+                        </label>
+            </div>
+            <br>
+            <div>
+                <ion-label position="floating">Fecha de nacimiento:</ion-label>
+                <ion-datetime [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
+            </div>
+            <br>
+            <div>
+                <ion-label>Tipo de sangre:</ion-label>
+                <ion-select [(ngModel)]="tipo_sangre" type="text">
+                    <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
+                    <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
+                    <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
+                    <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
+                    <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
+                    <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
+                    <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
+                    <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
+                </ion-select>
+            </div>
+
+            <ion-list>
+                <!--
+                      <ion-item>
+                          <ion-label position="floating">Fecha de nacimiento:</ion-label>
+                          <ion-datetime [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
+                      </ion-item>
+                      
+              <ion-item>
+                  <ion-label>Tipo de sangre:</ion-label>
+                  <ion-select [(ngModel)]="tipo_sangre" type="text">
+                      <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
+                      <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
+                      <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
+                      <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
+                      <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
+                      <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
+                      <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
+                      <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
+                  </ion-select>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>Sexo:</ion-label>
+                  <ion-select [(ngModel)]="sexo" type="text">
+                      <ion-select-option value='Masculino'>Masculino</ion-select-option>
+                      <ion-select-option value='Femenino'>Femenino</ion-select-option>
+                      <ion-select-option value='Sin especificar'>Sin especificar</ion-select-option>
+                  </ion-select>
+              </ion-item>
+              <ion-item>
+                  <ion-label>ARS:</ion-label>
+                  <ion-select [(ngModel)]="ars" type="text">
+                      <ion-select-option value='ARS BMI'>ARS BMI</ion-select-option>
+                      <ion-select-option value='Primera ARS Humano'>Primera ARS Humano</ion-select-option>
+                      <ion-select-option value='ARS Palic Salud'>ARS Palic Salud</ion-select-option>
+                      <ion-select-option value='ARS La Colonial'>ARS La Colonial</ion-select-option>
+                      <ion-select-option value='ARS Monumental'>ARS Monumental</ion-select-option>
+                      <ion-select-option value='ARS Renacer'>ARS Renacer</ion-select-option>
+                      <ion-select-option value='ARS Simag'>ARS Simag</ion-select-option>
+                      <ion-select-option value='ARS Universal'>ARS Universal</ion-select-option>
+                      <ion-select-option value='ARS Yunén'>ARS Yunén</ion-select-option>
+                      <ion-select-option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</ion-select-option>
+                      <ion-select-option value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</ion-select-option>
+                      <ion-select-option value='ARS Futuro'>ARS Futuro</ion-select-option>
+                  </ion-select>
+              </ion-item>
+
+              <ion-row>
+                  <ion-col>
+                      <ion-button type="button" (click)="addPaciente()" color="primary" shape="full" expand="block"> Añadir pacientes </ion-button>
+                  </ion-col>
+              </ion-row>
+-->
+            </ion-list>
+
+        </ion-card>
+
+        <ion-card class="datos-personales2">
+
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nombres</span>
+                        <input type="text" [(ngModel)]="nombre" placeholder="Nombres">
+                      </label>
+                <label class="item item-input item-stacked-label">
+                        <span class="input-label">Apellidos</span>
+                        <input type="text" [(ngModel)]="apellido" placeholder="Apellidos">
+                      </label>
+                <label class="item item-input item-stacked-label">
+                        <span class="input-label">Cédula</span>
+                        <input type="text" [(ngModel)]="cedula" placeholder="Cédula">
+                      </label>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Teléfono</span>
+                          <input type="text" [(ngModel)]="telefono" placeholder="Teléfono">
+                        </label>
+            </div>
+            <br>
+            <div>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Alergias</span>
+                          <input type="text" [(ngModel)]="alergias" placeholder="Alergias">
+                        </label>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Padecimientos</span>
+                          <input type="text" [(ngModel)]="padecimientos" placeholder="Padecimientos">
+                        </label>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Ocupación</span>
+                          <input type="text" [(ngModel)]="ocupacion" placeholder="Ocupación">
+                        </label>
+                <label class="item item-input item-stacked-label">
+                          <span class="input-label">Dirección</span>
+                          <input type="text" [(ngModel)]="direccion" placeholder="Dirección">
+                        </label>
+            </div>
+            <br>
+            <div>
+                <ion-label position="floating">Fecha de nacimiento:</ion-label>
+                <ion-datetime [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
+            </div>
+            <br>
+            <div>
+                <ion-label>Tipo de sangre:</ion-label>
+                <ion-select [(ngModel)]="tipo_sangre" type="text">
+                    <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
+                    <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
+                    <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
+                    <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
+                    <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
+                    <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
+                    <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
+                    <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
+                </ion-select>
+            </div>
+
+            <ion-list>
+                <!--
+                      <ion-item>
+                          <ion-label position="floating">Fecha de nacimiento:</ion-label>
+                          <ion-datetime [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
+                      </ion-item>
+                      -->
+                <ion-item>
+                    <ion-label>Tipo de sangre:</ion-label>
+                    <ion-select [(ngModel)]="tipo_sangre" type="text">
+                        <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
+                        <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
+                        <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
+                        <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
+                        <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
+                        <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
+                        <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
+                        <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Sexo:</ion-label>
+                    <ion-select [(ngModel)]="sexo" type="text">
+                        <ion-select-option value='Masculino'>Masculino</ion-select-option>
+                        <ion-select-option value='Femenino'>Femenino</ion-select-option>
+                        <ion-select-option value='Sin especificar'>Sin especificar</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label>ARS:</ion-label>
+                    <ion-select [(ngModel)]="ars" type="text">
+                        <ion-select-option value='ARS BMI'>ARS BMI</ion-select-option>
+                        <ion-select-option value='Primera ARS Humano'>Primera ARS Humano</ion-select-option>
+                        <ion-select-option value='ARS Palic Salud'>ARS Palic Salud</ion-select-option>
+                        <ion-select-option value='ARS La Colonial'>ARS La Colonial</ion-select-option>
+                        <ion-select-option value='ARS Monumental'>ARS Monumental</ion-select-option>
+                        <ion-select-option value='ARS Renacer'>ARS Renacer</ion-select-option>
+                        <ion-select-option value='ARS Simag'>ARS Simag</ion-select-option>
+                        <ion-select-option value='ARS Universal'>ARS Universal</ion-select-option>
+                        <ion-select-option value='ARS Yunén'>ARS Yunén</ion-select-option>
+                        <ion-select-option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</ion-select-option>
+                        <ion-select-option value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</ion-select-option>
+                        <ion-select-option value='ARS Futuro'>ARS Futuro</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-row>
+                    <ion-col>
+                        <ion-button type="button" (click)="addPaciente()" color="primary" shape="full" expand="block"> Añadir pacientes </ion-button>
+                    </ion-col>
+                </ion-row>
+
+            </ion-list>
+
+            <ion-list>
+
+                <ion-list-header>
+                    Lista de pacientes
+                </ion-list-header>
+
+
+                <ion-item lines="inset" *ngFor="let pacientes of pacientes">
+                    <ion-label>
+                        <h5>{{pacientes.nombre_paciente}} {{pacientes.apellido_paciente}}, {{pacientes.telefono_paciente}} ({{pacientes.cedula_paciente}}) </h5>
+                    </ion-label>
+
+                    <div class="item-note">
+                        <ion-icon name="create-outline" style="zoom: 2.5;" [routerLink]="['/paciente-update/',pacientes.id_paciente]"></ion-icon>
+                        <ion-icon name="trash-bin-outline" style="zoom: 2.5;" (click)="delePaciente(pacientes.id_paciente)"></ion-icon>
+                        <ion-icon name="heart-outline" style="zoom: 2.5;" [routerLink]="['/paciente-add-area/',pacientes.id_paciente]"></ion-icon>
+                    </div>
+
+                </ion-item>
+
+            </ion-list>
+        </ion-card>
+    </ion-card>
+</ion-content>

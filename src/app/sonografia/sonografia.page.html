@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Sonografía</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+
+        <ion-label position="floating">Nombre:</ion-label>
+        <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+
+    </ion-item>
+    <ion-item>
+        <ion-row>
+            <ion-col>
+                <ion-button type="button" (click)="updatePaciente()" color="primary" shape="full" expand="block"> Actualizar paciente </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-item>
+</ion-content>
