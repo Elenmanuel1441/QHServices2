@@ -47,15 +47,8 @@ export class UsuarioRegistroPage implements OnInit{
   }
   ngOnInit() 
   {
-    this.permission = true;
-    console.log("Hii");
-    this._apiService.getUsuarios().subscribe(res=>{
-      console.log("Res",res)
-      this.nombres=res;
-      this.buscarUsuario = this.nombres;
-    })
-
-    
+ 
+   
   }
    getUsuarios(){
     this._apiService.getUsuarios().subscribe((res:any) => {
@@ -74,16 +67,7 @@ export class UsuarioRegistroPage implements OnInit{
       console.log("ERROR")
     })
   }
-  buscarUsuarios(event)
-  {
-    const text = event.target.value;
-    this.buscarUsuario = this.nombre;
-    if(text && text.trim()!= '')
-    {
-      this.buscarUsuario = this.buscarUsuario.filter((user: any)=> {
-        return (user.nombre.toLowerCase().indexOf(text.toLowerCase()) > -1);
-      })
-    }
+ 
   }
 
-}
+
