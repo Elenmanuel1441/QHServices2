@@ -3,6 +3,7 @@
         <ion-buttons slot="end">
             <ion-back-button></ion-back-button>
         </ion-buttons>
+
         <ion-title>Registro de usarios</ion-title>
     </ion-toolbar>
 </ion-header>
@@ -47,10 +48,10 @@
 
                 <ion-list-header>
                     Usuarios registrados
-                </ion-list-header>
 
-                <ion-searchbar showCancelButton="always"></ion-searchbar>
-                <ion-item lines="inset" *ngFor="let nombres of nombres">
+                </ion-list-header>
+                <ion-searchbar showCancelButton="always" placeholder="Buscar" animate (ionChange)="buscarUsuarios($event)"></ion-searchbar>
+                <ion-item lines="inset" *ngFor="let nombres of buscarUsuario">
                     <ion-label>
                         <h5>{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
                     </ion-label>

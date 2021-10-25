@@ -6,10 +6,14 @@ import { ApiService } from '../api.service';
   templateUrl: './usuario-registro.page.html',
   styleUrls: ['./usuario-registro.page.scss'],
 })
-export class UsuarioRegistroPage{
+export class UsuarioRegistroPage implements OnInit{
   nombre: any;
   estado: any;
   rol: any;
+
+  permission: boolean;
+
+  buscarUsuario: any;
   
   nombres: any = [];
 
@@ -41,6 +45,18 @@ export class UsuarioRegistroPage{
     })
     
   }
+  ngOnInit() 
+  {
+    this.permission = true;
+    console.log("Hii");
+    this._apiService.getUsuarios().subscribe(res=>{
+      console.log("Res",res)
+      this.nombres=res;
+      this.buscarUsuario = this.nombres;
+    })
+
+    
+  }
    getUsuarios(){
     this._apiService.getUsuarios().subscribe((res:any) => {
       console.log("SUCCESS ===",res);
@@ -57,6 +73,17 @@ export class UsuarioRegistroPage{
     },(error: any) => {
       console.log("ERROR")
     })
+  }
+  buscarUsuarios(event)
+  {
+    const text = event.target.value;
+    this.buscarUsuario = this.nombre;
+    if(text && text.trim()!= '')
+    {
+      this.buscarUsuario = this.buscarUsuario.filter((user: any)=> {
+        return (user.nombre.toLowerCase().indexOf(text.toLowerCase()) > -1);
+      })
+    }
   }
 
 }
