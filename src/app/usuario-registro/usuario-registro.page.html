@@ -8,7 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
     <ion-card class="card-usuario" color="Dark">
         <ion-card-header>
             <ion-list>
@@ -50,6 +49,7 @@
                     Usuarios registrados
                 </ion-list-header>
 
+                <ion-searchbar showCancelButton="always"></ion-searchbar>
                 <ion-item lines="inset" *ngFor="let nombres of nombres">
                     <ion-label>
                         <h5>{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
