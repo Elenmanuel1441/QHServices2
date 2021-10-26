@@ -1,4 +1,5 @@
 <ion-header>
+
     <ion-toolbar>
         <ion-buttons slot="end">
             <ion-back-button></ion-back-button>
@@ -15,6 +16,11 @@
                 <ion-item>
                     <ion-label position="floating">Usuario:</ion-label>
                     <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Contraseña:</ion-label>
+                    <ion-input [(ngModel)]="contrasena" type="text"></ion-input>
                 </ion-item>
 
                 <ion-item>
@@ -50,7 +56,6 @@
                     Usuarios registrados
 
                 </ion-list-header>
-                <ion-searchbar showCancelButton="always" placeholder="Buscar" animate (ionChange)="buscarUsuarios($event)"></ion-searchbar>
                 <ion-item lines="inset" *ngFor="let nombres of nombres">
                     <ion-label>
                         <h5>{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>

@@ -8,10 +8,9 @@ import { ApiService } from '../api.service';
 })
 export class UsuarioRegistroPage implements OnInit{
   nombre: any;
+  contrasena: any;
   estado: any;
   rol: any;
-
-  permission: boolean;
 
   buscarUsuario: any;
   
@@ -27,6 +26,7 @@ export class UsuarioRegistroPage implements OnInit{
   {
     let data = {
       nombre: this.nombre,
+      contrasena:this.contrasena,
       estado: this.estado,
       rol: this.rol
     }
@@ -34,6 +34,7 @@ export class UsuarioRegistroPage implements OnInit{
     this._apiService.addusuario(data).subscribe((res:any) => {
     console.log("SUCCESS ===",res);
     this.nombre = '';
+    this.contrasena =
     this.estado = '';  
     this.rol = ''; 
     alert('SUCCESS');
