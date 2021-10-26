@@ -27,6 +27,11 @@ ion-input {
     width: 300px;
     padding: 16px;
     background-color: #ccc;
+    border-color: var(--ion-color-medium-shade);
+    border-radius: 3px;
+    border-width: 1px;
+    box-shadow: 2px gray;
+    background: #f8f9fa;
 }
 
 form {
@@ -38,9 +43,13 @@ form {
 }
 
 label {
-    color: black;
+    text-decoration-color: black;
 }
 
 input {
     background-color: white;
+}
+
+.h1 title {
+    color: black;
 }

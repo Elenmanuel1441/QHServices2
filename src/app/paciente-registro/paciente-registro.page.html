@@ -49,6 +49,7 @@
                           <input type="text" [(ngModel)]="direccion" placeholder="Dirección">
                         </label>
             </div>
+
             <br>
             <div>
                 <ion-label position="floating">Fecha de nacimiento:</ion-label>
@@ -129,14 +130,33 @@
         <ion-card class="datos-personales2">
 
             <div class="list">
-                <label class="item item-input item-stacked-label">
-                        <span class="input-label">Nombres</span>
-                        <input type="text" [(ngModel)]="nombre" placeholder="Nombres">
-                      </label>
-                <label class="item item-input item-stacked-label">
-                        <span class="input-label">Apellidos</span>
-                        <input type="text" [(ngModel)]="apellido" placeholder="Apellidos">
-                      </label>
+                <div class="bar bar-header">
+                    <div class="h1 title">Nombre</div>
+                </div>
+                <div class="list list-inset">
+                    <label class="item item-input">
+                      <i class="icon ion-search placeholder-icon"></i>
+                      <input type="text" [(ngModel)]="nombre" placeholder="Nombre">
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="list">
+                <div class="bar bar-header">
+                    <div class="h1 title">Nombre</div>
+                </div>
+                <div class="list list-inset">
+                    <label class="item item-input">
+                      <i class="icon ion-search placeholder-icon"></i>
+                      <input type="text" [(ngModel)]="nombre" placeholder="Nombre">
+                    </label>
+                </div>
+
+            </div>
+
+
+            <!--
                 <label class="item item-input item-stacked-label">
                         <span class="input-label">Cédula</span>
                         <input type="text" [(ngModel)]="cedula" placeholder="Cédula">
@@ -145,7 +165,7 @@
                           <span class="input-label">Teléfono</span>
                           <input type="text" [(ngModel)]="telefono" placeholder="Teléfono">
                         </label>
-            </div>
+                -->
             <br>
             <div>
                 <label class="item item-input item-stacked-label">
@@ -164,6 +184,16 @@
                           <span class="input-label">Dirección</span>
                           <input type="text" [(ngModel)]="direccion" placeholder="Dirección">
                         </label>
+            </div>
+            <br>
+            <div class="bar bar-header">
+                <div class="h1 title">Dirección</div>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                  <i class="icon ion-search placeholder-icon"></i>
+                  <input type="text" [(ngModel)]="direccion" placeholder="Dirección">
+                </label>
             </div>
             <br>
             <div>
