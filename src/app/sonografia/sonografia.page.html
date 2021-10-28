@@ -16,13 +16,10 @@
         </ion-list-header>
         <ion-item lines="inset" *ngFor="let sonografias of sonografias">
             <ion-label>
-                <h5>{{sonografias.nombre}} - ({{sonografias.apellido}}, {{pacientes.cedula}},{{pacientes.fecha_nacimiento}})</h5>
+                <h5>{{sonografias.nombre_paciente}} - {{sonografias.apellido_paciente}}-{{sonografias.cedula_paciente}}-{{sonografias.telefono_paciente}}-{{sonografias.fecha_n_paciente}}</h5>
             </ion-label>
 
-            <div class="item-note">
-                <ion-icon name="create-outline" style="zoom: 2.5;" [routerLink]="['/usuario-update/',nombres.id]"></ion-icon>
-                <ion-icon name="trash-bin-outline" style="zoom: 2.5;" (click)="deleUsuarios(nombres.id)"></ion-icon>
-            </div>
-            </ion-item>
+           
+            </ion-item> 
     </ion-list>
 </ion-content>
