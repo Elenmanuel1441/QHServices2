@@ -3,40 +3,41 @@
         <ion-buttons slot="end">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>asignar paciente</ion-title>
+        <ion-title>Asignar área a paciente</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-list lines="full">
+    <ion-card>
+        <ion-list class="list-asignar">
+            <ion-item>
+                <ion-label position="floating">id:</ion-label>
+                <ion-input disabled [(ngModel)]="id" type="number"></ion-input>
+            </ion-item>
 
-        <ion-item>
-            <ion-label position="floating">id:</ion-label>
-            <ion-input disabled [(ngModel)]="id" type="number"></ion-input>
-        </ion-item>
+            <ion-item>
+                <ion-label>Estado</ion-label>
+                <ion-select [(ngModel)]="estado_sono" type="number">
+                    <ion-select-option value='1'>Activo</ion-select-option>
 
-        <ion-item>
-            <ion-label>Estado</ion-label>
-            <ion-select [(ngModel)]="estado_sono" type="number">
-                <ion-select-option value='1'>Activo</ion-select-option>
+                </ion-select>
 
-            </ion-select>
+            </ion-item>
 
-        </ion-item>
+            <ion-item>
+                <ion-label>Área</ion-label>
+                <ion-select [(ngModel)]="area" type="number">
+                    <ion-select-option value='1'>Sonografia</ion-select-option>
+                    <ion-select-option value='2'>Laboratorio</ion-select-option>
+                    <ion-select-option value='3'>Odontologia</ion-select-option>
 
-        <ion-item>
-            <ion-label>area</ion-label>
-            <ion-select [(ngModel)]="area" type="number">
-                <ion-select-option value='1'>Sonografia</ion-select-option>
-                <ion-select-option value='2'>Laboratorio</ion-select-option>
-                <ion-select-option value='3'>Odontologia</ion-select-option>
-
-            </ion-select>
-        </ion-item>
-        <ion-row>
-            <ion-col>
-                <ion-button type="button" (click)="addSonografia()" color="primary" shape="full" expand="block"> asignar area </ion-button>
-            </ion-col>
-        </ion-row>
-    </ion-list>
+                </ion-select>
+            </ion-item>
+            <ion-row>
+                <ion-col>
+                    <ion-button class="btn-add" type="button" (click)="addSonografia()" color="primary" shape="full" expand="block"> asignar area </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
 </ion-content>s
