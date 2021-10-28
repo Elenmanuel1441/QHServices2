@@ -1,6 +1,6 @@
 .card-principal {
     height: 900px;
-    background-color: rgb(94, 243, 101);
+    background-color: white;
 }
 
 .datos-personales {
@@ -9,7 +9,7 @@
     padding: 50px;
     border-radius: 10px;
     margin: left;
-    background-color: rgb(255, 255, 255);
+    background-color: #ccf8e7;
     left: 0em;
 }
 
@@ -22,6 +22,10 @@
     background-color: #ccf8e7;
     left: 22.5em;
     bottom: 56.5em;
+}
+
+ion-label {
+    color: black;
 }
 
 ion-input {
@@ -41,10 +45,6 @@ form {
     border-radius: 10px;
     margin: auto;
     background-color: #ccc;
-}
-
-label {
-    color: black;
 }
 
 input {
