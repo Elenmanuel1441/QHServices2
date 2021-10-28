@@ -8,7 +8,7 @@
     padding: 50px;
     border-radius: 10px;
     margin: left;
-    background-color: #ccc;
+    background-color: rgb(255, 255, 255);
     left: 0em;
 }
 
@@ -18,13 +18,13 @@
     padding: 50px;
     border-radius: 10px;
     margin: left;
-    background-color: #ccc;
+    background-color: #E8E9F2;
     left: 22.5em;
     bottom: 56.5em;
 }
 
 ion-input {
-    width: 300px;
+    width: 250px;
     padding: 16px;
     background-color: #ccc;
     border-color: var(--ion-color-medium-shade);
@@ -43,7 +43,7 @@ form {
 }
 
 label {
-    text-decoration-color: black;
+    color: black;
 }
 
 input {
@@ -52,4 +52,16 @@ input {
 
 .h1 title {
     color: black;
+}
+
+ion-scroll {
+    height: 100px;
+}
+
+.card-list {
+    border-radius: 10px;
+}
+
+.card-lista-paciente {
+    border-radius: 10px;
 }
