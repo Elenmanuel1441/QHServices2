@@ -10,12 +10,13 @@ import { ApiService } from '../api.service';
 })
 export class SonografiaPage implements OnInit {
   
-  nombre: any;
-  apellido: any;
-  cedula: any;
-  fecha_nacimiento: any;
+  nombre_paciente: any;
+  apellido_paciente: any;
+  cedula_paciente: any;
+  telefono_paciente: any;
+  fecha_n_paciente: any;
   sonografias: any[];
-  public 
+  
   constructor(
 
     public _apiService: ApiService
