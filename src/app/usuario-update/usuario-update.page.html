@@ -8,38 +8,40 @@
 </ion-header>
 
 <ion-content>
-    <ion-list line="full">
-        <ion-list>
-            <ion-item>
-                <ion-label position="floating">Usuario:</ion-label>
-                <ion-input [(ngModel)]="nombre" type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label>Posición</ion-label>
-                <ion-select [(ngModel)]="rol" type="text">
-                    <ion-select-option value='Laboratorio'>Laboratorio</ion-select-option>
-                    <ion-select-option value='Odontología'>Odontología</ion-select-option>
-                    <ion-select-option value='Rayos X'>Rayos X</ion-select-option>
-                    <ion-select-option value='Recepción'>Recepción</ion-select-option>
-                    <ion-select-option value='Sonografía'>Sonografía</ion-select-option>
+    <ion-card class="card-principal">
+        <ion-list class="list-usuarios">
+            <ion-list>
+                <ion-item>
+                    <ion-label position="floating">Usuario:</ion-label>
+                    <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Posición</ion-label>
+                    <ion-select [(ngModel)]="rol" type="text">
+                        <ion-select-option value='Laboratorio'>Laboratorio</ion-select-option>
+                        <ion-select-option value='Odontología'>Odontología</ion-select-option>
+                        <ion-select-option value='Rayos X'>Rayos X</ion-select-option>
+                        <ion-select-option value='Recepción'>Recepción</ion-select-option>
+                        <ion-select-option value='Sonografía'>Sonografía</ion-select-option>
 
-                </ion-select>
-            </ion-item>
+                    </ion-select>
+                </ion-item>
 
-            <ion-item>
-                <ion-label>Estado</ion-label>
-                <ion-select [(ngModel)]="estado" type="text">
-                    <ion-select-option value='Activo'>Activo</ion-select-option>
-                    <ion-select-option value='Inactivo'>Inactivo</ion-select-option>
-                </ion-select>
-            </ion-item>
+                <ion-item>
+                    <ion-label>Estado</ion-label>
+                    <ion-select [(ngModel)]="estado" type="text">
+                        <ion-select-option value='Activo'>Activo</ion-select-option>
+                        <ion-select-option value='Inactivo'>Inactivo</ion-select-option>
+                    </ion-select>
+                </ion-item>
 
-            <ion-row>
-                <ion-col>
-                    <ion-button type="button" (click)="UpdateUsuario()" color="primary" shape="full" expand="block"> Update usuarios </ion-button>
-                </ion-col>
-            </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button type="button" (click)="UpdateUsuario()" color="primary" shape="full" expand="block"> Update usuarios </ion-button>
+                    </ion-col>
+                </ion-row>
 
+            </ion-list>
         </ion-list>
-    </ion-list>
+    </ion-card>
 </ion-content>

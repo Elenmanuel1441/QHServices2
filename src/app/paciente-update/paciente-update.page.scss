@@ -1,0 +1,51 @@
+.datos-personales {
+    width: 850px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #5aeeb5;
+    padding: 16px;
+    margin: auto;
+}
+
+ion-label {
+    color: black;
+}
+
+ion-input {
+    width: 250px;
+    padding: 16px;
+    background-color: #ccc;
+    border-color: var(--ion-color-medium-shade);
+    border-radius: 15px;
+    border-width: 1px;
+    box-shadow: 2px gray;
+    background: #f8f9fa;
+}
+
+form {
+    width: 300px;
+    padding: 16px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #ccc;
+}
+
+input {
+    background-color: white;
+}
+
+.h1 title {
+    color: black;
+}
+
+ion-scroll {
+    height: 100px;
+}
+
+.card-list {
+    border-radius: 10px;
+}
+
+.card-lista-paciente {
+    border-radius: 10px;
+}
