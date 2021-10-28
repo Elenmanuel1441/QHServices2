@@ -52,27 +52,6 @@
                           <input type="text" [(ngModel)]="direccion" placeholder="Dirección">
                         </label>
             </div>
-
-            <br>
-            <div>
-                <ion-label position="floating">Fecha de nacimiento:</ion-label>
-                <ion-datetime [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
-            </div>
-            <br>
-            <div>
-                <ion-label>Tipo de sangre:</ion-label>
-                <ion-select [(ngModel)]="tipo_sangre" type="text">
-                    <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
-                    <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
-                    <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
-                    <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
-                    <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
-                    <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
-                    <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
-                    <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
-                </ion-select>
-            </div>
-
         </ion-card>
 
         <ion-card class="datos-personales2">
@@ -127,6 +106,7 @@
                     </ion-col>
                 </ion-row>
             </ion-grid>
+
             <br>
 
             <ion-list class="card-list">
