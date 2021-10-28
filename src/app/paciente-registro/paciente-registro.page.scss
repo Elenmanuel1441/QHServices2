@@ -1,5 +1,6 @@
 .card-principal {
     height: 900px;
+    background-color: rgb(94, 243, 101);
 }
 
 .datos-personales {
@@ -18,7 +19,7 @@
     padding: 50px;
     border-radius: 10px;
     margin: left;
-    background-color: #E8E9F2;
+    background-color: #ccf8e7;
     left: 22.5em;
     bottom: 56.5em;
 }
@@ -28,7 +29,7 @@ ion-input {
     padding: 16px;
     background-color: #ccc;
     border-color: var(--ion-color-medium-shade);
-    border-radius: 3px;
+    border-radius: 10px;
     border-width: 1px;
     box-shadow: 2px gray;
     background: #f8f9fa;

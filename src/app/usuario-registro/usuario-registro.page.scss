@@ -1,9 +1,17 @@
-.card-usuario {
+.card-principal {
     width: 1000px;
-    height: 780px;
+    height: 620px;
     padding: 50px;
     border-radius: 10px;
     margin: auto;
-    background-color: #ccc;
+    background-color: rgb(94, 243, 101);
     left: 0em;
+}
+
+.list-usuarios {
+    border-radius: 10px;
+}
+
+.list-lista-usuarios {
+    border-radius: 10px;
 }

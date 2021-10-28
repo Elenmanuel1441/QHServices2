@@ -10,9 +10,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-card class="card-usuario" color="Dark">
+    <ion-card class="card-principal" color="Dark">
         <ion-card-header>
-            <ion-list>
+            <ion-list class="list-usuarios">
                 <ion-item>
                     <ion-label position="floating">Usuario:</ion-label>
                     <ion-input [(ngModel)]="nombre" type="text"></ion-input>
@@ -44,13 +44,13 @@
 
                 <ion-row>
                     <ion-col>
-                        <ion-button type="button" (click)="addUsuario()" color="primary" shape="full" expand="block"> Add usuarios </ion-button>
+                        <ion-button type="button" (click)="addUsuario()" color="primary" shape="round" expand="block"> Add usuarios </ion-button>
                     </ion-col>
                 </ion-row>
 
             </ion-list>
-
-            <ion-list>
+            <br>
+            <ion-list class="list-lista-usuarios">
 
                 <ion-list-header>
                     Usuarios registrados

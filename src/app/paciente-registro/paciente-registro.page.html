@@ -173,7 +173,7 @@
 
                 <ion-row>
                     <ion-col>
-                        <ion-button class="guardar-paciente" type="button" (click)="addPaciente()" color="primary" shape="full" expand="block"> Añadir pacientes </ion-button>
+                        <ion-button class="guardar-paciente" type="button" (click)="addPaciente()" color="primary" shape="round" expand="block"> Añadir pacientes </ion-button>
                     </ion-col>
                 </ion-row>
 
@@ -194,7 +194,7 @@
                     <div class="item-note">
                         <ion-icon name="create-outline" style="zoom: 2.5;" [routerLink]="['/paciente-update/',pacientes.id_paciente]"></ion-icon>
                         <ion-icon name="trash-bin-outline" style="zoom: 2.5;" (click)="delePaciente(pacientes.id_paciente)"></ion-icon>
-                        <ion-icon name="heart-outline" style="zoom: 2.5;" [routerLink]="['/paciente-add-area/',pacientes.id_paciente]"></ion-icon>
+                        <ion-icon name="add-circle-outline" style="zoom: 2.5;" [routerLink]="['/paciente-add-area/',pacientes.id_paciente]"></ion-icon>
                     </div>
 
                 </ion-item>

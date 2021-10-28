@@ -19,20 +19,16 @@
 
             <ion-card-content>
 
-                <ion-item>
-                    <ion-label position="floating">Usuario</ion-label>
-                    <ion-input></ion-input>
-                </ion-item>
-                <br>
-                <ion-item>
-                    <ion-label position="floating">Contraseña</ion-label>
-                    <ion-input type="password"></ion-input>
-                </ion-item>
-                <br>
 
-                <ion-button id="btnacceder" expand="block" routerLink="/home">Acceder</ion-button>
+                <ion-label position="floating">Usuario</ion-label>
+                <ion-input type="text" [(ngModel)]="usuario"></ion-input>
                 <br>
-                <ion-button id="btnregistrar" expand="block" routerLink="/home">Registrate</ion-button>
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+                <br>
+                <ion-button id="btnacceder" shape="round" expand="block" routerLink="/home">Acceder</ion-button>
+                <br>
+                <ion-button id="btnregistrar" shape="round" expand="block" routerLink="/home">Registrate</ion-button>
 
             </ion-card-content>
         </ion-card>
