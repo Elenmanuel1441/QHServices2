@@ -9,24 +9,43 @@ import { ApiService } from '../api.service';
   styleUrls: ['./sonografia.page.scss'],
 })
 export class SonografiaPage implements OnInit {
+  
   nombre: any;
-
+  apellido: any;
+  cedula: any;
+  fecha_nacimiento: any;
+  sonografias: any[];
+  public 
   constructor(
-   private route: ActivatedRoute,
-   private router: Router,
-   private _apiservice: ApiService
+
+    public _apiService: ApiService
+
  
   ) { 
-    this.route.params.subscribe((param:any) =>{
+
+
+    this.getSonografias();
+
+
+   /* this.route.params.subscribe((param:any) =>{
       this.nombre = param.nombre;
       console.log(this.nombre);
       this.getPaciente(this.nombre);      
-    })
+    })*/
   }
 
   ngOnInit() {
   }
 
+  getSonografias(){
+    this._apiService.getSonografias().subscribe((res:any) => {
+      console.log("SUCCESS ===",res);
+      this.sonografias = res;
+      },(error: any) => {
+        console.log("ERROR ===",error);
+      })
+    }
+/*
   getPaciente(id){
     this._apiservice.getPaciente(id).subscribe((res:any) => {
       console.log("SUCCESS",res);
@@ -50,7 +69,7 @@ export class SonografiaPage implements OnInit {
   }, (err:any)=>{
     console.log("ERROR", err)
    })
-  }
+  }*/
 
 }
   

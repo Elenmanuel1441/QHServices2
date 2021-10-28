@@ -54,4 +54,9 @@ export class ApiService {
   {
     return this.http.post('http://localhost/proyecto/backend/addsonografia.php',data);
   }
+  getSonografias()
+  {
+    return this.http.get('http://localhost/proyecto/backend/getSonografias.php');
+
+  }
 }

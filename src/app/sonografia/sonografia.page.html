@@ -3,22 +3,26 @@
         <ion-buttons slot="end">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>Sonografía</ion-title>
+        <ion-title>Cola Sonografia</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-item>
+    <ion-list class="list-lista-sonografias">
 
-        <ion-label position="floating">Nombre:</ion-label>
-        <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+        <ion-list-header>
+            Cola Sonografia
 
-    </ion-item>
-    <ion-item>
-        <ion-row>
-            <ion-col>
-                <ion-button type="button" (click)="updatePaciente()" color="primary" shape="full" expand="block"> Actualizar paciente </ion-button>
-            </ion-col>
-        </ion-row>
-    </ion-item>
+        </ion-list-header>
+        <ion-item lines="inset" *ngFor="let sonografias of sonografias">
+            <ion-label>
+                <h5>{{sonografias.nombre}} - ({{sonografias.apellido}}, {{pacientes.cedula}},{{pacientes.fecha_nacimiento}})</h5>
+            </ion-label>
+
+            <div class="item-note">
+                <ion-icon name="create-outline" style="zoom: 2.5;" [routerLink]="['/usuario-update/',nombres.id]"></ion-icon>
+                <ion-icon name="trash-bin-outline" style="zoom: 2.5;" (click)="deleUsuarios(nombres.id)"></ion-icon>
+            </div>
+            </ion-item>
+    </ion-list>
 </ion-content>
