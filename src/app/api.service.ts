@@ -59,4 +59,11 @@ export class ApiService {
     return this.http.get('http://localhost/proyecto/backend/getSonografias.php');
 
   }
+  getSonografia(id_col_sonografia)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getSingleSonografia.php?id_col_sonografia='+id_col_sonografia);
+  }
+  updateSonografia(id_col_sonografia, data)
+  {
+    return this.http.put('http://localhost/proyecto/backend/updateSonografia.php?id='+id_col_sonografia,data);}
 }
