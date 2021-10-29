@@ -3,7 +3,7 @@
         <ion-buttons slot="end">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title color="primary">Rayos X</ion-title>
+        <ion-title class="titulo">Rayos X</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -12,16 +12,16 @@
     <ion-list>
 
         <ion-list-header>
-            <h3>Cola de Rayos X</h3>
+            <h3 class="subtitulo">Cola de Rayos X</h3>
         </ion-list-header>
 
 
         <ion-card>
-            <ion-card-header>
+            <ion-card-header class="list-rayos">
 
                 <ion-item lines="inset" *ngFor="let nombres of nombres">
                     <ion-label color="primary">
-                        <h5>{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
+                        <h5 class="normal">{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
                     </ion-label>
 
                 </ion-item>
