@@ -3,7 +3,7 @@
         <ion-buttons slot="end">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>Actualizar datos de usuarios</ion-title>
+        <ion-title class="titulo">Actualizar datos de usuarios</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -12,12 +12,12 @@
         <ion-list class="list-usuarios">
             <ion-list>
                 <ion-item>
-                    <ion-label position="floating">Usuario:</ion-label>
-                    <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+                    <ion-label class="subtitulo" position="floating">Usuario:</ion-label>
+                    <ion-input class="subtitulo" [(ngModel)]="nombre" type="text"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label>Posición</ion-label>
-                    <ion-select [(ngModel)]="rol" type="text">
+                    <ion-label class="subtitulo">Posición</ion-label>
+                    <ion-select class="subtitulo" [(ngModel)]="rol" type="text">
                         <ion-select-option value='Laboratorio'>Laboratorio</ion-select-option>
                         <ion-select-option value='Odontología'>Odontología</ion-select-option>
                         <ion-select-option value='Rayos X'>Rayos X</ion-select-option>
@@ -28,8 +28,8 @@
                 </ion-item>
 
                 <ion-item>
-                    <ion-label>Estado</ion-label>
-                    <ion-select [(ngModel)]="estado" type="text">
+                    <ion-label class="subtitulo">Estado</ion-label>
+                    <ion-select class="subtitulo" [(ngModel)]="estado" type="text">
                         <ion-select-option value='Activo'>Activo</ion-select-option>
                         <ion-select-option value='Inactivo'>Inactivo</ion-select-option>
                     </ion-select>
@@ -37,7 +37,7 @@
 
                 <ion-row>
                     <ion-col>
-                        <ion-button type="button" (click)="UpdateUsuario()" color="primary" shape="shape" expand="block"> Update usuarios </ion-button>
+                        <ion-button class="subtitulo" type="button" (click)="UpdateUsuario()" color="primary" shape="shape" expand="block"> Update usuarios </ion-button>
                     </ion-col>
                 </ion-row>
 

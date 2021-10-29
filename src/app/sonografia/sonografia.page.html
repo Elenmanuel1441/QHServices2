@@ -3,23 +3,22 @@
         <ion-buttons slot="end">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>Cola Sonografia</ion-title>
+        <ion-title class="titulo">Cola Sonografia</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-list class="list-lista-sonografias">
+    <ion-card>
+        <ion-list class="list-lista-sonografias">
 
-        <ion-list-header>
-            Cola Sonografia
-
-        </ion-list-header>
-        <ion-item lines="inset" *ngFor="let sonografias of sonografias">
-            <ion-label>
-                <h5>{{sonografias.nombre_paciente}} - {{sonografias.apellido_paciente}}-{{sonografias.cedula_paciente}}-{{sonografias.telefono_paciente}}-{{sonografias.fecha_n_paciente}}</h5>
-            </ion-label>
-
-           
-            </ion-item> 
-    </ion-list>
+            <ion-list-header class="subtitulo">
+                Cola Sonografia
+            </ion-list-header>
+            <ion-item lines="inset" *ngFor="let sonografias of sonografias">
+                <ion-label>
+                    <h5 class="normal">{{sonografias.nombre_paciente}} - {{sonografias.apellido_paciente}}-{{sonografias.cedula_paciente}}-{{sonografias.telefono_paciente}}-{{sonografias.fecha_n_paciente}}</h5>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-card>
 </ion-content>
