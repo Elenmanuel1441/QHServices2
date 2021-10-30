@@ -47,6 +47,11 @@ const routes: Routes = [
     path: 'setting',
     loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
   },
+  {
+    path: 'sonografia-update/:id_col_sonografia',
+    loadChildren: () => import('./sonografia-update/sonografia-update.module').then( m => m.SonografiaUpdatePageModule)
+  },
+
 ];
 
 @NgModule({
