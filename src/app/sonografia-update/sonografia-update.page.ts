@@ -55,7 +55,8 @@ export class SonografiaUpdatePage implements OnInit {
      this.router.navigateByUrl('/sonografia');
      
  }, (err:any)=>{
-   console.log("ERROR", err)
+   console.log("ERROR", err);
+   
  })
 }
  

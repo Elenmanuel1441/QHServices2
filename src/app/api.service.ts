@@ -65,5 +65,5 @@ export class ApiService {
   }
   updateSonografia(id_col_sonografia, data)
   {
-    return this.http.put('http://localhost/proyecto/backend/updateSonografia.php?id='+id_col_sonografia,data);}
+    return this.http.put('http://localhost/proyecto/backend/updateSonografia.php?id_col_sonografia='+id_col_sonografia,data);}
 }
