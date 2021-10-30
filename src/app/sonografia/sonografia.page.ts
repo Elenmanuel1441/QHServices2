@@ -36,7 +36,9 @@ export class SonografiaPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getSonografias();
   }
+
 
   getSonografias(){
     this._apiService.getSonografias().subscribe((res:any) => {
