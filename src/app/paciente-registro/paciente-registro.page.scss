@@ -1,5 +1,5 @@
 .datos-personales2 {
-    width: 1000px;
+    width: 900px;
     height: 780px;
     padding: 10px;
     border-radius: 10px;
@@ -9,17 +9,19 @@
 
 ion-label {
     color: black;
+    margin: 0 0 0 15px;
 }
 
 ion-input {
-    width: 300px;
+    width: 250px;
     height: 35px;
     padding: 16px;
     background-color: #ccc;
     border-color: var(--ion-color-medium-shade);
     border-radius: 8px;
     border-width: 1px;
-    box-shadow: 2px gray;
+    margin: auto;
+    box-shadow: 2px rgb(255, 255, 255);
     background: #f8f9fa;
 }
 
@@ -33,21 +35,22 @@ input {
 
 .card-list {
     border-radius: 10px;
-    width: 935px;
+    width: 830px;
     margin: 0 0 0 10px;
 }
 
 .tabla-paciente {
     border-radius: 10px;
-    width: 935px;
+    width: 250px;
     margin: 0 0 0 10px;
 }
 
 ion-datetime {
     background-color: white;
     border-radius: 8px;
-    width: 300px;
-    height: 30px;
+    width: 250px;
+    height: 35px;
+    margin: auto;
 }
 
 ion-title {
@@ -57,14 +60,14 @@ ion-title {
 .tabla-titulos {
     border-radius: 10px;
     text-align: center;
-    width: 935px;
+    width: 830px;
     margin: 0 0 0 10px;
 }
 
 .tabla-datos {
     border-radius: 10px;
     text-align: center;
-    width: 935px;
+    width: 830px;
     margin: 0 0 0 10px;
 }
 

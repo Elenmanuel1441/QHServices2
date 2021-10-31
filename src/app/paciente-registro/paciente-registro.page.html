@@ -1,8 +1,8 @@
 <ion-header>
 
     <ion-toolbar>
-        <ion-buttons slot="end">
-            <ion-back-button></ion-back-button>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title class="titulo">Registro de pacientes</ion-title>
     </ion-toolbar>
@@ -17,15 +17,15 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Nombres</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Nombres</ion-label>
                     <ion-input class="subtitulo" type="text" [(ngModel)]="nombre"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Apellidos</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Apellidos</ion-label>
                     <ion-input class="subtitulo" type="text" [(ngModel)]="apellido"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Cédula</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Cédula</ion-label>
                     <ion-input class="subtitulo" type="text" [(ngModel)]="cedula"></ion-input>
                 </ion-col>
             </ion-row>
@@ -34,15 +34,15 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Teléfono</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Teléfono</ion-label>
                     <ion-input class="subtitulo" type="text" [(ngModel)]="telefono"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Alergias</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Alergias</ion-label>
                     <ion-input class="subtitulo" type="text" [(ngModel)]="alergias"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Padecimientos</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Padecimientos</ion-label>
                     <ion-input class="subtitulo" type="text" [(ngModel)]="padecimientos"></ion-input>
                 </ion-col>
             </ion-row>
@@ -51,15 +51,15 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Ocupación</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Ocupación</ion-label>
                     <ion-input class="subtitulo" type="text" [(ngModel)]="ocupacion"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Dirección</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Dirección</ion-label>
                     <ion-input class="subtitulo" type="text" [(ngModel)]="direccion"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="floating">Fecha de nacimiento:</ion-label>
+                    <ion-label class="subtitulo" position="fixed">Fecha de nacimiento:</ion-label>
                     <ion-datetime class="subtitulo" [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
                 </ion-col>
             </ion-row>
