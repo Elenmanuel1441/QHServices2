@@ -1,8 +1,3 @@
-.card-principal {
-    height: 900px;
-    background-color: white;
-}
-
 .datos-personales {
     width: 290px;
     height: 780px;
@@ -39,24 +34,12 @@ ion-input {
     background: #f8f9fa;
 }
 
-form {
-    width: 300px;
-    padding: 16px;
-    border-radius: 10px;
-    margin: auto;
-    background-color: #ccc;
-}
-
 input {
     background-color: white;
 }
 
 .h1 title {
     color: black;
-}
-
-ion-scroll {
-    height: 100px;
 }
 
 .card-list {
@@ -67,6 +50,8 @@ ion-scroll {
 
 .card-lista-paciente {
     border-radius: 10px;
+    width: 840px;
+    margin: 0 0 0 10px;
 }
 
 ion-datetime {
