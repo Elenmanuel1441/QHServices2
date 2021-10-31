@@ -8,14 +8,14 @@
     <ion-card>
         <ion-list class="list-lista-sonografias">
             <ion-list-header class="subtitulo">
-                Cola Sonografia
+                Cola Rayos X
             </ion-list-header>
             <ion-item lines="inset" *ngFor="let rayos_x of rayos_x">
                 <ion-label>
                     <h5 class="normal">{{rayos_x.nombre_paciente}} - {{rayos_x.apellido_paciente}}-{{rayos_x.cedula_paciente}}-{{rayos_x.telefono_paciente}}</h5>
                 </ion-label>
                 <div class="item-note">
-                    <ion-icon name="checkmark-circle-outline" style="zoom: 2.5;" [routerLink]="['/sonografia-update/',sonografias.id_col_sonografia]"></ion-icon>
+                    <ion-icon name="checkmark-circle-outline" style="zoom: 2.5;" [routerLink]="['/sonografia-update/',rayos_x.id_col_sonografia]"></ion-icon>
                 </div>
             </ion-item>
         </ion-list>
