@@ -11,6 +11,8 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'rayos-x',
     loadChildren: () => import('./rayos-x/rayos-x.module').then( m => m.RayosXPageModule)
