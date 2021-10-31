@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'usuario-registro',
     pathMatch: 'full',
   },
   { 
@@ -57,7 +57,8 @@ const routes: Routes = [
   },
   { 
     path: '**', redirectTo: 'home', pathMatch: 'full' 
-  },  {
+  },
+  {
     path: 'rayos-x-update',
     loadChildren: () => import('./rayos-x-update/rayos-x-update.module').then( m => m.RayosXUpdatePageModule)
   },
