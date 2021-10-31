@@ -157,33 +157,51 @@
         </ion-list>
         <br>
 
+        <ion-item class="tabla-titulos">
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        Nombre
+                    </ion-col>
+                    <ion-col>
+                        Apellido
+                    </ion-col>
+                    <ion-col>
+                        Telefono
+                    </ion-col>
+                    <ion-col>
+                        Cedula
+                    </ion-col>
+                    <ion-col>
+                        Acciones
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
 
-
-
-
-
-        <ion-list class="card-lista-paciente">
-
-            <ion-list-header class="subtitulo">
-                Lista de pacientes
-            </ion-list-header>
-
-
-            <ion-item lines="inset" *ngFor="let pacientes of pacientes">
-                <ion-label class="subtitulo">
-                    <h5>{{pacientes.nombre_paciente}} {{pacientes.apellido_paciente}}, {{pacientes.telefono_paciente}} ({{pacientes.cedula_paciente}}) </h5>
-                </ion-label>
-
-                <div class="item-note">
-                    <ion-icon name="create-outline" style="zoom: 2.5;" [routerLink]="['/paciente-update/',pacientes.id_paciente]"></ion-icon>
-                    <ion-icon name="trash-bin-outline" style="zoom: 2.5;" (click)="delePaciente(pacientes.id_paciente)"></ion-icon>
-                    <ion-icon name="add-circle-outline" style="zoom: 2.5;" [routerLink]="['/paciente-add-area/',pacientes.id_paciente]"></ion-icon>
-                </div>
-
-            </ion-item>
-
-        </ion-list>
-
+        <ion-item class="tabla-datos" lines="inset" *ngFor="let pacientes of pacientes">
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        <h6>{{pacientes.nombre_paciente}}</h6>
+                    </ion-col>
+                    <ion-col>
+                        <h6>{{pacientes.apellido_paciente}}</h6>
+                    </ion-col>
+                    <ion-col>
+                        <h6>{{pacientes.telefono_paciente}}</h6>
+                    </ion-col>
+                    <ion-col>
+                        <h6>{{pacientes.cedula_paciente}}</h6>
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="create-outline" style="zoom: 2.5;" [routerLink]="['/paciente-update/',pacientes.id_paciente]"></ion-icon>
+                        <ion-icon name="trash-bin-outline" style="zoom: 2.5;" (click)="delePaciente(pacientes.id_paciente)"></ion-icon>
+                        <ion-icon name="add-circle-outline" style="zoom: 2.5;" [routerLink]="['/paciente-add-area/',pacientes.id_paciente]"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
 
     </ion-card>
 

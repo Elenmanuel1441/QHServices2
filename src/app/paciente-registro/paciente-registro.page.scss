@@ -1,21 +1,21 @@
 .datos-personales {
     width: 290px;
     height: 780px;
-    padding: 50px;
+    padding: 40px;
     border-radius: 10px;
     margin: left;
     background-color: #ccf8e7;
-    left: 0em;
+    left: 1em;
 }
 
 .datos-personales2 {
     width: 990px;
     height: 780px;
-    padding: 50px;
+    padding: 15px;
     border-radius: 10px;
     margin: left;
     background-color: #ccf8e7;
-    left: 22.5em;
+    left: 23.55em;
     bottom: 56.5em;
 }
 
@@ -44,11 +44,11 @@ input {
 
 .card-list {
     border-radius: 10px;
-    width: 840px;
+    width: 885px;
     margin: 0 0 0 10px;
 }
 
-.card-lista-paciente {
+.tabla-paciente {
     border-radius: 10px;
     width: 840px;
     margin: 0 0 0 10px;
@@ -62,4 +62,16 @@ ion-datetime {
 
 ion-title {
     text-align: center;
+}
+
+.tabla-titulos {
+    border-radius: 10px;
+    width: 885px;
+    margin: 0 0 0 10px;
+}
+
+.tabla-datos {
+    border-radius: 10px;
+    width: 885px;
+    margin: 0 0 0 10px;
 }
