@@ -1,21 +1,22 @@
-select {
-    height: 30px;
-    width: 150px;
-}
-
 ion-card {
-    background-color: #383a3e;
+    width: 750px;
+    height: 300px;
+    padding: 5px;
     border-radius: 10px;
-}
-
-.list-rayos {
-    border-radius: 10px;
-}
-
-ion-list {
-    border-radius: 10px;
+    margin: 15px 0 0 310px;
+    background-color: rgb(94, 243, 101);
+    left: 0em;
 }
 
 ion-title {
     text-align: center;
+}
+
+h3 {
+    text-align: center;
+    color: black;
+}
+
+.lista {
+    border-radius: 10px;
 }
