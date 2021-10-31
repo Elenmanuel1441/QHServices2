@@ -3,26 +3,22 @@
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title class="titulo">Rayos X</ion-title>
+        <ion-title class="titulo">Rayos X </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-card>
+        <ion-list class="list-lista-sonografias">
+            <ion-list-header class="subtitulo">
+                Cola Rayos X
+            </ion-list-header>
+            <ion-item lines="inset" *ngFor="let nombres of nombres">
+                <ion-label>
+                    <h5 class="normal">{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
+                </ion-label>
 
-    <ion-list>
-        <ion-card>
-            <ion-card-header>
-                <h3 class="subtitulo">Cola de Rayos X</h3>
-                <br>
-                <ion-item lines="inset" *ngFor="let nombres of nombres">
-                    <ion-label color="primary">
-                        <h5 class="normal lista">{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
-                    </ion-label>
-
-                </ion-item>
-            </ion-card-header>
-        </ion-card>
-
-    </ion-list>
-
+            </ion-item>
+        </ion-list>
+    </ion-card>
 </ion-content>
