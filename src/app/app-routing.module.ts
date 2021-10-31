@@ -9,10 +9,12 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  { 
+    path: '', redirectTo: 'home', pathMatch: 'full' 
+  },
+
   {
     path: 'rayos-x',
     loadChildren: () => import('./rayos-x/rayos-x.module').then( m => m.RayosXPageModule)
@@ -52,6 +54,9 @@ const routes: Routes = [
   {
     path: 'sonografia-update/:id_col_sonografia',
     loadChildren: () => import('./sonografia-update/sonografia-update.module').then( m => m.SonografiaUpdatePageModule)
+  },
+  { 
+    path: '**', redirectTo: 'home', pathMatch: 'full' 
   },
 
 ];
