@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PacienteAddAreaPage implements OnInit {
   id: any;
-  estado_sono:any;
+  estados:any;
   area: any;
   
   
@@ -30,13 +30,34 @@ export class PacienteAddAreaPage implements OnInit {
       {
         let data = {
       id: this.id,
-      estado_sono: this.estado_sono
+      estados: this.estados
    
           }
           this._apiservice.addSonografia(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
             this.id = '';
-            this.estado_sono = '';
+            this.estados = '';
+            this.area = '';
+            alert('SUCCESS');
+            
+    
+          },(error: any) => {
+            alert('ERROR');
+            console.log("Error ===",error);
+          })
+      }
+    }
+    addRayosx(){
+      {
+        let data = {
+      id: this.id,
+      estado_sono: this.estados
+   
+          }
+          this._apiservice.addRayosx(data).subscribe((res:any) => {
+            console.log("SUCCESS ===",res);
+            this.id = '';
+            this.estados = '';
             this.area = '';
             alert('SUCCESS');
             
