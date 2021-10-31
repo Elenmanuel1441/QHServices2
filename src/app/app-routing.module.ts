@@ -57,7 +57,27 @@ const routes: Routes = [
   },
   { 
     path: '**', redirectTo: 'home', pathMatch: 'full' 
+  },  {
+    path: 'rayos-x-update',
+    loadChildren: () => import('./rayos-x-update/rayos-x-update.module').then( m => m.RayosXUpdatePageModule)
   },
+  {
+    path: 'odontologia',
+    loadChildren: () => import('./odontologia/odontologia.module').then( m => m.OdontologiaPageModule)
+  },
+  {
+    path: 'odontologia-update',
+    loadChildren: () => import('./odontologia-update/odontologia-update.module').then( m => m.OdontologiaUpdatePageModule)
+  },
+  {
+    path: 'laboratorio',
+    loadChildren: () => import('./laboratorio/laboratorio.module').then( m => m.LaboratorioPageModule)
+  },
+  {
+    path: 'laboratorio-update',
+    loadChildren: () => import('./laboratorio-update/laboratorio-update.module').then( m => m.LaboratorioUpdatePageModule)
+  },
+
 
 ];
 
