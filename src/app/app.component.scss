@@ -3,8 +3,9 @@ select {
     width: 130px;
 }
 
-label {
+ion-label {
     position: relative;
+    color: white;
 }
 
 ion-card {
@@ -13,7 +14,7 @@ ion-card {
 
 ion-menu {
     width: 300px;
-    --ion-background-color: var(--ion-color-primary);
+    --ion-background-color: var(--ion-color-success);
     --ion-text-color: var(--ion-color-secondary-contrast: #ffffff;
     );
 }
