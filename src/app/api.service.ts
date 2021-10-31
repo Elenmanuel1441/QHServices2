@@ -65,5 +65,61 @@ export class ApiService {
   }
   updateSonografia(id_col_sonografia, data)
   {
-    return this.http.put('http://localhost/proyecto/backend/updateSonografia.php?id_col_sonografia='+id_col_sonografia,data);}
+    return this.http.put('http://localhost/proyecto/backend/updateSonografia.php?id_col_sonografia='+id_col_sonografia,data);
+  }
+
+  addRayosx(data)
+  {
+    return this.http.post('http://localhost/proyecto/backend/addRayosx.php',data);}
+   
+    getRayosx()
+  {
+    return this.http.get('http://localhost/proyecto/backend/getrayosx.php');
+
+  }
+  getRayox(id_col_rayosx)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getSinglerayox.php?id_col_rayosx='+id_col_rayosx);
+  }
+  updateRayosx(id_col_rayosx, data)
+  {
+    return this.http.put('http://localhost/proyecto/backend/updaterayosx.php?id_col_rayosx='+id_col_rayosx,data);
+  }
+  addLaboratorio(data)
+  {
+    return this.http.post('http://localhost/proyecto/backend/addLaboratorios.php',data);}
+   
+    getLaboratorios()
+  {
+    return this.http.get('http://localhost/proyecto/backend/getLaboratorios.php');
+
+  }
+  getLaboratorio(id_col_laboratorio)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getSinglelaboratorio.php?id_col_laboratorio='+id_col_laboratorio);
+  }
+  updateLaboratorios(id_col_laboratorio, data)
+  {
+    return this.http.put('http://localhost/proyecto/backend/updateLaboratorio.php?id_col_laboratorio='+id_col_laboratorio,data);
+  }
+
+  addOdontologia(data)
+  {
+    return this.http.post('http://localhost/proyecto/backend/addOdontologia.php',data);}
+   
+    getOdontologias()
+  {
+    return this.http.get('http://localhost/proyecto/backend/getOdontologia.php');
+
+  }
+  getOdontologia(id_col_odontologia)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getSingleOdontologia.php?id_col_odontologia='+id_col_odontologia);
+  }
+  updateOdontologia(id_col_odontologia, data)
+  {
+    return this.http.put('http://localhost/proyecto/backend/updateOdontologia.php?id_col_odontologia='+id_col_odontologia,data);
+  }
+
+
 }
