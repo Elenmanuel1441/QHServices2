@@ -34,7 +34,7 @@ export class RayosXUpdatePage implements OnInit {
    this._apiservice.getRayox(id_col_rayosx).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      let rayosx = res[0];
-     this.estado_rayosx = rayosx.estado_sonografia;
+     this.estado_rayosx = rayosx.estado_rayosx;
       }, (err:any)=>{
    console.log("ERROR", err)
  })
