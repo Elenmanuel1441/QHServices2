@@ -119,17 +119,19 @@ limpiarCampos()
   this.rol = ''; 
 }
 
- deleUsuarios(id){
+
+
+deleUsuarios(id){
    
-  this._apiService.deleUsuarios(id).subscribe((res:any) => {
-    console.log("SUCCESS");
-    this.presentToastEli('Eliminado exitosamente!');
-    this.getUsuarios();
-    },(error: any) => {
-      this.presentToastErrEli('Error al eliminar!');
-      console.log("ERROR")
-    })
-  }
+this._apiService.deleUsuarios(id).subscribe((res:any) => {
+   console.log("SUCCESS");
+   this.presentToastEli('Eliminado exitosamente!');
+   this.getUsuarios();
+   },(error: any) => {
+     this.presentToastErrEli('Error al eliminar!');
+    console.log("ERROR")
+   })
+ }
 
 
   async presentToast(mensaje: string) {
@@ -202,7 +204,24 @@ limpiarCampos()
     await alert.present();
   }
 
-
+async presentAlert()
+{
+  const alert = await this.alertController.create({
+    header: "Borrar usuario",
+    message: "Estas seguro que quieres borrar el usuario?",
+    buttons: [
+      {
+         text: "Si",
+         handler: () => {  
+     
+            }
+         }      
+  ],
+  });
+  await alert.present()
+  let result = await alert.onDidDismiss();
+  console.log(result);
+}
 
 }
 
