@@ -55,20 +55,10 @@ const routes: Routes = [
     path: 'sonografia-update/:id_col_sonografia',
     loadChildren: () => import('./sonografia-update/sonografia-update.module').then( m => m.SonografiaUpdatePageModule)
   },
-  { 
-    path: '**', redirectTo: 'home', pathMatch: 'full' 
-  },
+
   {
     path: 'rayos-x-update',
     loadChildren: () => import('./rayos-x-update/rayos-x-update.module').then( m => m.RayosXUpdatePageModule)
-  },
-  {
-    path: 'odontologia',
-    loadChildren: () => import('./odontologia/odontologia.module').then( m => m.OdontologiaPageModule)
-  },
-  {
-    path: 'odontologia-update',
-    loadChildren: () => import('./odontologia-update/odontologia-update.module').then( m => m.OdontologiaUpdatePageModule)
   },
   {
     path: 'laboratorio',
@@ -78,7 +68,19 @@ const routes: Routes = [
     path: 'laboratorio-update',
     loadChildren: () => import('./laboratorio-update/laboratorio-update.module').then( m => m.LaboratorioUpdatePageModule)
   },
+  {
+    path: 'odontologia',
+    loadChildren: () => import('./odontologia/odontologia.module').then( m => m.OdontologiaPageModule)
+  },
+  {
+    path: 'odontologia-update',
+    loadChildren: () => import('./odontologia-update/odontologia-update.module').then( m => m.OdontologiaUpdatePageModule)
+  },
+  { 
+    path: '**', redirectTo: 'home', pathMatch: 'full' 
+  },
 
+ 
 
 ];
 
