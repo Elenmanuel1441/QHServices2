@@ -83,7 +83,7 @@ export class ApiService {
   }
   updateRayosx(id_col_rayosx, data)
   {
-    return this.http.put('http://localhost/proyecto/backend/updaterayosx.php?id_col_rayosx='+id_col_rayosx,data);
+    return this.http.put('http://localhost/proyecto/backend/updateRayosx.php?id_col_rayosx='+id_col_rayosx,data);
   }
   addLaboratorio(data)
   {
@@ -98,7 +98,7 @@ export class ApiService {
   {
     return this.http.get('http://localhost/proyecto/backend/getSinglelaboratorio.php?id_col_laboratorio='+id_col_laboratorio);
   }
-  updateLaboratorios(id_col_laboratorio, data)
+  updateLaboratorio(id_col_laboratorio, data)
   {
     return this.http.put('http://localhost/proyecto/backend/updateLaboratorio.php?id_col_laboratorio='+id_col_laboratorio,data);
   }

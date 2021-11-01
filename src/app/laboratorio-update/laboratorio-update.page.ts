@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../api.service';
+
 
 @Component({
   selector: 'app-laboratorio-update',
@@ -7,9 +10,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaboratorioUpdatePage implements OnInit {
 
-  constructor() { }
+  id_col_laboratorio: any;
+  estado_laboratorio: any;
+  
 
-  ngOnInit() {
-  }
 
+ constructor(
+  private route: ActivatedRoute,
+  private router: Router,
+  private _apiservice: ApiService
+
+ ) { 
+
+   this.route.params.subscribe((param:any) =>{
+     this.id_col_laboratorio = param.id_col_laboratorio;
+     console.log(this.id_col_laboratorio);
+     this.getLaboratorio(this.id_col_laboratorio);
+   })
+ }
+
+ ngOnInit() {
+ }
+ getLaboratorio(id_col_laboratorio)
+ {
+   this._apiservice.getLaboratorio(id_col_laboratorio).subscribe((res:any)=>{
+     console.log("SUCCESS",res);
+     let laboratorios = res[0];
+     this.estado_laboratorio = laboratorios.estado_laboratorio;
+      }, (err:any)=>{
+   console.log("ERROR", err)
+ })
+ 
 }
+ 
+ updateLaboratorio()
+{
+ let data = {
+   
+   estado_laboratorio: this.estado_laboratorio,
+  
+   }
+   this._apiservice.updateLaboratorio(this.id_col_laboratorio,data).subscribe((res:any)=>{
+     console.log("SUCCESS",res);
+     this.router.navigateByUrl('/laboratorio');
+     
+ }, (err:any)=>{
+   console.log("ERROR", err);
+   
+ })
+}
+ 
+ 
+}
+

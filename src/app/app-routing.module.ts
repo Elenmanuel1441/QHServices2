@@ -57,7 +57,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'rayos-x-update',
+    path: 'rayos-x-update/:id_col_rayosx',
     loadChildren: () => import('./rayos-x-update/rayos-x-update.module').then( m => m.RayosXUpdatePageModule)
   },
   {
@@ -65,7 +65,7 @@ const routes: Routes = [
     loadChildren: () => import('./laboratorio/laboratorio.module').then( m => m.LaboratorioPageModule)
   },
   {
-    path: 'laboratorio-update',
+    path: 'laboratorio-update/:id_col_laboratorio',
     loadChildren: () => import('./laboratorio-update/laboratorio-update.module').then( m => m.LaboratorioUpdatePageModule)
   },
   {
@@ -73,7 +73,7 @@ const routes: Routes = [
     loadChildren: () => import('./odontologia/odontologia.module').then( m => m.OdontologiaPageModule)
   },
   {
-    path: 'odontologia-update',
+    path: 'odontologia-update:id_col_odontologia',
     loadChildren: () => import('./odontologia-update/odontologia-update.module').then( m => m.OdontologiaUpdatePageModule)
   },
   { 

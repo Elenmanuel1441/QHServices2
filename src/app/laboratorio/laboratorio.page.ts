@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../api.service';
+
 
 @Component({
   selector: 'app-laboratorio',
@@ -7,9 +10,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaboratorioPage implements OnInit {
 
-  constructor() { }
+  nombre_paciente: any;
+  apellido_paciente: any;
+  cedula_paciente: any;
+  telefono_paciente: any;
+  
+  laboratorios: any[];
+  
+  constructor(
 
-  ngOnInit() {
+    public _apiService: ApiService
+
+ 
+  ) { 
+
+
+    this.getLaboratorios();
+
+
+   
   }
 
+  ngOnInit() {
+    
+  }
+
+
+  getLaboratorios(){
+    this._apiService.getLaboratorios().subscribe((res:any) => {
+      console.log("SUCCESS ===",res);
+      this.laboratorios = res;
+      },(error: any) => {
+        console.log("ERROR ===",error);
+      })
+    }
+
+
 }
+  
