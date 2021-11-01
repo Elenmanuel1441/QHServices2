@@ -73,7 +73,7 @@ const routes: Routes = [
     loadChildren: () => import('./odontologia/odontologia.module').then( m => m.OdontologiaPageModule)
   },
   {
-    path: 'odontologia-update:id_col_odontologia',
+    path: 'odontologia-update/:id_col_odontologia',
     loadChildren: () => import('./odontologia-update/odontologia-update.module').then( m => m.OdontologiaUpdatePageModule)
   },
   { 
