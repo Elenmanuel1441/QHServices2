@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -19,34 +19,85 @@ export class UsuarioRegistroPage implements OnInit{
 
   constructor(
     public _apiService: ApiService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public alertController: AlertController
   ){
     this.getUsuarios();
     this.limpiarCampos();
   }
 
 
-  addUsuario()
+  async addUsuario()
   {
-    let data = {
-      nombre: this.nombre,
-      contrasena:this.contrasena,
-      estado: this.estado,
-      rol: this.rol
+    if(this.nombre == "")
+    {
+      const toast = await this.toastController.create({
+      message: 'Ingrese un nombre',
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastVal',
+      position: "bottom",
+      });
+      toast.present();
     }
+    else if(this.contrasena == "")
+    {
+      const toast = await this.toastController.create({
+        message: 'Ingrese una password',
+        duration: 1500,
+      color: "danger",
+      cssClass: 'toastVal',
+      position: "bottom",
+      });
+      toast.present();
+    }
+    else if(this.rol == "")
+    {
+      const toast = await this.toastController.create({
+        message: 'Ingrese un rol',
+        duration: 1500,
+      color: "danger",
+      cssClass: 'toastVal',
+      position: "bottom",
+      });
+      toast.present();
+    }
+    else if(this.estado == "")
+    {
+      const toast = await this.toastController.create({
+        message: 'Ingrese un estado',
+        duration: 1500,
+      color: "danger",
+      cssClass: 'toastVal',
+      position: "bottom",
+      });
+      toast.present();
+    }
+else{
 
-    this._apiService.addusuario(data).subscribe((res:any) => {
-    console.log("SUCCESS ===",res);
-    this.limpiarCampos(); 
-    this.presentToast('Guardado exitosamente!');
-    this.getUsuarios();
-
-    },(error: any) => {
-      this.presentToastErrAdd('Error al guardar!');
-      console.log("Error ===",error);
-    })
-    
+  let data = {
+    nombre: this.nombre,
+    contrasena:this.contrasena,
+    estado: this.estado,
+    rol: this.rol
   }
+
+  this._apiService.addusuario(data).subscribe((res:any) => {
+  console.log("SUCCESS ===",res);
+  this.limpiarCampos(); 
+  this.presentToast('Guardado exitosamente!');
+  this.getUsuarios();
+
+  },(error: any) => {
+    this.presentToastErrAdd('Error al guardar!');
+    console.log("Error ===",error);
+  })
+  
+}
+  
+}
+    
+  
   ngOnInit() 
   {
    this.limpiarCampos();
@@ -69,6 +120,7 @@ limpiarCampos()
 }
 
  deleUsuarios(id){
+   
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
     console.log("SUCCESS");
     this.presentToastEli('Eliminado exitosamente!');
@@ -80,30 +132,6 @@ limpiarCampos()
   }
 
 
-  async presentToastWithOptions() {
-    const toast = await this.toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
-      position: 'top',
-      buttons: [
-        {
-          side: 'start',
-          icon: 'star',
-          text: 'Favorite',
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Done',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-
-  }
   async presentToast(mensaje: string) {
     const toast = await this.toastController.create({
       message: mensaje,
@@ -148,5 +176,33 @@ limpiarCampos()
     });
     toast.present();
   }
+
+  async presentAlertConfirm() {
+    const alert = await this.alertController.create({
+      cssClass: 'normal',
+      header: 'Confirm!',
+      message: 'Message <strong>text</strong>!!!',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+
 }
 
