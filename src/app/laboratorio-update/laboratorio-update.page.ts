@@ -33,10 +33,10 @@ export class LaboratorioUpdatePage implements OnInit {
  }
  getLaboratorio(id_col_laboratorio)
  {
-   this._apiservice.getLaboratorio(id_col_laboratorio).subscribe((res:any)=>{
+   this._apiservice.getOdontologia(id_col_laboratorio).subscribe((res:any)=>{
      console.log("SUCCESS",res);
-     let laboratorios = res[0];
-     this.estado_laboratorio = laboratorios.estado_laboratorio;
+     let laboratorio = res[0];
+     this.estado_laboratorio = laboratorio.estado_laboratorio;
       }, (err:any)=>{
    console.log("ERROR", err)
  })

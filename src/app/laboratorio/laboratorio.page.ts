@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
-
-
 @Component({
   selector: 'app-laboratorio',
   templateUrl: './laboratorio.page.html',
   styleUrls: ['./laboratorio.page.scss'],
 })
 export class LaboratorioPage implements OnInit {
-
   nombre_paciente: any;
   apellido_paciente: any;
   cedula_paciente: any;
