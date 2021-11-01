@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class PacienteRegistroPage implements OnInit {
   pacientes: any = [];
 
   constructor(
-    public _apiService: ApiService
+    public _apiService: ApiService,
+    public toastController: ToastController
     
   ) {
     this.getPacientes();
@@ -47,12 +49,12 @@ export class PacienteRegistroPage implements OnInit {
       }
       this._apiService.addPaciente(data).subscribe((res:any) => {
         console.log("SUCCESS ===",res);
+        this.presentToast('Guardado exitosamente!');
         this.limpiarCampos();
-        alert('SUCCESS');
         this.getPacientes();
 
       },(error: any) => {
-        alert('ERROR');
+        this.presentToastErrorADD('Error al guardar!');
         console.log("Error ===",error);
       })
   }
@@ -88,11 +90,80 @@ export class PacienteRegistroPage implements OnInit {
     }
       delePaciente(id){
         this._apiService.delePaciente(id).subscribe((res:any) => {
-          console.log("SUCCESS");
+          this.presentToastEli('Eliminado exitosamente!');
           this.getPacientes();
           },(error: any) => {
-            console.log("ERROR")
+            this.presentToastError('Error al eliminar!');
           })
+  }
+
+  async presentToastWithOptions() {
+    const toast = await this.toastController.create({
+      header: 'Toast header',
+      message: 'Click to Close',
+      position: 'top',
+      buttons: [
+        {
+          side: 'start',
+          icon: 'star',
+          text: 'Favorite',
+          handler: () => {
+            console.log('Favorite clicked');
+          }
+        }, {
+          text: 'Done',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+
+  }
+  async presentToast(mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 1500,
+      color: "success",
+      cssClass: 'toastAdd',
+      position: "bottom",
+      
+    });
+    toast.present();
+  }
+
+  async presentToastEli (mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastEli',
+      position: "bottom",
+    });
+    toast.present();
+  }
+
+  async presentToastError (mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastEli',
+      position: "bottom",
+    });
+    toast.present();
+  }
+
+  async presentToastErrorADD (mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastEli',
+      position: "bottom",
+    });
+    toast.present();
   }
 }
 

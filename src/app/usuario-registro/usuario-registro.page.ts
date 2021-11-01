@@ -25,14 +25,6 @@ export class UsuarioRegistroPage implements OnInit{
     this.limpiarCampos();
   }
 
-validarDatos()
-{
-  if (this.nombre()=='')
-  {
-    
-  }
-}
-
 
   addUsuario()
   {
@@ -46,12 +38,11 @@ validarDatos()
     this._apiService.addusuario(data).subscribe((res:any) => {
     console.log("SUCCESS ===",res);
     this.limpiarCampos(); 
-    //alert('SUCCESS');
     this.presentToast('Guardado exitosamente!');
     this.getUsuarios();
 
     },(error: any) => {
-      alert('ERROR');
+      this.presentToastErrAdd('Error al guardar!');
       console.log("Error ===",error);
     })
     
@@ -83,6 +74,7 @@ limpiarCampos()
     this.presentToastEli('Eliminado exitosamente!');
     this.getUsuarios();
     },(error: any) => {
+      this.presentToastErrEli('Error al eliminar!');
       console.log("ERROR")
     })
   }
@@ -117,8 +109,8 @@ limpiarCampos()
       message: mensaje,
       duration: 1500,
       color: "success",
-      cssClass: 'toastAdd ',
-      position: "top",
+      cssClass: 'toastAdd',
+      position: "bottom",
       
     });
     toast.present();
@@ -130,8 +122,29 @@ limpiarCampos()
       duration: 1500,
       color: "danger",
       cssClass: 'toastEli',
-      position: "top",
-      
+      position: "bottom",
+    });
+    toast.present();
+  }
+
+  async presentToastErrEli (mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastEli',
+      position: "bottom",
+    });
+    toast.present();
+  }
+
+  async presentToastErrAdd (mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastEli',
+      position: "bottom",
     });
     toast.present();
   }
