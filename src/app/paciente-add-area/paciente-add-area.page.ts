@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-paciente-add-area',
@@ -17,7 +18,8 @@ export class PacienteAddAreaPage implements OnInit {
     constructor(
       private route: ActivatedRoute,
       private router: Router,
-      public _apiservice: ApiService
+      public _apiservice: ApiService,
+      public toastController: ToastController
     ) {
   
     this.route.params.subscribe((param:any) =>{
@@ -52,14 +54,14 @@ export class PacienteAddAreaPage implements OnInit {
           }
           this._apiservice.addSonografia(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
+            this.presentToast('Asignado correctamente!');
             this.id = '';
             this.estados = '';
             this.area = '';
-            alert('SUCCESS');
             this.router.navigateByUrl('/paciente-registro');
     
           },(error: any) => {
-            alert('ERROR');
+            this.presentToastError('Error al asignar!');
             console.log("Error ===",error);
           })
       }
@@ -73,14 +75,15 @@ export class PacienteAddAreaPage implements OnInit {
           }
           this._apiservice.addRayosx(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
+            this.presentToast('Asignado correctamente!');
             this.id = '';
             this.estados = '';
             this.area = '';
-            alert('SUCCESS');
+       
             this.router.navigateByUrl('/paciente-registro');
     
           },(error: any) => {
-            alert('ERROR');
+            this.presentToastError('Error al asignar!');
             console.log("Error ===",error);
           })
       }
@@ -95,14 +98,15 @@ export class PacienteAddAreaPage implements OnInit {
           }
           this._apiservice.addOdontologia(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
+            this.presentToast('Asignado correctamente!');
             this.id = '';
             this.estados = '';
             this.area = '';
-            alert('SUCCESS');
+            
             this.router.navigateByUrl('/paciente-registro');
     
           },(error: any) => {
-            alert('ERROR');
+            this.presentToastError('Error al asignar!');
             console.log("Error ===",error);
           })
       }
@@ -117,14 +121,15 @@ export class PacienteAddAreaPage implements OnInit {
           }
           this._apiservice.addLaboratorio(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
+            this.presentToast('Asignado correctamente!');
             this.id = '';
             this.estados = '';
             this.area = '';
-            alert('SUCCESS');
+            
             this.router.navigateByUrl('/paciente-registro');
     
           },(error: any) => {
-            alert('ERROR');
+            this.presentToastError('Error al asignar!');
             console.log("Error ===",error);
           })
       }
@@ -144,6 +149,55 @@ export class PacienteAddAreaPage implements OnInit {
         })
   
       }
+
+      async presentToastWithOptions() {
+        const toast = await this.toastController.create({
+          header: 'Toast header',
+          message: 'Click to Close',
+          position: 'top',
+          buttons: [
+            {
+              side: 'start',
+              icon: 'star',
+              text: 'Favorite',
+              handler: () => {
+                console.log('Favorite clicked');
+              }
+            }, {
+              text: 'Done',
+              role: 'cancel',
+              handler: () => {
+                console.log('Cancel clicked');
+              }
+            }
+          ]
+        });
+      
+      }
+      async presentToast(mensaje: string) {
+        const toast = await this.toastController.create({
+          message: mensaje,
+          duration: 1500,
+          color: "success",
+          cssClass: 'toastAdd',
+          position: "bottom",
+          
+        });
+        toast.present();
+      }
+      
+      async presentToastError(mensaje: string) {
+        const toast = await this.toastController.create({
+          message: mensaje,
+          duration: 1500,
+          color: "danger",
+          cssClass: 'toastAdd',
+          position: "bottom",
+          
+        });
+        toast.present();
+      }
+  
      
   }
   
