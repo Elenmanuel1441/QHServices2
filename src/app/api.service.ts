@@ -74,7 +74,7 @@ export class ApiService {
    
     getRayosx()
   {
-    return this.http.get('http://localhost/proyecto/backend/getrayosx.php');
+    return this.http.get('http://localhost/proyecto/backend/getRayosx.php');
 
   }
   getRayox(id_col_rayosx)
@@ -87,7 +87,7 @@ export class ApiService {
   }
   addLaboratorio(data)
   {
-    return this.http.post('http://localhost/proyecto/backend/addLaboratorios.php',data);}
+    return this.http.post('http://localhost/proyecto/backend/addLaboratorio.php',data);}
    
     getLaboratorios()
   {
