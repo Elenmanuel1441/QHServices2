@@ -6,7 +6,7 @@ import { ApiService } from '../api.service';
   templateUrl: './paciente-registro.page.html',
   styleUrls: ['./paciente-registro.page.scss'],
 })
-export class PacienteRegistroPage {
+export class PacienteRegistroPage implements OnInit {
   nombre: any;
   apellido: any;
   cedula: any;
@@ -23,8 +23,10 @@ export class PacienteRegistroPage {
 
   constructor(
     public _apiService: ApiService
+    
   ) {
     this.getPacientes();
+    this.limpiarCampos();
    }
 
   addPaciente()
@@ -45,18 +47,7 @@ export class PacienteRegistroPage {
       }
       this._apiService.addPaciente(data).subscribe((res:any) => {
         console.log("SUCCESS ===",res);
-        this.nombre = '';
-        this.apellido = '';
-        this.cedula = '';
-        this.telefono = '';
-        this.fecha_nacimiento = '';
-        this.alergias = '';
-        this.tipo_sangre = '';
-        this.padecimientos = '';
-        this.ocupacion = '';
-        this.sexo = '';
-        this.ars = '';
-        this.direccion = '';
+        this.limpiarCampos();
         alert('SUCCESS');
         this.getPacientes();
 
@@ -65,6 +56,28 @@ export class PacienteRegistroPage {
         console.log("Error ===",error);
       })
   }
+
+  ngOnInit() 
+  {
+    this.limpiarCampos();
+  }
+
+  limpiarCampos()
+  {
+    this.nombre = '';
+    this.apellido = '';
+    this.cedula = '';
+    this.telefono = '';
+    this.fecha_nacimiento = '';
+    this.alergias = '';
+    this.tipo_sangre = '';
+    this.padecimientos = '';
+    this.ocupacion = '';
+    this.sexo = '';
+    this.ars = '';
+    this.direccion = '';
+  }
+
   getPacientes(){
     this._apiService.getPacientes().subscribe((res:any) => {
       console.log("SUCCESS ===",res);

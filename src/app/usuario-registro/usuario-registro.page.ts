@@ -20,6 +20,7 @@ export class UsuarioRegistroPage implements OnInit{
     public _apiService: ApiService
   ){
     this.getUsuarios();
+    this.limpiarCampos();
   }
 
   addUsuario()
@@ -33,10 +34,7 @@ export class UsuarioRegistroPage implements OnInit{
 
     this._apiService.addusuario(data).subscribe((res:any) => {
     console.log("SUCCESS ===",res);
-    this.nombre = '';
-    this.contrasena =
-    this.estado = '';  
-    this.rol = ''; 
+    this.limpiarCampos(); 
     alert('SUCCESS');
     this.getUsuarios();
 
@@ -48,8 +46,7 @@ export class UsuarioRegistroPage implements OnInit{
   }
   ngOnInit() 
   {
- 
-   
+   this.limpiarCampos();
   }
    getUsuarios(){
     this._apiService.getUsuarios().subscribe((res:any) => {
@@ -58,8 +55,16 @@ export class UsuarioRegistroPage implements OnInit{
       },(error: any) => {
         console.log("ERROR ===",error);
       })
-
  }
+
+limpiarCampos()
+{
+  this.nombre = '';
+  this.contrasena =
+  this.estado = '';  
+  this.rol = ''; 
+}
+
  deleUsuarios(id){
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
     console.log("SUCCESS");
