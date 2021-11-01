@@ -1,12 +1,23 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>laboratorio</ion-title>
+        <ion-title class="titulo">Cola Laboratorio </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <h2>
-        Hola mundo
-    </h2>
-
+    <ion-card>
+        <ion-list class="list-lista-laboratorio">
+            <ion-list-header class="subtitulo">
+                Cola Laboratorio
+            </ion-list-header>
+            <ion-item lines="inset" *ngFor="let laboratorio of laboratorio">
+                <ion-label>
+                    <h5 class="normal">{{laboratorio.nombre_paciente}} - {{laboratorio.apellido_paciente}}-{{laboratorio.cedula_paciente}}-{{laboratorio.telefono_paciente}}</h5>
+                </ion-label>
+                <div class="item-note">
+                    <ion-icon name="checkmark-circle-outline" style="zoom: 2.5;" [routerLink]="['/laboratorio-update/',laboratorio.id_col_laboratorio]"></ion-icon>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-card>
 </ion-content>

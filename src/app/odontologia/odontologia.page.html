@@ -1,9 +1,23 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>odontologia</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title class="titulo">Cola Odontología </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-card>
+        <ion-list class="list-lista-odontologia">
+            <ion-list-header class="subtitulo">
+                Cola Odontología
+            </ion-list-header>
+            <ion-item lines="inset" *ngFor="let odontologia of odontologia">
+                <ion-label>
+                    <h5 class="normal">{{odontologia.nombre_paciente}} - {{odontologia.apellido_paciente}}-{{odontologia.cedula_paciente}}-{{odontologia.telefono_paciente}}</h5>
+                </ion-label>
+                <div class="item-note">
+                    <ion-icon name="checkmark-circle-outline" style="zoom: 2.5;" [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]"></ion-icon>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-card>
 </ion-content>
