@@ -32,8 +32,11 @@ export class PacienteAddAreaPage implements OnInit {
         
         if(this.area == 1)
         { this.addSonografia()} 
+
         else if(this.area== 2 ){this.addLaboratorio()}
+
          else if (this.area == 3){this.addOdontologia()}
+
           else if (this.area == 4){this.addRayosx()}
       }
 
@@ -53,7 +56,7 @@ export class PacienteAddAreaPage implements OnInit {
             this.estados = '';
             this.area = '';
             alert('SUCCESS');
-            
+            this.router.navigateByUrl('/paciente-registro');
     
           },(error: any) => {
             alert('ERROR');
@@ -65,7 +68,7 @@ export class PacienteAddAreaPage implements OnInit {
       {
         let data = {
       id: this.id,
-      estado: this.estados
+      estados: this.estados
    
           }
           this._apiservice.addRayosx(data).subscribe((res:any) => {
@@ -74,7 +77,7 @@ export class PacienteAddAreaPage implements OnInit {
             this.estados = '';
             this.area = '';
             alert('SUCCESS');
-            
+            this.router.navigateByUrl('/paciente-registro');
     
           },(error: any) => {
             alert('ERROR');
@@ -87,7 +90,7 @@ export class PacienteAddAreaPage implements OnInit {
       {
         let data = {
       id: this.id,
-      estado: this.estados
+      estados: this.estados
    
           }
           this._apiservice.addOdontologia(data).subscribe((res:any) => {
@@ -96,7 +99,7 @@ export class PacienteAddAreaPage implements OnInit {
             this.estados = '';
             this.area = '';
             alert('SUCCESS');
-            
+            this.router.navigateByUrl('/paciente-registro');
     
           },(error: any) => {
             alert('ERROR');
@@ -109,7 +112,7 @@ export class PacienteAddAreaPage implements OnInit {
       {
         let data = {
       id: this.id,
-      estado: this.estados
+      estados: this.estados
    
           }
           this._apiservice.addLaboratorio(data).subscribe((res:any) => {
@@ -118,7 +121,7 @@ export class PacienteAddAreaPage implements OnInit {
             this.estados = '';
             this.area = '';
             alert('SUCCESS');
-            
+            this.router.navigateByUrl('/paciente-registro');
     
           },(error: any) => {
             alert('ERROR');
