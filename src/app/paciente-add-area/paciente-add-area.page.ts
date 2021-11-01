@@ -26,6 +26,20 @@ export class PacienteAddAreaPage implements OnInit {
         this.getPaciente(this.id);})
   
      }
+     
+      areaCheck(){
+
+        
+        if(this.area == 1)
+        { this.addSonografia()} 
+        else if(this.area== 2 ){this.addLaboratorio()}
+         else if (this.area == 3){this.addOdontologia()}
+          else if (this.area == 4){this.addRayosx()}
+      }
+
+
+
+
     addSonografia(){
       {
         let data = {
@@ -51,7 +65,7 @@ export class PacienteAddAreaPage implements OnInit {
       {
         let data = {
       id: this.id,
-      estado_sono: this.estados
+      estado: this.estados
    
           }
           this._apiservice.addRayosx(data).subscribe((res:any) => {
@@ -69,6 +83,50 @@ export class PacienteAddAreaPage implements OnInit {
       }
     }
   
+    addOdontologia(){
+      {
+        let data = {
+      id: this.id,
+      estado: this.estados
+   
+          }
+          this._apiservice.addOdontologia(data).subscribe((res:any) => {
+            console.log("SUCCESS ===",res);
+            this.id = '';
+            this.estados = '';
+            this.area = '';
+            alert('SUCCESS');
+            
+    
+          },(error: any) => {
+            alert('ERROR');
+            console.log("Error ===",error);
+          })
+      }
+    }
+
+    addLaboratorio(){
+      {
+        let data = {
+      id: this.id,
+      estado: this.estados
+   
+          }
+          this._apiservice.addLaboratorio(data).subscribe((res:any) => {
+            console.log("SUCCESS ===",res);
+            this.id = '';
+            this.estados = '';
+            this.area = '';
+            alert('SUCCESS');
+            
+    
+          },(error: any) => {
+            alert('ERROR');
+            console.log("Error ===",error);
+          })
+      }
+    }
+
     ngOnInit() {
     }
     getPaciente(id){
