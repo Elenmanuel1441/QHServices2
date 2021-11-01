@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -17,11 +18,21 @@ export class UsuarioRegistroPage implements OnInit{
   nombres: any = [];
 
   constructor(
-    public _apiService: ApiService
+    public _apiService: ApiService,
+    public toastController: ToastController
   ){
     this.getUsuarios();
     this.limpiarCampos();
   }
+
+validarDatos()
+{
+  if (this.nombre()=='')
+  {
+    
+  }
+}
+
 
   addUsuario()
   {
@@ -35,7 +46,8 @@ export class UsuarioRegistroPage implements OnInit{
     this._apiService.addusuario(data).subscribe((res:any) => {
     console.log("SUCCESS ===",res);
     this.limpiarCampos(); 
-    alert('SUCCESS');
+    //alert('SUCCESS');
+    this.presentToast('Guardado exitosamente!');
     this.getUsuarios();
 
     },(error: any) => {
@@ -68,12 +80,60 @@ limpiarCampos()
  deleUsuarios(id){
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
     console.log("SUCCESS");
+    this.presentToastEli('Eliminado exitosamente!');
     this.getUsuarios();
     },(error: any) => {
       console.log("ERROR")
     })
   }
- 
+
+
+  async presentToastWithOptions() {
+    const toast = await this.toastController.create({
+      header: 'Toast header',
+      message: 'Click to Close',
+      position: 'top',
+      buttons: [
+        {
+          side: 'start',
+          icon: 'star',
+          text: 'Favorite',
+          handler: () => {
+            console.log('Favorite clicked');
+          }
+        }, {
+          text: 'Done',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+
+  }
+  async presentToast(mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 1500,
+      color: "success",
+      cssClass: 'toastAdd ',
+      position: "top",
+      
+    });
+    toast.present();
   }
 
+  async presentToastEli (mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastEli',
+      position: "top",
+      
+    });
+    toast.present();
+  }
+}
 

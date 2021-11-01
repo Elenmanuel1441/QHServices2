@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 
@@ -14,12 +13,15 @@ export class RayosXPage implements OnInit {
   apellido_paciente: any;
   cedula_paciente: any;
   telefono_paciente: any;
+
+
   
   rayos_x: any[];
   
   constructor(
 
-    public _apiService: ApiService
+    public _apiService: ApiService,
+ 
 
  
   ) { 
@@ -44,7 +46,6 @@ export class RayosXPage implements OnInit {
         console.log("ERROR ===",error);
       })
     }
-
 
 }
   
