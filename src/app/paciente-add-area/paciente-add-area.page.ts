@@ -10,10 +10,10 @@ import { ToastController } from '@ionic/angular';
 })
 export class PacienteAddAreaPage implements OnInit {
   id: any;
-  estados:any;
+  estados= 1;
   area: any;
   
-  
+  showComp = true;
   
     constructor(
       private route: ActivatedRoute,
@@ -56,7 +56,7 @@ export class PacienteAddAreaPage implements OnInit {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
             this.id = '';
-            this.estados = '';
+          
             this.area = '';
             this.router.navigateByUrl('/paciente-registro');
     
@@ -77,7 +77,7 @@ export class PacienteAddAreaPage implements OnInit {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
             this.id = '';
-            this.estados = '';
+            
             this.area = '';
        
             this.router.navigateByUrl('/paciente-registro');
@@ -100,7 +100,7 @@ export class PacienteAddAreaPage implements OnInit {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
             this.id = '';
-            this.estados = '';
+          
             this.area = '';
             
             this.router.navigateByUrl('/paciente-registro');
@@ -123,7 +123,7 @@ export class PacienteAddAreaPage implements OnInit {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
             this.id = '';
-            this.estados = '';
+            
             this.area = '';
             
             this.router.navigateByUrl('/paciente-registro');
