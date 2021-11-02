@@ -82,8 +82,8 @@ export class PacienteUpdatePage implements OnInit {
     }
     this._apiservice.updatePaciente(this.id,data).subscribe((res:any)=>{
       console.log("SUCCESS",res);
-      this.presentToast('Guardado exitosamente!');
-      this.router.navigateByUrl('/registro-paciente');
+      this.presentToast('Actualizado exitosamente!');
+      this.router.navigateByUrl('/paciente-registro');
   }, (err:any)=>{
     this.presentToastError('Error al actualizar!');
     console.log("ERROR", err)
