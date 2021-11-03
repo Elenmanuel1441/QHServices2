@@ -22,22 +22,23 @@
                 </ion-item>
 
                 <ion-item>
-                    <ion-label class="subtitulo">Posición:</ion-label>
-                    <ion-select class="subtitulo" [(ngModel)]="rol" type="text">
-                        <ion-select-option value='Laboratorio'>Laboratorio</ion-select-option>
-                        <ion-select-option value='Odontología'>Odontología</ion-select-option>
-                        <ion-select-option value='Rayos X'>Rayos X</ion-select-option>
-                        <ion-select-option value='Recepción'>Recepción</ion-select-option>
-                        <ion-select-option value='Sonografía'>Sonografía</ion-select-option>
-                    </ion-select>
+                    <label class="subtitulo">Posición:</label>
+                    <select [(ngModel)]="rol" class="form-select form-select-lg mb-3 select-posicion">
+                    <option value='Laboratorio'>Laboratorio</option>
+                    <option value='Odontología'>Odontología</option>
+                    <option value='Rayos X'>Rayos X</option>
+                    <option value='Recepción'>Recepción</option>
+                    <option value='Sonografía'>Sonografía</option>
+                  </select>
                 </ion-item>
 
+
                 <ion-item>
-                    <ion-label class="subtitulo">Estado:</ion-label>
-                    <ion-select class="subtitulo" [(ngModel)]="estado" type="text">
-                        <ion-select-option value='Activo'>Activo</ion-select-option>
-                        <ion-select-option value='Inactivo'>Inactivo</ion-select-option>
-                    </ion-select>
+                    <label class="subtitulo">Estado:</label>
+                    <select [(ngModel)]="estado" class="form-select form-select-lg mb-3 select-estado">
+                    <option value='Activo'>Activo</option>
+                    <option value='Inactivo'>Inactivo</option>
+                  </select>
                 </ion-item>
 
                 <ion-row>
