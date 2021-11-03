@@ -11,6 +11,7 @@ import { ApiService } from '../api.service';
 export class UsuarioUpdatePage implements OnInit {
   id: any;
   nombre: any;
+  contrasena: any;
   estado: any;
   rol: any;
 
@@ -39,6 +40,7 @@ export class UsuarioUpdatePage implements OnInit {
      console.log("SUCCESS",res);
      let nombres = res[0];
      this.nombre = nombres.nombre;
+     this.contrasena = nombres.contraseña;
      this.estado = nombres.estado;
      this.rol = nombres.rol;
  }, (err:any)=>{
@@ -51,6 +53,7 @@ export class UsuarioUpdatePage implements OnInit {
 {
  let data = {
    nombre: this.nombre,
+   contrasena: this.contrasena,
    estado: this.estado,
    rol: this.rol
    }

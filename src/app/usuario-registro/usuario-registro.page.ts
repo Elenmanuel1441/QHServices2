@@ -77,7 +77,7 @@ else{
 
   let data = {
     nombre: this.nombre,
-    contrasena:this.contrasena,
+    contrasena: this.contrasena,
     estado: this.estado,
     rol: this.rol
   }
@@ -114,7 +114,7 @@ else{
 limpiarCampos()
 {
   this.nombre = '';
-  this.contrasena =
+  this.contrasena = '';
   this.estado = '';  
   this.rol = ''; 
 }
