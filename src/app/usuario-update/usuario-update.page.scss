@@ -1,6 +1,6 @@
 .card-principal {
     width: 700px;
-    height: 390px;
+    height: 435px;
     padding: 30px;
     border-radius: 10px;
     margin: auto;
@@ -18,4 +18,16 @@
 
 ion-title {
     text-align: center;
+}
+
+.select-estado {
+    height: 45px;
+    width: 790px;
+    margin: 15px 0 0 28px;
+}
+
+.select-posicion {
+    height: 45px;
+    width: 790px;
+    margin: 15px 0 0 15px;
 }
