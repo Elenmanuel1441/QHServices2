@@ -63,44 +63,46 @@
 
         <ion-list class="card-list">
 
+
             <ion-item>
-                <ion-label class="subtitulo">Tipo de sangre:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="tipo_sangre" type="text">
-                    <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
-                    <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
-                    <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
-                    <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
-                    <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
-                    <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
-                    <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
-                    <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
-                </ion-select>
+                <label class="subtitulo">Tipo de sangre:</label>
+                <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mb-3 select">
+                <option  value='A Negativo'>A Negativo</option>
+                <option value='A Positivo'>A Positivo</option>
+                <option value='B Negativo'>B Negativo</option>
+                <option value='B Positivo'>B Positivo</option>
+                <option value='AB Negativo'>AB Negativo</option>
+                <option value='AB Positivo'>AB Positivo</option>
+                <option value='O Negativo'>O Negativo</option>
+                <option value='O Positivo'>O Positivo</option>
+              </select>
             </ion-item>
 
             <ion-item>
-                <ion-label class="subtitulo">Sexo:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="sexo" type="text">
-                    <ion-select-option value='Masculino'>Masculino</ion-select-option>
-                    <ion-select-option value='Femenino'>Femenino</ion-select-option>
-                    <ion-select-option value='Sin especificar'>Sin especificar</ion-select-option>
-                </ion-select>
+                <label class="subtitulo">Sexo:</label>
+                <select [(ngModel)]="sexo" class="form-select form-select-lg mb-3 select-sexo">
+                <option  value='Masculino'>Masculino</option>
+                <option value='Femenino'>Femenino</option>
+                <option value='Sin especificar'>Sin especificar</option>
+              </select>
             </ion-item>
+
             <ion-item>
-                <ion-label class="subtitulo">ARS:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="ars" type="text">
-                    <ion-select-option value='ARS BMI'>ARS BMI</ion-select-option>
-                    <ion-select-option value='Primera ARS Humano'>Primera ARS Humano</ion-select-option>
-                    <ion-select-option value='ARS Palic Salud'>ARS Palic Salud</ion-select-option>
-                    <ion-select-option value='ARS La Colonial'>ARS La Colonial</ion-select-option>
-                    <ion-select-option value='ARS Monumental'>ARS Monumental</ion-select-option>
-                    <ion-select-option value='ARS Renacer'>ARS Renacer</ion-select-option>
-                    <ion-select-option value='ARS Simag'>ARS Simag</ion-select-option>
-                    <ion-select-option value='ARS Universal'>ARS Universal</ion-select-option>
-                    <ion-select-option value='ARS Yunén'>ARS Yunén</ion-select-option>
-                    <ion-select-option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</ion-select-option>
-                    <ion-select-option value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</ion-select-option>
-                    <ion-select-option value='ARS Futuro'>ARS Futuro</ion-select-option>
-                </ion-select>
+                <label class="subtitulo">ARS:</label>
+                <select [(ngModel)]="ars" class="form-select form-select-lg mb-3 select-ars">
+                <option  value='ARS BMI'>ARS BMI</option>
+                <option value='Primera ARS Humano'>Primera ARS Humano</option>
+                <option value='ARS Palic Salud'>ARS Palic Salud</option>
+                <option value='ARS La Colonial'>ARS La Colonial</option>
+                <option  value='ARS Monumental'>ARS Monumental</option>
+                <option value='ARS Renacer'>ARS Renacer</option>
+                <option value='ARS Simag'>ARS Simag</option>
+                <option value='ARS Universal'>ARS Universal</option>
+                <option value='ARS Yunén'>ARS Yunén</option>
+                <option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</option>
+                <option  value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</option>
+                <option value='ARS Futuro'>ARS Futuro</option>
+              </select>
             </ion-item>
 
             <ion-row>
