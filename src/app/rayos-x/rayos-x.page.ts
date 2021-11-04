@@ -35,6 +35,10 @@ export class RayosXPage implements OnInit {
 
   ngOnInit() {
     
+
+    this.getRayosx();
+    setInterval(() => this.getRayosx(), 10000);
+
   }
 
 

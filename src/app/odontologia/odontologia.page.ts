@@ -19,16 +19,18 @@ export class OdontologiaPage implements OnInit {
 
  
   ) { 
-
-
     this.getOdontologias();
+    
+   
 
 
    
   }
 
   ngOnInit() {
-    
+
+    this.getOdontologias();
+    setInterval(() => this.getOdontologias(), 10000);
   }
 
 
@@ -40,7 +42,9 @@ export class OdontologiaPage implements OnInit {
         console.log("ERROR ===",error);
       })
     }
+    
 
+    
 
 }
   
