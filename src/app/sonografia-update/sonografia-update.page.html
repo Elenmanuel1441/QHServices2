@@ -18,4 +18,23 @@
         </ion-item>
         <ion-button class="subtitulo" type="button" (click)="updateSonografia()" color="primary" shape="shape" expand="block"> cambiar estado </ion-button>
     </ion-card>
+    <ion-item>
+
+        <ion-label stacked>Nombre</ion-label>
+        <ion-input [(ngModel)]="letterObject.nombre"></ion-input>
+        </ion-item>
+        <ion-item><ion-label stacked>Tipo Sonografia</ion-label>
+        <ion-input [(ngModel)]="letterObject.sono"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-label stacked>Feto</ion-label>
+        <ion-input [(ngModel)]="letterObject.feto" rows="10"></ion-input>
+        </ion-item> 
+        <ion-item>
+        <ion-button  (click)="createPdf()">crear</ion-button> 
+        </ion-item>
+        <ion-item>
+          <ion-button  (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button> 
+          </ion-item>
+
 </ion-content>

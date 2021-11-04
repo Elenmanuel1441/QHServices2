@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
-
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-sonografia-update',
@@ -13,7 +15,13 @@ export class SonografiaUpdatePage implements OnInit {
 
   id_col_sonografia: any;
   estado_sonografia: any;
-  
+  letterObject = {
+    nombre: '',
+    sono: '',
+    feto: ''
+  }
+ 
+  pdfObj = null;
 
 
  constructor(
@@ -112,7 +120,64 @@ async presentToastError(mensaje: string) {
   toast.present();
 }
  
- 
+createPdf() {
+  var docDefinition = {
+    content: [
+      { text: 'CENTRO DIAGNOSTICO MONTECRISTI', style: 'header',alignment: 'center' },
+      { text: new Date().toTimeString(), alignment: 'right' },
+
+      { text: 'Nombre', style: 'subheader' },
+      { text: this.letterObject.nombre },
+
+      { text: 'Sonografia', style: 'subheader' },
+      this.letterObject.sono,
+
+      { text: this.letterObject.feto, style: 'story', margin: [0, 20, 0, 20] },
+
+      {
+        ul: [
+          'POSICION: CEFALICO',
+          'DORSO: POSTERIOR DERECHO.',
+          'PLACENTA:   FUNDICA  0',
+        ]
+      }
+    ],
+    styles: {
+      header: {
+        fontSize: 18,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 14,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(docDefinition);
+}
+
+printPdf() {
+  /* if (this.plt.is('cordova')) {
+    this.pdfObj.getBuffer((buffer) => {
+      var blob = new Blob([buffer], { type: 'application/pdf' });
+
+      // Save the PDF to the data Directory of our App
+      this.file.writeFile(this.file.dataDirectory, 'myletter.pdf', blob, { replace: true }).then(fileEntry => {
+        // Open the PDf with the correct OS tools
+        this.fileOpener.open(this.file.dataDirectory + 'myletter.pdf', 'application/pdf');
+      })
+    });
+  } else {*/
+    // On a browser simply use download!
+    this.pdfObj.print();
+  
+}
  
 }
 
