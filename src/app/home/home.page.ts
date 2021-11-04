@@ -30,23 +30,24 @@ export class HomePage implements OnInit {
     private _apiservice: ApiService,
 
   ) {
+    this.getCount_rayos_x();
+    setInterval(() => this.getCount_rayos_x(), 10000);
+
+    this.getCount_sonografia();
+    setInterval(() => this.getCount_sonografia(), 10000);
+  
+     this.getCount_laboratorio();
+     setInterval(() => this.getCount_laboratorio(), 10000);
+
+    this.getCount_odontologia();
+    setInterval(() => this.getCount_odontologia(), 10000);
 
   }
 
   ngOnInit() 
   {
     
-      this.getCount_rayos_x();
-      setInterval(() => this.getCount_rayos_x(), 10000);
-
-      this.getCount_sonografia();
-      setInterval(() => this.getCount_sonografia(), 10000);
-    
-       this.getCount_laboratorio();
-       setInterval(() => this.getCount_laboratorio(), 10000);
-
-      this.getCount_odontologia();
-      setInterval(() => this.getCount_odontologia(), 10000);
+     
   }
 
 
