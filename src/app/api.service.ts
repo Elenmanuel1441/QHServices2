@@ -121,5 +121,11 @@ export class ApiService {
     return this.http.put('http://localhost/proyecto/backend/updateOdontologia.php?id_col_odontologia='+id_col_odontologia,data);
   }
 
+  getCount_rayos_x()
+  {
+    return this.http.get('http://localhost/proyecto/backend/rayos_x_count.php');
+
+  }
+
 
 }
