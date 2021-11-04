@@ -27,12 +27,6 @@ export class SonografiaPage implements OnInit {
 
     this.getSonografias();
 
-
-   /* this.route.params.subscribe((param:any) =>{
-      this.nombre = param.nombre;
-      console.log(this.nombre);
-      this.getPaciente(this.nombre);      
-    })*/
   }
 
   ngOnInit() {
@@ -50,6 +44,7 @@ export class SonografiaPage implements OnInit {
       })
     }
 
+  
 
 }
   

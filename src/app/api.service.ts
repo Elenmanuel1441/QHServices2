@@ -127,5 +127,23 @@ export class ApiService {
 
   }
 
+  getCount_sonografia()
+  {
+    return this.http.get('http://localhost/proyecto/backend/sonografia_count.php');
+
+  }
+
+  getCount_laboratorio()
+  {
+    return this.http.get('http://localhost/proyecto/backend/laboratorio_count.php');
+
+  }
+
+  getCount_odontologia()
+  {
+    return this.http.get('http://localhost/proyecto/backend/odontologia_count.php');
+
+  }
+
 
 }
