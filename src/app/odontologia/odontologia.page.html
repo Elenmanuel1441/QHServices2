@@ -15,7 +15,7 @@
                     <h5 class="normal">{{odontologia.nombre_paciente}} - {{odontologia.apellido_paciente}}-{{odontologia.cedula_paciente}}-{{odontologia.telefono_paciente}}</h5>
                 </ion-label>
                 <div class="item-note">
-                    <ion-icon name="checkmark-circle-outline" style="zoom: 2.5;" [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]"></ion-icon>
+                    <ion-button [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]">liberar</ion-button>
                 </div>
             </ion-item>
         </ion-list>

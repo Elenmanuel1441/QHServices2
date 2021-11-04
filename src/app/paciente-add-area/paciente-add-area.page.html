@@ -14,32 +14,18 @@
                 <ion-label class="subtitulo" position="floating">id:</ion-label>
                 <ion-input class="subtitulo" disabled [(ngModel)]="id" type="number"></ion-input>
             </ion-item>
-<!--
+
             <ion-item>
-                <ion-label class="subtitulo">Estado</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="estados" type="number">
-                    <ion-select-option value='1'>Activo</ion-select-option>
+                <label class="subtitulo">Área:</label>
+                <select [(ngModel)]="area" class="form-select form-select-lg mb-3 select">
+                <option  value='1'>Sonografia</option>
+                <option value='2'>Laboratorio</option>
+                <option value='3'>Odontologia</option>
+                <option value='4'>Rayos-X</option>
 
-                </ion-select>
-
-            </ion-item>
--->
-            <ion-item>
-                <ion-label class="subtitulo">Área</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="area" type="number">
-                    <ion-select-option value='1'>Sonografia</ion-select-option>
-                    <ion-select-option value='2'>Laboratorio</ion-select-option>
-                    <ion-select-option value='3'>Odontologia</ion-select-option>
-                    <ion-select-option value='4'>Rayos-X</ion-select-option>
-
-                </ion-select>
-            </ion-item>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
               </select>
+            </ion-item>
+
             <ion-row>
                 <ion-col>
                     <ion-button class="subtitulo" type="button" (click)="areaCheck()" color="primary" shape="round" expand="block"> asignar area </ion-button>

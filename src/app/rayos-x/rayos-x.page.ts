@@ -14,22 +14,17 @@ export class RayosXPage implements OnInit {
   cedula_paciente: any;
   telefono_paciente: any;
 
-
-  
   rayos_x: any[];
   
   constructor(
 
     public _apiService: ApiService,
  
-
- 
   ) { 
 
 
     this.getRayosx();
-
-
+  
    
   }
 

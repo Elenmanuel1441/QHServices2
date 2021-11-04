@@ -15,7 +15,7 @@
                     <h5 class="normal">{{laboratorios.nombre_paciente}} - {{laboratorios.apellido_paciente}}-{{laboratorios.cedula_paciente}}-{{laboratorios.telefono_paciente}}</h5>
                 </ion-label>
                 <div class="item-note">
-                    <ion-icon name="checkmark-circle-outline" style="zoom: 2.5;" [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]"></ion-icon>
+                    <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]">Liberar</ion-button>
                 </div>
             </ion-item>
         </ion-list>
