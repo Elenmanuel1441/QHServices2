@@ -68,90 +68,128 @@
     </ion-grid>
 
     <h1 class="titulo">Lista de Pacientes</h1>
+    <table class="table tabla_dashboard">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Turno</th>
+                <th scope="col">Condicion</th>
+                <th scope="col">Area de atencion</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Elenmanuel</td>
+                <td>MG-8</td>
+                <td>Estable</td>
+                <td>Laboratorio</td>
+                <ion-button>Espera</ion-button>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Ericcson</td>
+                <td>MG-9</td>
+                <td>@Estable</td>
+                <td>Odontologia</td>
+                <ion-button>Espera</ion-button>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Luisa</td>
+                <td>MG-10</td>
+                <td>@Estable</td>
+                <td>Sonografia</td>
+                <ion-button>Espera</ion-button>
+            </tr>
 
-    <ion-card class="card-lista">
+        </tbody>
+    </table>
 
-        <ion-list>
-            <ion-item>
-                <ion-label style="text-align: left;">No.</ion-label>
-                <ion-label style="text-align: left;">Nombre</ion-label>
-                <ion-label style="text-align: left;">Turno</ion-label>
-                <ion-label style="text-align: left;">Condicion</ion-label>
-                <ion-label style="text-align: left;">Area de atencion</ion-label>
-                <ion-label style="text-align: left;">Estado</ion-label>
-            </ion-item>
-        </ion-list>
-
-
-        <ion-list>
-            <ion-item>
-                <ion-label style="text-align: left;">1</ion-label>
-                <ion-label style="text-align: left;">Elenmanuel</ion-label>
-                <ion-label style="text-align: left;">MG-8</ion-label>
-                <ion-label style="text-align: left;">Estable</ion-label>
-                <ion-label style="text-align: left;">Laboratorio</ion-label>
-                <ion-button color="success">
-                    Colsulta
-                </ion-button>
-            </ion-item>
-
-            <ion-item>
-                <ion-label style="text-align: left;">1</ion-label>
-                <ion-label style="text-align: left;">Elenmanuel</ion-label>
-                <ion-label style="text-align: left;">MG-8</ion-label>
-                <ion-label style="text-align: left;">Estable</ion-label>
-                <ion-label style="text-align: left;">Laboratorio</ion-label>
-                <ion-button color="warning">
-                    Espera
-                </ion-button>
-            </ion-item>
-
-            <ion-item>
-                <ion-label style="text-align: left;">1</ion-label>
-                <ion-label style="text-align: left;">Elenmanuel</ion-label>
-                <ion-label style="text-align: left;">MG-8</ion-label>
-                <ion-label style="text-align: left;">Estable</ion-label>
-                <ion-label style="text-align: left;">Laboratorio</ion-label>
-                <ion-button color="success">
-                    Colsulta
-                </ion-button>
-            </ion-item>
-
-            <ion-item>
-                <ion-label style="text-align: left;">1</ion-label>
-                <ion-label style="text-align: left;">Elenmanuel</ion-label>
-                <ion-label style="text-align: left;">MG-8</ion-label>
-                <ion-label style="text-align: left;">Estable</ion-label>
-                <ion-label style="text-align: left;">Laboratorio</ion-label>
-
-                <ion-button color="warning">
-                    Espera
-                </ion-button>
-            </ion-item>
-
-            <ion-item>
-                <ion-label style="text-align: left;">1</ion-label>
-                <ion-label style="text-align: left;">Elenmanuel</ion-label>
-                <ion-label style="text-align: left;">MG-8</ion-label>
-                <ion-label style="text-align: left;">Estable</ion-label>
-                <ion-label style="text-align: left;">Laboratorio</ion-label>
-                <ion-button color="success">
-                    Colsulta
-                </ion-button>
-            </ion-item>
-
-            <ion-item>
-                <ion-label style="text-align: left;">1</ion-label>
-                <ion-label style="text-align: left;">Elenmanuel</ion-label>
-                <ion-label style="text-align: left;">MG-8</ion-label>
-                <ion-label style="text-align: left;">Estable</ion-label>
-                <ion-label style="text-align: left;">Laboratorio</ion-label>
-                <ion-button color="warning">
-                    Espera
-                </ion-button>
-            </ion-item>
+    <!--
+    <ion-list>
+        <ion-item>
+            <ion-label style="text-align: left;">No.</ion-label>
+            <ion-label style="text-align: left;">Nombre</ion-label>
+            <ion-label style="text-align: left;">Turno</ion-label>
+            <ion-label style="text-align: left;">Condicion</ion-label>
+            <ion-label style="text-align: left;">Area de atencion</ion-label>
+            <ion-label style="text-align: left;">Estado</ion-label>
+        </ion-item>
+    </ion-list>
 
 
-        </ion-list>
-    </ion-card>
+    <ion-list>
+        <ion-item>
+            <ion-label style="text-align: left;">1</ion-label>
+            <ion-label style="text-align: left;">Elenmanuel</ion-label>
+            <ion-label style="text-align: left;">MG-8</ion-label>
+            <ion-label style="text-align: left;">Estable</ion-label>
+            <ion-label style="text-align: left;">Laboratorio</ion-label>
+            <ion-button color="success">
+                Colsulta
+            </ion-button>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="text-align: left;">1</ion-label>
+            <ion-label style="text-align: left;">Elenmanuel</ion-label>
+            <ion-label style="text-align: left;">MG-8</ion-label>
+            <ion-label style="text-align: left;">Estable</ion-label>
+            <ion-label style="text-align: left;">Laboratorio</ion-label>
+            <ion-button color="warning">
+                Espera
+            </ion-button>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="text-align: left;">1</ion-label>
+            <ion-label style="text-align: left;">Elenmanuel</ion-label>
+            <ion-label style="text-align: left;">MG-8</ion-label>
+            <ion-label style="text-align: left;">Estable</ion-label>
+            <ion-label style="text-align: left;">Laboratorio</ion-label>
+            <ion-button color="success">
+                Colsulta
+            </ion-button>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="text-align: left;">1</ion-label>
+            <ion-label style="text-align: left;">Elenmanuel</ion-label>
+            <ion-label style="text-align: left;">MG-8</ion-label>
+            <ion-label style="text-align: left;">Estable</ion-label>
+            <ion-label style="text-align: left;">Laboratorio</ion-label>
+
+            <ion-button color="warning">
+                Espera
+            </ion-button>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="text-align: left;">1</ion-label>
+            <ion-label style="text-align: left;">Elenmanuel</ion-label>
+            <ion-label style="text-align: left;">MG-8</ion-label>
+            <ion-label style="text-align: left;">Estable</ion-label>
+            <ion-label style="text-align: left;">Laboratorio</ion-label>
+            <ion-button color="success">
+                Colsulta
+            </ion-button>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="text-align: left;">1</ion-label>
+            <ion-label style="text-align: left;">Elenmanuel</ion-label>
+            <ion-label style="text-align: left;">MG-8</ion-label>
+            <ion-label style="text-align: left;">Estable</ion-label>
+            <ion-label style="text-align: left;">Laboratorio</ion-label>
+            <ion-button color="warning">
+                Espera
+            </ion-button>
+        </ion-item>
+
+
+    </ion-list>
+    -->
 </ion-content>
