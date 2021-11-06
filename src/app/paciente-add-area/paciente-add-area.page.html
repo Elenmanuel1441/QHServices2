@@ -11,12 +11,12 @@
     <ion-card>
         <ion-list class="list-asignar">
             <ion-item>
-                <ion-label class="subtitulo" position="floating">id:</ion-label>
-                <ion-input class="subtitulo" disabled [(ngModel)]="id" type="number"></ion-input>
+                <ion-label class="subtitulo2" position="floating">id:</ion-label>
+                <ion-input class="subtitulo2" disabled [(ngModel)]="id" type="number"></ion-input>
             </ion-item>
 
             <ion-item>
-                <label class="subtitulo">Área:</label>
+                <label class="subtitulo2">Área:</label>
                 <select [(ngModel)]="area" class="form-select form-select-lg mb-3 select">
                 <option  value='1'>Sonografia</option>
                 <option value='2'>Laboratorio</option>
@@ -28,7 +28,7 @@
 
             <ion-row>
                 <ion-col>
-                    <ion-button class="subtitulo" type="button" (click)="areaCheck()" color="primary" shape="round" expand="block"> asignar area </ion-button>
+                    <ion-button class="subtitulo2" type="button" (click)="areaCheck()" color="primary" shape="round" expand="block"> asignar area </ion-button>
                 </ion-col>
             </ion-row>
         </ion-list>

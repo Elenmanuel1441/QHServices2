@@ -14,33 +14,16 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Nombres</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="nombre"></ion-input>
+                    <ion-label class="subtitulo2" position="fixed">Nombres</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="nombre"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Apellidos</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="apellido"></ion-input>
+                    <ion-label class="subtitulo2" position="fixed">Apellidos</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="apellido"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Cédula</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="cedula"></ion-input>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Teléfono</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="telefono"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Alergias</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="alergias"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Padecimientos</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="padecimientos"></ion-input>
+                    <ion-label class="subtitulo2" position="fixed">Cédula</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="cedula"></ion-input>
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -48,16 +31,36 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Ocupación</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="ocupacion"></ion-input>
+                    <ion-label class="subtitulo2" position="fixed">Teléfono</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="telefono"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Dirección</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="direccion"></ion-input>
+                    <ion-label class="subtitulo2" position="fixed">Alergias</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="alergias"></ion-input>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo" position="fixed">Fecha de nacimiento:</ion-label>
-                    <ion-datetime class="subtitulo" [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
+                    <ion-label class="subtitulo2" position="fixed">Padecimientos</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="padecimientos"></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Ocupación</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="ocupacion"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Dirección</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="direccion"></ion-input>
+                </ion-col>
+                <ion-col>
+
+
+                    <ion-label class="subtitulo2" position="fixed">Fecha de nacimiento:</ion-label>
+                    <input class="date subtitulo2" [(ngModel)]="fecha_nacimiento" type="date" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="hoy">
+                    <!--  <ion-datetime class="subtitulo" [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime> -->
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -66,7 +69,7 @@
 
         <ion-list class="card-list">
             <ion-item>
-                <label class="subtitulo">Tipo de sangre:</label>
+                <label class="subtitulo2">Tipo de sangre:</label>
                 <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mb-3 select">
                 <option  value='A Negativo'>A Negativo</option>
                 <option value='A Positivo'>A Positivo</option>
@@ -80,7 +83,7 @@
             </ion-item>
 
             <ion-item>
-                <label class="subtitulo">Sexo:</label>
+                <label class="subtitulo2">Sexo:</label>
                 <select [(ngModel)]="sexo" class="form-select form-select-lg mb-3 select-sexo">
                 <option  value='Masculino'>Masculino</option>
                 <option value='Femenino'>Femenino</option>
@@ -89,7 +92,7 @@
             </ion-item>
 
             <ion-item>
-                <label class="subtitulo">ARS:</label>
+                <label class="subtitulo2">ARS:</label>
                 <select [(ngModel)]="ars" class="form-select form-select-lg mb-3 select-ars">
                 <option  value='ARS BMI'>ARS BMI</option>
                 <option value='Primera ARS Humano'>Primera ARS Humano</option>
@@ -109,7 +112,7 @@
 
             <ion-row>
                 <ion-col>
-                    <ion-button class="subtitulo" type="button" (click)="addPaciente()" color="success" shape="shape" expand="block"> Añadir pacientes </ion-button>
+                    <ion-button class="subtitulo2" type="button" (click)="addPaciente()" color="success" shape="shape" expand="block"> Añadir pacientes </ion-button>
                 </ion-col>
             </ion-row>
 

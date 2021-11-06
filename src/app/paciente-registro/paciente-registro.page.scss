@@ -45,12 +45,14 @@ input {
     margin: 0 0 0 10px;
 }
 
-ion-datetime {
+.date {
     background-color: white;
     border-radius: 8px;
     width: 250px;
-    height: 35px;
+    height: 36px;
     margin: auto;
+    margin-left: 15px;
+    border-color: white;
 }
 
 ion-title {
@@ -77,19 +79,26 @@ ion-icon {
 }
 
 .select {
-    height: 45px;
+    height: 35px;
+    font-size: 13px;
     width: 600px;
-    margin: 15px 0 0 35px;
+    margin: 15px 0 0 43px;
 }
 
 .select-ars {
-    height: 45px;
+    height: 35px;
     width: 600px;
+    font-size: 13px;
     margin: 15px 0 0 125px;
 }
 
 .select-sexo {
-    height: 45px;
+    height: 35px;
     width: 600px;
+    font-size: 13px;
     margin: 15px 0 0 120px;
+}
+
+.list_item {
+    height: 50px;
 }

@@ -1,6 +1,6 @@
 .datos-personales {
     width: 850px;
-    height: 630px;
+    height: 580px;
     border-radius: 10px;
     background-color: #4cf1b2;
     padding: 10px;
@@ -13,6 +13,7 @@ ion-label {
 
 ion-input {
     width: 250px;
+    height: 35px;
     padding: 16px;
     background-color: #ccc;
     border-color: var(--ion-color-medium-shade);
@@ -42,10 +43,13 @@ ion-scroll {
     border-radius: 10px;
 }
 
-ion-datetime {
+.date {
     background-color: white;
     border-radius: 8px;
     width: 250px;
+    height: 36px;
+    margin: auto;
+    border-color: white;
 }
 
 ion-title {
@@ -53,19 +57,22 @@ ion-title {
 }
 
 .select {
-    height: 45px;
+    height: 35px;
     width: 600px;
-    margin: 15px 0 0 35px;
+    font-size: 13px;
+    margin: 15px 0 0 43px;
 }
 
 .select-ars {
-    height: 45px;
+    height: 35px;
     width: 600px;
+    font-size: 13px;
     margin: 15px 0 0 125px;
 }
 
 .select-sexo {
-    height: 45px;
+    height: 35px;
     width: 600px;
+    font-size: 13px;
     margin: 15px 0 0 120px;
 }
