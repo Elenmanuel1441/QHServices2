@@ -1,6 +1,6 @@
 .card-principal {
-    width: 900px;
-    height: 630px;
+    width: 650px;
+    height: 500px;
     padding: 20px;
     border-radius: 10px;
     margin: auto;
@@ -15,6 +15,19 @@
     border-radius: 10px;
 }
 
+ion-input {
+    width: 250px;
+    height: 35px;
+    padding: 16px;
+    background-color: #ccc;
+    border-color: var(--ion-color-medium-shade);
+    border-radius: 8px;
+    border-width: 1px;
+    margin: auto;
+    box-shadow: 2px rgb(255, 255, 255);
+    background: #f8f9fa;
+}
+
 ion-title {
     text-align: center;
 }
@@ -23,16 +36,27 @@ ion-title {
     margin: auto;
 }
 
+.label {
+    margin-left: 15px;
+}
+
 .select-estado {
     height: 35px;
+    border-radius: 8px;
     font-size: 13px;
-    width: 790px;
-    margin: 15px 0 0 28px;
+    width: 250px;
+    margin: auto;
 }
 
 .select-posicion {
     height: 35px;
+    border-radius: 8px;
     font-size: 13px;
-    width: 790px;
-    margin: 15px 0 0 15px;
+    width: 250px;
+    margin: auto;
+}
+
+ion-button {
+    width: 530px;
+    margin: auto;
 }
