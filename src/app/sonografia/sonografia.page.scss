@@ -1,16 +1,15 @@
-ion-card {
-    width: 900px;
-    height: 350px;
-    padding: 25px;
-    border-radius: 10px;
-    margin: auto;
-    background-color: #4cf1b2;
-}
-
-.list-lista-sonografias {
-    border-radius: 10px;
-}
-
 ion-title {
     text-align: center;
+}
+
+ion-item {
+    width: 900px;
+    margin: auto;
+}
+
+ion-card {
+    width: 950px;
+    margin: auto;
+    background-color: rgb(150, 245, 171);
+    border-radius: 10px;
 }

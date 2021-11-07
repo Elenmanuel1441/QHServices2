@@ -6,18 +6,57 @@
 
 <ion-content>
     <ion-card>
-        <ion-list class="list-lista-sonografias">
-            <ion-list-header class="subtitulo">
-                Cola Sonografia
-            </ion-list-header>
-            <ion-item lines="inset" *ngFor="let sonografias of sonografias">
-                <ion-label>
-                    <h5 class="normal">{{sonografias.nombre_paciente}} - {{sonografias.apellido_paciente}}-{{sonografias.cedula_paciente}}-{{sonografias.telefono_paciente}}</h5>
-                </ion-label>
-                <div class="item-note">
-                    <ion-button [routerLink]="['/sonografia-update/',sonografias.id_col_sonografia]"> Liberar</ion-button>
-                </div>
-            </ion-item>
-        </ion-list>
+
+        <ion-item>
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        No.
+                    </ion-col>
+                    <ion-col>
+                        Nombre
+                    </ion-col>
+                    <ion-col>
+                        Apellido
+                    </ion-col>
+                    <ion-col>
+                        Cédula
+                    </ion-col>
+                    <ion-col>
+                        Teléfono
+                    </ion-col>
+                    <ion-col>
+                        Acciones
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+        <ion-item lines="inset" *ngFor="let sonografias of sonografias;let i=index;">
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        <h5>{{i+1}} </h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{sonografias.nombre_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{sonografias.apellido_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{sonografias.cedula_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{sonografias.telefono_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button [routerLink]="['/sonografia-update/',sonografias.id_col_sonografia]"> Liberar</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-item>
+
     </ion-card>
 </ion-content>

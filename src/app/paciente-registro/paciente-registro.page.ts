@@ -28,8 +28,7 @@ export class PacienteRegistroPage implements OnInit {
     
   ) {
     this.getPacientes();
-    setInterval(() => this.getPacientes(), 10000);
-    this.limpiarCampos();
+  //  this.limpiarCampos();
    }
 
   addPaciente()
