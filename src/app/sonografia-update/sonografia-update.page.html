@@ -20,25 +20,27 @@
         </ion-item>
         <br>
         <ion-button class="subtitulo" type="button" (click)="setVi()" color="primary" shape="shape" expand="block"> continuar </ion-button>
+
     </ion-card>
     <ion-list *ngIf="showObito">
         <ion-item>
-            <h1 class="subtitulo2">Sonografia Obito</h1>
-            <br>
-            <ion-label stacked>Nombre</ion-label>
+            <ion-label class="subtitulo2" stacked>NOMBRE:</ion-label>
             <ion-input [(ngModel)]="letterObject.nombre +' '+ letterObject.apellido"></ion-input>
         </ion-item>
+
         <ion-item>
-            <ion-label stacked>Edad</ion-label>
+            <ion-label class="subtitulo2" stacked>EDAD:</ion-label>
             <ion-input [(ngModel)]="letterObject.edad"></ion-input>
         </ion-item>
+
         <ion-item>
-            <label class="subtitulo2">FETO:</label>
+            <label class="subtitulo2">Feto:</label>
             <select [(ngModel)]="letterObject.feto" class="form-select form-select-lg mb-3 select">
-            <option  value='único'>único</option>
+            <option value='único'>único</option>
             <option value='gemelar'>gemelar</option>
             <option value='tres'>tres</option>
-            <option value='cuatro'>cuatro</option>         
+            <option value='cuatro'>cuatro</option> 
+             
           </select>
         </ion-item>
 
@@ -47,8 +49,7 @@
             <select [(ngModel)]="letterObject.posicion" class="form-select form-select-lg mb-3 select">
             <option  value='Cefalico'>Cefalico</option>
             <option value='Pelvico'>Pelvico</option>
-            <option value='Podálico'>Podálico</option>
-         
+            <option value='Podálico'>Podálico</option>      
           </select>
         </ion-item>
 
@@ -62,15 +63,13 @@
           </select>
         </ion-item>
 
-
         <ion-item>
-            <ion-label stacked>Peso</ion-label>
+            <ion-label class="subtitulo2" stacked>Peso:</ion-label>
             <ion-input type="number" [(ngModel)]="letterObject.peso"></ion-input>
         </ion-item>
 
-
         <ion-item>
-            <label class="subtitulo2">Columna vertebral:</label>
+            <label class="subtitulo2" class="subtitulo2">Columna vertebral:</label>
             <select [(ngModel)]="letterObject.columna" class="form-select form-select-lg mb-3 select">
             <option  value='Poco Valorable'>Poco Valorable</option>
             <option value='Morfologicamente normal'>Morfologicamente Normal</option>
@@ -78,18 +77,14 @@
             </select>
         </ion-item>
 
-
-
         <ion-item>
             <label class="subtitulo2">Estomago:</label>
             <select [(ngModel)]="letterObject.estomago" class="form-select form-select-lg mb-3 select">
                 <option  value='Poco Valorable'>Poco Valorable</option>
                 <option value='Lleno'>lleno</option>
-                <option value='Vacio'>Vacio</option>
-             
+                <option value='Vacio'>Vacio</option>        
               </select>
         </ion-item>
-
 
         <ion-item>
             <label class="subtitulo2">Riñones:</label>
@@ -100,8 +95,6 @@
               </select>
         </ion-item>
 
-
-
         <ion-item>
             <label class="subtitulo2">Vejiga:</label>
             <select [(ngModel)]="letterObject.vejiga" class="form-select form-select-lg mb-3 select">
@@ -111,23 +104,19 @@
               </select>
         </ion-item>
 
-
         <ion-item>
             <label class="subtitulo2">Cabeza:</label>
             <select [(ngModel)]="letterObject.cabeza" class="form-select form-select-lg mb-3 select">
                 <option  value='Poco Valorable'>Poco Valorable</option>
                 <option value='Normocefalica'>Normocefalica</option>
-                <option value='Acabalgamiento de los parietales'>Acabalgamiento de los parietales</option>
-             
+                <option value='Acabalgamiento de los parietales'>Acabalgamiento de los parietales</option>            
               </select>
         </ion-item>
 
-
         <ion-item>
-            <ion-label stacked>FCF</ion-label>
+            <ion-label class="subtitulo2" stacked>FCF</ion-label>
             <ion-input type="number" [(ngModel)]="letterObject.fcf"></ion-input>
         </ion-item>
-
 
         <ion-item>
             <label class="subtitulo2">Placenta:</label>
@@ -135,10 +124,8 @@
                 <option  value='Fundica'>Fundica</option>
                 <option value='Anterior Corporal'>Anterior Corporal</option>
                 <option value='Previa'>Previa</option>
-             
-              </select>
+             </select>
         </ion-item>
-
 
         <ion-item>
             <label class="subtitulo2">Grado:</label>
@@ -146,12 +133,9 @@
                 <option  value='Cero'>Fundica</option>
                 <option value='Uno'>Anterior Corporal</option>
                 <option value='Dos'>Previa</option>
-                <option value='Tres'>Tres</option>
-             
+                <option value='Tres'>Tres</option>        
               </select>
         </ion-item>
-
-
 
         <ion-item>
             <label class="subtitulo2">Cordon:</label>
@@ -161,7 +145,6 @@
                              
               </select>
         </ion-item>
-
 
         <ion-item>
             <label class="subtitulo2">Liquido:</label>
@@ -173,19 +156,13 @@
               </select>
         </ion-item>
 
-
         <ion-item>
             <label class="subtitulo2">Cervix:</label>
             <select [(ngModel)]="letterObject.cervix" class="form-select form-select-lg mb-3 select">
                 <option  value='Abierto'>Abierto</option>
-                <option value='Cerrado'>Cerrado</option>
-               
-             
+                <option value='Cerrado'>Cerrado</option>     
               </select>
         </ion-item>
-
-
-
 
         <ion-item>
             <label class="subtitulo2">Sexo:</label>
@@ -199,7 +176,7 @@
 
 
         <ion-item>
-            <ion-label stacked>Conclusion</ion-label>
+            <ion-label stacked>Conclusión:</ion-label>
             <ion-input [(ngModel)]="letterObject.conclusiones" rows="10"></ion-input>
         </ion-item>
 
@@ -219,16 +196,11 @@
         </ion-item>
 
 
-
     </ion-list>
-
-
 
     <ion-list *ngIf="showVesi">
         <ion-item>
             <h1 class="subtitulo2">Sonografia Vesicular</h1>
-
-
             <ion-label stacked>Nombre</ion-label>
             <ion-input></ion-input>
         </ion-item>

@@ -155,7 +155,7 @@ createPdf() {
   var docDefinition = {
     content: [
       { text: 'CENTRO DIAGNOSTICO MONTECRISTI', style: 'header',alignment: 'center' },
-      { text: new Date().toTimeString(), alignment: 'right' },
+      { text: new Date().toLocaleDateString(), alignment: 'right' },
       { text: 'ESTUDIO REALIZADO POR VIA ABDOMINAL, CON TRANSDUCTOR DE 3.5MHZ ENCONTRANDO AL MOMENTO DEL ESTUDIO:', style: 'subheader' },
       
       
