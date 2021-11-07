@@ -152,82 +152,68 @@ async presentToastError(mensaje: string) {
 }
  //variable formato del pdf
 createPdf() {
-  var docDefinition = {
-    content: [
-      { text: 'CENTRO DIAGNOSTICO MONTECRISTI', style: 'header',alignment: 'center' },
-      { text: new Date().toLocaleDateString(), alignment: 'right' },
-      { text: 'ESTUDIO REALIZADO POR VIA ABDOMINAL, CON TRANSDUCTOR DE 3.5MHZ ENCONTRANDO AL MOMENTO DEL ESTUDIO:', style: 'subheader' },
-      
-      
+  var docDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI', style: 'header',alignment: 'center' },
+      { text: new Date().toLocaleDateString(), alignment: 'left' },
+
+ 	{
+			columns: [
+				{
+					text: new Date().toLocaleDateString(), alignment: 'left',
+          
+				},
+				{
+          text: this.letterObject.nombre }, { text: this.letterObject.apellido
+				},
+			]
+		},
+
       { text: 'PACIENTE:', style: 'subheader' },
-      { text: this.letterObject.nombre } ,
-       
+      { text: this.letterObject.nombre }, { text: this.letterObject.apellido } , 
+      { text: 'EDAD:', style: 'subheader' }, this.letterObject.edad,
 
-      { text: 'EDAD:', style: 'subheader' },
-      this.letterObject.edad,
+      { text: 'MEDICO: A QUIEN CORRESPONDA'},
 
-
-      { text: 'FETO:', style: 'subheader' },
-      this.letterObject.feto,
-
-      { text: 'POSICION:', style: 'subheader' },
-      this.letterObject.posicion,
-
-      { text: 'DORSO:', style: 'subheader' },
-      this.letterObject.dorso,
-
-
-
-
-      { text: 'PESO:', style: 'subheader', },
-      this.letterObject.peso,
-
-      { text: 'COLUMNA:', style: 'subheader' },
-      this.letterObject.columna,
-
-      { text: 'ESTOMAGO:', style: 'subheader' },
-      this.letterObject.estomago,
-
-
-      { text: 'RIÑONES:', style: 'subheader' },
-      this.letterObject.rinones,
-
-
-      { text: 'VEJIGA:', style: 'subheader' },
-      this.letterObject.vejiga,
-
-
-
-      { text: 'CABEZA:', style: 'subheader' },
-      this.letterObject.cabeza,
-
-      { text: 'FCF:', style: 'subheader' },
-      this.letterObject.fcf,
-
-
-      { text: 'PLACENTA:', style: 'subheader' },
-      this.letterObject.placenta,
-      { text: 'GRADO:', style: 'subheader' },
-      this.letterObject.grado,
-
-      { text: 'CORDON UMBILICAL:', style: 'subheader' },
-      this.letterObject.cordon,
-
-
-      { text: 'LIQUIDO AMNIOTICO:', style: 'subheader' },
-      this.letterObject.liquido,
-
+      { text: 'SONOGRAFIA OBSTETRICA:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTUDIO REALIZADO POR VIA ABDOMINAL, CON TRANSDUCTOR DE 3.5MHZ ENCONTRANDO AL MOMENTO DEL ESTUDIO:'},  
       
-           
-      { text: 'CERVIX:', style: 'subheader' },
-      this.letterObject.cervix,
+     
 
+      { text: 'FETO:', style: 'subheader' }, this.letterObject.feto,
 
-      { text: 'SEXO:', style: 'subheader' },
-      this.letterObject.sexo,
+      { text: 'POSICION:', style: 'subheader' }, this.letterObject.posicion,
 
-  
-      
+      { text: 'DORSO:', style: 'subheader' }, this.letterObject.dorso,
+
+      { text: 'PESO:', style: 'subheader', },this.letterObject.peso,
+
+      { text: 'COLUMNA:', style: 'subheader' }, this.letterObject.columna,
+
+      { text: 'ESTOMAGO:', style: 'subheader' }, this.letterObject.estomago,
+
+      { text: 'RIÑONES:', style: 'subheader' }, this.letterObject.rinones,
+
+      { text: 'VEJIGA:', style: 'subheader' }, this.letterObject.vejiga,
+
+      { text: 'CABEZA:', style: 'subheader' }, this.letterObject.cabeza,
+
+      { text: 'FCF:', style: 'subheader' }, this.letterObject.fcf,
+
+      { text: 'PLACENTA:', style: 'subheader' }, this.letterObject.placenta,
+
+      { text: 'GRADO:', style: 'subheader' }, this.letterObject.grado,
+
+      { text: 'CORDON UMBILICAL:', style: 'subheader' }, this.letterObject.cordon,
+
+      { text: 'LIQUIDO AMNIOTICO:', style: 'subheader' }, this.letterObject.liquido,
+         
+      { text: 'CERVIX:', style: 'subheader' }, this.letterObject.cervix,
+
+      { text: 'SEXO:', style: 'subheader' }, this.letterObject.sexo,
+
       {
         ul: [
           { text: 'CONCLUSIONES:', style: 'subheader' },{ text: this.letterObject.conclusiones, style: 'story', margin: [0, 20, 0, 20] },
@@ -235,8 +221,7 @@ createPdf() {
       this.letterObject.fpp
         ]
       }
-      
-      
+  
     ],
     styles: {
       header: {
@@ -272,10 +257,10 @@ printPdf() {
   } else {*/
     // On a browser simply use download!
     this.pdfObj.print();
-  
+
 }
 //metodo con condiciones que muestra o oculta los formularios.
- 
+
  setVi(){
    
   if (this.tipoSonografia==1) {
