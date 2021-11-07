@@ -28,12 +28,8 @@ export class PacienteRegistroPage implements OnInit {
     
   ) {
     this.getPacientes();
-<<<<<<< Updated upstream
     setInterval(() => this.getPacientes(), 10000);
     this.limpiarCampos();
-=======
-  //  this.limpiarCampos();
->>>>>>> Stashed changes
    }
 
   addPaciente()
