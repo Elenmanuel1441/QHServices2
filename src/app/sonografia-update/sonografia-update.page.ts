@@ -17,12 +17,37 @@ export class SonografiaUpdatePage implements OnInit {
   estado_sonografia: any;
   letterObject = {
     nombre: '',
-    sono: '',
-    feto: ''
+    apellido: '',
+    edad: '',
+    feto: '',
+    posicion: '',
+    dorso: '',
+    peso: '',
+    columna: '',
+    estomago: '',
+    rinones: '',
+    vejiga: '',
+    cabeza: '',
+    fcf: '',
+    placenta: '',
+    grado: '',
+    cordon: '',
+    liquido: '',
+    cervix: '',
+    sexo: '',
+    conclusiones: '',
+    fpp: ''  
   }
- 
-  pdfObj = null;
 
+  //variables que determinan si mostrar los formularios o no
+  showObito: boolean;
+  showVesi: boolean;
+  showTransV: boolean;
+
+
+  pdfObj = null;
+  //variable que me dice el tipo de sonografia
+  tipoSonografia: any;
 
  constructor(
   private route: ActivatedRoute,
@@ -40,6 +65,8 @@ export class SonografiaUpdatePage implements OnInit {
  }
 
  ngOnInit() {
+
+  
  }
  getSonografia(id_col_sonografia)
  {
@@ -47,6 +74,10 @@ export class SonografiaUpdatePage implements OnInit {
      console.log("SUCCESS",res);
      let sonografia = res[0];
      this.estado_sonografia = sonografia.estado_sonografia;
+     this.letterObject.nombre = sonografia.nombre_paciente;
+     this.letterObject.apellido = sonografia.apellido_paciente;
+     this.letterObject.edad = sonografia.EDAD;
+     
       }, (err:any)=>{
    console.log("ERROR", err)
  })
@@ -126,21 +157,84 @@ createPdf() {
       { text: 'CENTRO DIAGNOSTICO MONTECRISTI', style: 'header',alignment: 'center' },
       { text: new Date().toTimeString(), alignment: 'right' },
 
-      { text: 'Nombre', style: 'subheader' },
-      { text: this.letterObject.nombre },
+      { text: 'PACIENTE:', style: 'subheader' },
+      { text: this.letterObject.nombre } ,
+       { text: this.letterObject.apellido },
 
-      { text: 'Sonografia', style: 'subheader' },
-      this.letterObject.sono,
+      { text: 'EDAD:', style: 'subheader' },
+      this.letterObject.edad,
 
-      { text: this.letterObject.feto, style: 'story', margin: [0, 20, 0, 20] },
 
+      { text: 'FETO:', style: 'subheader' },
+      this.letterObject.feto,
+
+      { text: 'POSICION:', style: 'subheader' },
+      this.letterObject.posicion,
+
+      { text: 'DORSO:', style: 'subheader' },
+      this.letterObject.dorso,
+
+
+
+
+      { text: 'PESO:', style: 'subheader', },
+      this.letterObject.peso,
+
+      { text: 'COLUMNA:', style: 'subheader' },
+      this.letterObject.columna,
+
+      { text: 'ESTOMAGO:', style: 'subheader' },
+      this.letterObject.estomago,
+
+
+      { text: 'RIÑONES:', style: 'subheader' },
+      this.letterObject.rinones,
+
+
+      { text: 'VEJIGA:', style: 'subheader' },
+      this.letterObject.vejiga,
+
+
+
+      { text: 'CABEZA:', style: 'subheader' },
+      this.letterObject.cabeza,
+
+      { text: 'FCF:', style: 'subheader' },
+      this.letterObject.fcf,
+
+
+      { text: 'PLACENTA:', style: 'subheader' },
+      this.letterObject.placenta,
+      { text: 'GRADO:', style: 'subheader' },
+      this.letterObject.grado,
+
+      { text: 'CORDON UMBILICAL:', style: 'subheader' },
+      this.letterObject.cordon,
+
+
+      { text: 'LIQUIDO AMNIOTICO:', style: 'subheader' },
+      this.letterObject.liquido,
+
+      
+           
+      { text: 'CERVIX:', style: 'subheader' },
+      this.letterObject.cervix,
+
+
+      { text: 'SEXO:', style: 'subheader' },
+      this.letterObject.sexo,
+
+  
+      
       {
         ul: [
-          'POSICION: CEFALICO',
-          'DORSO: POSTERIOR DERECHO.',
-          'PLACENTA:   FUNDICA  0',
+          { text: 'CONCLUSIONES:', style: 'subheader' },{ text: this.letterObject.conclusiones, style: 'story', margin: [0, 20, 0, 20] },
+          { text: 'FPP:', style: 'subheader' },
+      this.letterObject.fpp
         ]
       }
+      
+      
     ],
     styles: {
       header: {
@@ -178,6 +272,33 @@ printPdf() {
     this.pdfObj.print();
   
 }
+//metodo con condiciones que muestra o oculta los formularios.
  
+ setVi(){
+   
+  if (this.tipoSonografia==1) {
+
+    this.showObito=true; 
+    this.showVesi=false;
+    this.showTransV=false;
+  }
+   else if (this.tipoSonografia==2) {
+
+    this.showVesi=true;
+    this.showTransV=false;
+    this.showObito=false; 
+  }
+   else if (this.tipoSonografia==3) {
+
+    this.showTransV=true;
+    this.showVesi=false;
+    this.showObito=false; 
+  }
+  else { this.presentToastError('No ha seleccionado el tipo de sonografia!')
+  
+  }
+
+
+ }
 }
 
