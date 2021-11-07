@@ -6,55 +6,55 @@
 
 <ion-content>
 
+    <ion-card>
+        <ion-item>
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        No.
+                    </ion-col>
+                    <ion-col>
+                        Nombre
+                    </ion-col>
+                    <ion-col>
+                        Apellido
+                    </ion-col>
+                    <ion-col>
+                        Cédula
+                    </ion-col>
+                    <ion-col>
+                        Teléfono
+                    </ion-col>
+                    <ion-col>
+                        Acciones
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
 
-    <ion-item>
-        <ion-grid class="tabla-paciente">
-            <ion-row>
-                <ion-col>
-                    No.
-                </ion-col>
-                <ion-col>
-                    Nombre
-                </ion-col>
-                <ion-col>
-                    Apellido
-                </ion-col>
-                <ion-col>
-                    Cédula
-                </ion-col>
-                <ion-col>
-                    Teléfono
-                </ion-col>
-                <ion-col>
-                    Acciones
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-item>
-
-    <ion-item lines="inset" *ngFor="let rayos_x of rayos_x ;let i=index;">
-        <ion-grid class="tabla-paciente">
-            <ion-row>
-                <ion-col>
-                    <h5>{{i+1}} </h5>
-                </ion-col>
-                <ion-col>
-                    <h5 class="normal">{{rayos_x.nombre_paciente}} </h5>
-                </ion-col>
-                <ion-col>
-                    <h5 class="normal">{{rayos_x.apellido_paciente}}</h5>
-                </ion-col>
-                <ion-col>
-                    <h5 class="normal">{{rayos_x.cedula_paciente}}</h5>
-                </ion-col>
-                <ion-col>
-                    <h5 class="normal">{{rayos_x.telefono_paciente}}</h5>
-                </ion-col>
-                <ion-col>
-                    <ion-button [routerLink]="['/rayos-x-update/',rayos_x.id_col_rayosx]">Liberar</ion-button>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-item>
-
+        <ion-item lines="inset" *ngFor="let rayos_x of rayos_x ;let i=index;">
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        <h5>{{i+1}} </h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{rayos_x.nombre_paciente}} </h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{rayos_x.apellido_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{rayos_x.cedula_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{rayos_x.telefono_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button [routerLink]="['/rayos-x-update/',rayos_x.id_col_rayosx]">Liberar</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-card>
 </ion-content>
