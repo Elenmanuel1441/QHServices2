@@ -23,6 +23,7 @@ export class UsuarioRegistroPage implements OnInit{
     public alertController: AlertController
   ){
     this.getUsuarios();
+    setInterval(() => this.getUsuarios(), 10000);
     this.limpiarCampos();
   }
 
