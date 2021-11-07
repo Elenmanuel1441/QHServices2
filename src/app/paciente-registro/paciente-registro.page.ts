@@ -28,8 +28,12 @@ export class PacienteRegistroPage implements OnInit {
     
   ) {
     this.getPacientes();
+<<<<<<< Updated upstream
     setInterval(() => this.getPacientes(), 10000);
     this.limpiarCampos();
+=======
+  //  this.limpiarCampos();
+>>>>>>> Stashed changes
    }
 
   addPaciente()
@@ -51,9 +55,9 @@ export class PacienteRegistroPage implements OnInit {
       this._apiService.addPaciente(data).subscribe((res:any) => {
         console.log("SUCCESS ===",res);
         this.presentToast('Guardado exitosamente!');
-        this.limpiarCampos();
         this.getPacientes();
-
+    //  this.limpiarCampos();
+        setTimeout(() => this.limpiarCampos,1000);
       },(error: any) => {
         this.presentToastErrorADD('Error al guardar!');
         console.log("Error ===",error);
@@ -62,7 +66,7 @@ export class PacienteRegistroPage implements OnInit {
 
   ngOnInit() 
   {
-    this.limpiarCampos();
+   
   }
 
   limpiarCampos()
