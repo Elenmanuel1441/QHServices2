@@ -24,10 +24,10 @@
     <ion-list *ngIf="showObito">
         <ion-item>
             <h1 class="subtitulo2">Sonografia Obito</h1>
-
-
+            <br>
             <ion-label stacked>Nombre</ion-label>
-            <ion-input [(ngModel)]="letterObject.nombre && letterObject.apellido"></ion-input>
+            <br>
+            <ion-input [(ngModel)]="letterObject.nombre + letterObject.apellido"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label stacked>Edad</ion-label>

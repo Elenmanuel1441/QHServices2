@@ -159,7 +159,6 @@ createPdf() {
 
       { text: 'PACIENTE:', style: 'subheader' },
       { text: this.letterObject.nombre } ,
-       { text: this.letterObject.apellido },
 
       { text: 'EDAD:', style: 'subheader' },
       this.letterObject.edad,
