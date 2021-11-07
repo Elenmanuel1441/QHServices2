@@ -156,80 +156,131 @@ createPdf() {
     pageSize: 'LETTER',
     content:[
 
-      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI', style: 'header',alignment: 'center' },
-      { text: new Date().toLocaleDateString(), alignment: 'left' },
-
- 	{
-			columns: [
-				{
-					text: new Date().toLocaleDateString(), alignment: 'left',
-          
-				},
-				{
-          text: this.letterObject.nombre }, { text: this.letterObject.apellido
-				},
-			]
-		},
-
-      { text: 'PACIENTE:', style: 'subheader' },
-      { text: this.letterObject.nombre }, { text: this.letterObject.apellido } , 
-      { text: 'EDAD:', style: 'subheader' }, this.letterObject.edad,
-
-      { text: 'MEDICO: A QUIEN CORRESPONDA'},
-
-      { text: 'SONOGRAFIA OBSTETRICA:', style: 'subheader', alignment: 'center' },  
-      { text: 'ESTUDIO REALIZADO POR VIA ABDOMINAL, CON TRANSDUCTOR DE 3.5MHZ ENCONTRANDO AL MOMENTO DEL ESTUDIO:'},  
-      
-     
-
-      { text: 'FETO:', style: 'subheader' }, this.letterObject.feto,
-
-      { text: 'POSICION:', style: 'subheader' }, this.letterObject.posicion,
-
-      { text: 'DORSO:', style: 'subheader' }, this.letterObject.dorso,
-
-      { text: 'PESO:', style: 'subheader', },this.letterObject.peso,
-
-      { text: 'COLUMNA:', style: 'subheader' }, this.letterObject.columna,
-
-      { text: 'ESTOMAGO:', style: 'subheader' }, this.letterObject.estomago,
-
-      { text: 'RIÑONES:', style: 'subheader' }, this.letterObject.rinones,
-
-      { text: 'VEJIGA:', style: 'subheader' }, this.letterObject.vejiga,
-
-      { text: 'CABEZA:', style: 'subheader' }, this.letterObject.cabeza,
-
-      { text: 'FCF:', style: 'subheader' }, this.letterObject.fcf,
-
-      { text: 'PLACENTA:', style: 'subheader' }, this.letterObject.placenta,
-
-      { text: 'GRADO:', style: 'subheader' }, this.letterObject.grado,
-
-      { text: 'CORDON UMBILICAL:', style: 'subheader' }, this.letterObject.cordon,
-
-      { text: 'LIQUIDO AMNIOTICO:', style: 'subheader' }, this.letterObject.liquido,
-         
-      { text: 'CERVIX:', style: 'subheader' }, this.letterObject.cervix,
-
-      { text: 'SEXO:', style: 'subheader' }, this.letterObject.sexo,
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
 
       {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+
+      {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.letterObject.nombre +' '+ this.letterObject.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.letterObject.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA OBSTETRICA:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTUDIO REALIZADO POR VIA ABDOMINAL, CON TRANSDUCTOR DE 3.5MHZ ENCONTRANDO AL MOMENTO DEL ESTUDIO:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'FETO:', style: 'subheader'}, this.letterObject.feto,
+			      ]
+    },
+
+    {
+      text:  [
+             { text: 'POSICION:', style: 'subheader'}, this.letterObject.posicion,
+			      ]
+    },
+
+    {
+      text:  [
+             { text: 'DORSO:', style: 'subheader'}, this.letterObject.dorso,'\n\n',
+			      ]
+    },
+
+    {
+      text:  [
+             { text: 'PESO:', style: 'subheader'}, this.letterObject.peso,
+			      ]    
+    },
+
+    {
+      text:  [
+             { text: 'COLUMNA '}, this.letterObject.columna,
+             { text: ' ESTOMAGO '}, this.letterObject.estomago,
+             { text: ' RIÑONES '}, this.letterObject.rinones,
+             { text: ' VEJIGA '}, this.letterObject.vejiga,
+             { text: ' CABEZA '}, this.letterObject.cabeza,'\n\n',
+			      ]    
+    },
+
+    {
+      text:  [
+              { text: 'FCF:', style: 'subheader' }, this.letterObject.fcf,'\n\n',
+			      ]
+    },
+
+    {
+      text:  [
+             { text: 'PLACENTA:', style: 'subheader' }, this.letterObject.placenta,
+			      ]
+    },
+
+    {
+      text:  [
+        { text: 'GRADO:'}, this.letterObject.grado, 
+			      ]
+    },
+
+    {
+      text:  [
+        { text: 'CORDON UMBILICAL:'}, this.letterObject.cordon,
+			      ]
+    },
+
+    {
+      text:  [
+        { text: 'LIQUIDO AMNIOTICO:'}, this.letterObject.liquido,
+			      ]
+    },
+
+    {
+      text:  [
+        { text: 'CERVIX:'}, this.letterObject.cervix, '\n\n',
+			      ]
+    },
+
+
+
+
+    {
+      text:  [
+              { text: 'SEXO:', style: 'subheader' }, this.letterObject.sexo,'\n\n',
+			      ]
+    },
+     
+      {
         ul: [
-          { text: 'CONCLUSIONES:', style: 'subheader' },{ text: this.letterObject.conclusiones, style: 'story', margin: [0, 20, 0, 20] },
-          { text: 'FPP:', style: 'subheader' },
-      this.letterObject.fpp
+          { text: 'CONCLUSIONES:', style: 'subheader' }, this.letterObject.conclusiones,'\n\n',
+          
         ]
-      }
+      },
+
+      {
+        text:  [
+                 { text: 'FPP:', style: 'subheader' }, this.letterObject.fpp
+              ]
+      },
   
     ],
     styles: {
       header: {
-        fontSize: 18,
+        fontSize: 14,
         bold: true,
       },
       subheader: {
-        fontSize: 14,
+        fontSize: 12,
         bold: true,
         margin: [0, 15, 0, 0]
       },
