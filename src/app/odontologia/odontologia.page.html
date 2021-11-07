@@ -6,18 +6,55 @@
 
 <ion-content>
     <ion-card>
-        <ion-list class="list-lista-odontologia">
-            <ion-list-header class="subtitulo">
-                Cola Odontología
-            </ion-list-header>
-            <ion-item lines="inset" *ngFor="let odontologia of odontologia">
-                <ion-label>
-                    <h5 class="normal">{{odontologia.nombre_paciente}} - {{odontologia.apellido_paciente}}-{{odontologia.cedula_paciente}}-{{odontologia.telefono_paciente}}</h5>
-                </ion-label>
-                <div class="item-note">
-                    <ion-button [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]">liberar</ion-button>
-                </div>
-            </ion-item>
-        </ion-list>
+        <ion-item>
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        No.
+                    </ion-col>
+                    <ion-col>
+                        Nombre
+                    </ion-col>
+                    <ion-col>
+                        Apellido
+                    </ion-col>
+                    <ion-col>
+                        Cédula
+                    </ion-col>
+                    <ion-col>
+                        Teléfono
+                    </ion-col>
+                    <ion-col>
+                        Acciones
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+        <ion-item lines="inset" *ngFor="let odontologia of odontologia ;let i=index;">
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        <h5>{{i+1}} </h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{odontologia.nombre_paciente}} </h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{odontologia.apellido_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{odontologia.cedula_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{odontologia.telefono_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]">liberar</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
     </ion-card>
 </ion-content>

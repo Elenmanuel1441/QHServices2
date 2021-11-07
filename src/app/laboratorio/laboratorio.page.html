@@ -6,18 +6,56 @@
 
 <ion-content>
     <ion-card>
-        <ion-list class="list-lista-laboratorio">
-            <ion-list-header class="subtitulo">
-                Cola laboratorio
-            </ion-list-header>
-            <ion-item lines="inset" *ngFor="let laboratorios of laboratorios">
-                <ion-label>
-                    <h5 class="normal">{{laboratorios.nombre_paciente}} - {{laboratorios.apellido_paciente}}-{{laboratorios.cedula_paciente}}-{{laboratorios.telefono_paciente}}</h5>
-                </ion-label>
-                <div class="item-note">
-                    <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]">Liberar</ion-button>
-                </div>
-            </ion-item>
-        </ion-list>
+
+        <ion-item>
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        No.
+                    </ion-col>
+                    <ion-col>
+                        Nombre
+                    </ion-col>
+                    <ion-col>
+                        Apellido
+                    </ion-col>
+                    <ion-col>
+                        Cédula
+                    </ion-col>
+                    <ion-col>
+                        Teléfono
+                    </ion-col>
+                    <ion-col>
+                        Acciones
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+        <ion-item lines="inset" *ngFor="let laboratorios of laboratorios ;let i=index;">
+            <ion-grid class="tabla-paciente">
+                <ion-row>
+                    <ion-col>
+                        <h5>{{i+1}} </h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{laboratorios.nombre_paciente}} </h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{laboratorios.apellido_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{laboratorios.cedula_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <h5 class="normal">{{laboratorios.telefono_paciente}}</h5>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]">Liberar</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
     </ion-card>
 </ion-content>

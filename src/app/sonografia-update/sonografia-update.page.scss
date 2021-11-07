@@ -1,5 +1,5 @@
 ion-card {
-    width: 700px;
+    width: 600px;
     height: 200px;
     padding: 25px;
     border-radius: 10px;
@@ -7,16 +7,23 @@ ion-card {
     background-color: #4cf1b2;
 }
 
-ion-item {
-    border-radius: 10px;
-}
-
 ion-button {
-    margin: 10px;
-    width: 600x;
-    margin: 15px 0 0 0;
+    margin: auto;
+    width: 500px;
 }
 
 ion-title {
     text-align: center;
+}
+
+.select {
+    margin: auto;
+    margin-top: 15px;
+    width: 250px;
+}
+
+.item_select {
+    width: 500px;
+    border-radius: 10px;
+    margin: auto;
 }
