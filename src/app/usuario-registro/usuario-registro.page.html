@@ -45,32 +45,57 @@
                 </ion-row>
             </ion-grid>
 
-            <ion-row>
-                <ion-col>
-                    <ion-button class="subtitulo2" type="button" (click)="addUsuario()" color="primary" shape="shape" expand="block"> Add usuarios </ion-button>
-                </ion-col>
-            </ion-row>
+            <ion-button class="subtitulo2" type="button" (click)="addUsuario()" color="primary" shape="shape" expand="block"> Add usuarios </ion-button>
+
             <ion-searchbar placeholder="Buscar..." [(ngModel)]="searchTerm" showCancelButton="focus" animated>
             </ion-searchbar>
 
-            <ion-list class="list-lista-usuarios">
-
-                <ion-list-header class="subtitulo2">
-                    Usuarios registrados
-
-                </ion-list-header>
-                <ion-item lines="inset" *ngFor="let nombres of nombres | filter:searchTerm">
-                    <ion-label>
-                        <h5 class="normal">{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
-                    </ion-label>
-
-                    <div class="item-note">
-                        <ion-icon name="create-outline" style="zoom: 2.5;" [routerLink]="['/usuario-update/',nombres.id]"></ion-icon>
-                        <ion-icon name="trash-bin-outline" style="zoom: 2.5;" (click)="deleUsuarios(nombres.id)"></ion-icon>
-                    </div>
-
+            <ion-card class="user_item">
+                <ion-item>
+                    <ion-grid class="tabla-paciente">
+                        <ion-row>
+                            <ion-col>
+                                <h5 class="normal">No.</h5>
+                            </ion-col>
+                            <ion-col>
+                                <h5 class="normal">Nombre</h5>
+                            </ion-col>
+                            <ion-col>
+                                <h5 class="normal">Area</h5>
+                            </ion-col>
+                            <ion-col>
+                                <h5 class="normal">Estado</h5>
+                            </ion-col>
+                            <ion-col>
+                                <h5 class="normal">Acciones</h5>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
                 </ion-item>
-            </ion-list>
+
+                <ion-item lines="inset" *ngFor="let nombres of nombres | filter:searchTerm ;let i=index;">
+                    <ion-grid class="tabla-paciente">
+                        <ion-row>
+                            <ion-col>
+                                <h5 class="normal">{{i+1}} </h5>
+                            </ion-col>
+                            <ion-col>
+                                <h5 class="normal">{{nombres.nombre}}</h5>
+                            </ion-col>
+                            <ion-col>
+                                <h5 class="normal">{{nombres.rol}}</h5>
+                            </ion-col>
+                            <ion-col>
+                                <h5 class="normal">{{nombres.estado}}</h5>
+                            </ion-col>
+                            <ion-col>
+                                <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',nombres.id]"></ion-icon>
+                                <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(nombres.id)"></ion-icon>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-item>
+            </ion-card>
 
         </ion-card-header>
 

@@ -1,5 +1,5 @@
 .card-principal {
-    width: 630px;
+    width: 600px;
     padding: 8px;
     border-radius: 10px;
     margin: auto;
@@ -10,7 +10,7 @@
     border-radius: 10px;
 }
 
-.list-lista-usuarios {
+.user_item {
     border-radius: 10px;
     width: 530px;
     margin: auto;
@@ -38,7 +38,7 @@ ion-title {
 }
 
 .label {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .select-estado {
@@ -60,6 +60,7 @@ ion-title {
 ion-button {
     width: 530px;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .list {
@@ -70,4 +71,5 @@ ion-button {
 ion-searchbar {
     width: 545px;
     margin: auto;
+    margin-bottom: 20px;
 }

@@ -32,16 +32,10 @@ input {
     color: black;
 }
 
-.card-list {
+.card_list_select {
     border-radius: 10px;
     width: 830px;
     margin: auto;
-}
-
-.tabla-paciente {
-    border-radius: 10px;
-    width: 250px;
-    margin: 0 0 0 10px;
 }
 
 .date {
@@ -58,26 +52,11 @@ ion-title {
     text-align: center;
 }
 
-.tabla-titulos {
-    border-radius: 10px;
-    text-align: center;
-    width: 830px;
-    margin: auto;
-}
-
-.tabla-datos {
-    border-radius: 10px;
-    text-align: center;
-    width: 830px;
-    margin: auto;
-}
-
 ion-icon {
-    margin: 0 0 0 8px;
-    padding: 4px 0 0 0;
+    margin: 0 0 0 3px;
 }
 
-.select {
+.select_sangre {
     height: 35px;
     font-size: 13px;
     width: 600px;
@@ -98,8 +77,15 @@ ion-icon {
     margin: 15px 0 0 120px;
 }
 
-.list_item {
-    height: 50px;
+.list_item_titulos {
+    width: 830px;
+    margin: auto;
+}
+
+.card_lista_paciente {
+    width: 830px;
+    margin: auto;
+    border-radius: 10px;
 }
 
 ion-searchbar {
