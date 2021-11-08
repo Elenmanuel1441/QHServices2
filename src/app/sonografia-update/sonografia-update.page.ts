@@ -259,12 +259,14 @@ createPdf() {
               { text: 'SEXO:', style: 'subheader' }, this.letterObject.sexo,'\n\n',
 			      ]
     },
-     
+    
+     { text: 'CONCLUSIONES:', style: 'subheader' }, this.letterObject.conclusiones,'\n\n',
+			      
       {
         ul: [
-          { text: 'CONCLUSIONES:', style: 'subheader' }, this.letterObject.conclusiones,'\n\n',
+         
           
-        ]
+           ]
       },
 
       {

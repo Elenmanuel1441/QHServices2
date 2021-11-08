@@ -1,20 +1,12 @@
 ion-card {
-    width: 900px;
-    height: 120px;
-    padding: 25px;
+    width: 950px;
     border-radius: 10px;
     margin: auto;
-    background-color: #4cf1b2;
+    background-color: #e9f7f1;
 }
 
 ion-grid {
     width: 900px;
-}
-
-ion-button {
-    margin: 0 530px 0 18px;
-    width: 200px;
-    height: 44px;
 }
 
 ion-title {
@@ -25,10 +17,46 @@ ion-title {
 .select {
     margin: 15px 0 0 0;
     width: 250px;
+    height: 38px;
 }
 
 .item_select {
     width: 500px;
     border-radius: 10px;
     margin: auto;
+}
+
+.btn_continuar {
+    margin: 0 530px 0 18px;
+    width: 200px;
+    height: 38px;
+}
+
+ion-input {
+    background-color: white;
+    border-radius: 5px;
+    width: 250px;
+    height: 38px;
+    margin-top: 13px;
+    border-color: rgb(10, 10, 10);
+}
+
+.date {
+    background-color: white;
+    border-radius: 8px;
+    width: 220px;
+    height: 38px;
+    border-color: white;
+    margin: auto;
+    margin-top: 35px;
+}
+
+ion-button {
+    width: 200px;
+    margin-left: 30px;
+}
+
+ion-textarea {
+    background-color: white;
+    width: 340px;
 }
