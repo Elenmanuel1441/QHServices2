@@ -50,15 +50,16 @@
                     <ion-button class="subtitulo2" type="button" (click)="addUsuario()" color="primary" shape="shape" expand="block"> Add usuarios </ion-button>
                 </ion-col>
             </ion-row>
+            <ion-searchbar placeholder="Buscar..." [(ngModel)]="searchTerm" showCancelButton="focus" animated>
+            </ion-searchbar>
 
-            <br>
             <ion-list class="list-lista-usuarios">
 
                 <ion-list-header class="subtitulo2">
                     Usuarios registrados
 
                 </ion-list-header>
-                <ion-item lines="inset" *ngFor="let nombres of nombres">
+                <ion-item lines="inset" *ngFor="let nombres of nombres | filter:searchTerm">
                     <ion-label>
                         <h5 class="normal">{{nombres.nombre}} - ({{nombres.rol}}, {{nombres.estado}})</h5>
                     </ion-label>

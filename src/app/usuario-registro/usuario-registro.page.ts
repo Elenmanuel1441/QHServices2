@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 
+
 @Component({
   selector: 'app-usuario-registro',
   templateUrl: './usuario-registro.page.html',
@@ -15,7 +16,9 @@ export class UsuarioRegistroPage implements OnInit{
 
   buscarUsuario: any;
   
-  nombres: any = [];
+  nombres: any = ['nombre', 'estado','rol'];
+
+  searchTerm: string;
 
   constructor(
     public _apiService: ApiService,
