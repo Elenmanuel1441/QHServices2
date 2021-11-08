@@ -118,6 +118,8 @@
 
         </ion-list>
         <br>
+        <ion-searchbar placeholder="Buscar..." [(ngModel)]="searchTerm" showCancelButton="focus" animated>
+        </ion-searchbar>
 
         <ion-item class="tabla-titulos">
             <ion-grid class="tabla-paciente">
@@ -141,7 +143,7 @@
             </ion-grid>
         </ion-item>
 
-        <ion-item class="tabla-datos" lines="inset" *ngFor="let pacientes of pacientes">
+        <ion-item class="tabla-datos" lines="inset" *ngFor="let pacientes of pacientes | filter:searchTerm">
             <ion-grid class="tabla-paciente">
                 <ion-row>
                     <ion-col>

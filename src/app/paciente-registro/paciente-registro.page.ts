@@ -20,7 +20,9 @@ export class PacienteRegistroPage implements OnInit {
   sexo: any;
   ars: any;
   direccion: any;
-  pacientes: any = [];
+  pacientes: any = ['nombre','apellido','cedula','telefono','sexo','ars'];
+
+  searchTerm: string;
 
   constructor(
     public _apiService: ApiService,
