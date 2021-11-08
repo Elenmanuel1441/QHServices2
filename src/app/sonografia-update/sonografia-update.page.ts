@@ -269,9 +269,10 @@ createPdf() {
 
       {
         text:  [
-                 { text: 'FPP:', style: 'subheader' }, this.letterObject.fpp
+                 { text: 'FPP:'}, this.letterObject.fpp
               ]
       },
+
   
     ],
     styles: {
