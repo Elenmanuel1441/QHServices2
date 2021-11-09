@@ -14,8 +14,8 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class SonografiaUpdatePage implements OnInit {
 
   id_col_sonografia: any;
-  estado_sonografia: any;
-  letterObject = {
+  estado_sonografia: '2';
+  sonoObito = {
     nombre: '',
     apellido: '',
     edad: '',
@@ -38,10 +38,54 @@ export class SonografiaUpdatePage implements OnInit {
     conclusiones: '',
     fpp: ''  
   }
-
+  sonoAbdominal = {
+    nombre: '',
+    apellido: '',
+    edad: '',
+    morfologia: '',
+    lesionesFocales: '',
+    medidaHigado: '',
+    viasBiliares: '',
+    vesiculaForma: '',
+    vesiculaSituacion: '',
+    vesiculaPared: '',
+    vesiculaLongitud: '',
+    vesiculaAncho: '',
+    vesiculaLitos: '',
+    vesiculaPolipos: '',
+    pancreasForma: '',
+    pancreasSituacion: '',
+    pancreasTamano: '',
+    pancreasRadio: '',
+    pancreasAncho: '',
+    pancreasContorno: '',
+    pancreasEcogenicidad: '',
+    rinondVisualiza: '',
+    rinondForma: '',
+    rinondContornos: '',
+    rinondRelacion: '',
+    rinondEvidencia: '',
+    rinondLitiasis: '',
+    rinondTumoraciones: '',
+    rinonlVisualiza: '',
+    rinonlForma: '',
+    rinonlContornos: '',
+    rinonlRelacion: '',
+    rinonlEvidencia: '',
+    rinonlLitiasis: '',
+    rinonlTumoraciones: '',
+    bazoVisualiza: '',
+    bazoForma: '',
+    bazoEcotextura: '',
+    bazoTumoraciones: '',
+    bazoLongitud: '',
+    bazoAncho: '',
+    conclusiones: '',
+     
+  }
   //variables que determinan si mostrar los formularios o no
   showObito: boolean;
-  showVesi: boolean;
+  showAbdominal: boolean;
   showTransV: boolean;
 
 
@@ -74,9 +118,9 @@ export class SonografiaUpdatePage implements OnInit {
      console.log("SUCCESS",res);
      let sonografia = res[0];
      this.estado_sonografia = sonografia.estado_sonografia;
-     this.letterObject.nombre = sonografia.nombre_paciente;
-     this.letterObject.apellido = sonografia.apellido_paciente;
-     this.letterObject.edad = sonografia.EDAD;
+     this.sonoObito.nombre = sonografia.nombre_paciente;
+     this.sonoObito.apellido = sonografia.apellido_paciente;
+     this.sonoObito.edad = sonografia.EDAD;
      
       }, (err:any)=>{
    console.log("ERROR", err)
@@ -88,7 +132,7 @@ export class SonografiaUpdatePage implements OnInit {
 {
  let data = {
    
-   estado_sonografia: this.estado_sonografia,
+   estado_sonografia: 2,
   
    }
    this._apiservice.updateSonografia(this.id_col_sonografia,data).subscribe((res:any)=>{
@@ -151,8 +195,8 @@ async presentToastError(mensaje: string) {
   toast.present();
 }
  //variable formato del pdf
-createPdf() {
-  var docDefinition: any = {
+createObitoPdf() {
+  var obitoDefinition: any = {
     pageSize: 'LETTER',
     content:[
 
@@ -166,13 +210,13 @@ createPdf() {
 
       {
         text:  [
-               {text: 'PACIENTE:', style: 'subheader'}, this.letterObject.nombre +' '+ this.letterObject.apellido, '\n\n',
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoObito.nombre +' '+ this.sonoObito.apellido, '\n\n',
               ]
       },
 
       {
         text:  [
-               {text: 'EDAD:', style: 'subheader'}, this.letterObject.edad,'\n\n',
+               {text: 'EDAD:', style: 'subheader'}, this.sonoObito.edad,'\n\n',
               ]
       },
 
@@ -183,71 +227,71 @@ createPdf() {
 
     {
       text:  [
-				     {text: 'FETO:', style: 'subheader'}, this.letterObject.feto,
+				     {text: 'FETO:', style: 'subheader'}, this.sonoObito.feto,
 			      ]
     },
 
     {
       text:  [
-             { text: 'POSICION:', style: 'subheader'}, this.letterObject.posicion,
+             { text: 'POSICION:', style: 'subheader'}, this.sonoObito.posicion,
 			      ]
     },
 
     {
       text:  [
-             { text: 'DORSO:', style: 'subheader'}, this.letterObject.dorso,'\n\n',
+             { text: 'DORSO:', style: 'subheader'}, this.sonoObito.dorso,'\n\n',
 			      ]
     },
 
     {
       text:  [
-             { text: 'PESO:', style: 'subheader'}, this.letterObject.peso,
+             { text: 'PESO:', style: 'subheader'}, this.sonoObito.peso,{ text: 'g'}
 			      ]    
     },
 
     {
       text:  [
-             { text: 'COLUMNA '}, this.letterObject.columna,
-             { text: ' ESTOMAGO '}, this.letterObject.estomago,
-             { text: ' RIÑONES '}, this.letterObject.rinones,
-             { text: ' VEJIGA '}, this.letterObject.vejiga,
-             { text: ' CABEZA '}, this.letterObject.cabeza,'\n\n',
+             { text: 'COLUMNA '}, this.sonoObito.columna,
+             { text: ', ESTOMAGO '}, this.sonoObito.estomago,
+             { text: ', RIÑONES '}, this.sonoObito.rinones,
+             { text: ', VEJIGA '}, this.sonoObito.vejiga,
+             { text: ', CABEZA '}, this.sonoObito.cabeza,'\n\n',
 			      ]    
     },
 
     {
       text:  [
-              { text: 'FCF:', style: 'subheader' }, this.letterObject.fcf,'\n\n',
+              { text: 'FCF:', style: 'subheader' }, this.sonoObito.fcf,'\n\n',
 			      ]
     },
 
     {
       text:  [
-             { text: 'PLACENTA:', style: 'subheader' }, this.letterObject.placenta,
+             { text: 'PLACENTA:', style: 'subheader' }, this.sonoObito.placenta,
 			      ]
     },
 
     {
       text:  [
-        { text: 'GRADO:'}, this.letterObject.grado, 
+        { text: 'GRADO:', style: 'subheader'}, this.sonoObito.grado, 
 			      ]
     },
 
     {
       text:  [
-        { text: 'CORDON UMBILICAL:'}, this.letterObject.cordon,
+        { text: 'CORDON UMBILICAL:', style: 'subheader'}, this.sonoObito.cordon,
 			      ]
     },
 
     {
       text:  [
-        { text: 'LIQUIDO AMNIOTICO:'}, this.letterObject.liquido,
+        { text: 'LIQUIDO AMNIOTICO:', style: 'subheader'}, this.sonoObito.liquido,
 			      ]
     },
 
     {
       text:  [
-        { text: 'CERVIX:'}, this.letterObject.cervix, '\n\n',
+        { text: 'CERVIX:', style: 'subheader'}, this.sonoObito.cervix, '\n\n',
 			      ]
     },
 
@@ -256,11 +300,11 @@ createPdf() {
 
     {
       text:  [
-              { text: 'SEXO:', style: 'subheader' }, this.letterObject.sexo,'\n\n',
+              { text: 'SEXO:', style: 'subheader' }, this.sonoObito.sexo,'\n\n',
 			      ]
     },
     
-     { text: 'CONCLUSIONES:', style: 'subheader' }, this.letterObject.conclusiones,'\n\n',
+     { text: 'CONCLUSIONES:', style: 'subheader' }, this.sonoObito.conclusiones,'\n\n',
 			      
       {
         ul: [
@@ -271,11 +315,12 @@ createPdf() {
 
       {
         text:  [
-                 { text: 'FPP:'}, this.letterObject.fpp
+                 { text: 'FPP:', style: 'subheader'}, this.sonoObito.fpp
               ]
       },
-
-  
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
     ],
     styles: {
       header: {
@@ -294,10 +339,10 @@ createPdf() {
       }
     }
   }
-  this.pdfObj = pdfMake.createPdf(docDefinition);
+  this.pdfObj = pdfMake.createPdf(obitoDefinition);
 }
 
-printPdf() {
+printObitoPdf() {
   /* if (this.plt.is('cordova')) {
     this.pdfObj.getBuffer((buffer) => {
       var blob = new Blob([buffer], { type: 'application/pdf' });
@@ -311,8 +356,180 @@ printPdf() {
   } else {*/
     // On a browser simply use download!
     this.pdfObj.print();
-
+    this.updateSonografia();
+    
 }
+
+
+createAbdominalPdf() {
+  var obitoDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+
+      {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoObito.nombre +' '+ this.sonoObito.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoObito.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA OBSTETRICA:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTUDIO REALIZADO POR VIA ABDOMINAL, CON TRANSDUCTOR DE 3.5MHZ ENCONTRANDO AL MOMENTO DEL ESTUDIO:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'FETO:', style: 'subheader'}, this.sonoObito.feto,
+			      ]
+    },
+
+    {
+      text:  [
+             { text: 'POSICION:', style: 'subheader'}, this.sonoObito.posicion,
+			      ]
+    },
+
+    {
+      text:  [
+             { text: 'DORSO:', style: 'subheader'}, this.sonoObito.dorso,'\n\n',
+			      ]
+    },
+
+    {
+      text:  [
+             { text: 'PESO:', style: 'subheader'}, this.sonoObito.peso,{ text: 'g'}
+			      ]    
+    },
+
+    {
+      text:  [
+             { text: 'COLUMNA '}, this.sonoObito.columna,
+             { text: ', ESTOMAGO '}, this.sonoObito.estomago,
+             { text: ', RIÑONES '}, this.sonoObito.rinones,
+             { text: ', VEJIGA '}, this.sonoObito.vejiga,
+             { text: ', CABEZA '}, this.sonoObito.cabeza,'\n\n',
+			      ]    
+    },
+
+    {
+      text:  [
+              { text: 'FCF:', style: 'subheader' }, this.sonoObito.fcf,'\n\n',
+			      ]
+    },
+
+    {
+      text:  [
+             { text: 'PLACENTA:', style: 'subheader' }, this.sonoObito.placenta,
+			      ]
+    },
+
+    {
+      text:  [
+        { text: 'GRADO:', style: 'subheader'}, this.sonoObito.grado, 
+			      ]
+    },
+
+    {
+      text:  [
+        { text: 'CORDON UMBILICAL:', style: 'subheader'}, this.sonoObito.cordon,
+			      ]
+    },
+
+    {
+      text:  [
+        { text: 'LIQUIDO AMNIOTICO:', style: 'subheader'}, this.sonoObito.liquido,
+			      ]
+    },
+
+    {
+      text:  [
+        { text: 'CERVIX:', style: 'subheader'}, this.sonoObito.cervix, '\n\n',
+			      ]
+    },
+
+
+
+
+    {
+      text:  [
+              { text: 'SEXO:', style: 'subheader' }, this.sonoObito.sexo,'\n\n',
+			      ]
+    },
+    
+     { text: 'CONCLUSIONES:', style: 'subheader' }, this.sonoObito.conclusiones,'\n\n',
+			      
+      {
+        ul: [
+         
+          
+           ]
+      },
+
+      {
+        text:  [
+                 { text: 'FPP:', style: 'subheader'}, this.sonoObito.fpp
+              ]
+      },
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(obitoDefinition);
+}
+
+printAbdominalPdf() {
+  /* if (this.plt.is('cordova')) {
+    this.pdfObj.getBuffer((buffer) => {
+      var blob = new Blob([buffer], { type: 'application/pdf' });
+
+      // Save the PDF to the data Directory of our App
+      this.file.writeFile(this.file.dataDirectory, 'myletter.pdf', blob, { replace: true }).then(fileEntry => {
+        // Open the PDf with the correct OS tools
+        this.fileOpener.open(this.file.dataDirectory + 'myletter.pdf', 'application/pdf');
+      })
+    });
+  } else {*/
+    // On a browser simply use download!
+    this.pdfObj.print();
+    this.updateSonografia();
+    
+}
+
+
+
+
+
 //metodo con condiciones que muestra o oculta los formularios.
 
  setVi(){
@@ -320,19 +537,19 @@ printPdf() {
   if (this.tipoSonografia==1) {
 
     this.showObito=true; 
-    this.showVesi=false;
+    this.showAbdominal=false;
     this.showTransV=false;
   }
    else if (this.tipoSonografia==2) {
 
-    this.showVesi=true;
+    this.showAbdominal=true;
     this.showTransV=false;
     this.showObito=false; 
   }
    else if (this.tipoSonografia==3) {
 
     this.showTransV=true;
-    this.showVesi=false;
+    this.showAbdominal=false;
     this.showObito=false; 
   }
   else { this.presentToastError('No ha seleccionado el tipo de sonografia!')
