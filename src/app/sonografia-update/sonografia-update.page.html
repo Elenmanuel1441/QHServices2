@@ -255,8 +255,8 @@
                           </select>
                 </ion-col>            
                 <ion-col>
-                    <ion-label class="subtitulo2" stacked>:</ion-label>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.peso"></ion-input>
+                    <ion-label class="subtitulo2" stacked>MEDIDA:</ion-label>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.medidaHigado"></ion-input>
                 </ion-col>
                 <ion-col>
                     <label class="subtitulo2">VIAS BILIARES:</label>
@@ -290,16 +290,15 @@
                 </ion-col>
 
                 <ion-col>
-                    <ion-label class="subtitulo2" stacked>PARED:</ion-label>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaPared"></ion-input>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaPared">PARED</ion-input>
                 </ion-col>
                 <ion-col>
                     
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaLongitud"></ion-input>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaLongitud">LONGITUD</ion-input>
                 </ion-col>
                 <ion-col>
                     
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaAncho"></ion-input>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaAncho">ANCHO</ion-input>
                 </ion-col>
                 <ion-col>
                     <label class="subtitulo2">LITOS:</label>
@@ -330,9 +329,9 @@
                 </ion-col>
                 <ion-col>
                     <ion-label class="subtitulo2" stacked>TAMAÑO:</ion-label>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasTamano"></ion-input>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasRadio"></ion-input>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasAncho"></ion-input>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCabeza">CABEZA</ion-input>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCuerpo">CUERPO</ion-input>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCola">COLA</ion-input>
                 </ion-col>
             </ion-row>
         </ion-grid>
