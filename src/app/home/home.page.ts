@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Chart } from 'chart.js/auto';
+
 
 
 @Component({
@@ -26,7 +26,6 @@ export class HomePage implements OnInit {
   
   odontologia_res: any = [];
 
-  private chart_dashboard: Chart;
 
   constructor(
     private _apiservice: ApiService,
