@@ -10,7 +10,8 @@ import {Storage} from '@ionic/storage';
 export class AppComponent {
   constructor(
 private storage: Storage,
-public navctel: NavController
+public navctel: NavController,
+
   ) {}
 
 

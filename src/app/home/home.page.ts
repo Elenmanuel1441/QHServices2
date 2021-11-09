@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -28,6 +29,7 @@ export class HomePage implements OnInit {
 
   constructor(
     private _apiservice: ApiService,
+
 
   ) {
     this.getCount_rayos_x();
@@ -95,5 +97,6 @@ getCount_odontologia()
       console.log("ERROR ===",error);
     })
 }
+
 
 }
