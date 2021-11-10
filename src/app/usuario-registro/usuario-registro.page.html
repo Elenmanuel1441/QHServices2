@@ -48,13 +48,18 @@
 
             <ion-button class="subtitulo2" type="button" (click)="addUsuario()" color="primary" shape="shape" expand="block"> Add usuarios </ion-button>
 
-            <ion-searchbar placeholder="Buscar..." [(ngModel)]="search_01" showCancelButton="focus" animated>
-            </ion-searchbar>
+
+            <ion-label>Filtros</ion-label>
 
             <div class="container">
+
                 <div class="row">
                     <div class="col">
-                        <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoEstado subtitulo2">
+                        <ion-searchbar class="normal" placeholder="Nombre" [(ngModel)]="search_01" showCancelButton="focus" animated>
+                        </ion-searchbar>
+                    </div>
+                    <div class="col">
+                        <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoEstado normal">
                             <option selected></option>
                             <option value='Laboratorio'>Laboratorio</option>
                     <option value='Odontología'>Odontología</option>
@@ -64,8 +69,8 @@
                       </select>
                     </div>
                     <div class="col">
-                        <select [(ngModel)]="search_03" class="form-select form-select-lg mb-3 selectFiltoEstado subtitulo2">
-                            <option selected></option>
+                        <select [(ngModel)]="search_03" class="form-select form-select-lg mb-3 selectFiltoEstado normal">
+                            <option selected></option>  
                             <option value='Activo'>Activo</option>
                             <option value='Inactivo'>Inactivo</option>
                       </select>
@@ -73,7 +78,7 @@
                 </div>
             </div>
 
-            <ion-button (click)="exportexcel()">Export to Excel</ion-button>
+            <ion-button class="subtitulo2" type="button" (click)="exportexcel()" color="primary" shape="shape" expand="block">Export to Excel</ion-button>
 
             <!--Otra tabla de ejemplo con boostrab-->
             <ion-card>

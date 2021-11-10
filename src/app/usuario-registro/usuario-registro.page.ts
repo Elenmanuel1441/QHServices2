@@ -25,6 +25,8 @@ export class UsuarioRegistroPage implements OnInit{
 
   search_03: string;
 
+  fileName= 'Reporte de usuario.xlsx';
+
   constructor(
     public _apiService: ApiService,
     public toastController: ToastController,
@@ -233,8 +235,7 @@ async presentAlert()
   console.log(result);
  }
 
- 
-fileName= 'Reporte de usuario.xlsx';
+
 
   exportexcel(): void
   {

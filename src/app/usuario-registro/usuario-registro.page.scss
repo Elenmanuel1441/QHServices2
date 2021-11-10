@@ -58,7 +58,7 @@ ion-title {
 }
 
 ion-button {
-    width: 530px;
+    width: 520px;
     margin: auto;
     margin-bottom: 20px;
 }
@@ -69,19 +69,24 @@ ion-button {
 }
 
 ion-searchbar {
-    width: 250px;
-    margin: auto;
+    width: 160px;
+    margin: 0 0 30px 0;
 }
 
 .selectFiltoEstado {
     // height: 35px;
     border-radius: 8px;
     //font-size: 13px;
-    width: 250px;
+    width: 150px;
     margin: auto;
+    height: 35px;
 }
 
 .table_export {
     margin: auto;
     width: 600px;
+}
+
+.row {
+    width: 540px;
 }
