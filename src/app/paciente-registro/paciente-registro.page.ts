@@ -178,7 +178,7 @@ export class PacienteRegistroPage implements OnInit {
   exportexcel(): void
   {
     /* pass here the table id */
-    let element = document.getElementById('excel-table-user');
+    let element = document.getElementById('excel-table-paciente');
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
  
     /* generate workbook and add the worksheet */

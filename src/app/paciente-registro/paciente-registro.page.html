@@ -122,10 +122,10 @@
         </ion-searchbar>
 
         <!--Otra tabla de ejemplo con boostrab-->
-        <ion-button class="subtitulo2" type="button" (click)="exportexcel()" color="primary" shape="shape" expand="block">Export to Excel</ion-button>
-
-        <ion-card>
-            <table class="table" id="excel-table-user">
+        <ion-button class="subtitulo2 btnExport" type="button" (click)="exportexcel()" color="primary" shape="shape" expand="block">Exportar</ion-button>
+        <br>
+        <ion-card class="tabla_pacientes">
+            <table class="table" id="excel-table-paciente">
                 <thead>
                     <tr>
                         <th scope="col">No.</th>
@@ -137,7 +137,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of pacientes | filter:search_01 | filter:search_02; let i=index;">
+                    <tr *ngFor="let item of pacientes | filter:search_01 ; let i=index;">
                         <th scope="row">{{i+1}}</th>
                         <td>{{item.nombre_paciente}}</td>
                         <td>{{item.apellido_paciente}}</td>
