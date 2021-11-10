@@ -12,7 +12,7 @@
                         <div class="container-fluid col-12">
                             <select [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select subtitulo2">
                                 <option value='1'>OBSTETRICA OBITO</option>
-                                <option value='2'>VESICULAR</option>
+                                <option value='2'>ABDOMINAL</option>
                                 <option value='3'>TRANS VAGINAL</option>
                               </select>
                            
@@ -221,6 +221,7 @@
     </ion-card>
 <!---AUN SIGO TRABAJANDO EN ESTA PLANTILLA-->
     <ion-card *ngIf="showAbdominal">
+       
         <ion-grid>
             <ion-row>
                 <ion-col>
@@ -231,27 +232,33 @@
                     <ion-label class="subtitulo2" position="floating" stacked>EDAD:</ion-label>
                     <ion-input class="subtitulo2" [(ngModel)]="sonoAbdominal.edad"></ion-input>
                 </ion-col>
+               
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+               <label class="subtitulo2">HIGADO</label> 
+            </ion-row>   
+
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
                 <ion-col>
-                    <label class="subtitulo2">Higado:</label>
+                    <label class="subtitulo2">MORFOLOGIA:</label>
                     <select [(ngModel)]="sonoAbdominal.morfologia" class="form-select form-select-lg mb-3 select subtitulo2">
                             <option value='NORMAL'>NORMAL</option>
                             <option value='HETEROGENEA'>HETEROGENEA</option>
                               
                           </select>
                 </ion-col>
-            </ion-row>
-        </ion-grid>
-
-
-        <ion-grid>
-            <ion-row>
                 <ion-col>
-                    <label class="subtitulo2">Lesiones Focales:</label>
+                    <label class="subtitulo2">LESIONES FOCALES:</label>
                     <select [(ngModel)]="sonoAbdominal.lesionesFocales" class="form-select form-select-lg mb-3 select subtitulo2">
                             <option  value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
                             <option value='LIQUIDA'>LIQUIDA</option>
                             <option value='TUMORACION SOLIDA'>TUMORACION SOLIDA</option>
-                            <option value='LIQUIDA Y TUMORACION SOLIDA'>AMBAS</option>      
+                            <option value='LIQUIDAS Y TUMORACIONES SOLIDAS'>AMBAS</option>      
                           </select>
                 </ion-col>            
                 <ion-col>
@@ -268,17 +275,23 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <label class="subtitulo2">VESICULA BILIAR:</label> 
+
+            </ion-row>
+        </ion-grid>
 
 
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <label class="subtitulo2" class="subtitulo2">VESICULA BILIAR:</label>
+                    <label class="subtitulo2" class="subtitulo2">FORMA:</label>
                     <select [(ngModel)]="sonoAbdominal.vesiculaForma" class="form-select form-select-lg mb-3 select subtitulo2">
                             <option  value='DE FORMA PIRIFORME'> PIRIFORME</option>
                             <option value='DE FORMA SEPTADA'>SEPTADA</option>
                             <option value='DE FORMA TRABECULADA'>TRABECULADA</option>
-                            <option value='1'>NO SE VISUALIZA</option>
+                            <option value='NO SE VISUALIZA'>NO SE VISUALIZA</option>
                             </select>
                 </ion-col>
                 <ion-col>
@@ -320,24 +333,53 @@
                             <option value='AUSENTE'>AUSENTE</option>
                       </select>
                 </ion-col>
+            </ion-row>
+        </ion-grid>  
+        <ion-grid>
+            <ion-row>
+                <label class="subtitulo2">PANCREAS:</label> 
+
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>  
+            <ion-row>
                 <ion-col>
-                    <label class="subtitulo2">PANCREAS: FORMA</label>
+                    <label class="subtitulo2">FORMA:</label>
                     <select [(ngModel)]="sonoAbdominal.pancreasForma" class="form-select form-select-lg mb-3 select subtitulo2">
                             <option  value='NORMAL'>NORMAL</option>
                             <option value='IRREGULAR'>IRREGULAR</option>
                    </select>
                 </ion-col>
                 <ion-col>
-                    <ion-label class="subtitulo2" stacked>TAMAÑO:</ion-label>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCabeza">CABEZA</ion-input>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCuerpo">CUERPO</ion-input>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCola">COLA</ion-input>
+              
+                   
+                    
+                    
                 </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">CABEZA:</label>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCabeza"></ion-input>
+                </ion-col>
+
+                <ion-col>
+                    <label class="subtitulo2">CUERPO:</label>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCuerpo"></ion-input>
+                </ion-col>
+                
+             
+                
+
             </ion-row>
         </ion-grid>
 
+
         <ion-grid>
             <ion-row>
+                <ion-col>
+                    <label class="subtitulo2">COLA:</label>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.pancreasCola"></ion-input>
+                </ion-col>
                 <ion-col>
                     <label class="subtitulo2">CONTORNO:</label>
                     <select [(ngModel)]="sonoAbdominal.pancreasContorno" class="form-select form-select-lg mb-3 select subtitulo2">
@@ -354,20 +396,27 @@
                             <option value='HIPERECOICA'>HIPERECOICA</option>
                           </select>
                 </ion-col>
-                <ion-col>
-                    <label class="subtitulo2">RIÑON DERECHO:</label>
-                    <select [(ngModel)]="sonoAbdominal.rinondVisualiza" class="form-select form-select-lg mb-3 select subtitulo2">
-                        <option  value='SE VISUALIZA NORMAL'>NORMAL</option>
-                        <option  value='NO SE VISUALIZA'>NO SE VISUALIZA</option>
-                        <option value='ECTOPICO'>ECTOPICO</option>           
-                    </select>
-                </ion-col>
+                
             </ion-row>
         </ion-grid>
 
         <ion-grid>
             <ion-row>
+                <label class="subtitulo2">RIÑON DERECHO:</label> 
 
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <label class="subtitulo2">SITUACION:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinondVisualiza" class="form-select form-select-lg mb-3 select subtitulo2">
+                        <option  value='SE VISUALIZA NORMAL'>NORMAL</option>
+                        <option  value='NO SE VISUALIZA'>NO SE VISUALIZA</option>
+                        <option value='ECTOPICO'>ECTOPICO</option>           
+                    </select>
+                </ion-col>   
                 <ion-col>
                     <label class="subtitulo2">FORMA:</label>
                     <select [(ngModel)]="sonoAbdominal.rinondForma" class="form-select form-select-lg mb-3 select subtitulo2">
@@ -389,11 +438,6 @@
                             <option value='DILATADA'>DILATADA</option>
                           </select>
                 </ion-col>
-            </ion-row>
-        </ion-grid>
-
-        <ion-grid>
-            <ion-row>
                 <ion-col>
                     <label class="subtitulo2">EVIDENCIA:</label>
                     <select [(ngModel)]="sonoAbdominal.rinondEvidencia" class="form-select form-select-lg mb-3 select subtitulo2">
@@ -410,6 +454,7 @@
                             <option value='MICROLITIASIS'>MICROLITIASIS</option>
                           </select>
                 </ion-col>
+                
                 <ion-col>
                     <label class="subtitulo2">TUMORACIONES:</label>
                     <select [(ngModel)]="sonoAbdominal.rinondLitiasis" class="form-select form-select-lg mb-3 select subtitulo2">
@@ -419,10 +464,154 @@
                             <option value='MICROLITIASIS'>MICROLITIASIS</option>
                           </select>
                 </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <label class="subtitulo2">RIÑON IZQUIERDO:</label> 
+
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <label class="subtitulo2">SITUACION:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlVisualiza" class="form-select form-select-lg mb-3 select subtitulo2">
+                        <option  value='SE VISUALIZA NORMAL'>NORMAL</option>
+                        <option  value='NO SE VISUALIZA'>NO SE VISUALIZA</option>
+                        <option value='ECTOPICO'>ECTOPICO</option>           
+                    </select>
+                </ion-col>   
+                <ion-col>
+                    <label class="subtitulo2">FORMA:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlForma" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='IRREGULAR'>IRREGULAR</option>
+                            <option value='NORMAL'>NORMAL</option>
+                          </select>
+                </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">CONTORNO:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlContornos" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='REGULAR'>REGULAR</option>
+                            <option value='IRREGULAR'>IRREGULAR/option>     
+                          </select>
+                </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">CORTEZA:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlRelacion" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='CONSERVADA'>CONSERVADA</option>
+                            <option value='DILATADA'>DILATADA</option>
+                          </select>
+                </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">EVIDENCIA:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlEvidencia" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='CONSERVADA'>CONSERVADA</option>
+                            <option value='DILATADA'>DILATADA</option>
+                          </select>
+                </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">LITIASIS:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlLitiasis" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='PRESENTE'>PRESENTE</option>
+                            <option value='AUSENTE'>AUSENTE</option>
+                            <option value='SEVERA'>SEVERA</option>
+                            <option value='MICROLITIASIS'>MICROLITIASIS</option>
+                          </select>
+                </ion-col>
+                
+                <ion-col>
+                    <label class="subtitulo2">TUMORACIONES:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlLitiasis" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='SOLIDAS'>SOLIDAS</option>
+                            <option value='LIQUIDAS'>LIQUIDAS</option>
+                            <option value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
+                            <option value='MICROLITIASIS'>MICROLITIASIS</option>
+                          </select>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+
+
+
+        <ion-grid>
+            <ion-row>
+                <label class="subtitulo2">EL BAZO:</label> 
+
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <label class="subtitulo2">SITUACION:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlVisualiza" class="form-select form-select-lg mb-3 select subtitulo2">
+                        <option  value='SE VISUALIZA NORMAL'>NORMAL</option>
+                        <option  value='NO SE VISUALIZA'>NO SE VISUALIZA</option>
+                        <option value='ECTOPICO'>ECTOPICO</option>           
+                    </select>
+                </ion-col>   
+                <ion-col>
+                    <label class="subtitulo2">FORMA:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlForma" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='IRREGULAR'>IRREGULAR</option>
+                            <option value='NORMAL'>NORMAL</option>
+                          </select>
+                </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">CONTORNO:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlContornos" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='REGULAR'>REGULAR</option>
+                            <option value='IRREGULAR'>IRREGULAR/option>     
+                          </select>
+                </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">CORTEZA:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlRelacion" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='CONSERVADA'>CONSERVADA</option>
+                            <option value='DILATADA'>DILATADA</option>
+                          </select>
+                </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">EVIDENCIA:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlEvidencia" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='CONSERVADA'>CONSERVADA</option>
+                            <option value='DILATADA'>DILATADA</option>
+                          </select>
+                </ion-col>
+                <ion-col>
+                    <label class="subtitulo2">LITIASIS:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlLitiasis" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='PRESENTE'>PRESENTE</option>
+                            <option value='AUSENTE'>AUSENTE</option>
+                            <option value='SEVERA'>SEVERA</option>
+                            <option value='MICROLITIASIS'>MICROLITIASIS</option>
+                          </select>
+                </ion-col>
+                
+                <ion-col>
+                    <label class="subtitulo2">TUMORACIONES:</label>
+                    <select [(ngModel)]="sonoAbdominal.rinonlLitiasis" class="form-select form-select-lg mb-3 select subtitulo2">
+                            <option  value='SOLIDAS'>SOLIDAS</option>
+                            <option value='LIQUIDAS'>LIQUIDAS</option>
+                            <option value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
+                            <option value='MICROLITIASIS'>MICROLITIASIS</option>
+                          </select>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+               
               
                 <ion-col>
                     <ion-button class="subtitulo2" expand="block" (click)="createAbdominalPdf()">crear</ion-button>
-
+                </ion-col>
+                    
+                <ion-col>   
                     <ion-button class="subtitulo2" expand="block" (click)="printAbdominalPdf()" [disabled]="!pdfObj">imprimir </ion-button>
                 </ion-col>
             </ion-row>
@@ -447,10 +636,10 @@
             <ion-input></ion-input>
         </ion-item>
         <ion-item>
-            <ion-button (click)="createPdf()">crear</ion-button>
+        <ion-button (click)="createPdf()">crear</ion-button>
         </ion-item>
         <ion-item>
-            <ion-button (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+           <ion-button (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
         </ion-item>
     </ion-list>
 
