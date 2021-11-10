@@ -6,28 +6,28 @@
         <ion-title class="titulo">
             <div>
                 <nav class="navbar navbar-light bg-light">
-                   <div class="row">
+                    <div class="row">
 
-                    <div class="col-md-6">
-                        <div class="container-fluid col-12">
-                            <select [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select subtitulo2">
+                        <div class="col-md-6">
+                            <div class="container-fluid col-12">
+                                <select [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select subtitulo2">
                                 <option value='1'>OBSTETRICA OBITO</option>
                                 <option value='2'>ABDOMINAL</option>
                                 <option value='3'>TRANS VAGINAL</option>
                               </select>
-                           
+
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <ion-button class="subtitulo2 btn_continuar" type="button" (click)="setVi()" color="primary" shape="shape" expand="block"> continuar </ion-button>
+                            </div>
+
+
+
                         </div>
-
-
-                        <div class="col-md-6">
-                            <ion-button class="subtitulo2 btn_continuar" type="button" (click)="setVi()" color="primary" shape="shape" expand="block"> continuar </ion-button>
-                        </div>
-
-
 
                     </div>
-
-                   </div>
                 </nav>
             </div>
 
@@ -219,7 +219,7 @@
 
 
     </ion-card>
-<!---AUN SIGO TRABAJANDO EN ESTA PLANTILLA-->
+    <!---AUN SIGO TRABAJANDO EN ESTA PLANTILLA-->
     <ion-card *ngIf="showAbdominal">
        
         <ion-grid>
@@ -260,7 +260,7 @@
                             <option value='TUMORACION SOLIDA'>TUMORACION SOLIDA</option>
                             <option value='LIQUIDAS Y TUMORACIONES SOLIDAS'>AMBAS</option>      
                           </select>
-                </ion-col>            
+                </ion-col>
                 <ion-col>
                     <ion-label class="subtitulo2" stacked>MEDIDA:</ion-label>
                     <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.medidaHigado"></ion-input>
@@ -306,11 +306,11 @@
                     <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaPared">PARED</ion-input>
                 </ion-col>
                 <ion-col>
-                    
+
                     <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaLongitud">LONGITUD</ion-input>
                 </ion-col>
                 <ion-col>
-                    
+
                     <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaAncho">ANCHO</ion-input>
                 </ion-col>
                 <ion-col>
@@ -601,12 +601,6 @@
                             <option value='MICROLITIASIS'>MICROLITIASIS</option>
                           </select>
                 </ion-col>
-            </ion-row>
-        </ion-grid>
-        <ion-grid>
-            <ion-row>
-               
-              
                 <ion-col>
                     <ion-button class="subtitulo2" expand="block" (click)="createAbdominalPdf()">crear</ion-button>
                 </ion-col>
@@ -636,10 +630,10 @@
             <ion-input></ion-input>
         </ion-item>
         <ion-item>
-        <ion-button (click)="createPdf()">crear</ion-button>
+            <!-- <ion-button (click)="createPdf()">crear</ion-button> -->
         </ion-item>
         <ion-item>
-           <ion-button (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+            <!-- <ion-button (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button> -->
         </ion-item>
     </ion-list>
 
