@@ -195,7 +195,7 @@ async presentToastError(mensaje: string) {
   toast.present();
 }
  //variable formato del pdf
-createObitoPdf() {
+ async createObitoPdf() {
   var obitoDefinition: any = {
     pageSize: 'LETTER',
     content:[
@@ -213,12 +213,17 @@ createObitoPdf() {
                {text: 'PACIENTE:', style: 'subheader'}, this.sonoObito.nombre +' '+ this.sonoObito.apellido, '\n\n',
               ]
       },
-
       {
         text:  [
                {text: 'EDAD:', style: 'subheader'}, this.sonoObito.edad,'\n\n',
               ]
       },
+      {
+        image: await this.getBase64ImageFromURL(
+          "https://images.pexels.com/photos/209640/pexels-photo-209640.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300"
+
+        )
+      } , 
 
       { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
 
@@ -372,6 +377,10 @@ createAbdominalPdf() {
         text:  [
                {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
                ]
+      },
+
+      {
+        image: 'https://edteam-media.s3.amazonaws.com/specialities/original/6804abfc-5cc0-4199-a162-173e451d34df.png'
       },
 
       {
@@ -558,5 +567,24 @@ printAbdominalPdf() {
 
 
  }
+ getBase64ImageFromURL(url) {
+  return new Promise((resolve, reject) => {
+    var img = new Image();
+    img.setAttribute("crossOrigin", "anonymous");
+    img.onload = () => {
+      var canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+      var dataURL = canvas.toDataURL("image/png");
+      resolve(dataURL);
+    };
+    img.onerror = error => {
+      reject(error);
+    };
+    img.src = url;
+  });
+}
 }
 
