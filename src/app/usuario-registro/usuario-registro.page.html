@@ -48,30 +48,23 @@
 
             <ion-button class="subtitulo2" type="button" (click)="addUsuario()" color="primary" shape="shape" expand="block"> Add usuarios </ion-button>
 
-            <h5 class="normal h5">Filtros</h5>
-
-            <ion-searchbar class="normal" placeholder="Nombre" [(ngModel)]="search_01" showCancelButton="focus" animated>
-            </ion-searchbar>
-            <br>
+            <h5 class="subtitulo2 h5">Filtros</h5>
 
             <div class="container">
 
                 <div class="row">
                     <div class="col">
-                        <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoEstado normal">
+                        <ion-searchbar class="normal" placeholder="Nombre" [(ngModel)]="search_01" showCancelButton="focus" animated>
+                        </ion-searchbar>
+                    </div>
+                    <div class="col">
+                        <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoArea normal">
                             <option selected></option>
                             <option value='Laboratorio'>Laboratorio</option>
                     <option value='Odontología'>Odontología</option>
                     <option value='Rayos X'>Rayos X</option>
                     <option value='Recepción'>Recepción</option>
                     <option value='Sonografía'>Sonografía</option>
-                      </select>
-                    </div>
-                    <div class="col">
-                        <select [(ngModel)]="search_03" class="form-select form-select-lg mb-3 selectFiltoEstado normal">
-                            <option selected></option>  
-                            <option value='Activo'>Activo</option>
-                            <option value='Inactivo'>Inactivo</option>
                       </select>
                     </div>
                 </div>
