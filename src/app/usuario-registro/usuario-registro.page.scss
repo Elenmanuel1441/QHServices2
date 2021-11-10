@@ -69,15 +69,15 @@ ion-button {
 }
 
 ion-searchbar {
-    width: 160px;
-    margin: 0 0 30px 0;
+    width: 530px;
+    margin: auto;
 }
 
 .selectFiltoEstado {
     // height: 35px;
     border-radius: 8px;
     //font-size: 13px;
-    width: 150px;
+    width: 200px;
     margin: auto;
     height: 35px;
 }
@@ -89,4 +89,8 @@ ion-searchbar {
 
 .row {
     width: 540px;
+}
+
+.h5 {
+    margin-left: 20px;
 }
