@@ -45,58 +45,62 @@
                 </ion-row>
             </ion-grid>
 
+
             <ion-button class="subtitulo2" type="button" (click)="addUsuario()" color="primary" shape="shape" expand="block"> Add usuarios </ion-button>
 
-            <ion-searchbar placeholder="Buscar..." [(ngModel)]="searchTerm" showCancelButton="focus" animated>
+            <ion-searchbar placeholder="Buscar..." [(ngModel)]="search_01" showCancelButton="focus" animated>
             </ion-searchbar>
 
-            <ion-card class="user_item">
-                <ion-item>
-                    <ion-grid class="tabla-paciente">
-                        <ion-row>
-                            <ion-col>
-                                <h5 class="normal">No.</h5>
-                            </ion-col>
-                            <ion-col>
-                                <h5 class="normal">Nombre</h5>
-                            </ion-col>
-                            <ion-col>
-                                <h5 class="normal">Area</h5>
-                            </ion-col>
-                            <ion-col>
-                                <h5 class="normal">Estado</h5>
-                            </ion-col>
-                            <ion-col>
-                                <h5 class="normal">Acciones</h5>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </ion-item>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoEstado subtitulo2">
+                            <option selected></option>
+                            <option value='Laboratorio'>Laboratorio</option>
+                    <option value='Odontología'>Odontología</option>
+                    <option value='Rayos X'>Rayos X</option>
+                    <option value='Recepción'>Recepción</option>
+                    <option value='Sonografía'>Sonografía</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                        <select [(ngModel)]="search_03" class="form-select form-select-lg mb-3 selectFiltoEstado subtitulo2">
+                            <option selected></option>
+                            <option value='Activo'>Activo</option>
+                            <option value='Inactivo'>Inactivo</option>
+                      </select>
+                    </div>
+                </div>
+            </div>
 
-                <ion-item lines="inset" *ngFor="let nombres of nombres | filter:searchTerm ;let i=index;">
-                    <ion-grid class="tabla-paciente">
-                        <ion-row>
-                            <ion-col>
-                                <h5 class="normal">{{i+1}} </h5>
-                            </ion-col>
-                            <ion-col>
-                                <h5 class="normal">{{nombres.nombre}}</h5>
-                            </ion-col>
-                            <ion-col>
-                                <h5 class="normal">{{nombres.rol}}</h5>
-                            </ion-col>
-                            <ion-col>
-                                <h5 class="normal">{{nombres.estado}}</h5>
-                            </ion-col>
-                            <ion-col>
+            <ion-button (click)="exportexcel()">Export to Excel</ion-button>
+
+            <!--Otra tabla de ejemplo con boostrab-->
+            <ion-card>
+                <table class="table" id="excel-table-user">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Area</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of nombres | filter:search_01 | filter:search_02; let i=index;">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{item.nombre}}</td>
+                            <td>{{item.rol}}</td>
+                            <td>{{item.estado}}</td>
+                            <td>
                                 <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',nombres.id]"></ion-icon>
                                 <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(nombres.id)"></ion-icon>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </ion-item>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </ion-card>
-
         </ion-card-header>
 
     </ion-card>

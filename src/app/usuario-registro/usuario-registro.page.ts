@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import * as XLSX from 'xlsx';
 
 
 @Component({
@@ -18,7 +19,11 @@ export class UsuarioRegistroPage implements OnInit{
   
   nombres: any = ['nombre', 'estado','rol'];
 
-  searchTerm: string;
+  search_01: string;
+
+  search_02: string;
+
+  search_03: string;
 
   constructor(
     public _apiService: ApiService,
@@ -226,7 +231,26 @@ async presentAlert()
   await alert.present()
   let result = await alert.onDidDismiss();
   console.log(result);
-}
+ }
+
+ 
+fileName= 'Reporte de usuario.xlsx';
+
+  exportexcel(): void
+  {
+    /* pass here the table id */
+    let element = document.getElementById('excel-table-user');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileName);
+ 
+  }
+
 
 }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import * as XLSX from 'xlsx';
 
 
 
@@ -98,44 +99,85 @@ getCount_odontologia()
     })
 }
 
-// generarChart()
-// {
-// const ctx = document.getElementById("chart_dashboard");
-// this.chart_dashboard = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [12, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             y: {
-//                 beginAtZero: true
-//             }
-//         }
-//     }
-// });
-// }
+fileName= 'ExcelSheet.xlsx';
 
+userList = [
 
+  {
+  
+  "id": 1,
+  
+  "name": "Leanne Graham",
+  
+  "username": "Bret",
+  
+  "email": "Sincere@april.biz"
+  
+  },
+  
+  {
+  
+  "id": 2,
+  
+  "name": "Ervin Howell",
+  
+  "username": "Antonette",
+  
+  "email": "Shanna@melissa.tv"
+  
+  },
+  
+  {
+  
+  "id": 3,
+  
+  "name": "Clementine Bauch",
+  
+  "username": "Samantha",
+  
+  "email": "Nathan@yesenia.net"
+  
+  },
+  
+  {
+  
+  "id": 4,
+  
+  "name": "Patricia Lebsack",
+  
+  "username": "Karianne",
+  
+  "email": "Julianne.OConner@kory.org"
+  
+  },
+  
+  {
+  
+  "id": 5,
+  
+  "name": "Chelsey Dietrich",
+  
+  "username": "Kamren",
+  
+  "email": "Lucio_Hettinger@annie.ca"
+  
+  }
+  
+  ];
+
+  exportexcel(): void
+  {
+    /* pass here the table id */
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileName);
+ 
+  }
 }
+
