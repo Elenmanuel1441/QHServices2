@@ -1,0 +1,116 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title style="height: 80px;" class="titulo">Actualizar datos de paciente</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="datos-personales">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Nombres</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="nombre"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Apellidos</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="apellido"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Cédula</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="cedula"></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Teléfono</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="telefono"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Alergias</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="alergias"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Padecimientos</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="padecimientos"></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Ocupación</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="ocupacion"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Dirección</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="direccion"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="floating">Fecha de nacimiento:</ion-label>
+                    <input class="date subtitulo2" [(ngModel)]="fecha_nacimiento" type="date" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="hoy">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <br>
+
+        <ion-list class="card-list">
+
+
+            <ion-item>
+                <label class="subtitulo2">Tipo de sangre:</label>
+                <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mb-3 select">
+                <option  value='A Negativo'>A Negativo</option>
+                <option value='A Positivo'>A Positivo</option>
+                <option value='B Negativo'>B Negativo</option>
+                <option value='B Positivo'>B Positivo</option>
+                <option value='AB Negativo'>AB Negativo</option>
+                <option value='AB Positivo'>AB Positivo</option>
+                <option value='O Negativo'>O Negativo</option>
+                <option value='O Positivo'>O Positivo</option>
+              </select>
+            </ion-item>
+
+            <ion-item>
+                <label class="subtitulo2">Sexo:</label>
+                <select [(ngModel)]="sexo" class="form-select form-select-lg mb-3 select-sexo">
+                <option  value='Masculino'>Masculino</option>
+                <option value='Femenino'>Femenino</option>
+                <option value='Sin especificar'>Sin especificar</option>
+              </select>
+            </ion-item>
+
+            <ion-item>
+                <label class="subtitulo2">ARS:</label>
+                <select [(ngModel)]="ars" class="form-select form-select-lg mb-3 select-ars">
+                <option  value='ARS BMI'>ARS BMI</option>
+                <option value='Primera ARS Humano'>Primera ARS Humano</option>
+                <option value='ARS Palic Salud'>ARS Palic Salud</option>
+                <option value='ARS La Colonial'>ARS La Colonial</option>
+                <option  value='ARS Monumental'>ARS Monumental</option>
+                <option value='ARS Renacer'>ARS Renacer</option>
+                <option value='ARS Simag'>ARS Simag</option>
+                <option value='ARS Universal'>ARS Universal</option>
+                <option value='ARS Yunén'>ARS Yunén</option>
+                <option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</option>
+                <option  value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</option>
+                <option value='ARS Futuro'>ARS Futuro</option>
+              </select>
+            </ion-item>
+
+            <ion-row>
+                <ion-col>
+                    <ion-button class="subtitulo2" type="button" (click)="updatePaciente()" color="success" shape="shape" expand="block"> Actualizar pacientes </ion-button>
+                </ion-col>
+            </ion-row>
+
+        </ion-list>
+    </ion-card>
+</ion-content>

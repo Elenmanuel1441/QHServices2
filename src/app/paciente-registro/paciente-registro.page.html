@@ -1,0 +1,212 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-title style="height: 80px;" class="titulo">Registro de pacientes</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+    <ion-card class="datos-personales2">
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Nombres</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="nombre"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Apellidos</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="apellido"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Cédula</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="cedula"></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Teléfono</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="telefono"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Alergias</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="alergias"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Padecimientos</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="padecimientos"></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Ocupación</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="ocupacion"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label class="subtitulo2" position="fixed">Dirección</ion-label>
+                    <ion-input class="subtitulo2" type="text" [(ngModel)]="direccion"></ion-input>
+                </ion-col>
+                <ion-col>
+
+
+                    <ion-label class="subtitulo2" position="fixed">Fecha de nacimiento:</ion-label>
+                    <input class="date subtitulo2" [(ngModel)]="fecha_nacimiento" type="date" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="hoy">
+                    <!--  <ion-datetime class="subtitulo" [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime> -->
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <br>
+
+        <ion-list class="card_list_select">
+            <ion-item>
+                <label class="subtitulo2">Tipo de sangre:</label>
+                <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mb-3 select_sangre">
+                <option  value='A Negativo'>A Negativo</option>
+                <option value='A Positivo'>A Positivo</option>
+                <option value='B Negativo'>B Negativo</option>
+                <option value='B Positivo'>B Positivo</option>
+                <option value='AB Negativo'>AB Negativo</option>
+                <option value='AB Positivo'>AB Positivo</option>
+                <option value='O Negativo'>O Negativo</option>
+                <option value='O Positivo'>O Positivo</option>
+              </select>
+            </ion-item>
+
+            <ion-item>
+                <label class="subtitulo2">Sexo:</label>
+                <select [(ngModel)]="sexo" class="form-select form-select-lg mb-3 select-sexo">
+                <option  value='Masculino'>Masculino</option>
+                <option value='Femenino'>Femenino</option>
+                <option value='Sin especificar'>Sin especificar</option>
+              </select>
+            </ion-item>
+
+            <ion-item>
+                <label class="subtitulo2">ARS:</label>
+                <select [(ngModel)]="ars" class="form-select form-select-lg mb-3 select-ars">
+                <option  value='ARS BMI'>ARS BMI</option>
+                <option value='Primera ARS Humano'>Primera ARS Humano</option>
+                <option value='ARS Palic Salud'>ARS Palic Salud</option>
+                <option value='ARS La Colonial'>ARS La Colonial</option>
+                <option  value='ARS Monumental'>ARS Monumental</option>
+                <option value='ARS Renacer'>ARS Renacer</option>
+                <option value='ARS Simag'>ARS Simag</option>
+                <option value='ARS Universal'>ARS Universal</option>
+                <option value='ARS Yunén'>ARS Yunén</option>
+                <option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</option>
+                <option  value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</option>
+                <option value='ARS Futuro'>ARS Futuro</option>
+              </select>
+            </ion-item>
+
+
+            <ion-row>
+                <ion-col>
+                    <ion-button class="subtitulo2" type="button" (click)="addPaciente()" color="success" shape="shape" expand="block"> Añadir pacientes </ion-button>
+                </ion-col>
+            </ion-row>
+
+        </ion-list>
+
+        <ion-searchbar placeholder="Buscar..." [(ngModel)]="search_01" showCancelButton="focus" animated>
+        </ion-searchbar>
+
+        <!--Otra tabla de ejemplo con boostrab-->
+        <ion-button class="subtitulo2 btnExport" type="button" (click)="exportexcel()" color="primary" shape="shape" expand="block">Exportar</ion-button>
+        <br>
+        <ion-card class="tabla_pacientes">
+            <table class="table table-hover table-bordered" id="excel-table-paciente">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Cédula</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of pacientes | filter:search_01 ; let i=index;">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{item.nombre_paciente}}</td>
+                        <td>{{item.apellido_paciente}}</td>
+                        <td>{{item.telefono_paciente}}</td>
+                        <td>{{item.cedula_paciente }}</td>
+                        <td>
+                            <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',item.id_paciente]"></ion-icon>
+                            <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',item.id_paciente]"></ion-icon>
+                            <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(item.id_paciente)"></ion-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ion-card>
+        <!-- 
+        <ion-card class="card_lista_paciente">
+            <ion-item class="list_item_titulos">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <h5 class="normal">No.</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Nombre</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Apellido</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Teléfono</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Cédula</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Acciones</h5>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+
+            <ion-item class="list_item_titulos" lines="inset" *ngFor="let pacientes of pacientes | filter:searchTerm ;let i=index;">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <h5 class="normal">{{i+1}} </h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">{{pacientes.nombre_paciente}}</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">{{pacientes.apellido_paciente}}</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">{{pacientes.telefono_paciente}}</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">{{pacientes.cedula_paciente}}</h5>
+                        </ion-col>
+                        <ion-col>
+                            <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',pacientes.id_paciente]"></ion-icon>
+                            <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',pacientes.id_paciente]"></ion-icon>
+                            <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(pacientes.id_paciente)"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-card> -->
+
+    </ion-card>
+
+</ion-content>

@@ -1,104 +1,93 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './services/auth.guard';
-
 
 const routes: Routes = [
-    {
-      path: 'login',
-      loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-    },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
-  {
-    path: 'admin',
-    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
+  { 
+    path: '', redirectTo: 'home', pathMatch: 'full' 
   },
-  {
-    path: 'dashboard',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
-  {
-    path: 'gestion-usuario',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/gestion-usuario/gestion-usuario.module').then( m => m.GestionUsuarioPageModule)
-  },
-  {
-    path: 'registro-pacientes',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/registro-pacientes/registro-pacientes.module').then( m => m.RegistroPacientesPageModule)
-  },
-  {
-    path: 'laboratorio',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/laboratorio/laboratorio.module').then( m => m.LaboratorioPageModule)
-  },
-  {
-    path: 'cola-laboratorio',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/cola-laboratorio/cola-laboratorio.module').then( m => m.ColaLaboratorioPageModule)
-  },
-  {
-    path: 'pacientes-registrados',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/pacientes-registrados/pacientes-registrados.module').then( m => m.PacientesRegistradosPageModule)
-  },
-  {
-    path: 'usuarios',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
-  },
+
   {
     path: 'rayos-x',
-    loadChildren: () => import('./pages/rayos-x/rayos-x.module').then( m => m.RayosXPageModule)
+    loadChildren: () => import('./rayos-x/rayos-x.module').then( m => m.RayosXPageModule)
   },
   {
-    path: 'odontodologia',
-    loadChildren: () => import('./pages/odontodologia/odontodologia.module').then( m => m.OdontodologiaPageModule)
+    path: 'paciente-registro',
+    loadChildren: () => import('./paciente-registro/paciente-registro.module').then( m => m.PacienteRegistroPageModule)
   },
   {
-    path: 'odontodologia-update',
-    loadChildren: () => import('./pages/odontodologia-update/odontodologia-update.module').then( m => m.OdontodologiaUpdatePageModule)
-  },
-  {
-    path: 'pacientes-add-area/:id',
-    loadChildren: () => import('./pages/pacientes-add-area/pacientes-add-area.module').then( m => m.PacientesAddAreaPageModule)
-  },
-  {
-    path: 'paciente-update/:id',
-    loadChildren: () => import('./pages/paciente-update/paciente-update.module').then( m => m.PacienteUpdatePageModule)
-  },
-  {
-    path: 'rayos-x-update',
-    loadChildren: () => import('./pages/rayos-x-update/rayos-x-update.module').then( m => m.RayosXUpdatePageModule)
+    path: 'usuario-registro',
+    loadChildren: () => import('./usuario-registro/usuario-registro.module').then( m => m.UsuarioRegistroPageModule)
   },
   {
     path: 'sonografia',
-    loadChildren: () => import('./pages/sonografia/sonografia.module').then( m => m.SonografiaPageModule)
+    loadChildren: () => import('./sonografia/sonografia.module').then( m => m.SonografiaPageModule)
   },
   {
-    path: 'sonografia-update',
-    loadChildren: () => import('./pages/sonografia-update/sonografia-update.module').then( m => m.SonografiaUpdatePageModule)
+    path: 'paciente-update/:id',
+    loadChildren: () => import('./paciente-update/paciente-update.module').then( m => m.PacienteUpdatePageModule)
   },
   {
-    path: 'registro-usurios',
-    loadChildren: () => import('./pages/registro-usurios/registro-usurios.module').then( m => m.RegistroUsuriosPageModule)
+    path: 'usuario-update/:id',
+    loadChildren: () => import('./usuario-update/usuario-update.module').then( m => m.UsuarioUpdatePageModule)
   },
   {
-    path: 'usuarios-update',
-    loadChildren: () => import('./pages/usuarios-update/usuarios-update.module').then( m => m.UsuariosUpdatePageModule)
+    path: 'paciente-add-area/:id',
+    loadChildren: () => import('./paciente-add-area/paciente-add-area.module').then( m => m.PacienteAddAreaPageModule)
   },
   {
-   
-      path: '**',
-      redirectTo: 'admin',
-      pathMatch: 'full'
-    
-  }
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+  },
+  {
+    path: 'sonografia-update/:id_col_sonografia',
+    loadChildren: () => import('./sonografia-update/sonografia-update.module').then( m => m.SonografiaUpdatePageModule)
+  },
+
+  {
+    path: 'rayos-x-update/:id_col_rayosx',
+    loadChildren: () => import('./rayos-x-update/rayos-x-update.module').then( m => m.RayosXUpdatePageModule)
+  },
+  {
+    path: 'laboratorio',
+    loadChildren: () => import('./laboratorio/laboratorio.module').then( m => m.LaboratorioPageModule)
+  },
+  {
+    path: 'laboratorio-update/:id_col_laboratorio',
+    loadChildren: () => import('./laboratorio-update/laboratorio-update.module').then( m => m.LaboratorioUpdatePageModule)
+  },
+  {
+    path: 'odontologia',
+    loadChildren: () => import('./odontologia/odontologia.module').then( m => m.OdontologiaPageModule)
+  },
+  {
+    path: 'odontologia-update/:id_col_odontologia',
+    loadChildren: () => import('./odontologia-update/odontologia-update.module').then( m => m.OdontologiaUpdatePageModule)
+  },
+
+  {
+    path: 'reportes',
+    loadChildren: () => import('./reportes/reportes.module').then( m => m.ReportesPageModule)
+  },
+  { 
+    path: '**', redirectTo: 'home', pathMatch: 'full' 
+  },
+
+
+ 
+
 ];
 
 @NgModule({

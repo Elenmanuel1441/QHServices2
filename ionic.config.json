@@ -1,7 +1,7 @@
 {
-  "name": "QHServices",
+  "name": "QHServices2",
   "integrations": {
-    "capacitor": {}
+    "cordova": {}
   },
   "type": "angular"
 }
