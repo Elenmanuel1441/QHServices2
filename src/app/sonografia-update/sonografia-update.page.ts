@@ -370,7 +370,7 @@ printObitoPdf() {
 
 
 createAbdominalPdf() {
-  var obitoDefinition: any = {
+  var abdominalDefinition: any = {
     pageSize: 'LETTER',
     content:[
 
@@ -400,97 +400,62 @@ createAbdominalPdf() {
 
     {
       text:  [
-				     {text: 'FETO:', style: 'subheader'}, this.sonoObito.feto,
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
 			      ]
     },
 
     {
       text:  [
-             { text: 'POSICION:', style: 'subheader'}, this.sonoObito.posicion,
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
 			      ]
     },
 
     {
       text:  [
-             { text: 'DORSO:', style: 'subheader'}, this.sonoObito.dorso,'\n\n',
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA'}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS'}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
 			      ]
     },
 
     {
       text:  [
-             { text: 'PESO:', style: 'subheader'}, this.sonoObito.peso,{ text: 'g'}
-			      ]    
-    },
-
-    {
-      text:  [
-             { text: 'COLUMNA '}, this.sonoObito.columna,
-             { text: ', ESTOMAGO '}, this.sonoObito.estomago,
-             { text: ', RIÑONES '}, this.sonoObito.rinones,
-             { text: ', VEJIGA '}, this.sonoObito.vejiga,
-             { text: ', CABEZA '}, this.sonoObito.cabeza,'\n\n',
-			      ]    
-    },
-
-    {
-      text:  [
-              { text: 'FCF:', style: 'subheader' }, this.sonoObito.fcf,'\n\n',
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA'}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS'}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
 			      ]
     },
 
-    {
-      text:  [
-             { text: 'PLACENTA:', style: 'subheader' }, this.sonoObito.placenta,
-			      ]
-    },
+   
+   
 
-    {
-      text:  [
-        { text: 'GRADO:', style: 'subheader'}, this.sonoObito.grado, 
-			      ]
-    },
-
-    {
-      text:  [
-        { text: 'CORDON UMBILICAL:', style: 'subheader'}, this.sonoObito.cordon,
-			      ]
-    },
-
-    {
-      text:  [
-        { text: 'LIQUIDO AMNIOTICO:', style: 'subheader'}, this.sonoObito.liquido,
-			      ]
-    },
-
-    {
-      text:  [
-        { text: 'CERVIX:', style: 'subheader'}, this.sonoObito.cervix, '\n\n',
-			      ]
-    },
-
-
-
-
-    {
-      text:  [
-              { text: 'SEXO:', style: 'subheader' }, this.sonoObito.sexo,'\n\n',
-			      ]
-    },
-    
-     { text: 'CONCLUSIONES:', style: 'subheader' }, this.sonoObito.conclusiones,'\n\n',
-			      
-      {
-        ul: [
-         
-          
-           ]
-      },
-
-      {
-        text:  [
-                 { text: 'FPP:', style: 'subheader'}, this.sonoObito.fpp
-              ]
-      },
       { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
       { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
       
@@ -512,7 +477,7 @@ createAbdominalPdf() {
       }
     }
   }
-  this.pdfObj = pdfMake.createPdf(obitoDefinition);
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
 
 printAbdominalPdf() {
