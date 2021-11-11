@@ -121,6 +121,9 @@ export class SonografiaUpdatePage implements OnInit {
      this.sonoObito.nombre = sonografia.nombre_paciente;
      this.sonoObito.apellido = sonografia.apellido_paciente;
      this.sonoObito.edad = sonografia.EDAD;
+     this.sonoAbdominal.nombre = sonografia.nombre_paciente;
+     this.sonoAbdominal.apellido = sonografia.apellido_paciente;
+     this.sonoAbdominal.edad = sonografia.EDAD;
      
       }, (err:any)=>{
    console.log("ERROR", err)
@@ -266,7 +269,7 @@ async presentToastError(mensaje: string) {
 
     {
       text:  [
-              { text: 'FCF:', style: 'subheader' }, this.sonoObito.fcf,'\n\n',
+              { text: 'FCF:', style: 'subheader' }, this.sonoObito.fcf,'\n\n',{text:'L/M'}
 			      ]
     },
 
@@ -378,27 +381,22 @@ createAbdominalPdf() {
                {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
                ]
       },
-
-      {
-        image: 'https://edteam-media.s3.amazonaws.com/specialities/original/6804abfc-5cc0-4199-a162-173e451d34df.png'
-      },
-
-      {
+           {
         text:  [
-               {text: 'PACIENTE:', style: 'subheader'}, this.sonoObito.nombre +' '+ this.sonoObito.apellido, '\n\n',
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
               ]
       },
 
       {
         text:  [
-               {text: 'EDAD:', style: 'subheader'}, this.sonoObito.edad,'\n\n',
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
               ]
       },
 
       { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
 
-      { text: 'SONOGRAFIA OBSTETRICA:', style: 'subheader', alignment: 'center' },  
-      { text: 'ESTUDIO REALIZADO POR VIA ABDOMINAL, CON TRANSDUCTOR DE 3.5MHZ ENCONTRANDO AL MOMENTO DEL ESTUDIO:\n\n'},     
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
 
     {
       text:  [
