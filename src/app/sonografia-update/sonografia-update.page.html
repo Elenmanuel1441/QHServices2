@@ -268,7 +268,7 @@
                 <ion-col>
                     <label class="subtitulo2">VIAS BILIARES:</label>
                     <select [(ngModel)]="sonoAbdominal.viasBiliares" class="form-select form-select-lg mb-3 select subtitulo2">
-                            <option  value='DILATADA'>DILATADA</option>
+                            <option  value='DILATADAS'>DILATADA</option>
                             <option value='SIN DILATAR'>SIN DILATAR</option>
                               
                           </select>
@@ -303,22 +303,23 @@
                 </ion-col>
 
                 <ion-col>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaPared">PARED</ion-input>
+                    <label class="subtitulo2">PARED:</label>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaPared"></ion-input>
                 </ion-col>
                 <ion-col>
-
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaLongitud">LONGITUD</ion-input>
+                    <label class="subtitulo2">LONGITUD:</label>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaLongitud"></ion-input>
                 </ion-col>
                 <ion-col>
-
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaAncho">ANCHO</ion-input>
+                    <label class="subtitulo2">ANCHO:</label>
+                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.vesiculaAncho"></ion-input>
                 </ion-col>
                 <ion-col>
                     <label class="subtitulo2">LITOS:</label>
                     <select [(ngModel)]="sonoAbdominal.vesiculaLitos" class="form-select form-select-lg mb-3 select subtitulo2">
-                            <option  value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
-                            <option value='SE VISUALIZAN NORMALES'>SE VISUALIZAN</option>
-                            <option value='SE VISUALIZAN BARROS'>SE VISUALIZAN BARROS</option>         
+                            <option  value='NO SE VISUALIZAN '>NO SE VISUALIZAN</option>
+                            <option value='SE VISUALIZAN NORMALES '>SE VISUALIZAN</option>
+                            <option value='SE VISUALIZAN BARROS '>SE VISUALIZAN BARROS</option>         
                           </select>
                 </ion-col>
             </ion-row>
@@ -329,8 +330,8 @@
                 <ion-col>
                     <label class="subtitulo2">POLIPOS:</label>
                     <select [(ngModel)]="sonoAbdominal.vesiculaPolipos" class="form-select form-select-lg mb-3 select subtitulo2">
-                            <option  value='PRESENTE'>PRESENTE</option>
-                            <option value='AUSENTE'>AUSENTE</option>
+                            <option  value='PRESENTES'>PRESENTES</option>
+                            <option value='AUSENTES'>AUSENTES</option>
                       </select>
                 </ion-col>
             </ion-row>
@@ -347,8 +348,8 @@
                 <ion-col>
                     <label class="subtitulo2">FORMA:</label>
                     <select [(ngModel)]="sonoAbdominal.pancreasForma" class="form-select form-select-lg mb-3 select subtitulo2">
-                            <option  value='NORMAL'>NORMAL</option>
-                            <option value='IRREGULAR'>IRREGULAR</option>
+                            <option  value='DE FORMA NORMAL'>NORMAL</option>
+                            <option value='DE FORMA IRREGULAR'>IRREGULAR</option>
                    </select>
                 </ion-col>
                 <ion-col>
@@ -428,7 +429,7 @@
                     <label class="subtitulo2">CONTORNO:</label>
                     <select [(ngModel)]="sonoAbdominal.rinondContornos" class="form-select form-select-lg mb-3 select subtitulo2">
                             <option  value='REGULAR'>REGULAR</option>
-                            <option value='IRREGULAR'>IRREGULAR/option>     
+                            <option value='IRREGULAR'>IRREGULAR</option>     
                           </select>
                 </ion-col>
                 <ion-col>
