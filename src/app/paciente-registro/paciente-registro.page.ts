@@ -60,8 +60,8 @@ export class PacienteRegistroPage implements OnInit {
         console.log("SUCCESS ===",res);
         this.presentToast('Guardado exitosamente!');
         this.getPacientes();
-    //  this.limpiarCampos();
-        setTimeout(() => this.limpiarCampos,1000);
+        this.limpiarCampos();
+       
       },(error: any) => {
         this.presentToastErrorADD('Error al guardar!');
         console.log("Error ===",error);
