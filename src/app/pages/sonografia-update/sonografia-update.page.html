@@ -1,0 +1,255 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="titulo">
+          <div>
+              <nav class="navbar navbar-light bg-light">
+                  <div class="container-fluid">
+                      <select [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option value='1'>OBSTETRICA OBITO</option>
+                          <option value='2'>VESICULAR</option>
+                          <option value='3'>TRANS VAGINAL</option>
+                        </select>
+                      <ion-button class="subtitulo2 btn_continuar" type="button" (click)="setVi()" color="primary" shape="shape" expand="block"> continuar </ion-button>
+                  </div>
+              </nav>
+          </div>
+
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="showObito">
+
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <ion-label class="subtitulo2" position="floating" stacked>NOMBRE:</ion-label>
+                  <ion-input class="subtitulo2" [(ngModel)]="letterObject.nombre +' '+ letterObject.apellido"></ion-input>
+              </ion-col>
+              <ion-col>
+                  <ion-label class="subtitulo2" position="floating" stacked>EDAD:</ion-label>
+                  <ion-input class="subtitulo2" [(ngModel)]="letterObject.edad"></ion-input>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">FETO:</label>
+                  <select [(ngModel)]="letterObject.feto" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option value='ÚNICO'>ÚNICO</option>
+                          <option value='GEMELAR'>GEMELAR</option>
+                          <option value='TRES'>TRES</option>
+                          <option value='CUATRO'>CUATRO</option>  
+                        </select>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <label class="subtitulo2">POSICIÓN:</label>
+                  <select [(ngModel)]="letterObject.posicion" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='CEFÁLICO'>CEFÁLICO</option>
+                          <option value='PÉLVICO'>PÉLVICO</option>
+                          <option value='PODÁLICO'>PODÁLICO</option>      
+                        </select>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">DORSO:</label>
+                  <select [(ngModel)]="letterObject.dorso" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='POSTERIOR DERECHO'>POSTERIOR DERECHO</option>
+                          <option value='POSTERIOR IZQUIERDO'>POSTERIOR IZQUIERDO</option>
+                          <option value='ANTERIOR DERECHO'>ANTERIOR DERECHO</option>
+                          <option value='ANTERIOR IZQUIERDO'>ANTERIOR IZQUIERDO</option>    
+                        </select>
+              </ion-col>
+              <ion-col>
+                  <ion-label class="subtitulo2" stacked>PESO:</ion-label>
+                  <ion-input class="subtitulo2" type="number" [(ngModel)]="letterObject.peso"></ion-input>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <label class="subtitulo2" class="subtitulo2">COLUMNA VERTEBRAL:</label>
+                  <select [(ngModel)]="letterObject.columna" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='POCO VALORABLE'>POCO VALORABLE</option>
+                          <option value='MORFOLOGICAMENTE NORMAL'>MORFOLOGICAMENTE NORMAL</option>
+                          <option value='HALLAZGOS PATOLOGICOS'>HALLAZGOS PATOLOGICOS</option>
+                          </select>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">ESTÓMAGO:</label>
+                  <select [(ngModel)]="letterObject.estomago" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='POCO VALORABLE'>POCO VALORABLE</option>
+                          <option value='LLENO'>LLENO</option>
+                          <option value='VACIO'>VACIO</option>        
+                        </select>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">RIÑONES:</label>
+                  <select [(ngModel)]="letterObject.rinones" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
+                          <option value='SE VISUALIZAN NORMALES'>SE VISUALIZAN NORMALES</option>         
+                        </select>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <label class="subtitulo2">VEJIGA:</label>
+                  <select [(ngModel)]="letterObject.vejiga" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
+                          <option value='LLENA'>LLENA</option>
+                          <option value='VACIA'>VACIA</option>
+                    </select>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">CABEZA:</label>
+                  <select [(ngModel)]="letterObject.cabeza" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='POCO VALORABLE'>POCO VALORABLE</option>
+                          <option value='NORMOCEFALICA'>NORMOCEFALICA</option>
+                          <option value='ACABALGAMIENTO DE LOS PARIETALES'>ACABALGAMIENTO DE LOS PARIETALES</option>            
+                        </select>
+              </ion-col>
+              <ion-col>
+                  <ion-label class="subtitulo2" stacked>FCF:</ion-label>
+                  <ion-input class="subtitulo2" type="number" [(ngModel)]="letterObject.fcf"></ion-input>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <label class="subtitulo2">PLACENTA:</label>
+                  <select [(ngModel)]="letterObject.placenta" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='FUNDICA'>FUNDICA</option>
+                          <option value='ANTERIOR CORPORAL'>ANTERIOR CORPORAL</option>
+                          <option value='PREVIA'>PREVIA</option>
+                       </select>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">GRADO:</label>
+                  <select [(ngModel)]="letterObject.grado" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='CERO'>FÚNDICA</option>
+                          <option value='UNO'>ANTERIOR CORPORAL</option>
+                          <option value='DOS'>PREVIA</option>
+                          <option value='TRES'>TRES</option>        
+                        </select>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">CORDON:</label>
+                  <select [(ngModel)]="letterObject.cordon" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='NORMAL'>NORMAL</option>
+                          <option value='NO VALORABLE'>NO VALORABLE</option>           
+                        </select>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+          <ion-row>
+
+              <ion-col>
+                  <label class="subtitulo2">LÍQUIDO:</label>
+                  <select [(ngModel)]="letterObject.liquido" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='AUSEMNTE'>AUSENTE</option>
+                          <option value='NORMAL'>NORMAL</option>
+                          <option value='DISMINUIDO'>DISMINUIDO</option>
+                        </select>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">CERVIX:</label>
+                  <select [(ngModel)]="letterObject.cervix" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='ABIERTO'>ABIERTO</option>
+                          <option value='CERRADO'>CERRADO</option>     
+                        </select>
+              </ion-col>
+              <ion-col>
+                  <label class="subtitulo2">SEXO:</label>
+                  <select [(ngModel)]="letterObject.sexo" class="form-select form-select-lg mb-3 select subtitulo2">
+                          <option  value='MASCULINO'>MASCULINO</option>
+                          <option value='FEMENINO'>FEMENINO</option>
+                          <option value='NO SE VISUALIZA'>NO SE VISUALIZA</option>
+                        </select>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <ion-label class="subtitulo2" stacked>FPP:</ion-label>
+                  <input class="date subtitulo2" [(ngModel)]="letterObject.fpp" type="date" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="2100-01-01">
+              </ion-col>
+              <ion-col>
+                  <ion-label class="subtitulo2 label" stacked>CONCLUSIONES:</ion-label>
+                  <ion-textarea class="subtitulo2" [(ngModel)]="letterObject.conclusiones"></ion-textarea>
+              </ion-col>
+              <ion-col>
+                  <ion-button class="subtitulo2" expand="block" (click)="createPdf()">crear</ion-button>
+
+                  <ion-button class="subtitulo2" expand="block" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+
+  </ion-card>
+
+  <ion-list *ngIf="showVesi">
+      <ion-item>
+          <h1 class="subtitulo2">Sonografia Vesicular</h1>
+          <ion-label stacked>Nombre</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>asdsad</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Feto</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-button (click)="createPdf()">crear</ion-button>
+      </ion-item>
+      <ion-item>
+          <ion-button (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+      </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="showTransV">
+      <ion-item>
+          <h1 class="subtitulo2">Sonografia Transvaginal</h1>
+
+
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked></ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Feto</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-button (click)="createPdf()">crear</ion-button>
+      </ion-item>
+      <ion-item>
+          <ion-button (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+      </ion-item>
+  </ion-list>
+
+</ion-content>

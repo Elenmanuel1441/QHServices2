@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title style="height: 80px;" class="titulo">Finalizar paciente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <ion-item>
+          <ion-label>Estado</ion-label>
+          <ion-select [(ngModel)]="estado_rayosx" type="number">
+              <ion-select-option value=1>Activo</ion-select-option>
+              <ion-select-option value=2>Inactivo</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-button class="subtitulo" type="button" (click)="updateRayosx()" color="primary" shape="shape" expand="block"> cambiar estado </ion-button>
+  </ion-card>
+</ion-content>

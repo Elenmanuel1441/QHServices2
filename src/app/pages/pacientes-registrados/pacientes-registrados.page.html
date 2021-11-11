@@ -1,0 +1,35 @@
+<div class="container mt-5 animated fadeIn">
+  <!-- Content table -->
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h2 class="h4 mb-0 text-gray-800">Lista de Pacientes</h2>
+      </div>
+
+  <div class="container table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Paciente</th>
+            <th scope="col">Turno</th>
+            <th scope="col">Condicción</th>
+            <th scope="col">Area de Atención</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let paciente of pacientes; let i = index">
+              <th> {{ i + 1 | number}} </th>
+              <td> {{paciente.nombre}} {{paciente.apellido}}</td>
+              <td>MG-8</td>
+              <td>Estable</td>
+              <td>Medicina General</td>
+              <td><span class="badge bg-success">consulta</span></td>
+              <td><i class="fa fa-edit mr-2 text-primary cambios"></i><i class="fa fa-trash text-danger cambios"></i></td>
+            </tr>
+            <tr>
+        </tbody>
+      </table>
+      </div>
+</div>
