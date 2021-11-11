@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController} from  '@ionic/angular';
-import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +6,5 @@ import {Storage} from '@ionic/storage';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(
-private storage: Storage,
-public navctel: NavController,
-
-  ) {}
-
-
+  constructor() {}
 }

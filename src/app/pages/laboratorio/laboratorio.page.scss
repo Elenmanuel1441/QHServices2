@@ -1,0 +1,59 @@
+.card {
+    margin: auto;
+    width: 95%;
+    display: grid;
+    grid-template-areas: "card-title card-title" "card-item card-item-2-tabla" "card-item card-item-2-tabla";
+    padding: 20px;
+    background: #11998e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ffffff, #c07b7b);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ffffff, #faf8f8);
+    border-radius: 1em;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    color: #6c757d;
+}
+
+.card-title {
+    grid-area: card-title;
+    color: #6c757d;
+}
+
+.card-title h2 {
+    font-size: 25px;
+}
+
+.card-item {
+    grid-area: card-item;
+}
+
+.card-item-2 .card-item-2-input {
+    margin-right: 5px;
+}
+
+.card-item-2-btn {
+    margin-top: 10px;
+}
+
+.card-item {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    margin-right: 20px;
+}
+
+.card-item-2 {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-tabla {
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+

@@ -1,0 +1,56 @@
+<ion-content class="animated fadeIn">
+    <h2 class="h3" style="margin-left: 50px;text-transform: uppercase;">Sonografias</h2>
+  <ion-card>
+      <ion-item>
+          <ion-grid class="tabla-paciente">
+              <ion-row>
+                  <ion-col>
+                      No.
+                  </ion-col>
+                  <ion-col>
+                      Nombre
+                  </ion-col>
+                  <ion-col>
+                      Apellido
+                  </ion-col>
+                  <ion-col>
+                      Cédula
+                  </ion-col>
+                  <ion-col>
+                      Teléfono
+                  </ion-col>
+                  <ion-col>
+                      Acciones
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </ion-item>
+
+      <ion-item lines="inset" *ngFor="let sonografia of sonografias;let i=index;">
+          <ion-grid class="tabla-paciente">
+              <ion-row>
+                  <ion-col>
+                      <h5>{{i+1}} </h5>
+                  </ion-col>
+                  <ion-col>
+                      <h5 class="normal">{{sonografia.nombre_paciente}}</h5>
+                  </ion-col>
+                  <ion-col>
+                      <h5 class="normal">{{sonografia.apellido_paciente}}</h5>
+                  </ion-col>
+                  <ion-col>
+                      <h5 class="normal">{{sonografia.cedula_paciente}}</h5>
+                  </ion-col>
+                  <ion-col>
+                      <h5 class="normal">{{sonografia.telefono_paciente}}</h5>
+                  </ion-col>
+                  <ion-col>
+                      <ion-button [routerLink]="['/sonografia-update/',sonografia.id_col_sonografia]"> Liberar</ion-button>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+
+      </ion-item>
+
+  </ion-card>
+</ion-content>

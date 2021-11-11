@@ -1,0 +1,67 @@
+.card {
+
+    width: 80%;
+    margin: auto;
+    border-radius: 1em;
+    box-shadow: 0 0.5rem 1rem rgba(187, 65, 65, 0.15);
+    position: relative;
+  
+}
+
+.card-header {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+    font-size: 13px;
+    background-color: #fff;
+    border-radius: 1em;
+}
+
+.container-tabla {
+    background-color: #fff;
+    border-radius: 1em;
+}
+
+.card-body {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.card-body-iformacion {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    margin-right: 20px;
+}
+
+.example-form-field{
+    width: 100%;
+}
+
+.card-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.btn-form{
+    height:24px;
+    background-color: lightcyan;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    margin-top: -40px;
+}
+
+input{
+    font-size: 1rem; 
+    width: 100%;   
+}
+
+select{
+    font-size: 1rem; 
+    width: 100%;   
+
+}
