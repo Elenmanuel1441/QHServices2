@@ -14,23 +14,10 @@ ion-title {
     height: 80px;
 }
 
-.select {
-
-    margin: 15px 0 0 0;
-    width: 250px;
-    height: 38px;
-}
-
 .item_select {
     width: 500px;
     border-radius: 10px;
     margin: auto;
-}
-
-.btn_continuar {
-    margin: 0 530px 0 18px;
-    width: 200px;
-    height: 38px;
 }
 
 ion-input {
@@ -60,4 +47,8 @@ ion-button {
 ion-textarea {
     background-color: white;
     width: 340px;
+}
+
+.btn_continuar {
+    height: 35px;
 }
