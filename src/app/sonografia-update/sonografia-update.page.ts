@@ -89,8 +89,15 @@ export class SonografiaUpdatePage implements OnInit {
   showObito: boolean;
   showAbdominal: boolean;
   showTransV: boolean;
-  showBazo: boolean;
-  toggleBazo:boolean = false;
+  showBazo: boolean = true;
+  showVesicula: boolean=true;
+  showRinond: boolean = true;
+  showRinonl:boolean = true;
+  toggleBazo:boolean = true;
+  toggleVesicula: boolean = true;
+  toggleRinond: boolean = true;
+  toggleRinonl: boolean = true;
+  
 
 
   pdfObj = null;
@@ -135,15 +142,43 @@ export class SonografiaUpdatePage implements OnInit {
  
 }
 // usa el toggle para mostrar u ocultar los campos de bazo
-Bazo(bazo){
+bazo(){
    
 if (this.toggleBazo == true) {
   this.showBazo = true;
   
 }
-else{ this.showBazo = false}
+else if( this.toggleBazo == false ){ 
+  this.showBazo = false;
 }
-
+console.log(this.showBazo)
+}
+rinonl(){
+  if (this.toggleRinonl== false){
+    this.showRinonl =false;
+      }
+      else if (this.toggleRinonl == true){
+        this.showRinonl = true; 
+      }
+}
+rinond(){
+  if (this.toggleRinond== false){
+    this.showRinond =false;
+      }
+      else if (this.toggleRinond == true){
+        this.showRinond = true; 
+      }
+    
+}
+vesicula(){
+  if (this.toggleVesicula== false){
+    this.showVesicula =false;
+      }
+      else if (this.toggleVesicula == true){
+        this.showVesicula  = true; 
+      }
+}
+ 
  
  updateSonografia()
 {
@@ -382,8 +417,8 @@ printObitoPdf() {
     
 }
 
-
-createAbdominalPdf() {
+//imprime todo el formulario
+createAbdominalAllPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
     content:[
@@ -534,6 +569,2184 @@ createAbdominalPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
+//no imprimi el riñon derecho
+createAbdominalno_RinondPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime la vesicula
+createAbdominalno_VesiculaPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime el riñon izquierdo
+createAbdominalno_RinonlPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime el bazo
+createAbdominalno_BazoPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime la vesicula,riñones y bazo
+createAbdominalno_vesicula_rinond_rinonl_bazoPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime vesicula ni riñones
+createAbdominalno_vesicula_rinond_rinonlPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime bazo,vesicula,rinon derecho
+createAbdominalno_vesicula_rinond_bazoPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime bazo,vesicula,rinon izquierdo
+createAbdominalno_vesicula_rinonl_bazoPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime vesicula ni riñon derecho
+createAbdominalno_vesicula_rinondPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+
+//no imprime vesicula ni riñon izquierdo
+createAbdominalno_vesicula_rinonlPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime ni vesicula ni bazo
+createAbdominalno_vesicula_bazoPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+//no imprime ni bazo ni riñon derecho
+createAbdominalno_bazo_rinondPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+// no imprime bazo ni riñon izquierdo
+createAbdominalno_bazo_rinonlPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+// no imprime riñones
+createAbdominalno_rinoneslPdf() {
+  var abdominalDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+
+      {
+        text:  [
+               {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
+               ]
+      },
+           {
+        text:  [
+               {text: 'PACIENTE:', style: 'subheader'}, this.sonoAbdominal.nombre +' '+ this.sonoAbdominal.apellido, '\n\n',
+              ]
+      },
+
+      {
+        text:  [
+               {text: 'EDAD:', style: 'subheader'}, this.sonoAbdominal.edad,'\n\n',
+              ]
+      },
+
+      { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+
+      { text: 'SONOGRAFIA ABDOMINAL:', style: 'subheader', alignment: 'center' },  
+      { text: 'ESTIMADO DR., SE REALIZARON CORTES ULTRASONOGRAFICOS  A SU PACIENTE  EN EL SISTEMA HEPATOBILIAR , EN TIEMPO  REAL SECTORIAL CON TRANSDUCTOR DE 3.5 MHz DONDE SE ENCUENTRA AL MOMENTO DEL ESTUDIO LO SIGUIENTE:\n\n'},     
+
+    {
+      text:  [
+				     {text: 'HIGADO:', style: 'subheader'}, {text:  [
+              { text: 'SE OBSERVA  EN SITUACION ADECUADA CON MORFOLOGIA  '}, this.sonoAbdominal.morfologia,
+              { text: ', LESIONES FOCALES '}, this.sonoAbdominal.lesionesFocales,
+              { text: ', EL HIGADO MIDE EN SU EJE MAYOR '}, this.sonoAbdominal.medidaHigado,{text:'mm, '},
+              { text: 'Y VIAS BILIARES INTRAHEPATICAS '}, this.sonoAbdominal.viasBiliares,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.vesiculaForma,
+              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
+              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
+              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
+              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
+              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
+              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
+              { text: ''}, this.sonoAbdominal.pancreasForma,
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
+              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
+              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'RIÑON DERECHO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+			      ]
+    },
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
+
+      { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
+      { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 14,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 12,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      }
+    }
+  }
+  this.pdfObj = pdfMake.createPdf(abdominalDefinition);
+}
+
+checkAbdominalPdf(){
+//imprime todo
+if (this.showRinonl== true && this.showVesicula == true && this.showBazo == true && this.showRinond == true) {
+  this.createAbdominalAllPdf();
+}
+//no imprime la vesicula,riñones y bazo
+else if (this.showRinonl== false && this.showVesicula == false && this.showBazo == false && this.showRinond == false) {
+  this.createAbdominalno_vesicula_rinond_rinonl_bazoPdf();
+} 
+//no imprime vesicula ni riñones
+else if (this.showRinonl== false && this.showVesicula == false && this.showBazo == true && this.showRinond == false) {
+ this.createAbdominalno_vesicula_rinond_rinonlPdf(); 
+}
+//no imprime ni bazo ni vesicula
+else if (this.showRinonl== true && this.showVesicula == false && this.showBazo == false && this.showRinond == true) {
+  this.createAbdominalno_vesicula_bazoPdf();
+}
+//no imprime ni vesicula ni riñon derecho
+else if (this.showRinonl== true && this.showVesicula == false && this.showBazo == true && this.showRinond == false) {
+this.createAbdominalno_vesicula_rinondPdf();
+}
+//no imprime vesicula ni riñon izquierdo
+else if (this.showRinonl== false && this.showVesicula == false && this.showBazo == true && this.showRinond == true) {
+  this.createAbdominalno_vesicula_rinonlPdf();
+}
+//no imprime vesicula, bazo, riñon izquierdo
+else if (this.showRinonl== false && this.showVesicula == false && this.showBazo == false && this.showRinond == true) {
+  this.createAbdominalno_vesicula_rinonl_bazoPdf();
+}
+//no imprime vesicula ni bazo
+else if (this.showRinonl== true && this.showVesicula == false && this.showBazo == false && this.showRinond == true) {
+  this.createAbdominalno_vesicula_bazoPdf();
+
+}
+//no imprime riñones
+else if (this.showRinonl== false && this.showVesicula == true && this.showBazo == true && this.showRinond == false) {
+  
+this.createAbdominalno_rinoneslPdf()
+
+
+}
+//no imprime riñon izquierdo
+else if (this.showRinonl== false && this.showVesicula == true && this.showBazo == true && this.showRinond == true) {
+  this.createAbdominalno_RinonlPdf();
+}
+//no imprime riñon derecho
+else if (this.showRinonl== true && this.showVesicula == true && this.showBazo == true && this.showRinond == true) {
+  this.createAbdominalno_RinondPdf();
+}
+//no imprime
+else if (this.showRinonl== true && this.showVesicula == true && this.showBazo == true && this.showRinond == true) {
+  
+}
+else if (this.showRinonl== true && this.showVesicula == true && this.showBazo == true && this.showRinond == true) {
+  
+}
+}
+
+
 
 printAbdominalPdf() {
   /* if (this.plt.is('cordova')) {
