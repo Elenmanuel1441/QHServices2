@@ -80,6 +80,8 @@ export class SonografiaUpdatePage implements OnInit {
     bazoTumoraciones: '',
     bazoLongitud: '',
     bazoAncho: '',
+    aortaDiametro: '',
+    aortaValor:'',
     conclusiones: '',
      
   }
@@ -429,10 +431,10 @@ createAbdominalPdf() {
       text:  [
 				     {text: 'PANCREAS:', style: 'subheader'}, {text:  [
               { text: ''}, this.sonoAbdominal.pancreasForma,
-              { text: ', CABEZA'}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
+              { text: ', CABEZA '}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
               { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
               { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
-              { text: ',SITUACION Y CONTORNOS'}, this.sonoAbdominal.pancreasContorno,
+              { text: ',SITUACION Y CONTORNOS '}, this.sonoAbdominal.pancreasContorno,
               { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
               '\n\n',
              ]  }  
@@ -442,19 +444,60 @@ createAbdominalPdf() {
     {
       text:  [
 				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
-              { text: ''}, this.sonoAbdominal.pancreasForma,
-              { text: ', CABEZA'}, this.sonoAbdominal.pancreasCabeza,{text:'mm, '},
-              { text: 'CUERPO '}, this.sonoAbdominal.pancreasCuerpo,{text:'mm, '},
-              { text: 'COLA '}, this.sonoAbdominal.pancreasCola,{text:'mm, '},
-              { text: ',SITUACION Y CONTORNOS'}, this.sonoAbdominal.pancreasContorno,
-              { text: 'LA ECOGENICIDAD DEL PARENQUIMA ES '}, this.sonoAbdominal.pancreasEcogenicidad,
+              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
+              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
+              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
+              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
+              '\n\n',
+             ]  }  
+			      ]
+    },
+    
+    {
+      text:  [
+				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
+              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
+              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
+              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
+              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
+              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
               '\n\n',
              ]  }  
 			      ]
     },
 
-   
-   
+    {
+      text:  [
+				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
+              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
+              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
+              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
+              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
+              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
+              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
+              '\n\n',
+             ]  }  
+			      ]
+    },
+
+    {
+      text:  [
+				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
+              { text: 'DE DIAMETRO '}, this.sonoAbdominal.aortaDiametro,
+              { text: ', VALOR DE '}, this.sonoAbdominal.aortaValor,{text:'mm. '},
+              '\n\n',
+             ]  }  
+			      ]
+    },{ text: 'CONCLUSIONES GENERALES:', style: 'subheader' }, this.sonoAbdominal.conclusiones,'\n\n',
+
+
+
+
 
       { text: 'DRA. ROSA M. GRAJALES', style: 'header',alignment: 'center' },
       { text: 'MEDICO SONOGRAFISTA',alignment: 'center' }
