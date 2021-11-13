@@ -89,6 +89,8 @@ export class SonografiaUpdatePage implements OnInit {
   showObito: boolean;
   showAbdominal: boolean;
   showTransV: boolean;
+  showBazo: boolean;
+  toggleBazo:boolean = false;
 
 
   pdfObj = null;
@@ -132,6 +134,16 @@ export class SonografiaUpdatePage implements OnInit {
  })
  
 }
+// usa el toggle para mostrar u ocultar los campos de bazo
+Bazo(bazo){
+   
+if (this.toggleBazo == true) {
+  this.showBazo = true;
+  
+}
+else{ this.showBazo = false}
+}
+
  
  updateSonografia()
 {

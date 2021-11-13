@@ -274,7 +274,7 @@
         <ion-grid>
             <ion-row>
                 <label class="subtitulo2">VESICULA BILIAR:</label>
-
+                <ion-toggle color="primary"checked></ion-toggle>
             </ion-row>
         </ion-grid>
 
@@ -336,7 +336,7 @@
         <ion-grid>
             <ion-row>
                 <label class="subtitulo2">PANCREAS:</label>
-
+                
             </ion-row>
         </ion-grid>
 
@@ -401,7 +401,7 @@
         <ion-grid>
             <ion-row>
                 <label class="subtitulo2">RIÑON DERECHO:</label>
-
+                <ion-toggle color="primary" checked></ion-toggle>
             </ion-row>
         </ion-grid>
 
@@ -467,7 +467,7 @@
         <ion-grid>
             <ion-row>
                 <label class="subtitulo2">RIÑON IZQUIERDO:</label>
-
+                <ion-toggle color="primary"checked></ion-toggle>
             </ion-row>
         </ion-grid>
 
@@ -539,11 +539,11 @@
         <ion-grid>
             <ion-row>
                 <label class="subtitulo2">EL BAZO:</label>
-
+                <ion-toggle (ionChange)="Bazo($bazo)" color="primary" [(ngModel)]="toggleBazo" checked></ion-toggle>
             </ion-row>
         </ion-grid>
 
-        <ion-grid>
+        <ion-grid *ngif="showBazo">
             <ion-row>
                 <ion-col>
                     <label class="subtitulo2">SITUACION:</label>
