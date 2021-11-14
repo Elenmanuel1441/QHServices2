@@ -569,7 +569,7 @@ createAbdominalAllPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprimi el riñon derecho
+//no imprimi el riñon derecho c
 createAbdominalno_RinondPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -641,19 +641,13 @@ createAbdominalno_RinondPdf() {
     },
 
     {
-      text:  [
-				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
-              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
-              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
-              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
-              '\n\n',
-             ]  }  
-			      ]
-    },
+      
+        text:  [
+               {text: 'RIÑON DERECHO: NO SE VISUALIZA', style: 'subheader'},  
+               {text: '', style: 'subheader'},  
+               {text: '', style: 'subheader'},  
+              ]
+      },'\n\n',
     
     {
       text:  [
@@ -721,7 +715,7 @@ createAbdominalno_RinondPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime la vesicula
+//no imprime la vesicula c
 createAbdominalno_VesiculaPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -765,18 +759,11 @@ createAbdominalno_VesiculaPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
-              { text: ''}, this.sonoAbdominal.vesiculaForma,
-              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
-              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
-              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
-              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
-              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
-              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
-              '\n\n',
-             ]  }  
+				     {text: 'VESICULA: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -873,7 +860,7 @@ createAbdominalno_VesiculaPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime el riñon izquierdo
+//no imprime el riñon izquierdo c
 createAbdominalno_RinonlPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -1025,7 +1012,7 @@ createAbdominalno_RinonlPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime el bazo
+//no imprime el bazo c
 createAbdominalno_BazoPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -1128,15 +1115,7 @@ createAbdominalno_BazoPdf() {
 
     {
       text:  [
-				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
-              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
-              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
-              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
-              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
-              '\n\n',
-             ]  }  
+				     {text: 'EL BAZO: NO SE VISUALIZA', style: 'subheader'},'\n\n',
 			      ]
     },
 
@@ -1177,7 +1156,7 @@ createAbdominalno_BazoPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime la vesicula,riñones y bazo
+//no imprime la vesicula,riñones y bazo C
 createAbdominalno_vesicula_rinond_rinonl_bazoPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -1304,7 +1283,7 @@ createAbdominalno_vesicula_rinond_rinonl_bazoPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime vesicula ni riñones
+//no imprime vesicula ni riñones c
 createAbdominalno_vesicula_rinond_rinonlPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -1348,18 +1327,11 @@ createAbdominalno_vesicula_rinond_rinonlPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
-              { text: ''}, this.sonoAbdominal.vesiculaForma,
-              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
-              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
-              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
-              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
-              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
-              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
-              '\n\n',
-             ]  }  
+				     {text: 'VESICULA: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -1377,33 +1349,19 @@ createAbdominalno_vesicula_rinond_rinonlPdf() {
 
     {
       text:  [
-				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
-              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
-              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
-              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
-              '\n\n',
-             ]  }  
+				     {text: 'RIÑON DERECHO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
     
     {
       text:  [
-				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
-              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
-              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
-              '\n\n',
-             ]  }  
+				     {text: 'RIÑON IZQUIERDO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -1456,7 +1414,7 @@ createAbdominalno_vesicula_rinond_rinonlPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime bazo,vesicula,rinon derecho
+//no imprime bazo,vesicula,rinon derecho c
 createAbdominalno_vesicula_rinond_bazoPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -1500,18 +1458,11 @@ createAbdominalno_vesicula_rinond_bazoPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
-              { text: ''}, this.sonoAbdominal.vesiculaForma,
-              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
-              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
-              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
-              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
-              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
-              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
-              '\n\n',
-             ]  }  
+				     {text: 'VESICULA: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -1529,18 +1480,11 @@ createAbdominalno_vesicula_rinond_bazoPdf() {
 
     {
       text:  [
-				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
-              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
-              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
-              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
-              '\n\n',
-             ]  }  
+				     {text: 'RIÑON DERECHO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
     
     {
       text:  [
@@ -1559,18 +1503,11 @@ createAbdominalno_vesicula_rinond_bazoPdf() {
 
     {
       text:  [
-				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
-              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
-              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
-              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
-              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
-              '\n\n',
-             ]  }  
+				     {text: 'BAZO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
-
+    },'\n\n',
     {
       text:  [
 				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
@@ -1608,7 +1545,7 @@ createAbdominalno_vesicula_rinond_bazoPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime bazo,vesicula,rinon izquierdo
+//no imprime bazo,vesicula,rinon izquierdo c
 createAbdominalno_vesicula_rinonl_bazoPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -1649,21 +1586,13 @@ createAbdominalno_vesicula_rinonl_bazoPdf() {
              ]  }  
 			      ]
     },
-
     {
       text:  [
-				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
-              { text: ''}, this.sonoAbdominal.vesiculaForma,
-              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
-              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
-              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
-              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
-              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
-              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
-              '\n\n',
-             ]  }  
+				     {text: 'VESICULA BILIAR: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -1696,32 +1625,19 @@ createAbdominalno_vesicula_rinonl_bazoPdf() {
     
     {
       text:  [
-				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
-              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
-              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
-              '\n\n',
-             ]  }  
+				     {text: 'RIÑON IZQUIERDO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
-				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
-              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
-              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
-              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
-              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
-              '\n\n',
-             ]  }  
+				     {text: 'BAZO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -1760,7 +1676,7 @@ createAbdominalno_vesicula_rinonl_bazoPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime vesicula ni riñon derecho
+//no imprime vesicula ni riñon derecho c
 createAbdominalno_vesicula_rinondPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -1804,18 +1720,11 @@ createAbdominalno_vesicula_rinondPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
-              { text: ''}, this.sonoAbdominal.vesiculaForma,
-              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
-              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
-              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
-              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
-              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
-              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
-              '\n\n',
-             ]  }  
+				     {text: 'VESICULA: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -1833,18 +1742,11 @@ createAbdominalno_vesicula_rinondPdf() {
 
     {
       text:  [
-				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
-              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
-              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
-              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
-              '\n\n',
-             ]  }  
+				     {text: 'RIÑON DERECHO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
     
     {
       text:  [
@@ -1913,7 +1815,7 @@ createAbdominalno_vesicula_rinondPdf() {
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
 
-//no imprime vesicula ni riñon izquierdo
+//no imprime vesicula ni riñon izquierdo c
 createAbdominalno_vesicula_rinonlPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -1957,18 +1859,11 @@ createAbdominalno_vesicula_rinonlPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
-              { text: ''}, this.sonoAbdominal.vesiculaForma,
-              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
-              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
-              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
-              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
-              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
-              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
-              '\n\n',
-             ]  }  
+				     {text: 'VESICULA BILIAR: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -2001,18 +1896,11 @@ createAbdominalno_vesicula_rinonlPdf() {
     
     {
       text:  [
-				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
-              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
-              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
-              '\n\n',
-             ]  }  
+				     {text: 'RIÑON IZQUIERDO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -2065,7 +1953,7 @@ createAbdominalno_vesicula_rinonlPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime ni vesicula ni bazo
+//no imprime ni vesicula ni bazo c
 createAbdominalno_vesicula_bazoPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -2109,18 +1997,11 @@ createAbdominalno_vesicula_bazoPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA BILIAR:', style: 'subheader'}, {text:  [
-              { text: ''}, this.sonoAbdominal.vesiculaForma,
-              { text: ', SITUACION '}, this.sonoAbdominal.vesiculaSituacion,
-              { text: ', PARED '}, this.sonoAbdominal.vesiculaPared,{text:'mm, '},
-              { text: 'LONGITUD '}, this.sonoAbdominal.vesiculaLongitud,{text:'mm, '},
-              { text: 'ANCHO '}, this.sonoAbdominal.vesiculaAncho,{text:'mm, '},
-              { text: 'LITOS '}, this.sonoAbdominal.vesiculaLitos,
-              { text: ', POLIPOS '}, this.sonoAbdominal.vesiculaPolipos,
-              '\n\n',
-             ]  }  
+				     {text: 'VESICULA BILIAR: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -2168,17 +2049,11 @@ createAbdominalno_vesicula_bazoPdf() {
 
     {
       text:  [
-				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
-              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
-              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
-              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
-              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
-              '\n\n',
-             ]  }  
+				     {text: 'BAZO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -2217,7 +2092,7 @@ createAbdominalno_vesicula_bazoPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-//no imprime ni bazo ni riñon derecho
+//no imprime ni bazo ni riñon derecho c
 createAbdominalno_bazo_rinondPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -2288,20 +2163,14 @@ createAbdominalno_bazo_rinondPdf() {
 			      ]
     },
 
+    
     {
       text:  [
-				     {text: 'RIÑON DERECHO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION '}, this.sonoAbdominal.rinondVisualiza,
-              { text: ',DE FORMA '}, this.sonoAbdominal.rinondForma,
-              { text: ',CONTORNO '}, this.sonoAbdominal.rinondContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA '}, this.sonoAbdominal.rinondRelacion,
-              this.sonoAbdominal.rinondEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinondLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinondTumoraciones,
-              '\n\n',
-             ]  }  
+				     {text: 'RIÑON DERECHO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
     
     {
       text:  [
@@ -2318,19 +2187,14 @@ createAbdominalno_bazo_rinondPdf() {
 			      ]
     },
 
+    
     {
       text:  [
-				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
-              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
-              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
-              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
-              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
-              '\n\n',
-             ]  }  
+				     {text: 'BAZO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
     {
       text:  [
@@ -2369,7 +2233,7 @@ createAbdominalno_bazo_rinondPdf() {
   }
   this.pdfObj = pdfMake.createPdf(abdominalDefinition);
 }
-// no imprime bazo ni riñon izquierdo
+// no imprime bazo ni riñon izquierdo c
 createAbdominalno_bazo_rinonlPdf() {
   var abdominalDefinition: any = {
     pageSize: 'LETTER',
@@ -2455,35 +2319,23 @@ createAbdominalno_bazo_rinonlPdf() {
 			      ]
     },
     
+  
     {
       text:  [
-				     {text: 'RIÑON IZQUIERDO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.rinonlVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.rinonlForma,
-              { text: ',CONTORNO'}, this.sonoAbdominal.rinonlContornos,
-              { text: 'LA RELACION CORTEZA-MEDULA/SENO RENAL SE ENCUENTRA'}, this.sonoAbdominal.rinonlRelacion,
-              this.sonoAbdominal.rinonlEvidencia,{text:'EXISTE EVIDENCIA DE DILATACION PIELO-CALICIAL'},
-              { text: ', LITIASIS'}, this.sonoAbdominal.rinonlLitiasis,
-              { text: ', TUMORACIONES '}, this.sonoAbdominal.rinonlTumoraciones,
-              '\n\n',
-             ]  }  
+				     {text: 'RIÑON IZQUIERDO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
 
+ 
     {
       text:  [
-				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
-              { text: 'SITUACION'}, this.sonoAbdominal.bazoVisualiza,
-              { text: ',DE FORMA'}, this.sonoAbdominal.bazoForma,
-              { text: ',ECOTEXTURA'}, this.sonoAbdominal.bazoEcotextura,
-              { text: ', TUMORACIONES'}, this.sonoAbdominal.bazoTumoraciones,
-              { text: ', LONGITUD: '}, this.sonoAbdominal.bazoLongitud,{text:'mm, '},
-              { text: ', ANCHO: '}, this.sonoAbdominal.bazoAncho,{text:'mm '},
-              '\n\n',
-             ]  }  
+				     {text: 'BAZO: NO SE VISUALIZA', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
+             {text: '', style: 'subheader'},  
 			      ]
-    },
-
+    },'\n\n',
     {
       text:  [
 				     {text: 'AORTA ABDOMINAL:', style: 'subheader'}, {text:  [
