@@ -5,101 +5,111 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="contenido">
 
-    <ion-card class="card-principal" color="Dark">
-        <ion-card-header>
+    <ion-grid>
+        <ion-row class="columnas">
+            <ion-col>
+                <ion-card class="Card_secundaria">
 
-            <ion-grid>
-                <ion-row>
-                    <ion-col>
-                        <ion-label class="subtitulo2 label" position="floating">Usuario:</ion-label>
-                        <ion-input class="subtitulo2" [(ngModel)]="nombre" type="text"></ion-input>
-                    </ion-col>
-                    <ion-col>
-                        <ion-label class="subtitulo2 label" position="floating">Contraseña:</ion-label>
-                        <ion-input class="subtitulo2" [(ngModel)]="contrasena" type="password"></ion-input>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col class="columna_usuario">
+                                <div>
+                                    <ion-img class="imagen_usario" src="assets/image/user3.png"></ion-img>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <input type="text" [(ngModel)]="nombre" placeholder="Usuario" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
 
-            <ion-grid>
-                <ion-row>
-                    <ion-col>
-                        <label class="subtitulo2 label">Posición:</label>
-                        <select [(ngModel)]="rol" class="form-select form-select-lg mb-3 select-posicion">
-                    <option value='Laboratorio'>Laboratorio</option>
-                    <option value='Odontología'>Odontología</option>
-                    <option value='Rayos X'>Rayos X</option>
-                    <option value='Recepción'>Recepción</option>
-                    <option value='Sonografía'>Sonografía</option>
-                  </select>
-                    </ion-col>
-                    <ion-col>
-                        <label class="subtitulo2 label">Estado:</label>
-                        <select [(ngModel)]="estado" class="form-select form-select-lg mb-3 select-estado">
-                        <option value='Activo'>Activo</option>
-                        <option value='Inactivo'>Inactivo</option>
-                      </select>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <input type="password" [(ngModel)]="contrasena" placeholder="Contraseña" class="form-control inputs">
+                                    <i class="fas fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                                </div>
 
+                                <div class="mt-2 select_estado">
+                                    <select [(ngModel)]="rol" class="form-select Sel_estado" aria-label="Default select example">
+                                    <option selected>Área</option>
+                                    <option value='Laboratorio'>Laboratorio</option>
+                                    <option value='Odontología'>Odontología</option>
+                                    <option value='Rayos X'>Rayos X</option>
+                                    <option value='Recepción'>Recepción</option>
+                                    <option value='Sonografía'>Sonografía</option>
+                                  </select>
+                                </div>
+                                <div class="mt-2 select_estado">
+                                    <select [(ngModel)]="estado" class="form-select Sel_estado" placeholder="Contraseña" aria-label="Default select example">
+                                    <option selected>Estado</option>
+                                    <option value='Activo'>Activo</option>
+                                    <option value='Inactivo'>Inactivo</option>
+                                  </select>
+                                </div>
 
-            <ion-button class="subtitulo2" type="button" (click)="addUsuario()" color="primary" shape="shape" expand="block"> Add usuarios </ion-button>
+                                <div class=" mt-2 btn_agregar">
+                                    <ion-button style="width: 100%;" class="subtitulo2" type="button" (click)="addUsuario()" color="primary" shape="round" expand="block"> Agregar usuarios </ion-button>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card>
+            </ion-col>
+            <ion-col>
+                <ion-card class="card_elementos">
+                    <!-- <h5 class="subtitulo2 h5">Filtros</h5> -->
 
-            <h5 class="subtitulo2 h5">Filtros</h5>
+                    <div class="container">
 
-            <div class="container">
+                        <div class="row">
+                            <div class="col">
 
-                <div class="row">
-                    <div class="col">
-                        <ion-searchbar class="normal" placeholder="Nombre" [(ngModel)]="search_01" showCancelButton="focus" animated>
-                        </ion-searchbar>
+                                <div class="mt-2 inputIcon">
+                                    <input type="search" [(ngModel)]="search_01" placeholder="Buscar..." class="form-control inputs" aria-label="Search">
+                                    <i class="glyphicon glyphicon-user form-control-feedback"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 select_estado">
+                                <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoArea normal">
+                                    <option selected></option>
+                                    <option value='Laboratorio'>Laboratorio</option>
+                            <option value='Odontología'>Odontología</option>
+                            <option value='Rayos X'>Rayos X</option>
+                            <option value='Recepción'>Recepción</option>
+                            <option value='Sonografía'>Sonografía</option>
+                              </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoArea normal">
-                            <option selected></option>
-                            <option value='Laboratorio'>Laboratorio</option>
-                    <option value='Odontología'>Odontología</option>
-                    <option value='Rayos X'>Rayos X</option>
-                    <option value='Recepción'>Recepción</option>
-                    <option value='Sonografía'>Sonografía</option>
-                      </select>
-                    </div>
-                </div>
-            </div>
 
-            <ion-button class="subtitulo2" type="button" (click)="exportexcel()" color="warning" shape="shape" expand="block">Exportar</ion-button>
+                    <ion-button class="subtitulo2 btn_exportar" type="button" (click)="exportexcel()" color="warning" shape="shape" expand="block">Exportar</ion-button>
 
-            <!--Otra tabla de ejemplo con boostrab-->
-            <ion-card class="tabla_usaurios">
-                <table class="table table-hover table-bordered" id="excel-table-user">
-                    <thead class="table-light ">
-                        <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Area</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of nombres | filter:search_01 | filter:search_02; let i=index;">
-                            <th scope="row">{{i+1}}</th>
-                            <td>{{item.nombre}}</td>
-                            <td>{{item.rol}}</td>
-                            <td>{{item.estado}}</td>
-                            <td>
-                                <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',item.id]"></ion-icon>
-                                <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(item.id)"></ion-icon>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </ion-card>
-        </ion-card-header>
+                    <table class="table table-hover table-bordered" id="excel-table-user">
+                        <thead class="table-light ">
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Area</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of nombres | filter:search_01 | filter:search_02; let i=index;">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{item.nombre}}</td>
+                                <td>{{item.rol}}</td>
+                                <td>{{item.estado}}</td>
+                                <td>
+                                    <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',item.id]"></ion-icon>
+                                    <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(item.id)"></ion-icon>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    </ion-card>
+                </ion-card>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>
