@@ -108,28 +108,26 @@ ion-icon {
 
 .inputs {
     width: 250px;
-    margin-left: 40px;
     border-radius: 20px;
-}
-
-.inputs_usuario {
-    margin-left: 550px;
+    margin: auto;
+    margin-left: 15px;
 }
 
 .imagen_usario {
     height: 250px;
     width: 250px;
-    margin: -10px 0 0 40px;
+    margin: auto;
 }
 
 .btn_agregar {
     width: 250px;
-    margin-left: 40px;
+    margin: auto;
 }
 
 .select_estado {
     width: 250px;
-    margin-left: 40px;
+    //margin-left: 40px;
+    margin: auto;
 }
 
 .Sel_estado {
