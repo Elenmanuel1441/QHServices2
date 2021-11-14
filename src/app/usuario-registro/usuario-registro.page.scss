@@ -11,19 +11,18 @@
 //     width: 530px;
 //     margin: auto;
 // }
-ion-input {
-    width: 250px;
-    height: 35px;
-    padding: 16px;
-    background-color: #ccc;
-    border-color: var(--ion-color-medium-shade);
-    border-radius: 8px;
-    border-width: 1px;
-    margin: auto;
-    box-shadow: 2px rgb(255, 255, 255);
-    background: #f8f9fa;
-}
-
+// ion-input {
+//     width: 250px;
+//     height: 35px;
+//     padding: 16px;
+//     background-color: #ccc;
+//     border-color: var(--ion-color-medium-shade);
+//     border-radius: 8px;
+//     border-width: 1px;
+//     margin: auto;
+//     box-shadow: 2px rgb(255, 255, 255);
+//     background: #f8f9fa;
+// }
 ion-title {
     text-align: center;
 }
@@ -96,4 +95,56 @@ ion-searchbar {
 
 ion-icon {
     margin: 0 0 0 5px;
+}
+
+.Card_secundaria {
+    height: 500px;
+    width: 60%;
+    margin: auto;
+    margin-left: 50px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+.inputs {
+    width: 250px;
+    margin-left: 40px;
+    border-radius: 20px;
+}
+
+.inputs_usuario {
+    margin-left: 550px;
+}
+
+.imagen_usario {
+    height: 250px;
+    width: 250px;
+    margin: -10px 0 0 40px;
+}
+
+.btn_agregar {
+    width: 250px;
+    margin-left: 40px;
+}
+
+.select_estado {
+    width: 250px;
+    margin-left: 40px;
+}
+
+.Sel_estado {
+    border-radius: 20px
+}
+
+.card_elementos {
+    height: 500px;
+    width: 100%;
+    margin: auto;
+    margin-right: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+ion-grid {
+    --ion-grid-width: 600px
 }
