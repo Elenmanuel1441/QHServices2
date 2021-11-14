@@ -5,7 +5,7 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="contenido">
 
     <ion-grid>
         <ion-row class="columnas">
@@ -19,13 +19,14 @@
                                     <ion-img class="imagen_usario" src="assets/image/user3.png"></ion-img>
                                 </div>
                                 <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="nombre" placeholder="Usuario" class="form-control inputs">
-                                    <i class="fas fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                                    <input type="text" [(ngModel)]="nombre" placeholder="Usuario" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
                                 </div>
                                 <div class="mt-2 inputIcon">
                                     <input type="password" [(ngModel)]="contrasena" placeholder="Contraseña" class="form-control inputs">
                                     <i class="fas fa-user fa-lg fa-fw" aria-hidden="true"></i>
                                 </div>
+
                                 <div class="mt-2 select_estado">
                                     <select [(ngModel)]="rol" class="form-select Sel_estado" aria-label="Default select example">
                                     <option selected>Área</option>
@@ -60,8 +61,11 @@
 
                         <div class="row">
                             <div class="col">
-                                <ion-searchbar class="normal" placeholder="Nombre" [(ngModel)]="search_01" showCancelButton="focus" animated>
-                                </ion-searchbar>
+
+                                <div class="mt-2 inputIcon">
+                                    <input type="search" [(ngModel)]="search_01" placeholder="Buscar..." class="form-control inputs" aria-label="Search">
+                                    <i class="glyphicon glyphicon-user form-control-feedback"></i>
+                                </div>
                             </div>
                             <div class="mt-2 select_estado">
                                 <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoArea normal">
