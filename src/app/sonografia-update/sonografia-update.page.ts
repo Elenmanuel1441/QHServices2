@@ -12,7 +12,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ['./sonografia-update.page.scss'],
 })
 export class SonografiaUpdatePage implements OnInit {
-
+  id_paciente:any;
   id_col_sonografia: any;
   estado_sonografia: '2';
   sonoObito = {
@@ -128,6 +128,7 @@ export class SonografiaUpdatePage implements OnInit {
    this._apiservice.getSonografia(id_col_sonografia).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      let sonografia = res[0];
+     this.id_paciente = sonografia.id_paciente;
      this.estado_sonografia = sonografia.estado_sonografia;
      this.sonoObito.nombre = sonografia.nombre_paciente;
      this.sonoObito.apellido = sonografia.apellido_paciente;
@@ -759,7 +760,7 @@ createAbdominalno_VesiculaPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA: NO SE VISUALIZA', style: 'subheader'},  
+				     {text: 'VESICULA BILIAR: NO SE VISUALIZA', style: 'subheader'},  
              {text: '', style: 'subheader'},  
              {text: '', style: 'subheader'},  
 			      ]
@@ -1327,7 +1328,7 @@ createAbdominalno_vesicula_rinond_rinonlPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA: NO SE VISUALIZA', style: 'subheader'},  
+				     {text: 'VESICULA BILIAR: NO SE VISUALIZA', style: 'subheader'},  
              {text: '', style: 'subheader'},  
              {text: '', style: 'subheader'},  
 			      ]
@@ -1458,7 +1459,7 @@ createAbdominalno_vesicula_rinond_bazoPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA: NO SE VISUALIZA', style: 'subheader'},  
+				     {text: 'VESICULA BILIAR: NO SE VISUALIZA', style: 'subheader'},  
              {text: '', style: 'subheader'},  
              {text: '', style: 'subheader'},  
 			      ]
@@ -1720,7 +1721,7 @@ createAbdominalno_vesicula_rinondPdf() {
 
     {
       text:  [
-				     {text: 'VESICULA: NO SE VISUALIZA', style: 'subheader'},  
+				     {text: 'VESICULA BILIAR: NO SE VISUALIZA', style: 'subheader'},  
              {text: '', style: 'subheader'},  
              {text: '', style: 'subheader'},  
 			      ]
@@ -2452,7 +2453,7 @@ createAbdominalno_rinoneslPdf() {
              {text: '', style: 'subheader'},  
              {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
     
     {
       text:  [
@@ -2462,7 +2463,7 @@ createAbdominalno_rinoneslPdf() {
              {text: '', style: 'subheader'},  
              {text: '', style: 'subheader'},  
 			      ]
-    },
+    },'\n\n',
     {
       text:  [
 				     {text: 'EL BAZO:', style: 'subheader'}, {text:  [
