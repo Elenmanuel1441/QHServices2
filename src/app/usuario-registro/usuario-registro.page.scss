@@ -34,22 +34,6 @@ ion-title {
     margin-left: 10px;
 }
 
-.select-estado {
-    height: 35px;
-    border-radius: 8px;
-    font-size: 13px;
-    width: 250px;
-    margin: auto;
-}
-
-.select-posicion {
-    height: 35px;
-    border-radius: 8px;
-    font-size: 13px;
-    width: 250px;
-    margin: auto;
-}
-
 ion-button {
     width: 520px;
     margin: auto;
@@ -61,28 +45,18 @@ ion-button {
 //     margin: auto;
 // }
 ion-searchbar {
-    width: 250px;
+    width: 93%;
     margin: auto;
 }
 
 .selectFiltoArea {
     // height: 35px;
-    border-radius: 8px;
+    border-radius: 20px;
     //font-size: 13px;
-    width: 240px;
+    width: 100%;
     margin: auto;
-    margin-top: 8px;
-    height: 46px;
 }
 
-// .table_export {
-//     margin: auto;
-//     width: 600px;
-// }
-// .row {
-//     width: 600px;
-//     margin: auto;
-// }
 .h5 {
     margin-left: 20px;
 }
@@ -101,7 +75,7 @@ ion-icon {
     height: 460px;
     width: 60%;
     margin: auto;
-    margin-left: 50px;
+    margin-right: 80px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
     border-radius: 10px;
 }
@@ -123,6 +97,10 @@ ion-icon {
     margin: auto;
 }
 
+.btn_exportar {
+    width: 85%;
+}
+
 .select_estado {
     width: 90%;
     //margin-left: 40px;
@@ -137,11 +115,15 @@ ion-icon {
     height: 460px;
     width: 100%;
     margin: auto;
-    margin-right: 15px;
+    margin-left: -60px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
     border-radius: 10px;
 }
 
 ion-grid {
     --ion-grid-width: 600px
+}
+
+.columnas {
+    width: 95%;
 }

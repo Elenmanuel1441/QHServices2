@@ -8,7 +8,7 @@
 <ion-content>
 
     <ion-grid>
-        <ion-row>
+        <ion-row class="columnas">
             <ion-col>
                 <ion-card class="Card_secundaria">
 
@@ -63,7 +63,7 @@
                                 <ion-searchbar class="normal" placeholder="Nombre" [(ngModel)]="search_01" showCancelButton="focus" animated>
                                 </ion-searchbar>
                             </div>
-                            <div class="col">
+                            <div class="mt-2 select_estado">
                                 <select [(ngModel)]="search_02" class="form-select form-select-lg mb-3 selectFiltoArea normal">
                                     <option selected></option>
                                     <option value='Laboratorio'>Laboratorio</option>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
 
-                    <ion-button class="subtitulo2" type="button" (click)="exportexcel()" color="warning" shape="shape" expand="block">Exportar</ion-button>
+                    <ion-button class="subtitulo2 btn_exportar" type="button" (click)="exportexcel()" color="warning" shape="shape" expand="block">Exportar</ion-button>
 
                     <table class="table table-hover table-bordered" id="excel-table-user">
                         <thead class="table-light ">
