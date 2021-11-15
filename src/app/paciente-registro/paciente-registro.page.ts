@@ -9,6 +9,9 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./paciente-registro.page.scss'],
 })
 export class PacienteRegistroPage implements OnInit {
+
+  p: number = 1;
+
   nombre: any;
   apellido: any;
   cedula: any;

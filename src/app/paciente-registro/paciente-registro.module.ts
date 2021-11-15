@@ -8,6 +8,7 @@ import { PacienteRegistroPageRoutingModule } from './paciente-registro-routing.m
 
 import { PacienteRegistroPage } from './paciente-registro.page';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     IonicModule,
     PacienteRegistroPageRoutingModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   declarations: [PacienteRegistroPage]
 })
