@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import * as XLSX from 'xlsx';
@@ -109,7 +109,7 @@ else{
     console.log("Error ===",error);
   })
   
-}
+ }
   
 }
     
