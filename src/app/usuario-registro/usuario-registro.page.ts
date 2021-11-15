@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import * as XLSX from 'xlsx';
@@ -9,14 +9,14 @@ import * as XLSX from 'xlsx';
   templateUrl: './usuario-registro.page.html',
   styleUrls: ['./usuario-registro.page.scss'],
 })
-export class UsuarioRegistroPage implements OnInit{
+export class UsuarioRegistroPage implements OnInit,AfterViewInit{
+  
+  p: number = 1;
   nombre: any;
   contrasena: any;
   estado: any;
   rol: any;
 
-  buscarUsuario: any;
-  
   nombres: any = ['nombre', 'estado','rol'];
 
   search_01: string;
@@ -27,6 +27,7 @@ export class UsuarioRegistroPage implements OnInit{
 
   fileName= 'Reporte de usuario.xlsx';
 
+
   constructor(
     public _apiService: ApiService,
     public toastController: ToastController,
@@ -35,6 +36,10 @@ export class UsuarioRegistroPage implements OnInit{
     this.getUsuarios();
     setInterval(() => this.getUsuarios(), 10000);
     this.limpiarCampos();
+  }
+  ngAfterViewInit() 
+  {
+    
   }
 
 
@@ -112,8 +117,9 @@ else{
   ngOnInit() 
   {
    this.limpiarCampos();
-  }
-  
+
+}
+ 
    getUsuarios(){
     this._apiService.getUsuarios().subscribe((res:any) => {
       console.log("SUCCESS ===",res);

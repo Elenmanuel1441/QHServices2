@@ -93,7 +93,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of nombres | filter:search_01 | filter:search_02; let i=index;">
+                            <tr *ngFor="let item of nombres | filter:search_01 | filter:search_02 | paginate: { itemsPerPage: 5, currentPage: p } let i=index;">
                                 <th scope="row">{{i+1}}</th>
                                 <td>{{item.nombre}}</td>
                                 <td>{{item.rol}}</td>
@@ -105,11 +105,13 @@
                             </tr>
                         </tbody>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
                 </ion-card>
 
             </ion-col>
         </ion-row>
     </ion-grid>
+
 
 </ion-content>
