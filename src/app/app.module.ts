@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Material Angular
 import {MatIconModule} from '@angular/material/icon';
 
+//chart dashboard
+import { ChartsModule } from 'ng2-charts';
+
 
 
 
@@ -24,7 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
      IonicStorageModule.forRoot(),
      HttpClientModule, AppRoutingModule,
      BrowserAnimationsModule,
-     MatIconModule
+     MatIconModule, ChartsModule
     ],
   providers: [{ provide: RouteReuseStrategy,
      useClass: IonicRouteStrategy }],
