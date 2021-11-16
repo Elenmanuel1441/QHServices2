@@ -81,35 +81,37 @@
                     </div>
 
                     <ion-button class="subtitulo2 btn_exportar" type="button" (click)="exportexcel()" color="warning" shape="shape" expand="block">Exportar</ion-button>
-
-                    <table class="table table-hover table-bordered" id="excel-table-user">
-                        <thead class="table-light ">
-                            <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Area</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of nombres | filter:search_01 | filter:search_02 | paginate: { itemsPerPage: 5, currentPage: p } let i=index;">
-                                <th scope="row">{{i+1}}</th>
-                                <td>{{item.nombre}}</td>
-                                <td>{{item.rol}}</td>
-                                <td>{{item.estado}}</td>
-                                <td>
-                                    <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',item.id]"></ion-icon>
-                                    <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(item.id)"></ion-icon>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
+                    <div>
+                        <table class="table table-hover table-bordered" id="excel_table_user">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Area</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of nombres | filter:search_01 | filter:search_02 | paginate: { itemsPerPage: 5, currentPage: p } let i=index;">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.rol}}</td>
+                                    <td>{{item.estado}}</td>
+                                    <td>
+                                        <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',item.id]"></ion-icon>
+                                        <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(item.id)"></ion-icon>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
                 </ion-card>
 
             </ion-col>
         </ion-row>
     </ion-grid>
+
+
 </ion-content>

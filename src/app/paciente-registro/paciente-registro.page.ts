@@ -320,16 +320,20 @@ export class PacienteRegistroPage implements OnInit {
 
   exportexcel(): void
   {
-    /* pass here the table id */
-    let element = document.getElementById('excel-table-paciente');
-    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
- 
-    /* generate workbook and add the worksheet */
+    
+    document.getElementById('excel-table-paciente');
+    const ws: XLSX.WorkSheet =XLSX.utils.json_to_sheet(this.pacientes);
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
- 
-    /* save to file */  
     XLSX.writeFile(wb, this.fileName);
+ 
+
+    // document.getElementById('excel_table_user');
+    // const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.nombres);
+    // const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    // XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    // XLSX.writeFile(wb, this.fileName);
+ 
  
   }
 }
