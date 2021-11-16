@@ -9,9 +9,6 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./paciente-registro.page.scss'],
 })
 export class PacienteRegistroPage implements OnInit {
-
-  p: number = 1;
-
   nombre: any;
   apellido: any;
   cedula: any;
@@ -40,175 +37,35 @@ export class PacienteRegistroPage implements OnInit {
     
   ) {
     this.getPacientes();
-    this.limpiarCampos();
- 
+  //  this.limpiarCampos();
    }
 
- async addPaciente()
-{
-  if(this.nombre =='')
-  {
-    const toast = await this.toastController.create({
-      message: 'Ingrese un nombre',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if (this.apellido == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Ingrese un apellido',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if (this.cedula == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Ingrese la identificacion',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if (this.telefono == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Ingrese un telefono',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if (this.alergias == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Llene el campo alergias',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if (this.padecimientos == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Llene el campo padecimientos',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if (this.ocupacion == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Complete campo ocupacion',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if (this.direccion == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Complete la direccion',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if (this.fecha_nacimiento == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Llene la fecha de nacimiento',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if(this.tipo_sangre == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Seleccione tipo de sangre',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if(this.sexo == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Seleccione el sexo',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else if(this.ars == "")
-  {
-    const toast = await this.toastController.create({
-      message: 'Seleccione la ARS',
-      duration: 1500,
-    color: "danger",
-    cssClass: 'toastVal',
-    position: "bottom",
-    });
-    toast.present();
-  }
-  else
+  addPaciente()
   {
     let data = {
-      nombre: this.nombre,
-      apellido: this.apellido,
-      cedula: this.cedula,
-      telefono: this.telefono,
-      fecha_nacimiento: this.fecha_nacimiento,
-      alergias: this.alergias,
-      tipo_sangre: this.tipo_sangre,
-      padecimientos: this.padecimientos,
-      ocupacion: this.ocupacion,
-      sexo: this.sexo,
-      ars: this.ars,
-      direccion: this.direccion
-          }
-
-          this._apiService.addPaciente(data).subscribe((res:any) => {
-            console.log("SUCCESS ===",res);
-            this.limpiarCampos();
-            this.presentToast('Guardado exitosamente!');
-            this.getPacientes();
-            
-           
-          },(error: any) => {
-            this.presentToastErrorADD('Error al guardar!');
-            console.log("Error ===",error);
-          })
-
+  nombre: this.nombre,
+  apellido: this.apellido,
+  cedula: this.cedula,
+  telefono: this.telefono,
+  fecha_nacimiento: this.fecha_nacimiento,
+  alergias: this.alergias,
+  tipo_sangre: this.tipo_sangre,
+  padecimientos: this.padecimientos,
+  ocupacion: this.ocupacion,
+  sexo: this.sexo,
+  ars: this.ars,
+  direccion: this.direccion
       }
- 
+      this._apiService.addPaciente(data).subscribe((res:any) => {
+        console.log("SUCCESS ===",res);
+        this.presentToast('Guardado exitosamente!');
+        this.getPacientes();
+        this.limpiarCampos();
+       
+      },(error: any) => {
+        this.presentToastErrorADD('Error al guardar!');
+        console.log("Error ===",error);
+      })
   }
 
   ngOnInit() 
@@ -320,20 +177,16 @@ export class PacienteRegistroPage implements OnInit {
 
   exportexcel(): void
   {
-    
-    document.getElementById('excel-table-paciente');
-    const ws: XLSX.WorkSheet =XLSX.utils.json_to_sheet(this.pacientes);
+    /* pass here the table id */
+    let element = document.getElementById('excel-table-paciente');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
     XLSX.writeFile(wb, this.fileName);
- 
-
-    // document.getElementById('excel_table_user');
-    // const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.nombres);
-    // const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    // XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-    // XLSX.writeFile(wb, this.fileName);
- 
  
   }
 }

@@ -53,7 +53,7 @@ export class RayosXUpdatePage implements OnInit {
    this._apiservice.updateRayosx(this.id_col_rayosx,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('/rayos-x');
+     this.router.navigateByUrl('admin/rayos-x');
      
  }, (err:any)=>{
   this.presentToastError('Error al liberar!');

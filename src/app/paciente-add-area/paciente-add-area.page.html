@@ -1,36 +1,25 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="end">
-            <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title style="height: 80px;" class="titulo">Asignar área a paciente</ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content>
-    <ion-card>
-        <ion-list class="list-asignar">
+    <ion-content>
+        <div class="title"><h1>Asignar Area</h1></div>
+    <div class="container1">
+        <div class="avatar-left"></div>
+        <div class="table-rigth">
             <ion-item>
                 <ion-label class="subtitulo2" position="floating">id:</ion-label>
                 <ion-input class="subtitulo2" disabled [(ngModel)]="id" type="number"></ion-input>
             </ion-item>
 
             <ion-item>
-                <label class="subtitulo2">Área:</label>
+                <ion-label>Estado</ion-label>
                 <select [(ngModel)]="area" class="form-select form-select-lg mb-3 select">
-                <option  value='1'>Sonografia</option>
-                <option value='2'>Laboratorio</option>
-                <option value='3'>Odontologia</option>
-                <option value='4'>Rayos-X</option>
-
-              </select>
+                    <option  value='1'>Sonografia</option>
+                    <option value='2'>Laboratorio</option>
+                    <option value='3'>Odontologia</option>
+                    <option value='4'>Rayos-X</option>
+                  </select>
             </ion-item>
-
-            <ion-row>
-                <ion-col>
-                    <ion-button class="subtitulo2" type="button" (click)="areaCheck()" color="primary" shape="round" expand="block"> asignar area </ion-button>
-                </ion-col>
-            </ion-row>
-        </ion-list>
-    </ion-card>
+            <ion-button class="subtitulo" type="button" (click)="areaCheck()" color="success" shape="shape" expand="block"> cambiar estado </ion-button>
+        </div>
+        </div>
+    </ion-content>
 </ion-content>

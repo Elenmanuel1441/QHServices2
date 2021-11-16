@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import * as XLSX from 'xlsx';
@@ -9,14 +9,14 @@ import * as XLSX from 'xlsx';
   templateUrl: './usuario-registro.page.html',
   styleUrls: ['./usuario-registro.page.scss'],
 })
-export class UsuarioRegistroPage implements OnInit,AfterViewInit{
-  
-  p: number = 1;
+export class UsuarioRegistroPage implements OnInit{
   nombre: any;
   contrasena: any;
   estado: any;
   rol: any;
 
+  buscarUsuario: any;
+  
   nombres: any = ['nombre', 'estado','rol'];
 
   search_01: string;
@@ -27,7 +27,6 @@ export class UsuarioRegistroPage implements OnInit,AfterViewInit{
 
   fileName= 'Reporte de usuario.xlsx';
 
-
   constructor(
     public _apiService: ApiService,
     public toastController: ToastController,
@@ -36,10 +35,6 @@ export class UsuarioRegistroPage implements OnInit,AfterViewInit{
     this.getUsuarios();
     setInterval(() => this.getUsuarios(), 10000);
     this.limpiarCampos();
-  }
-  ngAfterViewInit() 
-  {
-    
   }
 
 
@@ -109,7 +104,7 @@ else{
     console.log("Error ===",error);
   })
   
- }
+}
   
 }
     
@@ -117,9 +112,8 @@ else{
   ngOnInit() 
   {
    this.limpiarCampos();
-
-}
- 
+  }
+  
    getUsuarios(){
     this._apiService.getUsuarios().subscribe((res:any) => {
       console.log("SUCCESS ===",res);
@@ -245,10 +239,15 @@ async presentAlert()
 
   exportexcel(): void
   {
-    document.getElementById('excel_table_user');
-    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.nombres);
+    /* pass here the table id */
+    let element = document.getElementById('excel-table-user');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
     XLSX.writeFile(wb, this.fileName);
  
   }

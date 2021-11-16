@@ -1,60 +1,34 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title style="height: 80px;" class="titulo">Odontología </ion-title>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content>
-    <ion-card>
-        <ion-item>
-            <ion-grid class="tabla-paciente">
-                <ion-row>
-                    <ion-col>
-                        No.
-                    </ion-col>
-                    <ion-col>
-                        Nombre
-                    </ion-col>
-                    <ion-col>
-                        Apellido
-                    </ion-col>
-                    <ion-col>
-                        Cédula
-                    </ion-col>
-                    <ion-col>
-                        Teléfono
-                    </ion-col>
-                    <ion-col>
-                        Acciones
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-item>
-
-        <ion-item lines="inset" *ngFor="let odontologia of odontologia ;let i=index;">
-            <ion-grid class="tabla-paciente">
-                <ion-row>
-                    <ion-col>
-                        <h5>{{i+1}} </h5>
-                    </ion-col>
-                    <ion-col>
-                        <h5 class="normal">{{odontologia.nombre_paciente}} </h5>
-                    </ion-col>
-                    <ion-col>
-                        <h5 class="normal">{{odontologia.apellido_paciente}}</h5>
-                    </ion-col>
-                    <ion-col>
-                        <h5 class="normal">{{odontologia.cedula_paciente}}</h5>
-                    </ion-col>
-                    <ion-col>
-                        <h5 class="normal">{{odontologia.telefono_paciente}}</h5>
-                    </ion-col>
-                    <ion-col>
-                        <ion-button [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]">liberar</ion-button>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-item>
-
-    </ion-card>
-</ion-content>
+<div class="animated fadeIn">
+  
+  <div class="title"><h1>Lista de Pacientes en Odontodologia</h1></div>
+  <div class="container1 animated fadeIn">
+      <div class="avatar-left"></div>
+      <div class="table-rigth">
+  
+          <table id="tabla" class="table table-hover">
+              <thead class="">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Cédule</th>
+                  <th scope="col">Teléfono</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let odontologia of odontologia ;let i=index;">
+                    <th>{{i+1}}</th>
+                    <td>{{odontologia.nombre_paciente}}  </td>
+                    <td>{{odontologia.apellido_paciente}}</td>
+                    <td>{{odontologia.cedula_paciente}}</td>
+                    <td>{{odontologia.telefono_paciente}}</td>
+                    <td> <ion-button [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]"> Liberar</ion-button></td>
+                  </tr>
+                  <tr>
+              </tr>
+              </tbody>
+              </table>
+      </div>
+  </div>
+</div>

@@ -1,60 +1,35 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title style="height: 80px;" class="titulo">Rayos X </ion-title>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-    <ion-card>
-        <ion-item>
-            <ion-grid class="tabla-paciente">
-                <ion-row>
-                    <ion-col>
-                        No.
-                    </ion-col>
-                    <ion-col>
-                        Nombre
-                    </ion-col>
-                    <ion-col>
-                        Apellido
-                    </ion-col>
-                    <ion-col>
-                        Cédula
-                    </ion-col>
-                    <ion-col>
-                        Teléfono
-                    </ion-col>
-                    <ion-col>
-                        Acciones
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-item>
-
-        <ion-item lines="inset" *ngFor="let rayos_x of rayos_x ;let i=index;">
-            <ion-grid class="tabla-paciente">
-                <ion-row>
-                    <ion-col>
-                        <h5>{{i+1}} </h5>
-                    </ion-col>
-                    <ion-col>
-                        <h5 class="normal">{{rayos_x.nombre_paciente}} </h5>
-                    </ion-col>
-                    <ion-col>
-                        <h5 class="normal">{{rayos_x.apellido_paciente}}</h5>
-                    </ion-col>
-                    <ion-col>
-                        <h5 class="normal">{{rayos_x.cedula_paciente}}</h5>
-                    </ion-col>
-                    <ion-col>
-                        <h5 class="normal">{{rayos_x.telefono_paciente}}</h5>
-                    </ion-col>
-                    <ion-col>
-                        <ion-button [routerLink]="['/rayos-x-update/',rayos_x.id_col_rayosx]">Liberar</ion-button>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-item>
-    </ion-card>
-</ion-content>
+<div class="animated fadeIn">
+  
+  <div class="title"><h1>Lista de Pacientes en Rayos X</h1></div>
+  <div class="container1 animated fadeIn">
+      <div class="avatar-left"></div>
+      <div class="table-rigth">
+  
+          <table id="tabla" class="table table-hover">
+              <thead class="">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Cédule</th>
+                  <th scope="col">Teléfono</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let rayos_x of rayos_x ;let i=index;">
+                    <th>{{i+1}}</th>
+                    <td>{{rayos_x.nombre_paciente}} </td>
+                    <td>{{rayos_x.apellido_paciente}}</td>
+                    <td>{{rayos_x.cedula_paciente}}</td>
+                    <td>{{rayos_x.telefono_paciente}}</td>
+                    <td> <ion-button [routerLink]="['/rayos-x-update/',rayos_x.id_col_rayosx]"> Liberar</ion-button></td>
+                  </tr>
+                  <tr>
+              </tr>
+              </tbody>
+              </table>
+      </div>
+  </div>
+  
+</div>

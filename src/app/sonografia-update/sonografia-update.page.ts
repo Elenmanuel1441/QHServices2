@@ -191,7 +191,7 @@ vesicula(){
    this._apiservice.updateSonografia(this.id_col_sonografia,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('/sonografia');
+     this.router.navigateByUrl('admin/sonografia');
      
  }, (err:any)=>{
   this.presentToastError('Error al liberar!');

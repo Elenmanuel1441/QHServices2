@@ -1,14 +1,5 @@
-<ion-header>
-
-    <ion-toolbar>
-        <ion-title style="height: 80px;" class="titulo">Registro de pacientes</ion-title>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-
-
-
+<ion-content>
+    
     <ion-card class="datos-personales2">
 
         <ion-grid>
@@ -137,7 +128,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of pacientes | filter:search_01 | paginate: { itemsPerPage: 5, currentPage: p } let i=index;">
+                    <tr *ngFor="let item of pacientes | filter:search_01 ; let i=index;">
                         <th scope="row">{{i+1}}</th>
                         <td>{{item.nombre_paciente}}</td>
                         <td>{{item.apellido_paciente}}</td>
@@ -151,10 +142,61 @@
                     </tr>
                 </tbody>
             </table>
-            <!--Se utiliza para que se pueda activar la paginacion y el evento donde llama a las cantidesde de paginas -->
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </ion-card>
+        <!-- 
+        <ion-card class="card_lista_paciente">
+            <ion-item class="list_item_titulos">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <h5 class="normal">No.</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Nombre</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Apellido</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Teléfono</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Cédula</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">Acciones</h5>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+
+            <ion-item class="list_item_titulos" lines="inset" *ngFor="let pacientes of pacientes | filter:searchTerm ;let i=index;">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <h5 class="normal">{{i+1}} </h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">{{pacientes.nombre_paciente}}</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">{{pacientes.apellido_paciente}}</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">{{pacientes.telefono_paciente}}</h5>
+                        </ion-col>
+                        <ion-col>
+                            <h5 class="normal">{{pacientes.cedula_paciente}}</h5>
+                        </ion-col>
+                        <ion-col>
+                            <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',pacientes.id_paciente]"></ion-icon>
+                            <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',pacientes.id_paciente]"></ion-icon>
+                            <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(pacientes.id_paciente)"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-card> -->
 
     </ion-card>
-
 </ion-content>

@@ -55,7 +55,7 @@ export class LaboratorioUpdatePage implements OnInit {
    this._apiservice.updateLaboratorio(this.id_col_laboratorio,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('/laboratorio');
+     this.router.navigateByUrl('admin/laboratorio');
      
  }, (err:any)=>{
    console.log("ERROR", err);

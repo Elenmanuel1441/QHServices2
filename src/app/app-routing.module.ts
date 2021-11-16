@@ -3,18 +3,23 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'admin',
     pathMatch: 'full',
   },
-  { 
-    path: '', redirectTo: 'home', pathMatch: 'full' 
-  },
 
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
   {
     path: 'rayos-x',
     loadChildren: () => import('./rayos-x/rayos-x.module').then( m => m.RayosXPageModule)
@@ -42,10 +47,6 @@ const routes: Routes = [
   {
     path: 'paciente-add-area/:id',
     loadChildren: () => import('./paciente-add-area/paciente-add-area.module').then( m => m.PacienteAddAreaPageModule)
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'setting',
@@ -82,8 +83,12 @@ const routes: Routes = [
     loadChildren: () => import('./reportes/reportes.module').then( m => m.ReportesPageModule)
   },
   { 
-    path: '**', redirectTo: 'home', pathMatch: 'full' 
+    path: '**', redirectTo: 'login', pathMatch: 'full' 
   },
+
+
+
+
 
 
  

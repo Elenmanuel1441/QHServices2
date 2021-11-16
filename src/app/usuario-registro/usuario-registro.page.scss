@@ -6,6 +6,7 @@
     background-color: #4cf1b2;
 }
 
+
 // .user_item {
 //     border-radius: 8px;
 //     width: 530px;
@@ -60,7 +61,10 @@ ion-searchbar {
 .h5 {
     margin-left: 20px;
 }
+.columna_usuario{
+    height: auto;
 
+}
 .tabla_usaurios {
     width: 520px;
     margin: auto;
@@ -88,7 +92,7 @@ ion-icon {
 
 .imagen_usario {
     height: 00%;
-    width: 80%;
+    width: 40%;
     margin: auto;
 }
 
@@ -112,7 +116,7 @@ ion-icon {
 }
 
 .card_elementos {
-    height: 520px;
+    height: 460px;
     width: 100%;
     margin: auto;
     margin-left: -60px;
@@ -128,6 +132,3 @@ ion-grid {
     width: 95%;
 }
 
-.contenido {
-    background-color: green;
-}
