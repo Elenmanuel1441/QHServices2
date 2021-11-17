@@ -17,7 +17,8 @@ ion-label {
 }
 
 ion-button {
-    border-radius: 20px;
+    margin: auto;
+    width: 400px;
 }
 
 ion-title {
@@ -25,13 +26,14 @@ ion-title {
 }
 
 .select {
-    height: 35px;
-    width: 700px;
+    height: 38px;
+    width: 400px;
     font-size: 13px;
-    margin: 15px 0 0 35px;
+    margin: auto;
+    border-radius: 20px;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -39,19 +41,20 @@ ion-title {
     top: 0;
 }
 
-.title{
+.title {
     text-align: center;
     padding: 50px 0 20px;
 }
 
-.title h1{
+.title h1 {
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
     color: #262626;
     text-transform: uppercase;
 }
-.container1{
+
+.container1 {
     width: 40%;
     height: 250px;
     background: #fff;
@@ -61,7 +64,7 @@ ion-title {
     margin-bottom: 40%;
 }
 
-.container1 .table-rigth{
+.container1 .table-rigth {
     float: right;
     padding: 40px;
     width: 100%;

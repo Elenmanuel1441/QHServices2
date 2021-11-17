@@ -1,25 +1,26 @@
 <ion-content>
-    <ion-content>
-        <div class="title"><h1>Asignar Area</h1></div>
+    <div class="title">
+        <h1>Asignar Área</h1>
+    </div>
     <div class="container1">
         <div class="avatar-left"></div>
         <div class="table-rigth">
-            <ion-item>
-                <ion-label class="subtitulo2" position="floating">id:</ion-label>
-                <ion-input class="subtitulo2" disabled [(ngModel)]="id" type="number"></ion-input>
-            </ion-item>
 
-            <ion-item>
-                <ion-label>Estado</ion-label>
-                <select [(ngModel)]="area" class="form-select form-select-lg mb-3 select">
+            <ion-input class="subtitulo2" hidden="true" disabled [(ngModel)]="id" type="number"></ion-input>
+
+            <div>
+                <select [(ngModel)]="area" class="form-select form-select-lg mb-3 select subtitulo">
+                    <option value="Nada" selected disabled>Seleccione el Área</option>
                     <option  value='1'>Sonografia</option>
                     <option value='2'>Laboratorio</option>
                     <option value='3'>Odontologia</option>
                     <option value='4'>Rayos-X</option>
                   </select>
-            </ion-item>
-            <ion-button class="subtitulo" type="button" (click)="areaCheck()" color="success" shape="shape" expand="block"> cambiar estado </ion-button>
+            </div>
+            <div>
+                <ion-button class="subtitulo" type="button" (click)="areaCheck()" color="success" shape="round" expand="block"> cambiar estado </ion-button>
+            </div>
+
         </div>
-        </div>
-    </ion-content>
+    </div>
 </ion-content>

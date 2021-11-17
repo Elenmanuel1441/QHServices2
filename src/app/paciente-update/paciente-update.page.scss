@@ -1,14 +1,16 @@
-.datos-personales {
-    width: 850px;
-    height: 580px;
-    border-radius: 10px;
-    background-color: #4cf1b2;
+.datos-personales2 {
+    width: 900px;
+    height: 300px;
     padding: 10px;
+    border-radius: 10px;
     margin: auto;
+    margin-top: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
 ion-label {
     color: black;
+    margin: 0 0 0 15px;
 }
 
 ion-input {
@@ -19,36 +21,28 @@ ion-input {
     border-color: var(--ion-color-medium-shade);
     border-radius: 8px;
     border-width: 1px;
-    box-shadow: 2px gray;
+    margin: auto;
+    box-shadow: 2px rgb(255, 255, 255);
     background: #f8f9fa;
-}
-
-input {
-    background-color: white;
 }
 
 .h1 title {
     color: black;
 }
 
-ion-scroll {
-    height: 100px;
-}
-
-.card-list {
+.card_list_select {
     border-radius: 10px;
-}
-
-.card-lista-paciente {
-    border-radius: 10px;
+    width: 830px;
+    margin: auto;
 }
 
 .date {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 20px;
     width: 250px;
-    height: 36px;
-    margin: auto;
+    height: 38px;
+    margin-top: 10px;
+    margin-left: 13px;
     border-color: white;
 }
 
@@ -56,23 +50,78 @@ ion-title {
     text-align: center;
 }
 
-.select {
-    height: 35px;
-    width: 600px;
+ion-icon {
+    margin: 0 0 0 5px;
+}
+
+.select_sangre {
+    height: 38px;
     font-size: 13px;
-    margin: 15px 0 0 43px;
+    width: 250px;
+    margin: auto;
+    border-radius: 20px;
 }
 
 .select-ars {
-    height: 35px;
-    width: 600px;
+    height: 38px;
+    width: 250px;
     font-size: 13px;
-    margin: 15px 0 0 125px;
+    margin: auto;
+    border-radius: 20px;
 }
 
 .select-sexo {
-    height: 35px;
-    width: 600px;
+    height: 38px;
+    width: 250px;
     font-size: 13px;
-    margin: 15px 0 0 120px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.list_item_titulos {
+    width: 830px;
+    margin: auto;
+}
+
+.card_lista_paciente {
+    width: 830px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.Search {
+    width: 838px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.row {
+    width: 540px;
+}
+
+.table_export {
+    margin: auto;
+    width: 600px;
+}
+
+.tabla_pacientes {
+    width: 830px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.btn_Update {
+    width: 830px;
+    margin: auto;
+}
+
+.btn_add_paciente {
+    width: 838px;
+    margin: auto;
+}
+
+.inputs {
+    width: 90%;
+    border-radius: 20px;
+    margin: auto;
 }
