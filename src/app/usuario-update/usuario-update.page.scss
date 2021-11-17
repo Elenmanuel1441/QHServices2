@@ -1,59 +1,107 @@
 .card-principal {
-    width: 630px;
-    height: 300px;
-    padding: 30px;
+    width: 600px;
+    padding: 8px;
     border-radius: 10px;
     margin: auto;
+    margin-bottom: 15px;
     background-color: #4cf1b2;
-    left: 0em;
-}
-
-.list-usuarios {
-    border-radius: 10px;
-}
-
-.label {
-    margin-left: 15px;
-}
-
-ion-input {
-    width: 250px;
-    height: 35px;
-    padding: 16px;
-    background-color: #ccc;
-    border-color: var(--ion-color-medium-shade);
-    border-radius: 8px;
-    border-width: 1px;
-    margin: auto;
-    box-shadow: 2px rgb(255, 255, 255);
-    background: #f8f9fa;
-}
-
-.list-lista-usuarios {
-    border-radius: 10px;
 }
 
 ion-title {
     text-align: center;
 }
 
-.select-estado {
-    height: 35px;
-    border-radius: 8px;
-    font-size: 13px;
-    width: 250px;
-    margin: auto;
-}
-
-.select-posicion {
-    height: 35px;
-    border-radius: 8px;
-    font-size: 13px;
-    width: 250px;
-    margin: auto;
+.label {
+    margin-left: 10px;
 }
 
 ion-button {
-    width: 530px;
+    width: 520px;
     margin: auto;
+    margin-bottom: 20px;
+}
+
+ion-searchbar {
+    width: 93%;
+    margin: auto;
+}
+
+.selectFiltoArea {
+    // height: 35px;
+    border-radius: 20px;
+    //font-size: 13px;
+    width: 100%;
+    margin: auto;
+}
+
+.h5 {
+    margin-left: 20px;
+}
+
+.columna_usuario {
+    height: auto;
+}
+
+.tabla_usaurios {
+    width: 520px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+ion-icon {
+    margin: 0 0 0 5px;
+}
+
+.Card_secundaria {
+    height: 460px;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    margin-right: 80px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+.inputs {
+    width: 90%;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.imagen_usario {
+    height: 00%;
+    width: 50%;
+    margin: auto;
+}
+
+.btn_update {
+    width: 90%;
+    margin: auto;
+}
+
+.select_estado {
+    width: 90%;
+    //margin-left: 40px;
+    margin: auto;
+}
+
+.Sel_estado {
+    border-radius: 20px
+}
+
+.card_elementos {
+    height: 460px;
+    width: 100%;
+    margin: auto;
+    margin-left: -60px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+ion-grid {
+    --ion-grid-width: 600px
+}
+
+.columnas {
+    width: 95%;
 }
