@@ -92,13 +92,12 @@ else{
   this.presentToast('Guardado exitosamente!');
   this.getUsuarios();
 
-  },(error: any) => {
+   },(error: any) => {
     this.presentToastErrAdd('Error al guardar!');
     console.log("Error ===",error);
-  })
+   })
   
-}
-  
+  }
 }
     
   
