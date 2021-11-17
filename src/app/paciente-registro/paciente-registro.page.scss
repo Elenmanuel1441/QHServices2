@@ -1,9 +1,11 @@
 .datos-personales2 {
     width: 900px;
+    height: 700px;
     padding: 10px;
     border-radius: 10px;
     margin: auto;
-    background-color: #4cf1b2;
+    margin-top: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
 ion-label {
@@ -24,10 +26,6 @@ ion-input {
     background: #f8f9fa;
 }
 
-input {
-    background-color: white;
-}
-
 .h1 title {
     color: black;
 }
@@ -40,11 +38,11 @@ input {
 
 .date {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 20px;
     width: 250px;
-    height: 36px;
-    margin: auto;
-    margin-left: 15px;
+    height: 38px;
+    margin-top: 10px;
+    margin-left: 13px;
     border-color: white;
 }
 
@@ -57,24 +55,27 @@ ion-icon {
 }
 
 .select_sangre {
-    height: 35px;
+    height: 38px;
     font-size: 13px;
-    width: 600px;
-    margin: 15px 0 0 43px;
+    width: 250px;
+    margin: auto;
+    border-radius: 20px;
 }
 
 .select-ars {
-    height: 35px;
-    width: 600px;
+    height: 38px;
+    width: 250px;
     font-size: 13px;
-    margin: 15px 0 0 125px;
+    margin: auto;
+    border-radius: 20px;
 }
 
 .select-sexo {
-    height: 35px;
-    width: 600px;
+    height: 38px;
+    width: 250px;
     font-size: 13px;
-    margin: 15px 0 0 120px;
+    margin: auto;
+    border-radius: 20px;
 }
 
 .list_item_titulos {
@@ -88,9 +89,10 @@ ion-icon {
     border-radius: 10px;
 }
 
-ion-searchbar {
-    width: 845px;
+.Search {
+    width: 838px;
     margin: auto;
+    border-radius: 20px;
 }
 
 .row {
@@ -110,5 +112,16 @@ ion-searchbar {
 
 .btnExport {
     width: 830px;
+    margin: auto;
+}
+
+.btn_add_paciente {
+    width: 838px;
+    margin: auto;
+}
+
+.inputs {
+    width: 90%;
+    border-radius: 20px;
     margin: auto;
 }
