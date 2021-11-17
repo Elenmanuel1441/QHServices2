@@ -1,12 +1,12 @@
-ion-card {
-    width: 950px;
+.card_Obit {
+    width: 90%;
     border-radius: 10px;
     margin: auto;
     background-color: #e9f7f1;
 }
 
 ion-grid {
-    width: 900px;
+    width: 100%;
 }
 
 ion-title {
@@ -31,12 +31,12 @@ ion-input {
 
 .date {
     background-color: white;
-    border-radius: 8px;
-    width: 220px;
+    border-radius: 20px;
+    width: 250px;
     height: 38px;
     border-color: white;
     margin: auto;
-    margin-top: 35px;
+    margin-left: 25px;
 }
 
 ion-button {
@@ -51,4 +51,31 @@ ion-textarea {
 
 .btn_continuar {
     height: 35px;
+}
+
+.card_Obit {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.inputs {
+    width: 250px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.select_ubito {
+    height: 38px;
+    font-size: 13px;
+    width: 250px;
+    margin: auto;
+    border-radius: 20px;
+}
+.borde_gris_input{
+    border-radius: 20px;
+}
+
+.input_borde_gris{
+    border-radius: 20px;
+    width: 150px;
 }
