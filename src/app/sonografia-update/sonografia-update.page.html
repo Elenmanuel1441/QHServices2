@@ -5,22 +5,19 @@
         </ion-buttons>
         <ion-title class="titulo">
             <div>
-                <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light ">
                     <div class="container-fluid">
-                        <ion-grid>
-                            <ion-row>
-                                <ion-col>
-                                    <select [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select subtitulo2">
-                                    <option value='1'>OBSTETRICA OBITO</option>
-                                    <option value='2'>ABDOMINAL</option>
-                                    <option value='3'>TRANS VAGINAL</option>
-                                  </select>
-                                </ion-col>
-                                <ion-col>
-                                    <ion-button class="subtitulo2 btn_continuar" type="button" (click)="setVi()" color="primary" shape="shape" expand="block"> continuar </ion-button>
-                                </ion-col>
-                            </ion-row>
-                        </ion-grid>
+
+                        <div>
+                            <select [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
+                                                <option value='1'>OBSTETRICA OBITO</option>
+                                                <option value='2'>ABDOMINAL</option>
+                                                <option value='3'>TRANS VAGINAL</option>
+                                              </select>
+                        </div>
+                        <div>
+                            <ion-button class="subtitulo2 btn_continuar " type="button" (click)="setVi()" color="primary" shape="round" expand="block"> continuar </ion-button>
+                        </div>
 
                     </div>
                 </nav>
@@ -34,15 +31,12 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text borde_gris_input" id="inputGroup-sizing-sm">Nombre:</span>
-                        </div>
-                        <input type="text"  [(ngModel)]="sonoObito.nombre +' '+ sonoObito.apellido" class="form-control input_borde_gris" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
-                      </div>
+                    <div class="mt-2 inputIcon">
+                        <input type="text" [(ngModel)]="sonoObito.nombre +' '+ sonoObito.apellido" placeholder="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                    </div>
 
                     <div class="mt-2 inputIcon">
-                        <input type="text" [(ngModel)]="sonoObito.edad" placeholder="Nombres" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        <input type="text" [(ngModel)]="sonoObito.edad" placeholder="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                     </div>
                     <div>
                         <select [(ngModel)]="sonoObito.feto" class="form-select form-select-lg mt-2 select_ubito subtitulo2">
@@ -53,23 +47,12 @@
                       </select>
                     </div>
                     <div>
-                        <select [(ngModel)]="sonoObito.feto" class="form-select form-select-lg mt-2 select_ubito subtitulo2">
-                            <option value='ÚNICO'>ÚNICO</option>
-                            <option value='GEMELAR'>GEMELAR</option>
-                            <option value='TRES'>TRES</option>
-                            <option value='CUATRO'>CUATRO</option>
-                          </select>
-                    </div>
-                    <div>
                         <select [(ngModel)]="sonoObito.posicion" class="form-select form-select-lg mt-2 select_ubito subtitulo2">
                             <option  value='CEFÁLICO'>CEFÁLICO</option>
                             <option value='PÉLVICO'>PÉLVICO</option>
-                            <option value='PODÁLICO'>PODÁLICO</option>
+                            <option value='PODÁLICO'>PODÁLICO</option>      
                           </select>
                     </div>
-                </ion-col>
-
-                <ion-col>
                     <div>
                         <select [(ngModel)]="sonoObito.dorso" class="form-select form-select-lg mt-2 select_ubito subtitulo2">
                         <option  value='POSTERIOR DERECHO'>POSTERIOR DERECHO</option>
@@ -78,6 +61,9 @@
                         <option value='ANTERIOR IZQUIERDO'>ANTERIOR IZQUIERDO</option>
                        </select>
                     </div>
+                </ion-col>
+
+                <ion-col>
                     <div class="mt-2 inputIcon">
                         <input type="text" [(ngModel)]="sonoObito.peso" placeholder="Peso" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                     </div>
@@ -101,9 +87,6 @@
                             <option value='SE VISUALIZAN NORMALES'>SE VISUALIZAN NORMALES</option>
                           </select>
                     </div>
-                </ion-col>
-
-                <ion-col>
                     <div>
                         <select [(ngModel)]="sonoObito.vejiga" class="form-select form-select-lg mt-2  select_ubito normal">
                        <option  value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
@@ -111,6 +94,11 @@
                       <option value='VACIA'>VACIA</option>
                     </select>
                     </div>
+
+                </ion-col>
+
+                <ion-col>
+
                     <div>
                         <select [(ngModel)]="sonoObito.cabeza" class="form-select form-select-lg  mt-2  select_ubito subtitulo2">
                         <option  value='POCO VALORABLE'>POCO VALORABLE</option>
@@ -137,15 +125,17 @@
                             <option value='TRES'>TRES</option>
                           </select>
                     </div>
-                </ion-col>
 
-                <ion-col>
                     <div>
                         <select [(ngModel)]="sonoObito.cordon" class="form-select form-select-lg mt-2  select_ubito subtitulo2">
                             <option  value='NORMAL'>NORMAL</option>
                             <option value='NO VALORABLE'>NO VALORABLE</option>
                           </select>
                     </div>
+                </ion-col>
+
+                <ion-col>
+
                     <div>
                         <select [(ngModel)]="sonoObito.liquido" class="form-select form-select-lg mt-2  select_ubito subtitulo2">
                             <option  value='AUSEMNTE'>AUSENTE</option>
@@ -176,20 +166,18 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">CONCLUSIONES</span>
-                        </div>
-                        <textarea class="form-control" [(ngModel)]="sonoObito.conclusiones" aria-label="With textarea"></textarea>
+                    <div class="mt-2 inputIcon">
+                        <ion-textarea class="textarea" [(ngModel)]="sonoObito.conclusiones" placeholder="Agregue las conclusiones aqui..."></ion-textarea>
                     </div>
-                </ion-col>
-                <ion-col>
-                    <ion-button class="subtitulo2" expand="block" (click)="createObitoPdf()">crear</ion-button>
-                    <ion-button class="subtitulo2" expand="block" (click)="printObitoPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                    <div class="mt-2 inputIcon">
+                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createObitoPdf()">crear</ion-button>
+                    </div>
+                    <div class="mt-2 inputIcon">
+                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printObitoPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                    </div>
                 </ion-col>
             </ion-row>
         </ion-grid>
-
 
     </ion-card>
     <!---AUN SIGO TRABAJANDO EN ESTA PLANTILLA-->
