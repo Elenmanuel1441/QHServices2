@@ -1,16 +1,17 @@
-.title{
+.title {
     text-align: center;
     padding: 50px 0 20px;
 }
 
-.title h1{
+.title h1 {
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
     color: #262626;
     text-transform: uppercase;
 }
-.container1{
+
+.container1 {
     width: 80%;
     height: 400px;
     background: #fff;
@@ -20,7 +21,7 @@
     margin-bottom: 50px;
 }
 
-.container1 .avatar-left{
+.container1 .avatar-left {
     float: left;
     width: 30%;
     height: 400px;
@@ -28,9 +29,10 @@
     background-position: center;
     background-size: cover;
     box-sizing: border-box;
+    border-radius: 10px 0 0 10px;
 }
 
-.container1 .table-rigth{
+.container1 .table-rigth {
     float: right;
     padding: 40px;
     width: 70%;
@@ -38,4 +40,9 @@
     background: #fff;
     background-size: cover;
     box-sizing: border-box;
+    border-radius: 0 10px 10px 0;
+}
+
+.borde {
+    border-radius: 10px;
 }
