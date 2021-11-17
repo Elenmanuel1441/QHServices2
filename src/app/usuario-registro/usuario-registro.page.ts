@@ -47,7 +47,7 @@ export class UsuarioRegistroPage implements OnInit{
       duration: 1500,
       color: "danger",
       cssClass: 'toastVal',
-      position: "bottom",
+      position: "top",
       });
       toast.present();
     }
@@ -58,7 +58,7 @@ export class UsuarioRegistroPage implements OnInit{
         duration: 1500,
       color: "danger",
       cssClass: 'toastVal',
-      position: "bottom",
+      position: "top",
       });
       toast.present();
     }
@@ -69,7 +69,7 @@ export class UsuarioRegistroPage implements OnInit{
         duration: 1500,
       color: "danger",
       cssClass: 'toastVal',
-      position: "bottom",
+      position: "top",
       });
       toast.present();
     }
@@ -141,7 +141,7 @@ this._apiService.deleUsuarios(id).subscribe((res:any) => {
       duration: 1500,
       color: "success",
       cssClass: 'toastAdd',
-      position: "bottom",
+      position: "top",
       
     });
     toast.present();
@@ -153,7 +153,7 @@ this._apiService.deleUsuarios(id).subscribe((res:any) => {
       duration: 1500,
       color: "danger",
       cssClass: 'toastEli',
-      position: "bottom",
+      position: "top",
     });
     toast.present();
   }
@@ -164,7 +164,7 @@ this._apiService.deleUsuarios(id).subscribe((res:any) => {
       duration: 1500,
       color: "danger",
       cssClass: 'toastEli',
-      position: "bottom",
+      position: "top",
     });
     toast.present();
   }
@@ -175,7 +175,7 @@ this._apiService.deleUsuarios(id).subscribe((res:any) => {
       duration: 1500,
       color: "danger",
       cssClass: 'toastEli',
-      position: "bottom",
+      position: "top",
     });
     toast.present();
   }
