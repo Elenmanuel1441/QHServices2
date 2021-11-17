@@ -73,17 +73,6 @@ export class UsuarioRegistroPage implements OnInit{
       });
       toast.present();
     }
-    else if(this.estado == "")
-    {
-      const toast = await this.toastController.create({
-        message: 'Ingrese un estado',
-        duration: 1500,
-      color: "danger",
-      cssClass: 'toastVal',
-      position: "bottom",
-      });
-      toast.present();
-    }
 else{
 
   let data = {
