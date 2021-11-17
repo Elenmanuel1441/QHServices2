@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -8,9 +12,23 @@ import { ApiService } from '../api.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+
+  loginForm: FormGroup;
+
+  constructor(private afAuth: AuthService, private formBuider: FormBuilder) {
+
+    this.loginForm = this.formBuider.group({
+      email: ['', [Validators.required, Validators.email]],
+      contrasena: ['', Validators.required]
+    })
+   }
 
   ngOnInit() {
+   
+  }
+
+  login(){
+    this.afAuth.login(this.loginForm.value.email, this.loginForm.value.contrasena)
   }
 
 }

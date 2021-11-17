@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AdminPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private afAuth: AuthService) { }
 
   ngOnInit() {
   }
@@ -41,4 +42,7 @@ export class AdminPage implements OnInit {
      this.router.navigate(['admin/paciente-registro']);
    }
 
+   logout(){
+     this.afAuth.logout();
+   }
 }
