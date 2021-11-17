@@ -72,6 +72,17 @@ export class ApiService {
   {
     return this.http.post('http://localhost/proyecto/backend/addRayosx.php',data);}
    
+    
+    addSonografiaAbdominal(data)
+    {
+      return this.http.post('http://localhost/proyecto/backend/addSonografiaAbdominal.php',data);}  
+    
+  
+    
+  addSonografiaObstetrica(data)
+    {
+      return this.http.post('http://localhost/proyecto/backend/addSonografiaObstetrica.php',data);}  
+    
     getRayosx()
   {
     return this.http.get('http://localhost/proyecto/backend/getRayosx.php');

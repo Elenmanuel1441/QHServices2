@@ -107,7 +107,7 @@ export class SonografiaUpdatePage implements OnInit {
  constructor(
   private route: ActivatedRoute,
   private router: Router,
-  private _apiservice: ApiService,
+  public _apiservice: ApiService,
   public toastController: ToastController
 
  ) { 
@@ -123,6 +123,104 @@ export class SonografiaUpdatePage implements OnInit {
 
   
  }
+ addSonografiaObstetrica()
+  {
+    let data = {
+  id_paciente: this.id_paciente,
+ sonoObitoNombre : this.sonoObito.nombre,
+ sonoObitoApellido :this.sonoObito.apellido,
+ sonoObitoEdad :this.sonoObito.edad,
+ sonoObitoFeto :this.sonoObito.feto,
+ sonoObitoPosicion :this.sonoObito.posicion,
+ sonoObitoDorso :this.sonoObito.dorso,
+ sonoObitoPeso :this.sonoObito.peso,
+ sonoObitoColumna :this.sonoObito.columna,
+ sonoObitoEstomago :this.sonoObito.estomago,
+ sonoObitoRinones :this.sonoObito.rinones,
+ sonoObitoVejiga :this.sonoObito.vejiga,
+ sonoObitoCabeza :this.sonoObito.cabeza,
+ sonoObitoFcf :this.sonoObito.fcf,
+ sonoObitoPlacenta :this.sonoObito.placenta,
+ sonoObitoGrado :this.sonoObito.grado,
+ sonoObitoCordon :this.sonoObito.cordon,
+ sonoObitoLiquido :this.sonoObito.liquido, 
+ sonoObitoCervix :this.sonoObito.cervix,
+ sonoObitoSexo :this.sonoObito.sexo,
+ sonoObitoConclusiones :this.sonoObito.conclusiones,
+ sonoObitoFpp :this.sonoObito.fpp,
+ 
+ 
+}
+      this._apiservice.addSonografiaObstetrica(data).subscribe((res:any) => {
+        console.log("SUCCESS ===",res);
+        this.presentToast('Guardado exitosamente!');
+      
+      },(error: any) => {
+        this.presentToastErrorADD('Error al guardar!');
+        console.log("Error ===",error);
+      })
+  }
+//AÑADE A LA BASE DE DATOS LA SONOGRAFIA ABDOMINAL
+  addSonografiaAbdominal()
+  {
+    let data = {
+  id_paciente: this.id_paciente,
+ sonoAbdominalNombre: this.sonoAbdominal.nombre,
+ sonoAbdominalApellido: this.sonoAbdominal.apellido,
+ sonoAbdominalEdad: this.sonoAbdominal.edad,
+ sonoAbdominalMorfologia: this.sonoAbdominal.morfologia,
+ sonoAbdominalLesionesFocales: this.sonoAbdominal.lesionesFocales,
+ sonoAbdominalMedidaHigado: this.sonoAbdominal.medidaHigado,
+ sonoAbdominalViasBiliares: this.sonoAbdominal.viasBiliares,
+ sonoAbdominalVesiculaForma: this.sonoAbdominal.vesiculaForma,
+ sonoAbdominalVesiculaSituacion: this.sonoAbdominal.vesiculaSituacion,
+ sonoAbdominalVesiculaPared: this.sonoAbdominal.vesiculaPared,
+ sonoAbdominalVesiculaLongitud: this.sonoAbdominal.vesiculaLongitud,
+ sonoAbdominalVesiculaAncho: this.sonoAbdominal.vesiculaAncho,
+ sonoAbdominalVesiculaLitos: this.sonoAbdominal.vesiculaLitos,
+ sonoAbdominalVesiculaPolipos: this.sonoAbdominal.vesiculaPolipos,
+ sonoAbdominalPancreasForma: this.sonoAbdominal.pancreasForma,
+ sonoAbdominalPancreasSituacion: this.sonoAbdominal.pancreasSituacion,
+ sonoAbdominalPancreasCabeza: this.sonoAbdominal.pancreasCabeza,
+ sonoAbdominalPancreasCuerpo: this.sonoAbdominal.pancreasCuerpo,
+ sonoAbdominalPancreasCola: this.sonoAbdominal.pancreasCola,
+ sonoAbdominalPancreasContorno: this.sonoAbdominal.pancreasContorno,
+ sonoAbdominalPancreasEcogenicidad: this.sonoAbdominal.pancreasEcogenicidad,
+ sonoAbdominalRinonDVisualiza: this.sonoAbdominal.rinondVisualiza,
+ sonoAbdominalRinonDForma: this.sonoAbdominal.rinondForma,
+ sonoAbdominalRinonDContornos: this.sonoAbdominal.rinondContornos,
+ sonoAbdominalRinonDRelacion: this.sonoAbdominal.rinondRelacion,
+ sonoAbdominalRinonDEvidencia: this.sonoAbdominal.rinondEvidencia,
+ sonoAbdominalRinonDLitiasis: this.sonoAbdominal.rinondLitiasis,
+ sonoAbdominalRinonDTumoraciones: this.sonoAbdominal.rinondTumoraciones,
+ sonoAbdominalRinonLVisualiza: this.sonoAbdominal.rinonlVisualiza,
+ sonoAbdominalRinonLForma: this.sonoAbdominal.rinonlForma,
+ sonoAbdominalRinonLContornos: this.sonoAbdominal.rinonlContornos,
+ sonoAbdominalRinonLRelacion: this.sonoAbdominal.rinonlRelacion,
+ sonoAbdominalRinonLEvidencia: this.sonoAbdominal.rinonlEvidencia,
+ sonoAbdominalRinonLLitiasis: this.sonoAbdominal.rinonlLitiasis,
+ sonoAbdominalRinonLTumoraciones: this.sonoAbdominal.rinonlTumoraciones,
+ sonoAbdominalBazoVisualiza: this.sonoAbdominal.bazoVisualiza,
+ sonoAbdominalBazoForma: this.sonoAbdominal.bazoForma,
+ sonoAbdominalBazoEcotextura: this.sonoAbdominal.bazoEcotextura,
+ sonoAbdominalBazoTumoraciones: this.sonoAbdominal.bazoTumoraciones,
+ sonoAbdominalBazoLongitud: this.sonoAbdominal.bazoLongitud,
+ sonoAbdominalBazoAncho: this.sonoAbdominal.bazoAncho,
+ sonoAbdominalAortaDiametro: this.sonoAbdominal.aortaDiametro,
+ sonoAbdominalAortaValor: this.sonoAbdominal.aortaValor,
+ sonoAbdominalConclusiones: this.sonoAbdominal.conclusiones,
+}
+      this._apiservice.addSonografiaAbdominal(data).subscribe((res:any) => {
+        console.log("SUCCESS ===",res);
+        this.presentToast('Guardado exitosamente!');
+      
+      },(error: any) => {
+        this.presentToastErrorADD('Error al guardar!');
+        console.log("Error ===",error);
+      })
+  }
+
+
  getSonografia(id_col_sonografia)
  {
    this._apiservice.getSonografia(id_col_sonografia).subscribe((res:any)=>{
@@ -142,6 +240,7 @@ export class SonografiaUpdatePage implements OnInit {
  })
  
 }
+
 // usa el toggle para mostrar u ocultar los campos de bazo
 bazo(){
    
@@ -244,6 +343,17 @@ async presentToastError(mensaje: string) {
     cssClass: 'toastAdd',
     position: "bottom",
     
+  });
+  toast.present();
+}
+//toast error al añadir
+async presentToastErrorADD (mensaje: string) {
+  const toast = await this.toastController.create({
+    message: mensaje,
+    duration: 1500,
+    color: "danger",
+    cssClass: 'toastEli',
+    position: "bottom",
   });
   toast.present();
 }
@@ -415,6 +525,7 @@ printObitoPdf() {
     // On a browser simply use download!
     this.pdfObj.print();
     this.updateSonografia();
+    this.addSonografiaObstetrica();
     
 }
 
@@ -2601,6 +2712,7 @@ printAbdominalPdf() {
     // On a browser simply use download!
     this.pdfObj.print();
     this.updateSonografia();
+    this.addSonografiaAbdominal();
     
 }
 
