@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import * as XLSX from 'xlsx';
+import { AuthService } from '../services/auth.service';
+
 
 
 @Component({
@@ -10,10 +12,11 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./usuario-registro.page.scss'],
 })
 export class UsuarioRegistroPage implements OnInit{
-  nombre: any;
-  contrasena: any;
-  estado: any;
-  rol: any;
+  nombre: string;
+  email: string;
+  contrasena: string;
+  estado: string;
+  rol: string;
 
   buscarUsuario: any;
   
@@ -29,6 +32,7 @@ export class UsuarioRegistroPage implements OnInit{
 
   constructor(
     public _apiService: ApiService,
+    private afAuth: AuthService,
     public toastController: ToastController,
     public alertController: AlertController
   ){
@@ -239,6 +243,10 @@ async presentAlert()
     /* save to file */  
     XLSX.writeFile(wb, this.fileName);
  
+  }
+
+  nuevoUsuario(){
+    this.afAuth.crearUsuario(this.email, this.contrasena)
   }
 
 }

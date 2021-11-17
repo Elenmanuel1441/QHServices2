@@ -6,7 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,6 +15,14 @@ import {MatIconModule} from '@angular/material/icon';
 
 //chart dashboard
 import { ChartsModule } from 'ng2-charts';
+
+
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+
 
 
 
@@ -27,7 +35,12 @@ import { ChartsModule } from 'ng2-charts';
      IonicStorageModule.forRoot(),
      HttpClientModule, AppRoutingModule,
      BrowserAnimationsModule,
-     MatIconModule, ChartsModule
+     MatIconModule, ChartsModule,
+      AngularFireModule.initializeApp(environment.DBConfig),
+      AngularFireAuthModule,
+      AngularFireDatabaseModule,
+      
+
     ],
   providers: [{ provide: RouteReuseStrategy,
      useClass: IonicRouteStrategy }],
