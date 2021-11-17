@@ -37,40 +37,181 @@ export class PacienteRegistroPage implements OnInit {
     
   ) {
     this.getPacientes();
-  //  this.limpiarCampos();
+    this.limpiarCampos();
    }
+  
 
-  addPaciente()
+ async addPaciente()
+{ 
+  if(this.nombre == "")
   {
-    let data = {
-  nombre: this.nombre,
-  apellido: this.apellido,
-  cedula: this.cedula,
-  telefono: this.telefono,
-  fecha_nacimiento: this.fecha_nacimiento,
-  alergias: this.alergias,
-  tipo_sangre: this.tipo_sangre,
-  padecimientos: this.padecimientos,
-  ocupacion: this.ocupacion,
-  sexo: this.sexo,
-  ars: this.ars,
-  direccion: this.direccion
+      const toast = await this.toastController.create({
+      message: 'Ingrese un nombre',
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastVal',
+      position: "top",
+      });
+      toast.present();
+    }
+    else if(this.apellido == "")
+  {
+      const toast = await this.toastController.create({
+      message: 'Ingrese un Apellido',
+      duration: 1500,
+      color: "danger",
+      cssClass: 'toastVal',
+      position: "top",
+      });
+      toast.present();
+    }
+    else if(this.cedula == "")
+    {
+        const toast = await this.toastController.create({
+        message: 'Ingrese una identificación',
+        duration: 1500,
+        color: "danger",
+        cssClass: 'toastVal',
+        position: "top",
+        });
+        toast.present();
       }
-      this._apiService.addPaciente(data).subscribe((res:any) => {
-        console.log("SUCCESS ===",res);
-        this.presentToast('Guardado exitosamente!');
-        this.getPacientes();
-        this.limpiarCampos();
-       
-      },(error: any) => {
-        this.presentToastErrorADD('Error al guardar!');
-        console.log("Error ===",error);
-      })
+      else if(this.telefono == "")
+      {
+          const toast = await this.toastController.create({
+          message: 'Ingrese una teléfono',
+          duration: 1500,
+          color: "danger",
+          cssClass: 'toastVal',
+          position: "top",
+          });
+          toast.present();
+        }
+        else if(this.alergias == "")
+        {
+            const toast = await this.toastController.create({
+            message: 'Complete el campo alergias',
+            duration: 1500,
+            color: "danger",
+            cssClass: 'toastVal',
+            position: "top",
+            });
+            toast.present();
+          }
+          else if(this.padecimientos == "")
+          {
+              const toast = await this.toastController.create({
+              message: 'Complete el campo padecimientos',
+              duration: 1500,
+              color: "danger",
+              cssClass: 'toastVal',
+              position: "top",
+              });
+              toast.present();
+            }
+            else if(this.ocupacion == "")
+            {
+                const toast = await this.toastController.create({
+                message: 'Ingrese una ocupación',
+                duration: 1500,
+                color: "danger",
+                cssClass: 'toastVal',
+                position: "top",
+                });
+                toast.present();
+              }
+              else if(this.direccion == "")
+              {
+                  const toast = await this.toastController.create({
+                  message: 'Ingrese una dirección',
+                  duration: 1500,
+                  color: "danger",
+                  cssClass: 'toastVal',
+                  position: "top",
+                  });
+                  toast.present();
+                }
+                else if(this.fecha_nacimiento == "")
+                {
+                    const toast = await this.toastController.create({
+                    message: 'Ingrese una fecha',
+                    duration: 1500,
+                    color: "danger",
+                    cssClass: 'toastVal',
+                    position: "top",
+                    });
+                    toast.present();
+                  }
+                  else if(this.tipo_sangre == "")
+                  {
+                      const toast = await this.toastController.create({
+                      message: 'Seleccione un tipo de sangre',
+                      duration: 1500,
+                      color: "danger",
+                      cssClass: 'toastVal',
+                      position: "top",
+                      });
+                      toast.present();
+                    }
+                    else if(this.sexo == "")
+                    {
+                        const toast = await this.toastController.create({
+                        message: 'Seleccione un sexo',
+                        duration: 1500,
+                        color: "danger",
+                        cssClass: 'toastVal',
+                        position: "top",
+                        });
+                        toast.present();
+                      }
+                      else if(this.ars == "")
+                    {
+                        const toast = await this.toastController.create({
+                        message: 'Seleccione una ARS',
+                        duration: 1500,
+                        color: "danger",
+                        cssClass: 'toastVal',
+                        position: "top",
+                        });
+                        toast.present();
+                      }
+            
+else{
+    let data = {
+  
+    nombre: this.nombre,
+    apellido: this.apellido,
+    cedula: this.cedula,
+    telefono: this.telefono,
+  
+    alergias: this.alergias,
+    padecimientos: this.padecimientos,
+    ocupacion: this.ocupacion,
+    direccion: this.direccion,
+  
+    fecha_nacimiento: this.fecha_nacimiento,
+    tipo_sangre: this.tipo_sangre,
+    sexo: this.sexo,
+    ars: this.ars,
+   } 
+   
+        this._apiService.addPaciente(data).subscribe((res:any) => {
+          console.log("SUCCESS ===",res);
+          this.limpiarCampos();
+          this.presentToast('Guardado exitosamente!');
+          this.getPacientes();
+          
+        },(error: any) => {
+          this.presentToastErrorADD('Error al guardar!');
+          console.log("Error ===",error);
+        })
   }
+}
+  
 
   ngOnInit() 
   {
-   
+   this.limpiarCampos();
   }
 
   limpiarCampos()
