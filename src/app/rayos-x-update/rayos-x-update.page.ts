@@ -12,8 +12,6 @@ export class RayosXUpdatePage implements OnInit {
   id_col_rayosx: any;
   estado_rayosx: any;
   
-
-
  constructor(
   private route: ActivatedRoute,
   private router: Router,

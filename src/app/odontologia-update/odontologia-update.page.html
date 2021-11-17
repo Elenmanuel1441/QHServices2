@@ -1,18 +1,13 @@
 <ion-content>
     <ion-content>
-        <div class="title"><h1>Seleccionar el Estado del Paciente</h1></div>
-    <div class="container1">
-        <div class="avatar-left"></div>
-        <div class="table-rigth">
-            <ion-item>
-                <ion-label>Estado</ion-label>
-                <ion-select [(ngModel)]="estado_odontologia"  type="number">
-                    <ion-select-option value=1>Activo</ion-select-option>
-                    <ion-select-option value=2>Inactivo</ion-select-option>
-                </ion-select>
-            </ion-item>
-            <ion-button class="subtitulo" type="button" (click)="updateOdontologia()" color="success" shape="shape" expand="block"> cambiar estado </ion-button>
+        <div class="title">
+            <h1>Seleccionar el Estado del Paciente</h1>
         </div>
+        <div class="container1">
+            <div class="avatar-left"></div>
+            <div class="table-rigth">
+                <ion-button class="subtitulo" type="button" (click)="updateOdontologia()" color="success" shape="shape" expand="block"> cambiar estado </ion-button>
+            </div>
         </div>
     </ion-content>
 </ion-content>
