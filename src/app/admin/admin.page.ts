@@ -10,7 +10,11 @@ import { AuthService } from '../services/auth.service';
 })
 export class AdminPage implements OnInit {
 
+  condiccion: number = 0;
+
+
   constructor(private router: Router, private afAuth: AuthService) { }
+
 
   ngOnInit() {
   }
@@ -42,7 +46,20 @@ export class AdminPage implements OnInit {
      this.router.navigate(['admin/paciente-registro']);
    }
 
+  
    logout(){
      this.afAuth.logout();
    }
+
+   toggle(){
+     if(this.condiccion === 0){
+       this.condiccion = 1
+     }
+     else{
+       this.condiccion = 0
+     }
+   }
+
+
+
 }

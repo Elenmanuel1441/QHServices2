@@ -1,5 +1,5 @@
 .card-principal {
-    width: 600px;
+    
     padding: 8px;
     border-radius: 10px;
     margin: auto;
@@ -25,6 +25,8 @@ ion-searchbar {
     margin: auto;
 }
 
+
+
 .selectFiltoArea {
     // height: 35px;
     border-radius: 20px;
@@ -37,9 +39,7 @@ ion-searchbar {
     margin-left: 20px;
 }
 
-.columna_usuario {
-    height: auto;
-}
+
 
 .tabla_usaurios {
     width: 520px;
@@ -52,7 +52,6 @@ ion-icon {
 }
 
 .Card_secundaria {
-    height: 460px;
     width: 60%;
     margin: auto;
     margin-right: 80px;
@@ -90,14 +89,15 @@ ion-icon {
 .Sel_estado {
     border-radius: 20px
 }
+.card_elementos{
+    height: 450px;
+}
 
-.card_elementos {
-    height: 460px;
-    width: 100%;
-    margin: auto;
-    margin-left: -60px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
-    border-radius: 10px;
+.card_elementos::-webkit-scrollbar {
+    width: 7px;
+}
+.card_elementos::-webkit-scrollbar-thumb {
+    background-color: rgb(64, 240, 64);
 }
 
 ion-grid {
@@ -106,4 +106,8 @@ ion-grid {
 
 .columnas {
     width: 95%;
+}
+.card-contenedor{
+
+    width: 100%;
 }

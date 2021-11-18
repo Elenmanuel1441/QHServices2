@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -16,7 +17,8 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     IonicModule,
     AdminPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule
   ],
   declarations: [AdminPage]
 })
