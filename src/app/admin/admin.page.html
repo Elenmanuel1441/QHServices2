@@ -27,14 +27,14 @@
             </div>
               <ng-container [ngSwitch]="type">
                        <!-- Nav Item - Utilities Collapse Menu -->
-              <li *ngSwitchCase="'Rayos X'" class="nav-item" (click)="getRayos_x()">
+              <li *ngSwitchCase="type=='Rayos X' ? type:'administrador'" class="nav-item" (click)="getRayos_x()">
                 <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                   <i class="fas fa-fw fa-x-ray"></i>
                   <span>Rayos X</span>
                 </a>
               </li>
                      <!-- Nav Item - Utilities Collapse Menu -->
-            <li *ngSwitchCase="'Odontologia'" class="nav-item" (click)="getOdontodologia()">
+            <li *ngSwitchCase=" type=='Odontologia' ? type:'administrador'" class="nav-item" (click)="getOdontodologia()">
               <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"
                   aria-expanded="true" aria-controls="collapseUtilities">
                   <i class="fas fa-fw fa-tooth"></i>
@@ -42,14 +42,14 @@
               </a>
           </li>
                  <!-- Nav Item - Utilities Collapse Menu -->
-            <li *ngSwitchCase="'Sonografía'" class="nav-item" (click)="getSonografia()">
+            <li *ngSwitchCase="type=='Sonografía' ? type:'administrador'" class="nav-item" (click)="getSonografia()">
                   <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"
                       aria-expanded="true" aria-controls="collapseUtilities">
                       <i class="fas fa-fw fa-baby"></i>
                       <span>Sonografia</span>
                   </a>
               </li>
-                    <li *ngSwitchCase="'Laboratorio'" class="nav-item" (click)="getLaboratorio()">
+                    <li *ngSwitchCase="type=='Laboratorio' ? type:'administrador'" class="nav-item" (click)="getLaboratorio()">
                   <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"
                       aria-expanded="true" aria-controls="collapseUtilities">
                       <i class="fas fa-fw fa-vial"></i>
