@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 
@@ -11,12 +11,22 @@ import { AuthService } from '../services/auth.service';
 export class AdminPage implements OnInit {
 
   condiccion: number = 0;
+  type: string = '';
+  showRegister: boolean;
 
-
-  constructor(private router: Router, private afAuth: AuthService) { }
+  constructor(private router: Router, private afAuth: AuthService, private activatedRoute: ActivatedRoute) { }
 
 
   ngOnInit() {
+    this.activatedRoute.queryParams.subscribe((urlData) => {
+      console.log(urlData);
+      this.type = urlData.type;
+      if (this.type == 'Laboratorio' || this.type == 'Sonografia' || this.type == 'Odontologia' || this.type == 'Rayos X') {
+        this.showRegister = false;
+      } else {
+        this.showRegister = true;
+      }
+    });
   }
 
   getRayos_x():void{
@@ -46,17 +56,17 @@ export class AdminPage implements OnInit {
      this.router.navigate(['admin/paciente-registro']);
    }
 
-  
+
    logout(){
      this.afAuth.logout();
    }
 
    toggle(){
      if(this.condiccion === 0){
-       this.condiccion = 1
+       this.condiccion = 1;
      }
      else{
-       this.condiccion = 0
+       this.condiccion = 0;
      }
    }
 

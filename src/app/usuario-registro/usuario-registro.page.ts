@@ -3,6 +3,7 @@ import { AlertController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import * as XLSX from 'xlsx';
 import { AuthService } from '../services/auth.service';
+import { UserData } from '../../models/auth.models';
 
 
 
@@ -19,7 +20,7 @@ export class UsuarioRegistroPage implements OnInit{
   rol: string;
 
   buscarUsuario: any;
-  
+
   nombres: any = ['nombre', 'estado','rol'];
 
   search_01: string;
@@ -88,7 +89,7 @@ else{
 
   this._apiService.addusuario(data).subscribe((res:any) => {
   console.log("SUCCESS ===",res);
-  this.limpiarCampos(); 
+  this.limpiarCampos();
   this.presentToast('Guardado exitosamente!');
   this.getUsuarios();
 
@@ -96,16 +97,16 @@ else{
     this.presentToastErrAdd('Error al guardar!');
     console.log("Error ===",error);
    })
-  
+
   }
 }
-    
-  
-  ngOnInit() 
+
+
+  ngOnInit()
   {
    this.limpiarCampos();
   }
-  
+
    getUsuarios(){
     this._apiService.getUsuarios().subscribe((res:any) => {
       console.log("SUCCESS ===",res);
@@ -119,14 +120,14 @@ limpiarCampos()
 {
   this.nombre = '';
   this.contrasena = '';
-  this.estado = '';  
-  this.rol = ''; 
+  this.estado = '';
+  this.rol = '';
 }
 
 
 
 deleUsuarios(id){
-   
+
 this._apiService.deleUsuarios(id).subscribe((res:any) => {
    console.log("SUCCESS");
    this.presentToastEli('Eliminado exitosamente!');
@@ -145,7 +146,7 @@ this._apiService.deleUsuarios(id).subscribe((res:any) => {
       color: "success",
       cssClass: 'toastAdd',
       position: "top",
-      
+
     });
     toast.present();
   }
@@ -216,10 +217,10 @@ async presentAlert()
     buttons: [
       {
          text: "Si",
-         handler: () => {  
-     
+         handler: () => {
+
             }
-         }      
+         }
   ],
   });
   await alert.present()
@@ -234,18 +235,25 @@ async presentAlert()
     /* pass here the table id */
     let element = document.getElementById('excel-table-user');
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
- 
+
     /* generate workbook and add the worksheet */
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
- 
-    /* save to file */  
+
+    /* save to file */
     XLSX.writeFile(wb, this.fileName);
- 
+
   }
 
   nuevoUsuario(){
-    this.afAuth.crearUsuario(this.email, this.contrasena)
+    const userData: UserData = {
+      name: this.nombre,
+      email: this.email,
+      password: this.contrasena,
+      type: this.rol,
+    };
+    this.afAuth.crearUsuario(userData);
+    // this.afAuth.crearUsuario(this.email, this.contrasena)
   }
 
 }
