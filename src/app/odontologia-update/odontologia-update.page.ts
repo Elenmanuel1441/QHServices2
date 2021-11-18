@@ -55,7 +55,7 @@ export class OdontologiaUpdatePage implements OnInit {
    this._apiservice.updateOdontologia(this.id_col_odontologia,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('admin/odontologia');
+     this.router.navigateByUrl('odontologia');
      
  }, (err:any)=>{
   this.presentToastError('Error al liberar!');

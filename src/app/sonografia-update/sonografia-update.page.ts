@@ -381,12 +381,12 @@ async presentToastErrorADD (mensaje: string) {
                {text: 'EDAD:', style: 'subheader'}, this.sonoObito.edad,'\n\n',
               ]
       },
-      {
-        image: await this.getBase64ImageFromURL(
-          "https://images.pexels.com/photos/209640/pexels-photo-209640.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300"
+      // {
+      //   image: await this.getBase64ImageFromURL(
+      //     "https://images.pexels.com/photos/209640/pexels-photo-209640.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300"
 
-        )
-      } , 
+      //   )
+      // } , 
 
       { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
 
