@@ -3,36 +3,28 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-  
         <!-- Sidebar -->
    <div [ngClass]="{ocultar: condiccion === 1, aparecer: condiccion === 0}">
       <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark">
-  
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon rotate-n-360">
                    <img src="../../assets/image/QHServices_3.png" class="mt-4" width="100" alt="">
                 </div>
-  
             </a>
-  
             <br><br>
-  
             <!-- Nav Item - Dashboard -->
             <li routerLink="" class="nav-item" (click)="getDashboard()">
                 <a class="nav-link">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-  
             <!-- Divider -->
             <hr class="sidebar-divider">
-  
             <!-- Heading -->
             <div class="sidebar-heading">
                 Area de Servicios
             </div>
-  
               <ng-container [ngSwitch]="type">
                        <!-- Nav Item - Utilities Collapse Menu -->
               <li *ngSwitchCase="'Rayos X'" class="nav-item" (click)="getRayos_x()">
@@ -102,8 +94,7 @@
                     <i class="fas fa-fw fa-lock-open"></i>
                     <span>Cerrar sesion</span>
                 </a>
-            </li>
-  
+            </li>  
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
         </ul>
@@ -270,7 +261,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{type}}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{type | lowercase}}</span>
                                 <img class="img-profile rounded-circle"
                                     src="assets/img/undraw_profile.svg">
                             </a>

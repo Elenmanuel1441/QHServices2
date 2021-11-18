@@ -21,10 +21,10 @@ export class AdminPage implements OnInit {
     this.activatedRoute.queryParams.subscribe((urlData) => {
       console.log(urlData);
       this.type = urlData.type;
-      if (this.type == 'Laboratorio' || this.type == 'Sonografía' || this.type == 'Odontologia' || this.type == 'Rayos X') {
-        this.showRegister = false;
-      }else if(this.type == 'administrador' || this.type == 'Administrador'){
+      if (this.type == 'Administrador' || this.type == 'administrador' || this.type == 'admin') {
         this.showRegister = true;
+      }else {
+          this.showRegister = false;
       }
     });
   }
