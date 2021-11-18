@@ -13,8 +13,6 @@ export class AdminPage implements OnInit {
   condiccion: number = 0;
   type: string = '';
   showRegister: boolean;
-  laboratorio: boolean;
-  autorizado: true;
 
   constructor(private router: Router, private afAuth: AuthService, private activatedRoute: ActivatedRoute) { }
 
@@ -23,15 +21,13 @@ export class AdminPage implements OnInit {
     this.activatedRoute.queryParams.subscribe((urlData) => {
       console.log(urlData);
       this.type = urlData.type;
-      if (this.type == 'administrador' )
-       {
+      if (this.type == 'Laboratorio' || this.type == 'Sonografía' || this.type == 'Odontologia' || this.type == 'Rayos X') {
+        this.showRegister = false;
+      }else if(this.type == 'administrador' || this.type == 'Administrador'){
         this.showRegister = true;
-       } 
- 
+      }
     });
   }
-  
-
 
   getRayos_x():void{
     this.router.navigate(['admin/rayos-x']);
@@ -64,8 +60,6 @@ export class AdminPage implements OnInit {
    logout(){
      this.afAuth.logout();
    }
-
-
 
    toggle(){
      if(this.condiccion === 0){
