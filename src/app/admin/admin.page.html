@@ -13,27 +13,23 @@
               <div class="sidebar-brand-icon rotate-n-360">
                  <img src="../../assets/image/QHServices_3.png" class="mt-4" width="100" alt="">
               </div>
-
           </a>
-
           <br><br>
-
+          <ng-container *ngIf="showRegister">
           <!-- Nav Item - Dashboard -->
           <li routerLink="" class="nav-item" (click)="getDashboard()">
               <a class="nav-link">
                   <i class="fas fa-fw fa-tachometer-alt"></i>
                   <span>Dashboard</span></a>
           </li>
-
           <!-- Divider -->
           <hr class="sidebar-divider">
 
           <!-- Heading -->
           <div class="sidebar-heading">
               Area de Servicios
-          </div>
-
-            <ng-container [ngSwitch]="type">
+        </div>
+            
                      <!-- Nav Item - Utilities Collapse Menu -->
             <li  class="nav-item" (click)="getRayos_x()">
               <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -50,7 +46,7 @@
             </a>
         </li>
                <!-- Nav Item - Utilities Collapse Menu -->
-          <li class="nav-item" (click)="getSonografia()">
+          <li  class="nav-item" (click)="getSonografia()">
                 <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
 
@@ -272,7 +268,7 @@
                       <li class="nav-item dropdown no-arrow">
                           <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
+                              <span class="mr-2 d-none d-lg-inline text-gray-600 small"> {{type}} </span>
                               <img class="img-profile rounded-circle"
                                   src="assets/img/undraw_profile.svg">
                           </a>
@@ -294,7 +290,10 @@
 
 
               <!-- /.container-fluid -->
-              <router-outlet></router-outlet>
+             <ng-container *ngIf="showRegister">
+                 <router-outlet></router-outlet>
+             </ng-container>
+             
           </div>
           <!-- End of Main Content -->
 
