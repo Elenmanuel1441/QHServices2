@@ -1,5 +1,4 @@
 .card-principal {
-    
     padding: 8px;
     border-radius: 10px;
     margin: auto;
@@ -25,8 +24,6 @@ ion-searchbar {
     margin: auto;
 }
 
-
-
 .selectFiltoArea {
     // height: 35px;
     border-radius: 20px;
@@ -38,8 +35,6 @@ ion-searchbar {
 .h5 {
     margin-left: 20px;
 }
-
-
 
 .tabla_usaurios {
     width: 520px;
@@ -89,13 +84,17 @@ ion-icon {
 .Sel_estado {
     border-radius: 20px
 }
-.card_elementos{
+
+.card_elementos {
     height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
 .card_elementos::-webkit-scrollbar {
     width: 7px;
 }
+
 .card_elementos::-webkit-scrollbar-thumb {
     background-color: rgb(64, 240, 64);
 }
@@ -107,7 +106,7 @@ ion-grid {
 .columnas {
     width: 95%;
 }
-.card-contenedor{
 
+.card-contenedor {
     width: 100%;
 }
