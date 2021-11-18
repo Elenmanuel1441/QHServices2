@@ -1,37 +1,33 @@
-
-        <div class="container-fluid h-custom">
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-md-9 col-lg-6 col-xl-5">
-              <img src="../../assets/image/QHServices_1.png" width="500" class="img-fluid"
-                alt="Sample image">
-            </div>
-            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <form [formGroup]="loginForm" (ngSubmit)="login()">
+<div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="../../assets/image/QHServices_1.png" width="500" class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="divider d-flex align-items-center my-4">
-                  <p class="text-center fw-bold mx-3 mb-0">
-                    <i class="fa fa-universal-access" aria-hidden="true"></i>
-                  </p>
+                    <p class="text-center fw-bold mx-3 mb-0">
+                        <i class="fa fa-universal-access" aria-hidden="true"></i>
+                    </p>
                 </div>
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" name="mail" autocomplete="off" formControlName="email" id="form3Example3" class="form-control form-control-lg"
-                    placeholder="Introduzca el nombre de usuario" />
-                  <label class="form-label" for="form3Example3">Nombre de Usuario</label>
+                    <label class="form-label" for="form3Example3">Nombre de Usuario</label>
+                    <input type="email" name="mail" autocomplete="off" formControlName="email" id="form3Example3" class="form-control form-control-lg" placeholder="Introduzca el nombre de usuario" />
+
                 </div>
-      
+
                 <!-- Password input -->
                 <div class="form-outline mb-3">
-                  <input type="password" autocomplete="off" name="pass" formControlName="contrasena" id="form3Example4" class="form-control form-control-lg"
-                    placeholder="*******" />
-                  <label class="form-label"  for="form3Example4">Contraseña</label>
-                </div>  
-                <div class="text-center text-lg-start mt-4 pt-2">
-                  <button type="submit" class="btn btn-primary btn-lg"
-                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
+                    <label class="form-label" for="form3Example4">Contraseña</label>
+                    <input type="password" autocomplete="off" name="pass" formControlName="contrasena" id="form3Example4" class="form-control form-control-lg" placeholder="*******" />
+
                 </div>
-      
-              </form>
-            </div>
-          </div>
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="submit" class="btn btn-primary btn-lg btn_ingresar" style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
+                </div>
+
+            </form>
         </div>
- 
+    </div>
+</div>
