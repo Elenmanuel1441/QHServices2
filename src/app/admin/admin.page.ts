@@ -13,6 +13,7 @@ export class AdminPage implements OnInit {
   condiccion: number = 0;
   type: string = '';
   showRegister: boolean;
+  prueba: true;
 
   constructor(private router: Router, private afAuth: AuthService, private activatedRoute: ActivatedRoute) { }
 
@@ -23,7 +24,8 @@ export class AdminPage implements OnInit {
       this.type = urlData.type;
       if (this.type == 'Administrador' || this.type == 'administrador' || this.type == 'admin') {
         this.showRegister = true;
-      }else {
+      }      
+      else {
           this.showRegister = false;
       }
     });
