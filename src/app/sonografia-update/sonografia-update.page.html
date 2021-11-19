@@ -10,7 +10,7 @@
 
                         <div>
                             <select [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
-                                                <option value='1'>OBSTETRICA OBITO</option>
+                                                <option *ngIf="showWoman" value='1'>OBSTETRICA OBITO</option>
                                                 <option value='2'>ABDOMINAL</option>
                                                 <option value='3'>TRANS VAGINAL</option>
                                               </select>

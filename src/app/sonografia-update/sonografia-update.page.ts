@@ -97,8 +97,8 @@ export class SonografiaUpdatePage implements OnInit {
   toggleVesicula: boolean = true;
   toggleRinond: boolean = true;
   toggleRinonl: boolean = true;
-  
-
+  sexo_paciente: any;
+  showWoman: boolean = false;
 
   pdfObj = null;
   //variable que me dice el tipo de sonografia
@@ -116,13 +116,24 @@ export class SonografiaUpdatePage implements OnInit {
      this.id_col_sonografia = param.id_col_sonografia;
      console.log(this.id_col_sonografia);
      this.getSonografia(this.id_col_sonografia);
+     setTimeout(() => 
+     {
+        this.checkWoman();
+     },
+     1500);
    })
- }
 
- ngOnInit() {
 
   
  }
+
+ ngOnInit() {
+  
+ 
+
+  
+ }
+ 
  addSonografiaObstetrica()
   {
     let data = {
@@ -234,6 +245,9 @@ export class SonografiaUpdatePage implements OnInit {
      this.sonoAbdominal.nombre = sonografia.nombre_paciente;
      this.sonoAbdominal.apellido = sonografia.apellido_paciente;
      this.sonoAbdominal.edad = sonografia.EDAD;
+     this.sexo_paciente = sonografia.sexo_paciente;
+
+     
      
       }, (err:any)=>{
    console.log("ERROR", err)
@@ -2748,6 +2762,26 @@ printAbdominalPdf() {
 
 
  }
+
+ checkWoman(){
+
+  if (this.sexo_paciente == "Femenino") {
+    this.showWoman = true;
+    console.log("valor de show woman",this.sexo_paciente)
+    
+  }
+  else{
+
+    console.log("valor de show woman",this.showWoman,this.sexo_paciente)
+
+
+  }
+
+
+ }
+
+
+
  getBase64ImageFromURL(url) {
   return new Promise((resolve, reject) => {
     var img = new Image();
