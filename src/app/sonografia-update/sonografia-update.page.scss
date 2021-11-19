@@ -26,6 +26,10 @@ ion-title {
 ion-toggle {
     margin: auto;
     margin-left: 40px;
+    --background: rgb(240, 234, 151);
+    --background-checked: #ebd93c;
+    --handle-background: #ebd93c;
+    --handle-background-checked: #000;
 }
 
 .select {
@@ -98,6 +102,7 @@ ion-toggle {
 
 ion-label {
     margin-left: 50px;
+    color: black;
 }
 
 .label_toggle {
@@ -113,6 +118,14 @@ ion-label {
     margin-left: 100px;
 }
 
-.label_bazo {
+.label_rizquiero {
     margin-left: 100px;
+}
+
+.label_bazo {
+    margin-left: 215px;
+}
+
+.label_final {
+    margin-left: 215px;
 }
