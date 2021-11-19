@@ -60,7 +60,7 @@ export class UsuarioUpdatePage implements OnInit {
    this._apiservice.UpdateUsuario(this.id,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Actualizado exitosamente!');
-     this.router.navigateByUrl('/usuario-registro');
+     this.router.navigate(['admin/usuario-registro']);
      
  }, (err:any)=>{
   this.presentToastError('Error al actualizar!');
