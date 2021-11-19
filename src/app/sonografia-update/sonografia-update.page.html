@@ -193,8 +193,6 @@
             </ion-row>
         </ion-grid>
 
-        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
-
         <ion-grid>
             <ion-row>
                 <ion-col>
@@ -579,6 +577,8 @@
         </ion-grid>
 
         <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+        <br>
+        <ion-label class="mt-2 inputIcon">Aorta Abdominal:</ion-label>
 
         <ion-grid>
             <ion-row>
@@ -621,45 +621,7 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
-
-
     </ion-card>
-
-
-
-
-    <!-- >
-
-
-
-     
-        <ion-grid>
-            <ion-row>
-                <label class="subtitulo2">AORTA ABDOMINAL:</label>
-
-            </ion-row>
-        </ion-grid>
-
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <label class="subtitulo2">DE DIAMETRO:</label>
-                    <select [(ngModel)]="sonoAbdominal.aortaDiametro" class="form-select form-select-lg mb-3 select subtitulo2">
-                            <option  value=' DENTRO DE LOS LIMITES NORMALES '>DENTRO</option>
-                            <option value='FUERA DE LOS LIMITES NORMALES'>FUERA</option>
-                          </select>
-                </ion-col>
-                <ion-col>
-                    <label class="subtitulo2">VALOR:</label>
-                    <ion-input class="subtitulo2" type="number" [(ngModel)]="sonoAbdominal.aortaValor"></ion-input>
-                </ion-col>
-
-
-            </ion-row>
-        </ion-grid>
-        
-       
-    </ion-card> -->
 
     <ion-list *ngIf="showTransV">
         <ion-item>
