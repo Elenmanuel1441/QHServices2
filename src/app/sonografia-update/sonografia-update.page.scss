@@ -36,7 +36,7 @@ ion-title {
     height: 38px;
     border: solid 1px rgb(62, 199, 130);
     margin: auto;
-    margin-left: 25px;
+    margin-left: 40px;
 }
 
 .textarea {
@@ -85,4 +85,8 @@ ion-title {
 .btn_imprimir {
     width: 95%;
     margin: auto;
+}
+
+ion-label {
+    margin-left: 50px;
 }
