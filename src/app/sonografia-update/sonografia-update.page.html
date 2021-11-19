@@ -9,8 +9,17 @@
                     <div class="container-fluid">
 
                         <div>
-                            <select [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
-                                                <option *ngIf="showWoman" value='1'>OBSTETRICA OBITO</option>
+                            <select *ngIf="showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
+                                tipo de sonografia
+                                                <option value='1'>OBSTETRICA OBITO</option>
+                                                <option value='2'>ABDOMINAL</option>
+                                                <option value='3'>TRANS VAGINAL</option>
+                                              </select>
+                        </div>
+                        <div>
+                            <select *ngIf="!showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
+                                tipo de sonografia
+                                                
                                                 <option value='2'>ABDOMINAL</option>
                                                 <option value='3'>TRANS VAGINAL</option>
                                               </select>
