@@ -25,7 +25,7 @@
                                               </select>
                         </div>
                         <div>
-                            <ion-button class="subtitulo2 btn_continuar " type="button" (click)="setVi()" color="primary" shape="round" expand="block"> continuar </ion-button>
+                            <ion-button class="subtitulo2 btn_continuar " type="button" (click)="setVi()" color="success" shape="round" expand="block"> continuar </ion-button>
                         </div>
 
                     </div>
@@ -193,6 +193,8 @@
             </ion-row>
         </ion-grid>
 
+        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+
         <ion-grid>
             <ion-row>
                 <ion-col>
@@ -313,12 +315,15 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
-        <div>
+        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+
+        <div class="mt-2 inputIcon">
             <ion-label class="label_toggle">Vesicula Biliar:</ion-label>
         </div>
         <div>
-            <ion-toggle color="primary" [(ngModel)]="toggleVesicula" (ionChange)="vesicula()"></ion-toggle>
+            <ion-toggle color="success" [(ngModel)]="toggleVesicula" (ionChange)="vesicula()"></ion-toggle>
         </div>
+
 
         <!--Este usa un toggle-->
         <ion-grid *ngIf="showVesicula">
@@ -367,11 +372,12 @@
 
             </ion-row>
         </ion-grid>
-        <div>
+        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+        <div class="mt-2 inputIcon">
             <ion-label class="label_toggle">Riñón Derecho:</ion-label>
         </div>
         <div>
-            <ion-toggle color="primary" [(ngModel)]="toggleRinond" (ionChange)="rinond()"></ion-toggle>
+            <ion-toggle color="success" [(ngModel)]="toggleRinond" (ionChange)="rinond()"></ion-toggle>
         </div>
         <!--Este usa un toggle-->
 
@@ -439,12 +445,12 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
-
-        <div class="label_toggle">
-            <ion-label>Riñón Izquierdo:</ion-label>
+        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+        <div class="mt-2 inputIcon">
+            <ion-label class="label_toggle">Riñón Izquierdo:</ion-label>
         </div>
         <div>
-            <ion-toggle color="primary" [(ngModel)]="toggleRinonl" (ionChange)="rinonl()"> </ion-toggle>
+            <ion-toggle color="success" [(ngModel)]="toggleRinonl" (ionChange)="rinonl()"> </ion-toggle>
         </div>
 
         <!--Este usa un toggle-->
@@ -519,11 +525,12 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
-        <div>
+        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+        <div class="mt-2 inputIcon">
             <ion-label class="label_toggle">El Bazo:</ion-label>
         </div>
         <div>
-            <ion-toggle color="primary" [(ngModel)]="toggleBazo" (ionChange)="bazo()"></ion-toggle>
+            <ion-toggle color="success" [(ngModel)]="toggleBazo" (ionChange)="bazo()"></ion-toggle>
         </div>
 
         <!--Este usa un toggle-->
@@ -571,6 +578,51 @@
             </ion-row>
         </ion-grid>
 
+        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+
+        <ion-grid>
+            <ion-row>
+
+                <ion-col>
+
+                    <div class="mt-2 inputIcon">
+                        <ion-label class="label_final">Diámetro:</ion-label>
+                        <select [(ngModel)]="sonoAbdominal.aortaDiametro" class="form-select form-select-lg select_ubito subtitulo2">
+                                <option  value=' DENTRO DE LOS LIMITES NORMALES '>DENTRO</option>
+                                <option value='FUERA DE LOS LIMITES NORMALES'>FUERA</option>
+                                  </select>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="mt-2 inputIcon">
+                        <ion-label class="label_final">Valor:</ion-label>
+                        <input type="number" [(ngModel)]="sonoAbdominal.aortaValor" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                    </div>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+
+        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div class="mt-2 inputIcon">
+                        <ion-label>Conclusiones:</ion-label>
+                        <ion-textarea class="textarea" [(ngModel)]="sonoAbdominal.conclusiones" placeholder="Agregue las conclusiones aqui..."></ion-textarea>
+                    </div>
+                    <div class="mt-2 inputIcon">
+                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="checkAbdominalPdf()">crear</ion-button>
+                    </div>
+                    <div class="mt-2 inputIcon">
+                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printAbdominalPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
     </ion-card>
 
 
@@ -578,7 +630,9 @@
 
     <!-- >
 
-        </ion-card>
+
+
+     
         <ion-grid>
             <ion-row>
                 <label class="subtitulo2">AORTA ABDOMINAL:</label>
@@ -603,27 +657,8 @@
 
             </ion-row>
         </ion-grid>
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <label class="subtitulo2">CONCLUSIONES GENERALES:</label>
-                    <textarea type="text" id="form7" [(ngModel)]="sonoAbdominal.conclusiones" class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
-                </ion-col>
-
-            </ion-row>
-        </ion-grid>
-
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-button class="subtitulo2" expand="block" (click)="checkAbdominalPdf()">crear</ion-button>
-                </ion-col>
-
-                <ion-col>
-                    <ion-button class="subtitulo2" expand="block" (click)="printAbdominalPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+        
+       
     </ion-card> -->
 
     <ion-list *ngIf="showTransV">
