@@ -3,6 +3,15 @@
     border-radius: 10px;
     margin: auto;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    margin-top: 20px;
+}
+
+.card_abdominal {
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    margin-top: 20px;
 }
 
 ion-grid {
@@ -12,6 +21,11 @@ ion-grid {
 ion-title {
     text-align: center;
     height: 80px;
+}
+
+ion-toggle {
+    margin: auto;
+    margin-left: 40px;
 }
 
 .select {
@@ -46,11 +60,6 @@ ion-title {
     border-radius: 10px;
     border: solid 1px rgb(74, 241, 116);
     color: rgb(0, 0, 0);
-}
-
-.card_Obit {
-    margin: auto;
-    margin-top: 20px;
 }
 
 .inputs {
@@ -89,4 +98,21 @@ ion-title {
 
 ion-label {
     margin-left: 50px;
+}
+
+.label_toggle {
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.label_vesicular {
+    margin-left: 100px;
+}
+
+.label_riderecho {
+    margin-left: 100px;
+}
+
+.label_bazo {
+    margin-left: 100px;
 }
