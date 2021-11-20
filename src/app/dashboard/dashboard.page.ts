@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +8,20 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
+
+  public data = [
+    {No: '1',  Nombre:'Elenmanuel', Apellido: 'Estrella', Telefono:'809-234-2345', Cedula:'031-2010819-8'},
+    {No: '2',  Nombre: 'Ericcson', Apellido:'Reyes', Telefono:'809-234-0813', Cedula:'031-8710819-8'},
+    {No: '3',  Nombre: 'Luis', Apellido:'Castillo', Telefono:'809-344-6572', Cedula:'402-2010819-8'},
+    {No: '4',  Nombre: 'Juan Carlos', Apellido:'Torres', Telefono:'809-809-0813', Cedula:'031-1230819-8'},
+    {No: '5',  Nombre:'Elenmanuel', Apellido: 'Estrella', Telefono:'809-234-2345', Cedula:'031-2010819-8'},
+    {No: '6',  Nombre: 'Ericcson', Apellido:'Reyes', Telefono:'809-234-0813', Cedula:'031-8710819-8'},
+    {No: '7',  Nombre: 'Luis', Apellido:'Castillo', Telefono:'809-344-6572', Cedula:'402-2010819-8'},
+    {No: '8',  Nombre: 'Juan Carlos', Apellido:'Torres', Telefono:'809-809-0813', Cedula:'031-1230819-8'},
+];
+
+ title = 'angulardatatables';
+ dtOptions: any = {};
 
   rayos_x: any;
 
@@ -47,7 +61,34 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() 
   {
-    
+    //cargar los datos de pruebas de la nueva tabla
+   this.dtOptions = {
+    pagingType: 'full_numbers',
+    pageLength: 5,
+    language: {
+      url: 'assets/json/idioma_esp.json'
+    } ,
+    processing: true,
+    dom: 'Bfrtip',
+      buttons: [
+          {
+            extend:'copy', "className": 'btn btn-secondary',
+            title: 'Reporte de pacientes'
+          }, 
+          { 
+            extend:'csv',
+            title: 'Reporte de pacientes',  "className":  'btn btn-primary' 
+          }, 
+          {
+           extend: 'excel',
+           title: 'Reporte de pacientes', "className": 'btn btn-success'
+          },
+
+      ]
+      
+  };
+  
+  //fin de los datos de pruebas
      
   }
 
@@ -163,18 +204,4 @@ userList = [
   
   ];
 
-  exportexcel(): void
-  {
-    /* pass here the table id */
-    let element = document.getElementById('excel-table');
-    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
- 
-    /* generate workbook and add the worksheet */
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
- 
-    /* save to file */  
-    XLSX.writeFile(wb, this.fileName);
- 
-  }
 }

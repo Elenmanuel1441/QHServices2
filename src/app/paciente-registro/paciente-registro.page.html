@@ -116,34 +116,5 @@
 
         </ion-card>
 
-
-        <!-- <ion-card class="tabla_pacientes">
-            <table class="table table-hover table-bordered datatable" id="excel-table-paciente">
-                <thead class="table-light">
-                    <tr>
-                        <th scope="col">No.</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Teléfono</th>
-                        <th scope="col">Cédula</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of pacientes | filter:search_01 ; let i=index;">
-                        <th scope="row">{{i+1}}</th>
-                        <td>{{item.nombre_paciente}}</td>
-                        <td>{{item.apellido_paciente}}</td>
-                        <td>{{item.telefono_paciente}}</td>
-                        <td>{{item.cedula_paciente }}</td>
-                        <td>
-                            <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',item.id_paciente]"></ion-icon>
-                            <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',item.id_paciente]"></ion-icon>
-                            <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(item.id_paciente)"></ion-icon>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </ion-card> -->
     </ion-card>
 </ion-content>

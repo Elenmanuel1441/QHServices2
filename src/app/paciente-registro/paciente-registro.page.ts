@@ -28,7 +28,7 @@ export class PacienteRegistroPage implements OnInit {
   sexo: any;
   ars: any;
   direccion: any;
-  pacientes: any = [];
+public pacientes: any = [];
 
   constructor(
     public _apiService: ApiService,
