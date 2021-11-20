@@ -31,6 +31,10 @@ export class AdminPage implements OnInit {
     });
   }
 
+  volver(){
+    this.router.navigateByUrl('admin/dashboard?type=administrador');
+  }
+
   getRayos_x():void{
     this.router.navigate(['admin/rayos-x']);
   }
