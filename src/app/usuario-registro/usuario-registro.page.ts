@@ -1,7 +1,6 @@
-  import { Component, OnInit } from '@angular/core';
+  import { AfterViewInit, Component, OnInit } from '@angular/core';
   import { AlertController, ToastController } from '@ionic/angular';
   import { ApiService } from '../api.service';
-  import * as XLSX from 'xlsx';
   import { AuthService } from '../services/auth.service';
   import { UserData } from '../../models/auth.models';
 
@@ -12,7 +11,7 @@
     templateUrl: './usuario-registro.page.html',
     styleUrls: ['./usuario-registro.page.scss'],
   })
-  export class UsuarioRegistroPage implements OnInit{
+  export class UsuarioRegistroPage implements OnInit, AfterViewInit{
 
   //datos de prueba de la nueva tabla
   
@@ -27,15 +26,7 @@
     estado: string;
     rol: string;
 
-    buscarUsuario: any;
-
-    nombres: any = ['nombre', 'estado','rol'];
-
-    search_01: string;
-
-    search_02: string;
-
-    search_03: string;
+    nombres: any = [];
 
     constructor(
       public _apiService: ApiService,
@@ -43,8 +34,13 @@
       public toastController: ToastController,
       public alertController: AlertController
     ){
-      this.getUsuarios();
+      
+      this.getUsuarios(); 
+     // setInterval(() => this.getUsuarios(), 10000);
       this.limpiarCampos();
+    }
+    ngAfterViewInit(): void {
+      throw new Error('Method not implemented.');
     }
 
 
@@ -96,7 +92,7 @@
     console.log("SUCCESS ===",res);
     this.limpiarCampos();
     this.presentToast('Guardado exitosamente!');
-    this.getUsuarios();
+    //this.getUsuarios();
 
     },(error: any) => {
       this.presentToastErrAdd('Error al guardar!');
@@ -109,12 +105,11 @@
 
     ngOnInit()
     {
-    this.getUsuarios();
     this.limpiarCampos();
     //cargar los datos de pruebas de la nueva tabla
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 6,
+      pageLength: 5,
       language: {
         url: 'assets/json/idioma_esp.json'
       } ,
@@ -133,8 +128,7 @@
              title: 'Reporte de usurio', "className": 'btn btn-success'
             },
  
-        ]
-        
+        ]    
 
     };
     
@@ -168,7 +162,7 @@
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
     console.log("SUCCESS");
     this.presentToastEli('Eliminado exitosamente!');
-    this.getUsuarios();
+   // this.getUsuarios();
     },(error: any) => {
       this.presentToastErrEli('Error al eliminar!');
       console.log("ERROR")

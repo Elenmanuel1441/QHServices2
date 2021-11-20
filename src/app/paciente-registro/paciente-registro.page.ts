@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
-import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-paciente-registro',
@@ -30,8 +29,6 @@ export class PacienteRegistroPage implements OnInit {
   ars: any;
   direccion: any;
   pacientes: any = [];
-
-  fileName= 'Reporte de pacientes.xlsx';
 
   constructor(
     public _apiService: ApiService,
@@ -348,19 +345,5 @@ else{
     toast.present();
   }
 
-  exportexcel(): void
-  {
-    /* pass here the table id */
-    let element = document.getElementById('excel-table-paciente');
-    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
- 
-    /* generate workbook and add the worksheet */
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
- 
-    /* save to file */  
-    XLSX.writeFile(wb, this.fileName);
- 
-  }
 }
 
