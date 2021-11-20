@@ -13,6 +13,14 @@
     styleUrls: ['./usuario-registro.page.scss'],
   })
   export class UsuarioRegistroPage implements OnInit{
+
+  //datos de prueba de la nueva tabla
+  
+  title = 'angulardatatables';
+  dtOptions: any = {};
+  
+  //fin de datos de pruebas
+
     nombre: string;
     email: string;
     contrasena: string;
@@ -29,8 +37,6 @@
 
     search_03: string;
 
-    fileName= 'Reporte de usuario.xlsx';
-
     constructor(
       public _apiService: ApiService,
       private afAuth: AuthService,
@@ -38,7 +44,6 @@
       public alertController: AlertController
     ){
       this.getUsuarios();
-      setInterval(() => this.getUsuarios(), 10000);
       this.limpiarCampos();
     }
 
@@ -104,7 +109,39 @@
 
     ngOnInit()
     {
+    this.getUsuarios();
     this.limpiarCampos();
+    //cargar los datos de pruebas de la nueva tabla
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 6,
+      language: {
+        url: 'assets/json/idioma_esp.json'
+      } ,
+      processing: true,
+      dom: 'Bfrtip',
+        buttons: [
+            {
+              extend:'copy', "className": 'btn btn-secondary'
+            }, 
+            { 
+              extend:'csv',
+              title: 'Reporte de usurio',  "className":  'btn btn-primary' 
+            }, 
+            {
+             extend: 'excel',
+             title: 'Reporte de usurio', "className": 'btn btn-success'
+            },
+ 
+        ]
+        
+
+    };
+    
+
+    //fin de los datos de pruebas
+
+
     }
 
     getUsuarios(){
@@ -228,22 +265,6 @@
     console.log(result);
   }
 
-
-
-    exportexcel(): void
-    {
-      /* pass here the table id */
-      let element = document.getElementById('excel-table-user');
-      const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
-
-      /* generate workbook and add the worksheet */
-      const wb: XLSX.WorkBook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-
-      /* save to file */
-      XLSX.writeFile(wb, this.fileName);
-
-    }
 
     nuevoUsuario(){
       const userData: UserData = {

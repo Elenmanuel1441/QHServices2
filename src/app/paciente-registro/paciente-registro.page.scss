@@ -1,7 +1,7 @@
 .datos-personales2 {
     width: 900px;
     height: 700px;
-    padding: 10px;
+    //padding: 10px;
     border-radius: 10px;
     margin: auto;
     margin-top: 15px;
@@ -41,8 +41,7 @@ ion-input {
     border-radius: 20px;
     width: 250px;
     height: 38px;
-    margin-top: 10px;
-    margin-left: 13px;
+    margin-left: 15px;
     border: solid 1px rgb(62, 199, 130);
 }
 
@@ -111,7 +110,7 @@ ion-icon {
 }
 
 .btnExport {
-    width: 830px;
+    width: 95%;
     margin: auto;
 }
 
@@ -123,5 +122,10 @@ ion-icon {
 .inputs {
     width: 90%;
     border-radius: 20px;
+    margin: auto;
+}
+
+.card_tabla {
+    width: 95%;
     margin: auto;
 }

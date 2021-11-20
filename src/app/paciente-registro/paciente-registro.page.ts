@@ -9,6 +9,14 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./paciente-registro.page.scss'],
 })
 export class PacienteRegistroPage implements OnInit {
+
+ //datos de prueba de la nueva tabla
+  
+ title = 'angulardatatables';
+ dtOptions: any = {};
+ 
+ //fin de datos de pruebas
+
   nombre: any;
   apellido: any;
   cedula: any;
@@ -21,13 +29,7 @@ export class PacienteRegistroPage implements OnInit {
   sexo: any;
   ars: any;
   direccion: any;
-  pacientes: any = ['nombre','apellido','cedula','telefono','sexo','ars'];
-
-  search_01: string;
-
-  search_02: string;
-
-  search_03: string;
+  pacientes: any = [];
 
   fileName= 'Reporte de pacientes.xlsx';
 
@@ -212,6 +214,36 @@ else{
   ngOnInit() 
   {
    this.limpiarCampos();
+   
+   //cargar los datos de pruebas de la nueva tabla
+   this.dtOptions = {
+    pagingType: 'full_numbers',
+    pageLength: 5,
+    language: {
+      url: 'assets/json/idioma_esp.json'
+    } ,
+    processing: true,
+    dom: 'Bfrtip',
+      buttons: [
+          {
+            extend:'copy', "className": 'btn btn-secondary'
+          }, 
+          { 
+            extend:'csv',
+            title: 'Reporte de usurio',  "className":  'btn btn-primary' 
+          }, 
+          {
+           extend: 'excel',
+           title: 'Reporte de usurio', "className": 'btn btn-success'
+          },
+
+      ]
+      
+  };
+  
+  //fin de los datos de pruebas
+
+
   }
 
   limpiarCampos()

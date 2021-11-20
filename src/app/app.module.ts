@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 //chart dashboard
 import { ChartsModule } from 'ng2-charts';
+import {DataTablesModule} from 'angular-datatables';
 
 
 // Firebase
@@ -39,7 +40,7 @@ import { environment } from 'src/environments/environment';
       AngularFireModule.initializeApp(environment.DBConfig),
       AngularFireAuthModule,
       AngularFireDatabaseModule,
-      
+      DataTablesModule
 
     ],
   providers: [{ provide: RouteReuseStrategy,
