@@ -15,15 +15,15 @@
                                                 <option value='2'>ABDOMINAL</option>
                                                 <option value='3'>TRANS VAGINAL</option>
                                               </select>
-                        </div>
-                        <div>
+
                             <select *ngIf="!showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
-                                tipo de sonografia
-                                                
+                                                tipo de sonografia
+                                                                
                                                 <option value='2'>ABDOMINAL</option>
-                                                <option value='3'>TRANS VAGINAL</option>
-                                              </select>
+                                               <option value='3'>TRANS VAGINAL</option>
+                                             </select>
                         </div>
+
                         <div>
                             <ion-button class="subtitulo2 btn_continuar " type="button" (click)="setVi()" color="success" shape="round" expand="block"> continuar </ion-button>
                         </div>
