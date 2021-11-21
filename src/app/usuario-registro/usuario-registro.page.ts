@@ -130,6 +130,8 @@
              extend: 'excel',
              title: 'Reporte de usurio', "className": 'btn btn-success'
             },
+            'pdf',
+            'print'
  
         ]    
     };
