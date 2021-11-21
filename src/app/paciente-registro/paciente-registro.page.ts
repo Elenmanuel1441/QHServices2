@@ -35,7 +35,7 @@ public pacientes: any = [];
     public toastController: ToastController
     
   ) {
-    this.getPacientes();
+ this.getPacientes();
     this.limpiarCampos();
    }
   

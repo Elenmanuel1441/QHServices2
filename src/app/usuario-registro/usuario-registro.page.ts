@@ -6,6 +6,7 @@
 
 
 
+
   @Component({
     selector: 'app-usuario-registro',
     templateUrl: './usuario-registro.page.html',
@@ -36,7 +37,6 @@
     ){
       
       this.getUsuarios(); 
-     // setInterval(() => this.getUsuarios(), 10000);
       this.limpiarCampos();
     }
     ngAfterViewInit(): void {
@@ -105,7 +105,9 @@
 
     ngOnInit()
     {
+   
     this.limpiarCampos();
+    
 
     //cargar los datos de pruebas de la nueva tabla
     this.dtOptions = {
@@ -130,7 +132,6 @@
             },
  
         ]    
-
     };
     
 
@@ -163,7 +164,7 @@
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
     console.log("SUCCESS");
     this.presentToastEli('Eliminado exitosamente!');
-   // this.getUsuarios();
+   this.getUsuarios();
     },(error: any) => {
       this.presentToastErrEli('Error al eliminar!');
       console.log("ERROR")
