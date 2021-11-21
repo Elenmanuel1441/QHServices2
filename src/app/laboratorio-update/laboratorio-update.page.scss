@@ -1,11 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    border-radius: 10px;
-    top: 0;
-}
-
 .title {
     text-align: center;
     padding: 50px 0 20px;
@@ -19,12 +11,10 @@
     text-transform: uppercase;
 }
 
-.container1 {
+.card_principal {
     width: 90%;
-    height: 200px;
-    background: #fff;
     margin: 0 auto;
-    border: 2px solid #ffff;
+    border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
     margin-bottom: 40%;
 }
@@ -37,4 +27,41 @@
     background: #fff;
     background-size: cover;
     box-sizing: border-box;
+}
+
+.card_seleccion {
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+}
+
+.card_tabla {
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+}
+
+.select_analisis {
+    height: 38px;
+    font-size: 13px;
+    width: 250px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.inputs {
+    width: 40%;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.inputs_gris {
+    border-radius: 20px;
+}
+
+.btn_guardar {
+    border-radius: 20px;
+    width: 90%;
 }

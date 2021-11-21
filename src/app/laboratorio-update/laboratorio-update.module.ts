@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LaboratorioUpdatePageRoutingModule } from './laboratorio-update-routing.module';
 
 import { LaboratorioUpdatePage } from './laboratorio-update.page';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LaboratorioUpdatePageRoutingModule
+    LaboratorioUpdatePageRoutingModule,
+    DataTablesModule
   ],
   declarations: [LaboratorioUpdatePage]
 })
