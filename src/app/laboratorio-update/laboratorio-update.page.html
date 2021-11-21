@@ -3,38 +3,28 @@
         <h1>Seleccionar el Estado del Paciente</h1>
     </div>
     <ion-card class="card_principal">
-        <ion-item>
-            <ion-label>Estado</ion-label>
-            <ion-select [(ngModel)]="estado_laboratorio" type="number">
-                <ion-select-option value=1>Activo</ion-select-option>
-                <ion-select-option value=2>Inactivo</ion-select-option>
-            </ion-select>
-        </ion-item>
-        <ion-button class="subtitulo" type="button" (click)="updateLaboratorio()" color="success" shape="shape" expand="block"> cambiar estado </ion-button>
-        <br>
         <ion-card class="card_seleccion">
             <ion-grid>
                 <ion-row>
                     <ion-col>
                         <div class="input-group">
                             <div class="input-group-prepend ">
-                                <span class="input-group-text inputs_gris" id="basic-addon1">Codigo:</span>
+                                <span class="input-group-text inputs_gris" id="basic-addon1">Nombre:</span>
                             </div>
-                            <input type="text" class="form-control inputs" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control inputs" placeholder="Elenmanuel Estrella" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </ion-col>
                     <ion-col>
                         <div>
                             <select class="form-select form-select-lg select_analisis ">
                                 <option value="Nada" selected disabled>Seleccione tipo analisis</option>
-                            <option value='A Negativo'>A Negativo</option>
-                            <option value='A Positivo'>A Positivo</option>
-                            <option value='B Negativo'>B Negativo</option>
-                            <option value='B Positivo'>B Positivo</option>
-                            <option value='AB Negativo'>AB Negativo</option>
-                            <option value='AB Positivo'>AB Positivo</option>
-                            <option value='O Negativo'>O Negativo</option>
-                            <option value='O Positivo'>O Positivo</option>
+                            <option value='Hemograma completo'>Hemograma completo</option>
+                            <option value='Urinálisis completo'>Urinálisis completo</option>
+                            <option value='Heces por parásito'>Heces por parásito</option>
+                            <option value='sangre oculta'>Sangre oculta</option>
+                            <option value='Cropologico'>Cropologico</option>
+                            <option value='Horina'>Horina</option>
+                            <option value='Gestacionalo'>Gestacional</option>
                             </select>
                         </div>
                     </ion-col>
@@ -43,11 +33,11 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text inputs_gris" id="basic-addon1">Costo:</span>
                             </div>
-                            <input type="text" class="form-control inputs" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control inputs" placeholder="800.00" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </ion-col>
                     <ion-col>
-                        <button type="button" class="btn btn-success btn_guardar">Guardar</button>
+                        <button (click)="updateLaboratorio()" type="button" class="btn btn-success btn_guardar">Guardar</button>
                     </ion-col>
                 </ion-row>
             </ion-grid>
