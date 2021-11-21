@@ -11,6 +11,21 @@ import { ApiService } from '../api.service';
 })
 export class LaboratorioUpdatePage implements OnInit {
 
+  public data = [
+    {No: '1',  Nombre:'Elenmanuel', Apellido: 'Estrella', Telefono:'809-234-2345', Cedula:'031-2010819-8'},
+    {No: '2',  Nombre: 'Ericcson', Apellido:'Reyes', Telefono:'809-234-0813', Cedula:'031-8710819-8'},
+    {No: '3',  Nombre: 'Luis', Apellido:'Castillo', Telefono:'809-344-6572', Cedula:'402-2010819-8'},
+    {No: '4',  Nombre: 'Juan Carlos', Apellido:'Torres', Telefono:'809-809-0813', Cedula:'031-1230819-8'},
+    {No: '5',  Nombre:'Elenmanuel', Apellido: 'Estrella', Telefono:'809-234-2345', Cedula:'031-2010819-8'},
+    {No: '6',  Nombre: 'Ericcson', Apellido:'Reyes', Telefono:'809-234-0813', Cedula:'031-8710819-8'},
+    {No: '7',  Nombre: 'Luis', Apellido:'Castillo', Telefono:'809-344-6572', Cedula:'402-2010819-8'},
+    {No: '8',  Nombre: 'Juan Carlos', Apellido:'Torres', Telefono:'809-809-0813', Cedula:'031-1230819-8'},
+];
+
+title = 'angulardatatables';
+ dtOptions: any = {};
+s
+
   id_col_laboratorio: any;
   estado_laboratorio: any;
   
@@ -42,6 +57,35 @@ export class LaboratorioUpdatePage implements OnInit {
       }, (err:any)=>{
    console.log("ERROR", err)
  })
+
+ //cargar los datos de pruebas de la nueva tabla
+ this.dtOptions = {
+  pagingType: 'full_numbers',
+  pageLength: 5,
+  language: {
+    url: 'assets/json/idioma_esp.json'
+  } ,
+  processing: true,
+  dom: 'Bfrtip',
+    buttons: [
+        {
+          extend:'copy', "className": 'btn btn-secondary',
+          title: 'Reporte de pacientes'
+        }, 
+        { 
+          extend:'csv',
+          title: 'Reporte de pacientes',  "className":  'btn btn-primary' 
+        }, 
+        {
+         extend: 'excel',
+         title: 'Reporte de pacientes', "className": 'btn btn-success'
+        },
+
+    ]
+    
+};
+
+//fin de los datos de pruebas
  
 }
  

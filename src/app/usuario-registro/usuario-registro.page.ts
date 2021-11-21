@@ -106,6 +106,7 @@
     ngOnInit()
     {
     this.limpiarCampos();
+
     //cargar los datos de pruebas de la nueva tabla
     this.dtOptions = {
       pagingType: 'full_numbers',
