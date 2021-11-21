@@ -1,18 +1,47 @@
 <ion-content>
-    <div class="title"><h1>Seleccionar el Estado del Paciente</h1></div>
-<div class="container1">
-    <div class="avatar-left"></div>
-    <div class="table-rigth">
-        <ion-item>
-            <ion-label>Estado</ion-label>
-            <ion-select [(ngModel)]="estado_laboratorio" type="number">
-                <ion-select-option value=1>Activo</ion-select-option>
-                <ion-select-option value=2>Inactivo</ion-select-option>
-            </ion-select>
-        </ion-item>
-        <ion-button class="subtitulo" type="button" (click)="updateLaboratorio()" color="success" shape="shape" expand="block"> cambiar estado </ion-button>
+    <div class="title">
+        <h1>Seleccionar el Estado del Paciente</h1>
     </div>
+    <div class="container1">
+        <div class="avatar-left"></div>
+        <div class="table-rigth">
+            <ion-item>
+                <ion-label>Estado</ion-label>
+                <ion-select [(ngModel)]="estado_laboratorio" type="number">
+                    <ion-select-option value=1>Activo</ion-select-option>
+                    <ion-select-option value=2>Inactivo</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-button class="subtitulo" type="button" (click)="updateLaboratorio()" color="success" shape="shape" expand="block"> cambiar estado </ion-button>
+            <br>
+            <ion-card>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-input>
+                                asjkdkllds
+                            </ion-input>
+                        </ion-col>
+                        <ion-col>
+                            <ion-select [(ngModel)]="estado_laboratorio" type="number">
+                                <ion-select-option value=1>Activo</ion-select-option>
+                                <ion-select-option value=2>Inactivo</ion-select-option>
+                            </ion-select>
+                        </ion-col>
+                        <ion-col>
+                            <ion-input>
+                                dsadsadas
+                            </ion-input>
+                        </ion-col>
+                        <ion-col>
+                            <ion-button>guardar</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </div>
+
     </div>
+
+
 </ion-content>
-
-
