@@ -11,6 +11,11 @@ import { ApiService } from '../api.service';
 export class RayosXUpdatePage implements OnInit {  
   id_col_rayosx: any;
   estado_rayosx: any;
+
+  nombre_paciente: any;
+  apellido_paciente: any;
+  cedula_paciente: any;
+
   
  constructor(
   private route: ActivatedRoute,
@@ -34,6 +39,9 @@ export class RayosXUpdatePage implements OnInit {
    this._apiservice.getRayox(id_col_rayosx).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      let rayosx = res[0];
+     this.nombre_paciente = rayosx.nombre_paciente;
+     this.apellido_paciente = rayosx.apellido_paciente;
+     this.cedula_paciente = rayosx.cedula_paciente;
      this.estado_rayosx = rayosx.estado_rayosx;
       }, (err:any)=>{
    console.log("ERROR", err)
@@ -46,7 +54,10 @@ export class RayosXUpdatePage implements OnInit {
  let data = {
    
    estado_rayosx: this.estado_rayosx,
-  
+   nombre: this.nombre_paciente,
+   apellido: this.apellido_paciente,
+   cedula: this.cedula_paciente,
+
    }
    this._apiservice.updateRayosx(this.id_col_rayosx,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);

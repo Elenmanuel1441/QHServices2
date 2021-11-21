@@ -130,9 +130,10 @@
              extend: 'excel',
              title: 'Reporte de usurio', "className": 'btn btn-success'
             },
-            'pdf',
-            'print'
- 
+            {
+              extend: 'pdf',
+              title: 'Reporte de usurio', "className": 'btn btn-danger'
+            }
         ]    
     };
     

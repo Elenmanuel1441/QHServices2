@@ -83,8 +83,10 @@ export class DashboardPage implements OnInit {
            extend: 'excel',
            title: 'Reporte de pacientes', "className": 'btn btn-success'
           },
-          'pdf',
-          'print'
+          {
+            extend: 'pdf',
+            title: 'Reporte de usurio', "className": 'btn btn-danger'
+          }
 
       ]
       

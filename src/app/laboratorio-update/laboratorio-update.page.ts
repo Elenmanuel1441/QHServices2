@@ -24,7 +24,6 @@ export class LaboratorioUpdatePage implements OnInit {
 
 title = 'angulardatatables';
  dtOptions: any = {};
-s
 
   id_col_laboratorio: any;
   estado_laboratorio: any;
@@ -65,7 +64,7 @@ s
   language: {
     url: 'assets/json/idioma_esp.json'
   } ,
-  processing: true,
+ processing: true,
   dom: 'Bfrtip',
     buttons: [
         {
@@ -80,6 +79,10 @@ s
          extend: 'excel',
          title: 'Reporte de pacientes', "className": 'btn btn-success'
         },
+        {
+          extend: 'pdf',
+          title: 'Reporte de usurio', "className": 'btn btn-danger'
+        }
 
     ]
     
