@@ -22,7 +22,7 @@
                 <!-- Heading -->
                 <div class="sidebar-heading">
                     Area de Servicios
-                </div>                
+                </div>
                 <li class="nav-item" (click)="logout()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-lock-open"></i>
@@ -31,12 +31,12 @@
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-                <ng-container class="animated fadeIn" >
+                <ng-container class="animated fadeIn">
                     <button style="background-color: transparent;" (click)="volver()">
                        <img src="../../assets/icon/volver.png" width="150" alt="">
                        <!-- <span class="text-white">Regresar</span> -->
                     </button>
-            </ng-container>
+                </ng-container>
 
             </ul>
         </div>
@@ -198,39 +198,39 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
-          <div class="row">
-              <div class="col">
-                <div>
-                    <nav class="navbar navbar-light ">
-                        <div class="container-fluid">
-    
-                            <div>
-                                <select *ngIf="showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <nav class="navbar navbar-light ">
+                                <div class="container-fluid">
+
+                                    <div>
+                                        <select *ngIf="showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
                                     tipo de sonografia
                                                     <option value='1'>OBSTETRICA OBITO</option>
                                                     <option value='2'>ABDOMINAL</option>
                                                     <option value='3'>TRANS VAGINAL</option>
                                                   </select>
-    
-                                <select *ngIf="!showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
+
+                                        <select *ngIf="!showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
                                                     tipo de sonografia
                                                                     
                                                     <option value='2'>ABDOMINAL</option>
                                                    <option value='3'>TRANS VAGINAL</option>
                                                  </select>
-                            </div>
-    
-                            <div>
-                                <ion-button class="subtitulo2 btn_continuar " type="button" (click)="setVi()" color="success" shape="round" expand="block"> continuar </ion-button>
-                            </div>
-    
-                        </div>
-                    </nav>
-                </div>
-              </div>
-          </div>
+                                    </div>
 
-          <hr class="sidebar-divider d-none d-md-block">
+                                    <div>
+                                        <ion-button class="subtitulo2 btn_continuar " type="button" (click)="setVi()" color="success" shape="round" expand="block"> continuar </ion-button>
+                                    </div>
+
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="sidebar-divider d-none d-md-block">
                 <ion-content>
                     <!--Sonografia obstetrica obito-->
                     <ion-card class="card_Obit" *ngIf="showObito">
@@ -241,7 +241,7 @@
                                         <ion-label>Nombre:</ion-label>
                                         <input disabled="true" type="text" [(ngModel)]="sonoObito.nombre +' '+ sonoObito.apellido" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Edad:</ion-label>
                                         <input disabled="true" type="number" [(ngModel)]="sonoObito.edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
@@ -273,9 +273,9 @@
                                        </select>
                                     </div>
                                 </ion-col>
-                
+
                                 <ion-col>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Peso:</ion-label>
                                         <input type="number" [(ngModel)]="sonoObito.peso" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
@@ -311,11 +311,11 @@
                                       <option value='VACIA'>VACIA</option>
                                     </select>
                                     </div>
-                
+
                                 </ion-col>
-                
+
                                 <ion-col>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Cabeza:</ion-label>
                                         <select [(ngModel)]="sonoObito.cabeza" class="form-select form-select-lg select_ubito subtitulo2">
@@ -324,7 +324,7 @@
                                      <option value='ACABALGAMIENTO DE LOS PARIETALES'>ACABALGAMIENTO DE LOS PARIETALES</option>
                                     </select>
                                     </div>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>FCF:</ion-label>
                                         <input type="number" [(ngModel)]="sonoObito.fcf" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
@@ -346,7 +346,7 @@
                                             <option value='TRES'>TRES</option>
                                           </select>
                                     </div>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Cordon:</ion-label>
                                         <select [(ngModel)]="sonoObito.cordon" class="form-select form-select-lg select_ubito subtitulo2">
@@ -355,9 +355,9 @@
                                           </select>
                                     </div>
                                 </ion-col>
-                
+
                                 <ion-col>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Líquido:</ion-label>
                                         <select [(ngModel)]="sonoObito.liquido" class="form-select form-select-lg  select_ubito subtitulo2">
@@ -388,7 +388,7 @@
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
-                
+
                         <ion-grid>
                             <ion-row>
                                 <ion-col>
@@ -405,39 +405,39 @@
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
-                
+
                     </ion-card>
-                
+
                     <!--Sonografia abdominal-->
-                
+
                     <ion-card class="card_abdominal" *ngIf="showAbdominal">
                         <ion-grid>
                             <ion-label class="label_toggle">Paciente:</ion-label>
                             <ion-row>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_datos">Nombre:</ion-label>
                                         <input type="text" [(ngModel)]="sonoAbdominal.nombre +' '+ sonoAbdominal.apellido" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
-                
-                
-                
+
+
+
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_datos">Edad:</ion-label>
                                         <input type="number" [(ngModel)]="sonoAbdominal.edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
-                
+
                                 </ion-col>
-                
+
                             </ion-row>
-                
+
                         </ion-grid>
                         <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
-                
+
                         <ion-grid>
                             <div class="mt-2 inputIcon">
                                 <ion-label class="label_toggle">Higado:</ion-label>
@@ -452,7 +452,7 @@
                                       </select>
                                     </div>
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_higado">Lesiones Focales:</ion-label>
@@ -464,14 +464,14 @@
                                           </select>
                                     </div>
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_higado">Medida:</ion-label>
                                         <input type="number" [(ngModel)]="sonoAbdominal.medidaHigado" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_higado">Vias Biliares:</ion-label>
@@ -497,26 +497,26 @@
                                             <option  value='DE FORMA NORMAL'>NORMAL</option>
                                             <option value='DE FORMA IRREGULAR'>IRREGULAR</option>
                                       </select>
-                
+
                                     </div>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_pancreas">Cabeza:</ion-label>
                                         <input type="number" [(ngModel)]="sonoAbdominal.pancreasCabeza" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_pancreas">Cuerpo:</ion-label>
                                         <input type="number" [(ngModel)]="sonoAbdominal.pancreasCuerpo" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_pancreas">Cola:</ion-label>
                                         <input type="number" [(ngModel)]="sonoAbdominal.pancreasCola" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_pancreas">Contorno:</ion-label>
@@ -534,22 +534,22 @@
                                           </select>
                                     </div>
                                 </ion-col>
-                
+
                             </ion-row>
-                
+
                         </ion-grid>
-                
-                
+
+
                         <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
-                
+
                         <div class="mt-2 inputIcon">
                             <ion-label class="label_toggle">Vesicula Biliar:</ion-label>
                         </div>
                         <div>
                             <ion-toggle color="success" [(ngModel)]="toggleVesicula" (ionChange)="vesicula()"></ion-toggle>
                         </div>
-                
-                
+
+
                         <!--Este usa un toggle-->
                         <ion-grid *ngIf="showVesicula">
                             <ion-row>
@@ -570,19 +570,19 @@
                                         <option value='ANORMAL'>ANORMAL</option>
                                         </select>
                                     </div>
-                
+
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_vesicular">Pared:</ion-label>
                                         <input type="text" [(ngModel)]="sonoAbdominal.vesiculaPared" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_vesicular">Longitud:</ion-label>
                                         <input type="text" [(ngModel)]="sonoAbdominal.vesiculaLongitud" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
-                
+
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
@@ -597,7 +597,7 @@
                                       <option value='SE VISUALIZA BARRO BILEAR  '>SE VISUALIZAN BARROS</option>
                                     </select>
                                     </div>
-                
+
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
@@ -608,7 +608,7 @@
                                           </select>
                                     </div>
                                 </ion-col>
-                
+
                             </ion-row>
                         </ion-grid>
                         <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
@@ -619,7 +619,7 @@
                             <ion-toggle color="success" [(ngModel)]="toggleRinond" (ionChange)="rinond()"></ion-toggle>
                         </div>
                         <!--Este usa un toggle-->
-                
+
                         <ion-grid *ngIf="showRinond">
                             <ion-row>
                                 <ion-col>
@@ -639,7 +639,7 @@
                                           </select>
                                     </div>
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_riderecho">Contorno:</ion-label>
@@ -655,7 +655,7 @@
                                                 <option value=' DILATADA '>DILATADA</option>
                                               </select>
                                     </div>
-                
+
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
@@ -674,7 +674,7 @@
                                                     <option value=' MICROLITIASIS '>MICROLITIASIS</option>
                                                   </select>
                                     </div>
-                
+
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
@@ -696,9 +696,9 @@
                         <div>
                             <ion-toggle color="success" [(ngModel)]="toggleRinonl" (ionChange)="rinonl()"> </ion-toggle>
                         </div>
-                
+
                         <!--Este usa un toggle-->
-                
+
                         <ion-grid *ngIf="showRinonl">
                             <ion-row>
                                 <ion-col>
@@ -717,10 +717,10 @@
                                         <option value=' NORMAL '>NORMAL</option>
                                       </select>
                                     </div>
-                
+
                                 </ion-col>
                                 <ion-col>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Contorno:</ion-label>
                                         <select [(ngModel)]="sonoAbdominal.rinonlContornos" class="form-select form-select-lg select_ubito subtitulo2">
@@ -737,7 +737,7 @@
                                     </div>
                                 </ion-col>
                                 <ion-col>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Evidencia:</ion-label>
                                         <select [(ngModel)]="sonoAbdominal.rinonlEvidencia" class="form-select form-select-lg select_ubito subtitulo2">
@@ -756,7 +756,7 @@
                                     </div>
                                 </ion-col>
                                 <ion-col>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Tumoraciones:</ion-label>
                                         <select [(ngModel)]="sonoAbdominal.rinonlTumoraciones" class="form-select form-select-lg select_ubito subtitulo2">
@@ -776,9 +776,9 @@
                         <div>
                             <ion-toggle color="success" [(ngModel)]="toggleBazo" (ionChange)="bazo()"></ion-toggle>
                         </div>
-                
+
                         <!--Este usa un toggle-->
-                
+
                         <ion-grid *ngIf="showBazo">
                             <ion-row>
                                 <ion-col>
@@ -789,7 +789,7 @@
                                             <option  value=' NO SE VISUALIZA '>NO SE VISUALIZA</option>
                                         </select>
                                     </div>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_bazo">Forma:</ion-label>
                                         <select [(ngModel)]="sonoAbdominal.bazoForma" class="form-select form-select-lg select_ubito subtitulo2">
@@ -797,9 +797,9 @@
                                         <option value=' IRREGULAR '>IRREGULAR</option>
                                       </select>
                                     </div>
-                
+
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_bazo">Ecotextura:</ion-label>
@@ -816,9 +816,9 @@
                                                 <option value=' IRREGULAR'>IRREGULAR</option>
                                               </select>
                                     </div>
-                
+
                                 </ion-col>
-                
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_bazo">Longitud:</ion-label>
@@ -831,16 +831,16 @@
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
-                
+
                         <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
                         <br>
                         <ion-label class="mt-2 inputIcon">Aorta Abdominal:</ion-label>
-                
+
                         <ion-grid>
                             <ion-row>
-                
+
                                 <ion-col>
-                
+
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_final">Diámetro:</ion-label>
                                         <select [(ngModel)]="sonoAbdominal.aortaDiametro" class="form-select form-select-lg select_ubito subtitulo2">
@@ -855,12 +855,12 @@
                                         <input type="number" [(ngModel)]="sonoAbdominal.aortaValor" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
-                
+
                             </ion-row>
                         </ion-grid>
-                
+
                         <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
-                
+
                         <ion-grid>
                             <ion-row>
                                 <ion-col>
@@ -878,7 +878,7 @@
                             </ion-row>
                         </ion-grid>
                     </ion-card>
-                
+
                     <ion-list *ngIf="showTransV">
                         <ion-item>
                             <h1 class="subtitulo2">Sonografia Transvaginal</h1>
@@ -900,8 +900,8 @@
                             <!-- <ion-button (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button> -->
                         </ion-item>
                     </ion-list>
-                
-                </ion-content> 
+
+                </ion-content>
             </div>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -919,5 +919,3 @@
     </div>
     <!-- End of Page Wrapper -->
 </body>
-
-
