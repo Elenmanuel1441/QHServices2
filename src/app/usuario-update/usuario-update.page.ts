@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-usuario-update',
@@ -14,6 +16,7 @@ export class UsuarioUpdatePage implements OnInit {
   contrasena: any;
   estado: any;
   rol: any;
+  condiccion: number = 0;
 
 
 
@@ -21,7 +24,8 @@ export class UsuarioUpdatePage implements OnInit {
   private route: ActivatedRoute,
   private router: Router,
   private _apiservice: ApiService,
-  public toastController: ToastController
+  public toastController: ToastController,
+  private afAuth: AuthService
 
  ) { 
 
@@ -60,7 +64,8 @@ export class UsuarioUpdatePage implements OnInit {
    this._apiservice.UpdateUsuario(this.id,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Actualizado exitosamente!');
-     this.router.navigate(['admin/usuario-registro']);
+    //  this.router.navigate(['admin/usuario-registro']);
+    this.router.navigateByUrl('admin/usuario-registro');
      
  }, (err:any)=>{
   this.presentToastError('Error al actualizar!');
@@ -115,8 +120,23 @@ async presentToastError(mensaje: string) {
   });
   toast.present();
 }
+
+volver(){
+  this.router.navigateByUrl('admin/usuario-registro');
 }
 
- 
+logout(){
+  this.afAuth.logout();
+}
+toggle(){
+  if(this.condiccion === 0){
+    this.condiccion = 1;
+  }
+  else{
+    this.condiccion = 0;
+  }
+}
+
+}
 
 

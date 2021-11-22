@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../services/auth.service';
+
 
 
 @Component({
@@ -24,12 +26,14 @@ export class PacienteUpdatePage implements OnInit {
   ars: any;
   direccion: any;
   rol: any;
+  condiccion: number = 0;
 
   constructor(
    private route: ActivatedRoute,
    private router: Router,
    private _apiservice: ApiService,
-   public toastController: ToastController
+   public toastController: ToastController,
+   private afAuth: AuthService
   ) { 
     this.route.params.subscribe((param:any) =>{
       this.id = param.id;
@@ -137,6 +141,23 @@ export class PacienteUpdatePage implements OnInit {
       });
       toast.present();
     }
+
+    volver(){
+      this.router.navigateByUrl('admin/paciente-registro');
+    }
+    
+    logout(){
+      this.afAuth.logout();
+    }
+    toggle(){
+      if(this.condiccion === 0){
+        this.condiccion = 1;
+      }
+      else{
+        this.condiccion = 0;
+      }
+    }
+    
 
     }
   
