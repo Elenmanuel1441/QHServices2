@@ -14,7 +14,9 @@ export class OdontologiaUpdatePage implements OnInit {
   id_col_odontologia: any;
   estado_odontologia: any;
   
-
+  nombre_paciente: any;
+  apellido_paciente: any;
+  cedula_paciente: any;
 
  constructor(
   private route: ActivatedRoute,
@@ -38,6 +40,9 @@ export class OdontologiaUpdatePage implements OnInit {
    this._apiservice.getOdontologia(id_col_odontologia).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      let odontologia = res[0];
+     this.nombre_paciente = odontologia.nombre_paciente;
+     this.apellido_paciente = odontologia.apellido_paciente;
+     this.cedula_paciente = odontologia.cedula_paciente;
      this.estado_odontologia = odontologia.estado_odontologia;
       }, (err:any)=>{
    console.log("ERROR", err)

@@ -12,6 +12,10 @@ export class PacienteAddAreaPage implements OnInit {
   id: any;
   estados= 1;
   area: any;
+
+  nombre_paciente: any;
+  apellido_paciente: any;
+  cedula_paciente: any;
   
   showComp = true;
   
@@ -141,6 +145,9 @@ export class PacienteAddAreaPage implements OnInit {
       this._apiservice.getPaciente(id).subscribe((res:any) => {
         console.log("SUCCESS",res);
         let pacientes = res[0];
+        this.nombre_paciente = pacientes.nombre_paciente;
+     this.apellido_paciente = pacientes.apellido_paciente;
+     this.cedula_paciente = pacientes.cedula_paciente;
         this.id = pacientes.id_paciente;
     
         
