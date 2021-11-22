@@ -28,7 +28,7 @@ export class PacienteRegistroPage implements OnInit {
   sexo: any;
   ars: any;
   direccion: any;
-public pacientes: any = [];
+pacientes: any = [];
 
   constructor(
     public _apiService: ApiService,
@@ -240,6 +240,8 @@ else{
       ]
       
   };
+  this.dtOptions().clear().draw();
+  this.dtOptions.ajax.reload(null, false);
   
   //fin de los datos de pruebas
 

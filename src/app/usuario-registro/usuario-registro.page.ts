@@ -35,7 +35,6 @@
       public toastController: ToastController,
       public alertController: AlertController
     ){
-      
       this.getUsuarios(); 
       this.limpiarCampos();
     }
@@ -110,7 +109,9 @@
     
 
     //cargar los datos de pruebas de la nueva tabla
-    this.dtOptions = {
+    
+    
+    this.dtOptions  = {
       pagingType: 'full_numbers',
       pageLength: 5,
       language: {
@@ -134,10 +135,12 @@
               extend: 'pdf',
               title: 'Reporte de usurio', "className": 'btn btn-danger'
             }
-        ]    
-    };
-    
-
+        ]  
+          
+      };
+      this.dtOptions().clear().draw();
+      this.dtOptions.ajax.reload(null, false);
+      // this.dtOptions.ajax.reload(null, false);
     //fin de los datos de pruebas
 
 

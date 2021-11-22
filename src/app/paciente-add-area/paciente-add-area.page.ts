@@ -59,10 +59,7 @@ export class PacienteAddAreaPage implements OnInit {
           this._apiservice.addSonografia(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
-            this.id = '';
-          
-            this.area = '';
-            this.router.navigateByUrl('/paciente-registro');
+            this.router.navigateByUrl('admin/paciente-registro');
     
           },(error: any) => {
             this.presentToastError('Error al asignar!');
@@ -80,11 +77,7 @@ export class PacienteAddAreaPage implements OnInit {
           this._apiservice.addRayosx(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
-            this.id = '';
-            
-            this.area = '';
-       
-            this.router.navigateByUrl('/paciente-registro');
+            this.router.navigateByUrl('admin/paciente-registro');
     
           },(error: any) => {
             this.presentToastError('Error al asignar!');
@@ -103,11 +96,7 @@ export class PacienteAddAreaPage implements OnInit {
           this._apiservice.addOdontologia(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
-            this.id = '';
-          
-            this.area = '';
-            
-            this.router.navigateByUrl('/paciente-registro');
+            this.router.navigateByUrl('admin/paciente-registro');
     
           },(error: any) => {
             this.presentToastError('Error al asignar!');
@@ -125,12 +114,8 @@ export class PacienteAddAreaPage implements OnInit {
           }
           this._apiservice.addLaboratorio(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
-            this.presentToast('Asignado correctamente!');
-            this.id = '';
-            
-            this.area = '';
-            
-            this.router.navigateByUrl('/paciente-registro');
+            this.presentToast('Asignado correctamente!');   
+            this.router.navigateByUrl('admin/paciente-registro');
     
           },(error: any) => {
             this.presentToastError('Error al asignar!');
