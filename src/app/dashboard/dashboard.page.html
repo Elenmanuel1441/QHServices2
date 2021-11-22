@@ -1,5 +1,5 @@
 <ion-content>
-         
+
     <div id="wrapper" class="animated fadeIn">
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
@@ -7,11 +7,11 @@
             <!-- Main Content -->
             <div id="content">
                 <!-- End of Topbar -->
-    
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-    
+
                     <div class="row">
                         <div class="col-sm-10">
                             <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -25,7 +25,7 @@
                     </div>
                     <!-- Content Row -->
                     <div class="row">
-    
+
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4 mf-4">
                             <div class="card border-left-primary shadow h-100 py-2">
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
@@ -111,27 +111,27 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Teléfono</th>
-                                    <th>Cédula</th>
+                                    <th>Apelldio</th>
+                                    <th>Edad</th>
+                                    <th>Morfología</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item of data ; let i=index;">
+                                <tr *ngFor="let item of reportAbdominal ; let i=index;">
                                     <th scope="row">{{i+1}}</th>
-                                    <td>{{item.Nombre}}</td>
-                                    <td>{{item.Apellido}}</td>
-                                    <td>{{item.Telefono}}</td>
-                                    <td>{{item.Cedula }}</td>
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.apellido}}</td>
+                                    <td>{{item.edad}}</td>
+                                    <td>{{item.morfologia }}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </ion-card>
-               </div>
             </div>
-            <!-- End of Main Content -->
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+    </div>
+    <!-- End of Content Wrapper -->
 
 </ion-content>
