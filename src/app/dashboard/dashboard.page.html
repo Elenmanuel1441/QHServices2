@@ -129,34 +129,7 @@
                 </div>
 
             </ion-card>
-            <br>
-            <ion-card class="card_tabla">
 
-                <div>
-                    <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Teléfono</th>
-                                <th>Cédula</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of data ; let i=index;">
-                                <th scope="row">{{i+1}}</th>
-                                <td>{{item.Nombre}}</td>
-                                <td>{{item.Apellido}}</td>
-                                <td>{{item.Telefono}}</td>
-                                <td>{{item.Cedula }}</td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </ion-card>
         </div>
         <!-- End of Main Content -->
 
