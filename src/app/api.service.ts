@@ -156,5 +156,13 @@ export class ApiService {
 
   }
 
+  addAnalisis(data)
+  {
+    return this.http.post('http://localhost/proyecto/backend/addAnalisis.php',data);}  
 
+
+    getAnalisis(id_paciente)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getAnalisis.php?id_paciente='+id_paciente);
+  }
 }

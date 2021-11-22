@@ -12,6 +12,10 @@ export class PacienteAddAreaPage implements OnInit {
   id: any;
   estados= 1;
   area: any;
+
+  nombre_paciente: any;
+  apellido_paciente: any;
+  cedula_paciente: any;
   
   showComp = true;
   
@@ -55,10 +59,7 @@ export class PacienteAddAreaPage implements OnInit {
           this._apiservice.addSonografia(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
-            this.id = '';
-          
-            this.area = '';
-            this.router.navigateByUrl('/paciente-registro');
+            this.router.navigateByUrl('admin/paciente-registro');
     
           },(error: any) => {
             this.presentToastError('Error al asignar!');
@@ -76,11 +77,7 @@ export class PacienteAddAreaPage implements OnInit {
           this._apiservice.addRayosx(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
-            this.id = '';
-            
-            this.area = '';
-       
-            this.router.navigateByUrl('/paciente-registro');
+            this.router.navigateByUrl('admin/paciente-registro');
     
           },(error: any) => {
             this.presentToastError('Error al asignar!');
@@ -99,11 +96,7 @@ export class PacienteAddAreaPage implements OnInit {
           this._apiservice.addOdontologia(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
             this.presentToast('Asignado correctamente!');
-            this.id = '';
-          
-            this.area = '';
-            
-            this.router.navigateByUrl('/paciente-registro');
+            this.router.navigateByUrl('admin/paciente-registro');
     
           },(error: any) => {
             this.presentToastError('Error al asignar!');
@@ -121,12 +114,8 @@ export class PacienteAddAreaPage implements OnInit {
           }
           this._apiservice.addLaboratorio(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
-            this.presentToast('Asignado correctamente!');
-            this.id = '';
-            
-            this.area = '';
-            
-            this.router.navigateByUrl('/paciente-registro');
+            this.presentToast('Asignado correctamente!');   
+            this.router.navigateByUrl('admin/paciente-registro');
     
           },(error: any) => {
             this.presentToastError('Error al asignar!');
@@ -141,6 +130,9 @@ export class PacienteAddAreaPage implements OnInit {
       this._apiservice.getPaciente(id).subscribe((res:any) => {
         console.log("SUCCESS",res);
         let pacientes = res[0];
+        this.nombre_paciente = pacientes.nombre_paciente;
+     this.apellido_paciente = pacientes.apellido_paciente;
+     this.cedula_paciente = pacientes.cedula_paciente;
         this.id = pacientes.id_paciente;
     
         

@@ -24,12 +24,19 @@ export class LaboratorioUpdatePage implements OnInit {
 
 title = 'angulardatatables';
  dtOptions: any = {};
-s
 
   id_col_laboratorio: any;
   estado_laboratorio: any;
-  
+  id_paciente: any;
+  id_analisis: any;
 
+
+
+tablaAnalisis ={
+  id_analisis: '',
+  estado: ''
+
+}
 
  constructor(
   private route: ActivatedRoute,
@@ -50,10 +57,11 @@ s
  }
  getLaboratorio(id_col_laboratorio)
  {
-   this._apiservice.getOdontologia(id_col_laboratorio).subscribe((res:any)=>{
+   this._apiservice.getLaboratorio(id_col_laboratorio).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      let laboratorio = res[0];
      this.estado_laboratorio = laboratorio.estado_laboratorio;
+     this.id_paciente = laboratorio.id_paciente;
       }, (err:any)=>{
    console.log("ERROR", err)
  })
@@ -65,7 +73,7 @@ s
   language: {
     url: 'assets/json/idioma_esp.json'
   } ,
-  processing: true,
+ processing: true,
   dom: 'Bfrtip',
     buttons: [
         {
@@ -80,6 +88,10 @@ s
          extend: 'excel',
          title: 'Reporte de pacientes', "className": 'btn btn-success'
         },
+        {
+          extend: 'pdf',
+          title: 'Reporte de usurio', "className": 'btn btn-danger'
+        }
 
     ]
     
@@ -89,6 +101,22 @@ s
  
 }
  
+
+
+
+
+getAnalisis(id_paciente){
+  this._apiservice.getAnalisis(id_paciente).subscribe((res:any)=>{
+    console.log("SUCCESS",res);
+    let paciente_analisis = res[0];
+    this.tablaAnalisis.id_analisis = paciente_analisis.id_analisis;
+    this.tablaAnalisis.estado = paciente_analisis.estado;
+    
+     }, (err:any)=>{
+  console.log("ERROR", err)
+})
+}
+
  updateLaboratorio()
 {
  let data = {
@@ -132,6 +160,30 @@ async presentToastWithOptions() {
   });
 
 }
+addAnalisis(){
+  let data = {
+    id_paciente: this.id_paciente,
+    id_analisis: this.id_analisis,
+    id_col_laboratorio: this.id_col_laboratorio
+ 
+        }
+        this._apiservice.addAnalisis(data).subscribe((res:any) => {
+          console.log("SUCCESS ===",res);
+          this.presentToast('Asignado correctamente!');
+          
+        
+          
+  
+        },(error: any) => {
+          this.presentToastError('Error al asignar!');
+          console.log("Error ===",error);
+        })
+    }
+
+
+  
+
+
 async presentToast(mensaje: string) {
   const toast = await this.toastController.create({
     message: mensaje,

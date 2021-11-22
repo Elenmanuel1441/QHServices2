@@ -3,6 +3,8 @@
   import { ApiService } from '../api.service';
   import { AuthService } from '../services/auth.service';
   import { UserData } from '../../models/auth.models';
+import { Router } from '@angular/router';
+
 
 
 
@@ -32,11 +34,10 @@
       public _apiService: ApiService,
       private afAuth: AuthService,
       public toastController: ToastController,
-      public alertController: AlertController
+      public alertController: AlertController,
+      private router: Router,
     ){
-      
       this.getUsuarios(); 
-     // setInterval(() => this.getUsuarios(), 10000);
       this.limpiarCampos();
     }
     ngAfterViewInit(): void {
@@ -92,7 +93,7 @@
     console.log("SUCCESS ===",res);
     this.limpiarCampos();
     this.presentToast('Guardado exitosamente!');
-    //this.getUsuarios();
+    this.getUsuarios();
 
     },(error: any) => {
       this.presentToastErrAdd('Error al guardar!');
@@ -105,12 +106,16 @@
 
     ngOnInit()
     {
+   
     this.limpiarCampos();
+    
 
     //cargar los datos de pruebas de la nueva tabla
-    this.dtOptions = {
+  
+    this.dtOptions  = {
       pagingType: 'full_numbers',
       pageLength: 5,
+
       language: {
         url: 'assets/json/idioma_esp.json'
       } ,
@@ -128,12 +133,20 @@
              extend: 'excel',
              title: 'Reporte de usurio', "className": 'btn btn-success'
             },
- 
-        ]    
-
-    };
-    
-
+            {
+              extend: 'pdf',
+              title: 'Reporte de usurio', "className": 'btn btn-danger'
+            }
+        ]  
+          
+      };
+      $(this.dtOptions).each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+      this.dtOptions().clear().draw();
+      this.dtOptions.ajax.reload(null, false);
+      // this.dtOptions.ajax.reload(null, false);
     //fin de los datos de pruebas
 
 
@@ -151,9 +164,11 @@
   limpiarCampos()
   {
     this.nombre = '';
+    this.email = '';
     this.contrasena = '';
     this.estado = '';
     this.rol = '';
+    
   }
 
 
@@ -163,7 +178,9 @@
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
     console.log("SUCCESS");
     this.presentToastEli('Eliminado exitosamente!');
-   // this.getUsuarios();
+    this.getUsuarios(); 
+    //this.router.navigate(['admin/usuario-registro']);
+   
     },(error: any) => {
       this.presentToastErrEli('Error al eliminar!');
       console.log("ERROR")

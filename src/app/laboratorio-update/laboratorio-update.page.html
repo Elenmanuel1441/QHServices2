@@ -16,25 +16,56 @@
                     </ion-col>
                     <ion-col>
                         <div>
-                            <select class="form-select form-select-lg select_analisis ">
+                            <select [(ngModel)]="id_analisis" class="form-select form-select-lg select_analisis ">
                                 <option value="Nada" selected disabled>Seleccione tipo analisis</option>
-                            <option value='Hemograma completo'>Hemograma completo</option>
+                                <option value='EXAMEN DE ORINA'>Examen de orina</option>
+                                <option value='TIPIFICACION'>Tipificacion</option>
+                                <option value='EXAMEN COPROLOGICO'>Examen coprologico</option>
+                                <option value='PRUEBA ANTIGENICA CV-19'>Prueba antigenica CV-19</option>
+                           
+                           
+                           
+                                <!--<option value='Hemograma completo'>Hemograma completo</option>
                             <option value='Urinálisis completo'>Urinálisis completo</option>
                             <option value='Heces por parásito'>Heces por parásito</option>
                             <option value='sangre oculta'>Sangre oculta</option>
                             <option value='Cropologico'>Cropologico</option>
                             <option value='Horina'>Horina</option>
                             <option value='Gestacionalo'>Gestacional</option>
+                            -->
                             </select>
                         </div>
                     </ion-col>
                     <ion-col>
-                        <button (click)="updateLaboratorio()" type="button" class="btn btn-success btn_guardar">Guardar</button>
+                        <button (click)="addAnalisis()" type="button" class="btn btn-success btn_guardar">Seleccionar</button>
                     </ion-col>
                 </ion-row>
             </ion-grid>
         </ion-card>
         <br>
+        <!--tabla para dejar funcionando el get-->
+        <table id="tabla" class="table table-hover">
+            <thead class="">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Analisis</th>
+                    <th scope="col">Estado</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let laboratorios of laboratorios ;let i=index;">
+                    <th>{{i+1}}</th>
+                    <td>{{paciente_analisis.id_analisis}}</td>
+                    <td>{{paciente_analisis.estado}}</td>
+                    <td>
+                        <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
         <ion-card class="card_tabla">
 
             <div>
