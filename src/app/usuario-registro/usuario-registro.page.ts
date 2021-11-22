@@ -111,11 +111,12 @@ import { Router } from '@angular/router';
     
 
     //cargar los datos de pruebas de la nueva tabla
+
+    
   
     this.dtOptions  = {
       pagingType: 'full_numbers',
       pageLength: 5,
-
       language: {
         url: 'assets/json/idioma_esp.json'
       } ,
