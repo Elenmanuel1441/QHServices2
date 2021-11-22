@@ -4,6 +4,7 @@ import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { AuthService } from '../services/auth.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -104,11 +105,14 @@ export class SonografiaUpdatePage implements OnInit {
   //variable que me dice el tipo de sonografia
   tipoSonografia: any;
 
+  condiccion: number = 0;
+
  constructor(
   private route: ActivatedRoute,
   private router: Router,
   public _apiservice: ApiService,
-  public toastController: ToastController
+  public toastController: ToastController,
+  private afAuth: AuthService
 
  ) { 
 
@@ -2801,5 +2805,22 @@ printAbdominalPdf() {
     img.src = url;
   });
 }
+
+volver(){
+  this.router.navigateByUrl('admin/sonografia');
+}
+
+logout(){
+  this.afAuth.logout();
+}
+toggle(){
+  if(this.condiccion === 0){
+    this.condiccion = 1;
+  }
+  else{
+    this.condiccion = 0;
+  }
+}
+
 }
 
