@@ -111,11 +111,11 @@ import { Router } from '@angular/router';
     
 
     //cargar los datos de pruebas de la nueva tabla
-    
-    
+  
     this.dtOptions  = {
       pagingType: 'full_numbers',
       pageLength: 5,
+
       language: {
         url: 'assets/json/idioma_esp.json'
       } ,
@@ -140,6 +140,10 @@ import { Router } from '@angular/router';
         ]  
           
       };
+      $(this.dtOptions).each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
       this.dtOptions().clear().draw();
       this.dtOptions.ajax.reload(null, false);
       // this.dtOptions.ajax.reload(null, false);
