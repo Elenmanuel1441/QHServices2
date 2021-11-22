@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-rayos-x-update',
@@ -15,13 +16,15 @@ export class RayosXUpdatePage implements OnInit {
   nombre_paciente: any;
   apellido_paciente: any;
   cedula_paciente: any;
+  condiccion: number = 0;
 
   
  constructor(
   private route: ActivatedRoute,
   private router: Router,
   private _apiservice: ApiService,
-  public toastController: ToastController
+  public toastController: ToastController,
+  private afAuth: AuthService
 
  ) { 
 
@@ -119,6 +122,24 @@ async presentToastError(mensaje: string) {
   toast.present();
 }
  
+
+volver(){
+  this.router.navigateByUrl('admin/rayos-x');
+}
+
+logout(){
+  this.afAuth.logout();
+}
+toggle(){
+  if(this.condiccion === 0){
+    this.condiccion = 1;
+  }
+  else{
+    this.condiccion = 0;
+  }
+}
+
+
  
 }
 

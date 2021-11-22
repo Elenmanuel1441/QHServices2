@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { UsuarioUpdatePageRoutingModule } from './usuario-update-routing.module';
 
 import { UsuarioUpdatePage } from './usuario-update.page';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UsuarioUpdatePageRoutingModule
+    UsuarioUpdatePageRoutingModule,
+    MatIconModule
   ],
   declarations: [UsuarioUpdatePage]
 })

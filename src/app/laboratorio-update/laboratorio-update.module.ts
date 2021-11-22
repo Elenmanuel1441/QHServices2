@@ -8,6 +8,7 @@ import { LaboratorioUpdatePageRoutingModule } from './laboratorio-update-routing
 
 import { LaboratorioUpdatePage } from './laboratorio-update.page';
 import { DataTablesModule } from 'angular-datatables';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { DataTablesModule } from 'angular-datatables';
     FormsModule,
     IonicModule,
     LaboratorioUpdatePageRoutingModule,
-    DataTablesModule
+    DataTablesModule,
+    MatIconModule
   ],
   declarations: [LaboratorioUpdatePage]
 })

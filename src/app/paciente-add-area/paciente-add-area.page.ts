@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-paciente-add-area',
@@ -18,12 +20,15 @@ export class PacienteAddAreaPage implements OnInit {
   cedula_paciente: any;
   
   showComp = true;
+
+  condiccion: number = 0;
   
     constructor(
       private route: ActivatedRoute,
       private router: Router,
       public _apiservice: ApiService,
-      public toastController: ToastController
+      public toastController: ToastController,
+      private afAuth: AuthService
     ) {
   
     this.route.params.subscribe((param:any) =>{
@@ -188,6 +193,23 @@ export class PacienteAddAreaPage implements OnInit {
           
         });
         toast.present();
+      }
+
+
+      volver(){
+        this.router.navigateByUrl('admin/paciente-registro');
+      }
+      
+      logout(){
+        this.afAuth.logout();
+      }
+      toggle(){
+        if(this.condiccion === 0){
+          this.condiccion = 1;
+        }
+        else{
+          this.condiccion = 0;
+        }
       }
   
      

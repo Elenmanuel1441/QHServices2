@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ReportesPageRoutingModule } from './reportes-routing.module';
 
 import { ReportesPage } from './reportes.page';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReportesPageRoutingModule
+    ReportesPageRoutingModule,
+    MatIconModule
   ],
   declarations: [ReportesPage]
 })
