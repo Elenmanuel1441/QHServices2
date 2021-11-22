@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -25,6 +26,8 @@ export class LaboratorioUpdatePage implements OnInit {
 title = 'angulardatatables';
  dtOptions: any = {};
 
+
+ condiccion: number = 0;
   id_col_laboratorio: any;
   estado_laboratorio: any;
   id_paciente: any;
@@ -42,7 +45,8 @@ tablaAnalisis ={
   private route: ActivatedRoute,
   private router: Router,
   private _apiservice: ApiService,
-  public toastController: ToastController
+  public toastController: ToastController,
+  private afAuth: AuthService
 
  ) { 
 
@@ -209,5 +213,23 @@ async presentToastError(mensaje: string) {
 }
  
  
+volver(){
+  this.router.navigateByUrl('admin/laboratorio');
+}
+
+logout(){
+  this.afAuth.logout();
+}
+toggle(){
+  if(this.condiccion === 0){
+    this.condiccion = 1;
+  }
+  else{
+    this.condiccion = 0;
+  }
+}
+
+
+
 }
 

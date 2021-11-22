@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-odontologia-update',
@@ -17,12 +18,14 @@ export class OdontologiaUpdatePage implements OnInit {
   nombre_paciente: any;
   apellido_paciente: any;
   cedula_paciente: any;
+  condiccion:number = 0;
 
  constructor(
   private route: ActivatedRoute,
   private router: Router,
   private _apiservice: ApiService,
-  public toastController: ToastController
+  public toastController: ToastController,
+  private afAuth: AuthService
 
  ) { 
 
@@ -119,6 +122,22 @@ async presentToastError(mensaje: string) {
 }
  
  
+volver(){
+  this.router.navigateByUrl('/admin/odontodologia');
+}
+
+logout(){
+  this.afAuth.logout();
+}
+toggle(){
+  if(this.condiccion === 0){
+    this.condiccion = 1;
+  }
+  else{
+    this.condiccion = 0;
+  }
+}
+
  
 }
 

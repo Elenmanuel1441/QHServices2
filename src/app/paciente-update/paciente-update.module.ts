@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PacienteUpdatePageRoutingModule } from './paciente-update-routing.module';
 
 import { PacienteUpdatePage } from './paciente-update.page';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PacienteUpdatePageRoutingModule
+    PacienteUpdatePageRoutingModule,
+    MatIconModule
   ],
   declarations: [PacienteUpdatePage]
 })

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LaboratorioResultadosPageRoutingModule } from './laboratorio-resultados-routing.module';
 
 import { LaboratorioResultadosPage } from './laboratorio-resultados.page';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LaboratorioResultadosPageRoutingModule
+    LaboratorioResultadosPageRoutingModule,
+    MatIconModule
   ],
   declarations: [LaboratorioResultadosPage]
 })

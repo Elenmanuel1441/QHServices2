@@ -40,7 +40,8 @@ import { environment } from 'src/environments/environment';
       AngularFireModule.initializeApp(environment.DBConfig),
       AngularFireAuthModule,
       AngularFireDatabaseModule,
-      DataTablesModule
+      DataTablesModule,
+      MatIconModule
 
     ],
   providers: [{ provide: RouteReuseStrategy,

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { OdontologiaUpdatePageRoutingModule } from './odontologia-update-routing.module';
 
 import { OdontologiaUpdatePage } from './odontologia-update.page';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OdontologiaUpdatePageRoutingModule
+    OdontologiaUpdatePageRoutingModule,
+    MatIconModule
   ],
   declarations: [OdontologiaUpdatePage]
 })

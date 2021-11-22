@@ -101,13 +101,13 @@ const routes: Routes = [
     loadChildren: () => import('./reportes/reportes.module').then( m => m.ReportesPageModule),
     canActivate: [AuthGuard],
   },
-  { 
-    path: '**', redirectTo: 'login', pathMatch: 'full' 
-  },  {
+  {
     path: 'laboratorio-resultados',
     loadChildren: () => import('./laboratorio-resultados/laboratorio-resultados.module').then( m => m.LaboratorioResultadosPageModule)
   },
-
+  { 
+    path: '**', redirectTo: 'login', pathMatch: 'full' 
+  },
 
 
 
