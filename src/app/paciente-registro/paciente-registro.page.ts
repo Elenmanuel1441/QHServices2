@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 
@@ -32,7 +33,8 @@ pacientes: any = [];
 
   constructor(
     public _apiService: ApiService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private router: Router,
     
   ) {
  this.getPacientes();
@@ -267,7 +269,9 @@ else{
   getPacientes(){
     this._apiService.getPacientes().subscribe((res:any) => {
       console.log("SUCCESS ===",res);
+      this.getPacientes();
       this.pacientes = res;
+      
       },(error: any) => {
         console.log("ERROR ===",error);
       })

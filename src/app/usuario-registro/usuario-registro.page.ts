@@ -3,6 +3,7 @@
   import { ApiService } from '../api.service';
   import { AuthService } from '../services/auth.service';
   import { UserData } from '../../models/auth.models';
+import { Router } from '@angular/router';
 
 
 
@@ -33,7 +34,8 @@
       public _apiService: ApiService,
       private afAuth: AuthService,
       public toastController: ToastController,
-      public alertController: AlertController
+      public alertController: AlertController,
+      private router: Router,
     ){
       this.getUsuarios(); 
       this.limpiarCampos();
@@ -91,7 +93,7 @@
     console.log("SUCCESS ===",res);
     this.limpiarCampos();
     this.presentToast('Guardado exitosamente!');
-    //this.getUsuarios();
+    this.getUsuarios();
 
     },(error: any) => {
       this.presentToastErrAdd('Error al guardar!');
@@ -158,9 +160,11 @@
   limpiarCampos()
   {
     this.nombre = '';
+    this.email = '';
     this.contrasena = '';
     this.estado = '';
     this.rol = '';
+    
   }
 
 
@@ -170,7 +174,9 @@
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
     console.log("SUCCESS");
     this.presentToastEli('Eliminado exitosamente!');
-   this.getUsuarios();
+    this.getUsuarios(); 
+    //this.router.navigate(['admin/usuario-registro']);
+   
     },(error: any) => {
       this.presentToastErrEli('Error al eliminar!');
       console.log("ERROR")
