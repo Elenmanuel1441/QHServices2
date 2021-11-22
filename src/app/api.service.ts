@@ -165,4 +165,8 @@ export class ApiService {
   {
     return this.http.get('http://localhost/proyecto/backend/getAnalisis.php?id_paciente='+id_paciente);
   }
+  ReportAbdominal()
+  {
+    return this.http.get('http://localhost/proyecto/backend/reportAbdominal.php');
+  }
 }

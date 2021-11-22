@@ -9,16 +9,54 @@ import { ApiService } from '../api.service';
 })
 export class DashboardPage implements OnInit {
 
-  public data = [
-    {No: '1',  Nombre:'Elenmanuel', Apellido: 'Estrella', Telefono:'809-234-2345', Cedula:'031-2010819-8'},
-    {No: '2',  Nombre: 'Ericcson', Apellido:'Reyes', Telefono:'809-234-0813', Cedula:'031-8710819-8'},
-    {No: '3',  Nombre: 'Luis', Apellido:'Castillo', Telefono:'809-344-6572', Cedula:'402-2010819-8'},
-    {No: '4',  Nombre: 'Juan Carlos', Apellido:'Torres', Telefono:'809-809-0813', Cedula:'031-1230819-8'},
-    {No: '5',  Nombre:'Elenmanuel', Apellido: 'Estrella', Telefono:'809-234-2345', Cedula:'031-2010819-8'},
-    {No: '6',  Nombre: 'Ericcson', Apellido:'Reyes', Telefono:'809-234-0813', Cedula:'031-8710819-8'},
-    {No: '7',  Nombre: 'Luis', Apellido:'Castillo', Telefono:'809-344-6572', Cedula:'402-2010819-8'},
-    {No: '8',  Nombre: 'Juan Carlos', Apellido:'Torres', Telefono:'809-809-0813', Cedula:'031-1230819-8'},
-];
+//datos del reporte abdominal
+nombre: string;
+apellido: string;
+edad: string;
+morfologia: string;
+LesionesFocales: string;
+MedidaHigado: string;
+ViasBiliares: string;
+versiculaForma: string;
+versiculaSituacion: string;
+versiculaPared: string;
+versiculaLongitud: string;
+versiculaAncho: string;
+versiculaLitos: string;
+versiculaPolipos: string;
+pancreasForma: string;
+pancreasSituacion: string;
+pancreasCabeza: string;
+pancreasCuerpo: string;
+pancreasCola: string;
+pancreasContorno: string;
+pancreasEcogenecidad: string;
+rinonDVisualiza: string;
+rinonDForma: string;
+rinonDContorno: string;
+rinonDRelacion: string;
+rinonDEvidencia: string;
+rinonDLitiasis: string;
+rinonDTumoraciones: string;
+rinonLVisualiza: string;
+rinonLForma: string;
+rinonLContornos: string;
+rinonLRelacion: string;
+rinonLEvidencia: string;
+rinonLlitiasis: string;
+rinonLTumoraciones: string;
+bazoVisualiza: string;
+bazoForma: string;
+bazoEcotextura: string;
+bazoTumoraciones: string;
+bazoLongitud: string;
+bazoAncho: string;
+AortaDiametro: string;
+AortaValor: string;
+fecha: string;
+
+reportAbdominal: any = [];
+//fin de los datos
 
  title = 'angulardatatables';
  dtOptions: any = {};
@@ -45,6 +83,9 @@ export class DashboardPage implements OnInit {
 
 
   ) {
+    this.ReportAbdominal();
+    setInterval(() => this.ReportAbdominal(), 10000);
+
     this.getCount_rayos_x();
     setInterval(() => this.getCount_rayos_x(), 10000);
 
@@ -140,72 +181,16 @@ getCount_odontologia()
     },(error: any) => {
       console.log("ERROR ===",error);
     })
-}
+ }
 
-fileName= 'ExcelSheet.xlsx';
+ ReportAbdominal(){
+  this._apiservice.ReportAbdominal().subscribe((res:any) => {
+    console.log("SUCCESS ===",res);
+    this.reportAbdominal = res;
+    },(error: any) => {
+      console.log("ERROR ===",error);
+    })
+   }
+ }
 
-userList = [
 
-  {
-  
-  "id": 1,
-  
-  "name": "Leanne Graham",
-  
-  "username": "Bret",
-  
-  "email": "Sincere@april.biz"
-  
-  },
-  
-  {
-  
-  "id": 2,
-  
-  "name": "Ervin Howell",
-  
-  "username": "Antonette",
-  
-  "email": "Shanna@melissa.tv"
-  
-  },
-  
-  {
-  
-  "id": 3,
-  
-  "name": "Clementine Bauch",
-  
-  "username": "Samantha",
-  
-  "email": "Nathan@yesenia.net"
-  
-  },
-  
-  {
-  
-  "id": 4,
-  
-  "name": "Patricia Lebsack",
-  
-  "username": "Karianne",
-  
-  "email": "Julianne.OConner@kory.org"
-  
-  },
-  
-  {
-  
-  "id": 5,
-  
-  "name": "Chelsey Dietrich",
-  
-  "username": "Kamren",
-  
-  "email": "Lucio_Hettinger@annie.ca"
-  
-  }
-  
-  ];
-
-}

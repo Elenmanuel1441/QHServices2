@@ -156,7 +156,7 @@ import { Router } from '@angular/router';
         },(error: any) => {
           console.log("ERROR ===",error);
         })
-  }
+  } 
 
   limpiarCampos()
   {
