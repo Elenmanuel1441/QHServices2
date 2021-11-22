@@ -140,10 +140,6 @@ import { Router } from '@angular/router';
         ]  
           
       };
-      $(this.dtOptions).each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-    } );
       this.dtOptions().clear().draw();
       this.dtOptions.ajax.reload(null, false);
       // this.dtOptions.ajax.reload(null, false);
@@ -176,7 +172,6 @@ import { Router } from '@angular/router';
   deleUsuarios(id){
 
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
-    console.log("SUCCESS");
     this.presentToastEli('Eliminado exitosamente!');
     this.getUsuarios(); 
     //this.router.navigate(['admin/usuario-registro']);

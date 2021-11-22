@@ -274,9 +274,7 @@ else{
   getPacientes(){
     this._apiService.getPacientes().subscribe((res:any) => {
       console.log("SUCCESS ===",res);
-      this.getPacientes();
       this.pacientes = res;
-      
       },(error: any) => {
         console.log("ERROR ===",error);
       })

@@ -86,10 +86,6 @@ export class DashboardPage implements OnInit {
           {
             extend: 'pdf',
             title: 'Reporte de usurio', "className": 'btn btn-danger'
-          },
-          {
-            extend: 'print',
-            title: 'Reporte de usurio', "className": 'btn btn-warning'
           }
 
       ]
