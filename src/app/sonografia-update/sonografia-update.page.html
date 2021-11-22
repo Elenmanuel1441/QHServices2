@@ -442,6 +442,9 @@
                             <option value=' NORMAL '>NORMAL</option>
                           </select>
                     </div>
+                </ion-col>
+
+                <ion-col>
                     <div class="mt-2 inputIcon">
                         <ion-label class="label_riderecho">Contorno:</ion-label>
                         <select [(ngModel)]="sonoAbdominal.rinondContornos" class="form-select form-select-lg select_ubito subtitulo2">
@@ -449,8 +452,6 @@
                             <option value=' IRREGULAR '>IRREGULAR</option>
                           </select>
                     </div>
-                </ion-col>
-                <ion-col>
                     <div class="mt-2 inputIcon">
                         <ion-label class="label_riderecho">Corteza:</ion-label>
                         <select [(ngModel)]="sonoAbdominal.rinondRelacion" class="form-select form-select-lg select_ubito subtitulo2">
@@ -458,6 +459,9 @@
                                 <option value=' DILATADA '>DILATADA</option>
                               </select>
                     </div>
+
+                </ion-col>
+                <ion-col>
                     <div class="mt-2 inputIcon">
                         <ion-label class="label_riderecho">Evidencia:</ion-label>
                         <select [(ngModel)]="sonoAbdominal.rinondEvidencia" class="form-select form-select-lg select_ubito subtitulo2">
@@ -465,8 +469,6 @@
                                 <option value=' NO '>NO EXISTE</option>
                               </select>
                     </div>
-                </ion-col>
-                <ion-col>
                     <div class="mt-2 inputIcon">
                         <ion-label class="label_riderecho">Litiasis:</ion-label>
                         <select [(ngModel)]="sonoAbdominal.rinondLitiasis" class="form-select form-select-lg select_ubito subtitulo2">
@@ -476,6 +478,9 @@
                                     <option value=' MICROLITIASIS '>MICROLITIASIS</option>
                                   </select>
                     </div>
+
+                </ion-col>
+                <ion-col>
                     <div class="mt-2 inputIcon">
                         <ion-label class="label_riderecho">Tumoraciones:</ion-label>
                         <select [(ngModel)]="sonoAbdominal.rinondTumoraciones" class="form-select form-select-lg select_ubito subtitulo2">
@@ -590,7 +595,7 @@
                     </div>
 
                     <div class="mt-2 inputIcon">
-                        <ion-label>Forma:</ion-label>
+                        <ion-label class="label_bazo">Forma:</ion-label>
                         <select [(ngModel)]="sonoAbdominal.bazoForma" class="form-select form-select-lg select_ubito subtitulo2">
                         <option  value=' REGULAR '>REGULAR</option>
                         <option value=' IRREGULAR '>IRREGULAR</option>
@@ -620,7 +625,7 @@
 
                 <ion-col>
                     <div class="mt-2 inputIcon">
-                        <ion-label class="label_vesicular">Longitud:</ion-label>
+                        <ion-label class="label_bazo">Longitud:</ion-label>
                         <input type="text" [(ngModel)]="sonoAbdominal.bazoLongitud" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                     </div>
                     <div class="mt-2 inputIcon">
