@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-paciente-registro',
@@ -12,8 +14,10 @@ export class PacienteRegistroPage implements OnInit {
 
  //datos de prueba de la nueva tabla
   
+ condiccion: number = 0;
  title = 'angulardatatables';
  dtOptions: any = {};
+
  
  //fin de datos de pruebas
 
@@ -35,6 +39,7 @@ pacientes: any = [];
     public _apiService: ApiService,
     public toastController: ToastController,
     private router: Router,
+    private afAuth: AuthService
     
   ) {
  this.getPacientes();
@@ -351,6 +356,8 @@ else{
     });
     toast.present();
   }
+
+
 
 }
 
