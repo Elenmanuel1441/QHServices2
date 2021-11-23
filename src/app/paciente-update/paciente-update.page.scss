@@ -131,3 +131,15 @@ ion-icon {
     width: 10%;
     margin: auto;
 }
+
+@media screen and (max-width: 480px) {
+    .aparecer{
+        margin-left: -28%;
+        transition:all 0.5s ease-in-out;
+    }
+    .ocultar{
+        transition: all 0.5s ease-in-out;
+}
+    
+}
+    
