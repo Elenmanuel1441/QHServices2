@@ -12,20 +12,6 @@ import { AuthService } from '../services/auth.service';
 })
 export class LaboratorioUpdatePage implements OnInit {
 
-  public data = [
-    {No: '1',  Nombre:'Elenmanuel', Apellido: 'Estrella', Telefono:'809-234-2345', Cedula:'031-2010819-8'},
-    {No: '2',  Nombre: 'Ericcson', Apellido:'Reyes', Telefono:'809-234-0813', Cedula:'031-8710819-8'},
-    {No: '3',  Nombre: 'Luis', Apellido:'Castillo', Telefono:'809-344-6572', Cedula:'402-2010819-8'},
-    {No: '4',  Nombre: 'Juan Carlos', Apellido:'Torres', Telefono:'809-809-0813', Cedula:'031-1230819-8'},
-    {No: '5',  Nombre:'Elenmanuel', Apellido: 'Estrella', Telefono:'809-234-2345', Cedula:'031-2010819-8'},
-    {No: '6',  Nombre: 'Ericcson', Apellido:'Reyes', Telefono:'809-234-0813', Cedula:'031-8710819-8'},
-    {No: '7',  Nombre: 'Luis', Apellido:'Castillo', Telefono:'809-344-6572', Cedula:'402-2010819-8'},
-    {No: '8',  Nombre: 'Juan Carlos', Apellido:'Torres', Telefono:'809-809-0813', Cedula:'031-1230819-8'},
-];
-
-title = 'angulardatatables';
- dtOptions: any = {};
-
 
  condiccion: number = 0;
   id_col_laboratorio: any;
@@ -33,7 +19,7 @@ title = 'angulardatatables';
   id_paciente: any;
   id_analisis: any;
 
-
+  paciente_analisis: any = [];
 
 tablaAnalisis ={
   id_analisis: '',
@@ -56,7 +42,9 @@ tablaAnalisis ={
      console.log(this.id_col_laboratorio);
      this.getLaboratorio(this.id_col_laboratorio);
    })
+   
    this.getAnalisis(this.id_paciente);
+   setInterval(() => this.getAnalisis(this.id_paciente), 10000);
   }
 
  ngOnInit() {
@@ -72,51 +60,16 @@ tablaAnalisis ={
    console.log("ERROR", err)
  })
 
- //cargar los datos de pruebas de la nueva tabla
- this.dtOptions = {
-  pagingType: 'full_numbers',
-  pageLength: 5,
-  language: {
-    url: 'assets/json/idioma_esp.json'
-  } ,
- processing: true,
-  dom: 'Bfrtip',
-    buttons: [
-        {
-          extend:'copy', "className": 'btn btn-secondary',
-          title: 'Reporte de pacientes'
-        }, 
-        { 
-          extend:'csv',
-          title: 'Reporte de pacientes',  "className":  'btn btn-primary' 
-        }, 
-        {
-         extend: 'excel',
-         title: 'Reporte de pacientes', "className": 'btn btn-success'
-        },
-        {
-          extend: 'pdf',
-          title: 'Reporte de usurio', "className": 'btn btn-danger'
-        }
-
-    ]
-    
-};
-
-//fin de los datos de pruebas
- 
 }
- 
-
-
-
 
 getAnalisis(id_paciente){
   this._apiservice.getAnalisis(id_paciente).subscribe((res:any)=>{
     console.log("SUCCESS",res);
-    let paciente_analisis = res[0];
-    this.tablaAnalisis.id_analisis = paciente_analisis.id_analisis;
-    this.tablaAnalisis.estado = paciente_analisis.estado;
+    this.paciente_analisis = res;
+//borra esto ya que no era necesario
+    // let paciente_analisis = res[0];
+    // this.tablaAnalisis.id_analisis = paciente_analisis.id_analisis;
+    // this.tablaAnalisis.estado = paciente_analisis.estado;
     
      }, (err:any)=>{
   console.log("ERROR", err)

@@ -1,4 +1,3 @@
-
 <body id="page-top" class="animated fadeIn">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -23,7 +22,7 @@
                 <!-- Heading -->
                 <div class="sidebar-heading">
                     Area de Servicios
-                </div>                
+                </div>
                 <li class="nav-item" (click)="logout()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-lock-open"></i>
@@ -32,12 +31,12 @@
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-                <ng-container class="animated fadeIn" >
+                <ng-container class="animated fadeIn">
                     <button style="background-color: transparent;" (click)="volver()">
                        <img src="../../assets/icon/volver.png" width="150" alt="">
                        <!-- <span class="text-white">Regresar</span> -->
                     </button>
-            </ng-container>
+                </ng-container>
 
             </ul>
         </div>
@@ -246,53 +245,30 @@
                         </ion-card>
                         <br>
                         <!--tabla para dejar funcionando el get-->
-                        <table id="tabla" class="table table-hover">
-                            <thead class="">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Analisis</th>
-                                    <th scope="col">Estado</th>
-                                   
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let analisis of analisis ;let i=index;">
-                                    <th>{{i+1}}</th>
-                                    <td>{{paciente_analisis.id_analisis}}</td>
-                                    <td>{{paciente_analisis.estado}}</td>
-                                    <td>
-                                        <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                </tr>
-                            </tbody>
-                        </table>
                         <ion-card class="card_tabla">
-                
-                            <div>
-                                <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Teléfono</th>
-                                            <th>Cédula</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let item of data ; let i=index;">
-                                            <th scope="row">{{i+1}}</th>
-                                            <td>{{item.Nombre}}</td>
-                                            <td>{{item.Apellido}}</td>
-                                            <td>{{item.Telefono}}</td>
-                                            <td>{{item.Cedula }}</td>
-                
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Análisis</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of paciente_analisis ; let i=index;">
+                                        <th scope="row">{{i+1}}</th>
+                                        <td>{{item.id_analisis}}</td>
+                                        <td>{{item.estado}}</td>
+                                        <td>
+                                            <ion-icon name="create-outline" style="zoom: 2;"></ion-icon>
+                                            <ion-icon name="add-circle-outline" style="zoom: 2;"></ion-icon>
+                                            <ion-icon name="trash-bin-outline" style="zoom: 2;"></ion-icon>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </ion-card>
                     </ion-card>
                 </ion-content>
