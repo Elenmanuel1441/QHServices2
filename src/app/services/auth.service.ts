@@ -9,6 +9,7 @@ import { UserData } from 'src/models/auth.models';
 import { HttpClient } from '@angular/common/http';
 import { LoginData } from '../../models/auth.models';
 import { AngularFireDatabase } from '@angular/fire/database';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -28,11 +29,25 @@ export class AuthService {
         .signInWithEmailAndPassword(loginData.email, loginData.password)
         .then((value) => {
           resolve(value);
+        
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Acceso Correcto',
+            showConfirmButton: false,
+            timer: 1000
+          })
+          
           // console.log('Excelente, todo funciona bien');
           // this.router.navigateByUrl('/admin');
         })
         .catch((err) => {
           rejects(err);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Nombre de usuario o contraseña es incorrecto!',
+          })
         });
     });
   }
