@@ -12,6 +12,10 @@ export class LaboratorioPage implements OnInit {
   telefono_paciente: any;
   
   laboratorios: any[];
+
+  //variable para paginacion
+
+  p: number = 1;
   
   constructor(
 

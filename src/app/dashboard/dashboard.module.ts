@@ -9,13 +9,15 @@ import { DashboardPageRoutingModule } from './dashboard-routing.module';
 import { DashboardPage } from './dashboard.page';
 import { DataTablesModule } from 'angular-datatables';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     DashboardPageRoutingModule,
-    DataTablesModule
+    DataTablesModule,
+    
   ],
   declarations: [DashboardPage]
 })

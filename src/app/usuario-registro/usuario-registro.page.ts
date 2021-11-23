@@ -94,6 +94,7 @@ import { Router } from '@angular/router';
     this.limpiarCampos();
     this.presentToast('Guardado exitosamente!');
     this.getUsuarios();
+    this.dtOptions.ajax.reload(null, false);
 
     },(error: any) => {
       this.presentToastErrAdd('Error al guardar!');
@@ -106,6 +107,10 @@ import { Router } from '@angular/router';
 
     ngOnInit()
     {
+
+      // this._apiService.getUsuarios().subscribe((response)=>{
+      //   this.nombres=response;
+      // })
    
     this.limpiarCampos();
     
@@ -175,6 +180,8 @@ import { Router } from '@angular/router';
   this._apiService.deleUsuarios(id).subscribe((res:any) => {
     this.presentToastEli('Eliminado exitosamente!');
     this.getUsuarios(); 
+    this.dtOptions().clear().draw();
+    this.dtOptions.ajax.reload(null, false);
     //this.router.navigate(['admin/usuario-registro']);
    
     },(error: any) => {
