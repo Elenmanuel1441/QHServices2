@@ -84,7 +84,6 @@ reportAbdominal: any = [];
 
   ) {
     this.ReportAbdominal();
-    setInterval(() => this.ReportAbdominal(), 10000);
 
     this.getCount_rayos_x();
     setInterval(() => this.getCount_rayos_x(), 10000);
