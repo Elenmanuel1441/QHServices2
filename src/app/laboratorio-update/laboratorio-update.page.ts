@@ -56,6 +56,7 @@ tablaAnalisis ={
      console.log(this.id_col_laboratorio);
      this.getLaboratorio(this.id_col_laboratorio);
    })
+   
    this.getAnalisis(this.id_paciente);
   }
 
