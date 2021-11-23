@@ -48,6 +48,7 @@ tablaAnalisis ={
   public toastController: ToastController,
   private afAuth: AuthService
 
+
  ) { 
 
    this.route.params.subscribe((param:any) =>{
@@ -55,7 +56,8 @@ tablaAnalisis ={
      console.log(this.id_col_laboratorio);
      this.getLaboratorio(this.id_col_laboratorio);
    })
- }
+   this.getAnalisis(this.id_paciente);
+  }
 
  ngOnInit() {
  }
@@ -174,7 +176,7 @@ addAnalisis(){
         this._apiservice.addAnalisis(data).subscribe((res:any) => {
           console.log("SUCCESS ===",res);
           this.presentToast('Asignado correctamente!');
-          
+          this.getAnalisis(this.id_paciente);
         
           
   
