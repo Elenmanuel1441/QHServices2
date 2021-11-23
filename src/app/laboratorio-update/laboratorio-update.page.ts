@@ -19,9 +19,12 @@ export class LaboratorioUpdatePage implements OnInit {
   id_paciente: any;
   id_analisis: any;
 
+  nombre_paciente: any;
+  apellido_paciente: any;
+
   paciente_analisis: any = [];
 
-tablaAnalisis ={
+ tablaAnalisis ={
   id_analisis: '',
   estado: ''
 
@@ -44,7 +47,7 @@ tablaAnalisis ={
    })
    
    this.getAnalisis(this.id_paciente);
-   setInterval(() => this.getAnalisis(this.id_paciente), 10000);
+   setInterval(() => this.getAnalisis(this.id_paciente), 1000);
   }
 
  ngOnInit() {
@@ -56,6 +59,8 @@ tablaAnalisis ={
      let laboratorio = res[0];
      this.estado_laboratorio = laboratorio.estado_laboratorio;
      this.id_paciente = laboratorio.id_paciente;
+     this.nombre_paciente = laboratorio.nombre_paciente;
+     this.apellido_paciente = laboratorio.apellido_paciente;
       }, (err:any)=>{
    console.log("ERROR", err)
  })
