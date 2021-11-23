@@ -46,7 +46,7 @@ export class AuthService {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Nombre de usuario o contraseña es incorrecto!',
+            text: 'Haz introducido el nombre de usuario o contraseña incorrecto!',
           })
         });
     });
