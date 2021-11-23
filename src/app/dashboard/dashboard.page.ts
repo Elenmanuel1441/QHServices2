@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 
 
@@ -77,9 +78,13 @@ reportAbdominal: any = [];
   
   odontologia_res: any = [];
 
+  showRegister: boolean
+  type: string = '';
+
 
   constructor(
     private _apiservice: ApiService,
+    private activatedRoute: ActivatedRoute
 
 
   ) {
@@ -101,6 +106,18 @@ reportAbdominal: any = [];
 
   ngOnInit() 
   {
+
+    this.activatedRoute.queryParams.subscribe((urlData) => {
+      console.log(urlData);
+      this.type = urlData.type;
+      if (this.type == 'Administrador' || this.type == 'administrador' || this.type == 'admin') {
+        this.showRegister = true;
+      }      
+      else {
+          this.showRegister = false;
+      }
+    });
+  
     //cargar los datos de pruebas de la nueva tabla
    this.dtOptions = {
     pagingType: 'full_numbers',
