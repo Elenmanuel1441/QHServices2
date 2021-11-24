@@ -61,18 +61,25 @@
     border-radius: 20px;
 }
 
-.btn_guardar {
+.btn_seleccionar {
     border-radius: 20px;
     width: 90%;
+    margin: auto;
 }
+
+.btn_siguiente {
+    border-radius: 20px;
+    width: 90%;
+    margin: auto;
+    margin-left: 5%;
+}
+
 @media screen and (max-width: 480px) {
-    .aparecer{
+    .aparecer {
         margin-left: -28%;
-        transition:all 0.5s ease-in-out;
-    }
-    .ocultar{
         transition: all 0.5s ease-in-out;
+    }
+    .ocultar {
+        transition: all 0.5s ease-in-out;
+    }
 }
-    
-}
-    
