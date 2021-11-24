@@ -54,7 +54,7 @@ ion-toggle {
     height: 38px;
     border: solid 1px rgb(62, 199, 130);
     margin: auto;
-    margin-left: 40px;
+    margin-left: 5%;
 }
 
 .textarea {
@@ -143,13 +143,11 @@ ion-label {
 }
 
 @media screen and (max-width: 480px) {
-    .aparecer{
+    .aparecer {
         margin-left: -28%;
-        transition:all 0.5s ease-in-out;
-    }
-    .ocultar{
         transition: all 0.5s ease-in-out;
+    }
+    .ocultar {
+        transition: all 0.5s ease-in-out;
+    }
 }
-    
-}
-    
