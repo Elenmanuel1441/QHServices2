@@ -262,14 +262,15 @@
                                         <td>{{item.id_analisis}}</td>
                                         <td>{{item.estado}}</td>
                                         <td>
-                                            <ion-icon name="create-outline" style="zoom: 2;"></ion-icon>
-                                            <ion-icon name="add-circle-outline" style="zoom: 2;"></ion-icon>
-                                            <ion-icon name="trash-bin-outline" style="zoom: 2;"></ion-icon>
+                                            
+                                            <ion-icon name="trash-bin-outline" (click)="cancelAnalisis(item.id_paciente_analisis)" style="zoom: 2;"></ion-icon>
+                                        
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </ion-card>
+                        <button (click)="updateLaboratorio()" type="button" class="btn btn-success btn_guardar">Paciente siguiente</button>
                     </ion-card>
                 </ion-content>
             </div>

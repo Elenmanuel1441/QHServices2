@@ -18,7 +18,7 @@ export class LaboratorioUpdatePage implements OnInit {
   estado_laboratorio: any;
   id_paciente: any;
   id_analisis: any;
-
+  id_paciente_analisis: any;
   nombre_paciente: any;
   apellido_paciente: any;
 
@@ -93,6 +93,20 @@ getAnalisis(id_paciente){
      this.presentToast('Liberado exitosamente!');
      this.router.navigateByUrl('admin/laboratorio');
      
+ }, (err:any)=>{
+   console.log("ERROR", err);
+   this.presentToastError('Error al liberar!');
+   
+ })
+}
+
+
+cancelAnalisis(id_paciente_analisis)
+{
+    this._apiservice.cancelAnalisis(id_paciente_analisis).subscribe((res:any)=>{
+     console.log("SUCCESS",res);
+     this.presentToast('Cancelado exitosamente!');
+     this.getAnalisis(this.id_analisis);
  }, (err:any)=>{
    console.log("ERROR", err);
    this.presentToastError('Error al liberar!');

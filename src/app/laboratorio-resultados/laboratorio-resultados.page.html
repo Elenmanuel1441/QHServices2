@@ -204,6 +204,39 @@
               <div class="title" style="text-align: center;">
                 <h1>Resultados de Laboratorio</h1>
             </div>
+            <div class="container1 animated fadeIn borde">
+                <div class="avatar-left"></div>
+                <div class="table-rigth">
+        
+                    <table id="tabla" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Cédula</th>
+                                <th>Teléfono</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let laboratorios of laboratorios ;let i=index;">
+                                <th>{{i+1}}</th>
+                                <td>{{laboratorios.nombre_paciente}}</td>
+                                <td>{{laboratorios.apellido_paciente}}</td>
+                                <td>{{laboratorios.cedula_paciente}}</td>
+                                <td>{{laboratorios.telefono_paciente}}</td>
+                                <td>
+                                    <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
           </div>
           <!-- Footer -->
           <footer class="sticky-footer bg-white">

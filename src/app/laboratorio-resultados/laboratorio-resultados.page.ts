@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-laboratorio-resultados',
@@ -8,12 +9,21 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./laboratorio-resultados.page.scss'],
 })
 export class LaboratorioResultadosPage implements OnInit {
-
+  nombre_paciente: any;
+  apellido_paciente: any;
+  cedula_paciente: any;
+  telefono_paciente: any;
+  
+  laboratorios: any[];
 
   condiccion: number = 0;
-  constructor(private router: Router, private afAuth: AuthService) { }
+  constructor(private router: Router, private afAuth: AuthService,public _apiService: ApiService) { 
+
+  }
 
   ngOnInit() {
+    this.getLaboratoriosBio();
+    setInterval(() => this.getLaboratoriosBio(), 10000);
   }
 
 
@@ -32,5 +42,13 @@ export class LaboratorioResultadosPage implements OnInit {
       this.condiccion = 0;
     }
   }
+  getLaboratoriosBio(){
+    this._apiService.getLaboratoriosBio().subscribe((res:any) => {
+      console.log("SUCCESS ===",res);
+      this.laboratorios = res;
+      },(error: any) => {
+        console.log("ERROR ===",error);
+      })
+    }
   
 }

@@ -169,4 +169,21 @@ export class ApiService {
   {
     return this.http.get('http://localhost/proyecto/backend/reportAbdominal.php');
   }
+  cancelAnalisis(id_paciente_analisis)
+  {
+    return this.http.get('http://localhost/proyecto/backend/cancelAnalisis.php?id_paciente_analisis='+id_paciente_analisis);
+  }
+  getLaboratoriosBio()
+  {
+    return this.http.get('http://localhost/proyecto/backend/getLaboratoriosBio.php');
+
+  }
+  getLaboratorioBio(id_col_laboratorio)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getSinglelaboratorioBio.php?id_col_laboratorio='+id_col_laboratorio);
+  }
+  updateLaboratorioBio(id_col_laboratorio, data)
+  {
+    return this.http.put('http://localhost/proyecto/backend/updateLaboratorioBio.php?id_col_laboratorio='+id_col_laboratorio,data);
+  }
 }
