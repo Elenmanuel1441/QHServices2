@@ -152,15 +152,15 @@
         <!-- End of Content Wrapper -->
     </ng-container>
     <ng-container *ngIf="!showRegister" >
-        <section id="header" class="animated fadeIn">
-            <div class="row">
-                <div class="col-sm-10">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800 ml-2">Dashboard</h1>
-                        <p>{{covid.Countries[49].Date | date:'longDate'}}</p>
-                    </div>
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800 ml-2">Dashboard</h1>
+                    <p>{{covid.Countries[49].Date | date:'longDate'}}</p>
                 </div>
             </div>
+        </div>
+        <section id="header" class="animated fadeIn">
             <div class="container animated fadeIn">
                 <div class="row">
                     <div class="col">
