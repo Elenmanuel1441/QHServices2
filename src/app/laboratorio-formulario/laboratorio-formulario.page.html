@@ -221,6 +221,12 @@
                                     <ion-label>Sexo:</ion-label>
                                     <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                 </div>
+                                <div class="mt-2 inputIcon">
+                                  <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                              </div>
+                              <div class="mt-2 inputIcon">
+                                  <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                              </div>
                               </ion-col>
                           </ion-row>
                       </ion-grid>
@@ -248,6 +254,12 @@
                               <div class="mt-2 inputIcon">
                                 <ion-label>Sexo:</ion-label>
                                 <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                            </div>
+                            <div class="mt-2 inputIcon">
+                                <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                            </div>
+                            <div class="mt-2 inputIcon">
+                                <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
                             </div>
                           </ion-col>
 
@@ -283,6 +295,12 @@
                               <ion-label>Sexo:</ion-label>
                               <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                           </div>
+                          <div class="mt-2 inputIcon">
+                            <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                        </div>
                           
                         </ion-col>
 
@@ -312,7 +330,21 @@
                             <ion-label>Sexo:</ion-label>
                             <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                         </div>
+                        <div class="mt-2 inputIcon">
+                            <ion-label>Resultado:</ion-label>
+                            <select [(ngModel)]="c19.resultado" class="form-select form-select-lg select_ubito subtitulo2">
+                             <option value='POSITIVO'>POSITIVO</option>
+                             <option  value='NEGATIVO'>NEGATIVO</option>
+                             </select>
+                        </div>
                         
+                        <div class="mt-2 inputIcon">
+                            <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                        </div>
+                     
                       </ion-col>
 
                       </ion-row>

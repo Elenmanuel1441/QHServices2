@@ -191,4 +191,9 @@ export class ApiService {
   {
     return this.http.get('http://localhost/proyecto/backend/getSingleAnalisi.php?id_paciente_analisis='+id_paciente_analisis);
   }
+  completeAnalisis(id_paciente_analisis)
+  {
+    return this.http.get('http://localhost/proyecto/backend/completeAnalisis.php?id_paciente_analisis='+id_paciente_analisis);
+  }
 }
+

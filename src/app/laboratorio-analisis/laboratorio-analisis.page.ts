@@ -83,17 +83,17 @@ getAnalisis(id_paciente){
 })
 }
 
- updateLaboratorio()
+ updateLaboratorioBio()
 {
  let data = {
    
    estado_laboratorio: this.estado_laboratorio,
   
    }
-   this._apiservice.updateLaboratorio(this.id_col_laboratorio,data).subscribe((res:any)=>{
+   this._apiservice.updateLaboratorioBio(this.id_col_laboratorio,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('admin/laboratorio');
+     this.router.navigateByUrl('/laboratorio-resultados');
      
  }, (err:any)=>{
    console.log("ERROR", err);
