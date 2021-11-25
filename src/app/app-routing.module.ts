@@ -111,7 +111,7 @@ const routes: Routes = [
     loadChildren: () => import('./laboratorio-analisis/laboratorio-analisis.module').then( m => m.LaboratorioAnalisisPageModule)
   },
   {
-    path: 'laboratorio-formulario',
+    path: 'laboratorio-formulario/:id_paciente_analisis',
     loadChildren: () => import('./laboratorio-formulario/laboratorio-formulario.module').then( m => m.LaboratorioFormularioPageModule)
   },
   { 

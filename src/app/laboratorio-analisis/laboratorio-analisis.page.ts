@@ -46,7 +46,13 @@ export class LaboratorioAnalisisPage implements OnInit {
    })
    
    this.getAnalisis(this.id_paciente);
-   setInterval(() => this.getAnalisis(this.id_paciente), 10000);
+   
+   setTimeout(() => 
+   {
+      //aqui va la consulta
+      this.getAnalisis(this.id_paciente)
+   },
+   1500);
   }
 
  ngOnInit() {

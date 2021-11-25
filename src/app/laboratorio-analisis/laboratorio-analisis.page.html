@@ -254,7 +254,8 @@
                                       <td>
 
                                           <ion-icon name="trash-bin-outline" (click)="cancelAnalisis(item.id_paciente_analisis)" style="zoom: 2;"></ion-icon>
-
+                                         
+                                 <ion-button [routerLink]="['/laboratorio-formulario/',item.id_paciente_analisis]"> Digitar</ion-button>
                                       </td>
                                   </tr>
                               </tbody>

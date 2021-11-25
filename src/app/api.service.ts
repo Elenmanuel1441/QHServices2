@@ -186,4 +186,9 @@ export class ApiService {
   {
     return this.http.put('http://localhost/proyecto/backend/updateLaboratorioBio.php?id_col_laboratorio='+id_col_laboratorio,data);
   }
+  
+  getAnalisi(id_paciente_analisis)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getSingleAnalisi.php?id_paciente_analisis='+id_paciente_analisis);
+  }
 }
