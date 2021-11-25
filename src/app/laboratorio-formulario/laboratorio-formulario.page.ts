@@ -217,7 +217,7 @@ printPdf() {
     // On a browser simply use download!
     this.pdfObj.print();
     this.completeAnalisis(this.id_paciente_analisis);
-   this.router.navigate(['/laboratorio-analisis/',this.id_col_laboratorio])
+    this.router.navigate(['/laboratorio-analisis/',this.id_col_laboratorio])
     this.pdfObj = null;
 }
 
