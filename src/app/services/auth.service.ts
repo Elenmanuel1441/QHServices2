@@ -31,7 +31,7 @@ export class AuthService {
           resolve(value);
         
           Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'success',
             title: 'Acceso Correcto',
             showConfirmButton: false,
