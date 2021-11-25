@@ -9,13 +9,14 @@
             <table id="tabla" class="table table-hover">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Cédula</th>
-                        <th>Teléfono</th>
-                        <th>Acciones</th>
+                        <th scope="col-2">No</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Cédula</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Acciones</th>
                     </tr>
+                    <tr></tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 4,currentPage:p} ;let i=index;">
@@ -27,11 +28,8 @@
                         <td>
                             <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
                         </td>
-                    </tr>
-                    <tr>
-                    </tr>
                 </tbody>
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </table>
         </div>
     </div>
