@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
+import { GlobalModel } from '../models/global.model';
+import { Covid19Service } from '../services/covid19.service';
+
+
 
 
 @Component({
@@ -56,6 +60,26 @@ AortaDiametro: string;
 AortaValor: string;
 fecha: string;
 
+
+// covid 19 ciudades
+global: boolean;
+country: string;
+data: GlobalModel;
+dailyData: any[];
+countries: any[];
+lineCharData: any [] = [
+  {data: [65,64,33,44], label: 'Temp label'}
+];
+lineCharType = 'line';
+lineChartLabels: any[] = 
+[
+  'label01', 'label02', 'label03'
+];
+barChartData: any[] = [
+  {data: [65,76,33], label: 'label'}
+]
+
+
 reportAbdominal: any = [];
 //fin de los datos
 
@@ -84,10 +108,16 @@ reportAbdominal: any = [];
 
   constructor(
     private _apiservice: ApiService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private covid19Service: Covid19Service
 
 
   ) {
+      // covid 19 api 
+      this.data = new GlobalModel();
+
+
+
     this.ReportAbdominal();
 
     this.getCount_rayos_x();
@@ -103,9 +133,18 @@ reportAbdominal: any = [];
     setInterval(() => this.getCount_odontologia(), 10000);
 
   }
-
+covid: any;
   ngOnInit() 
   {
+
+    this.covid19Service.getResultaldosCovid().subscribe((data) => {
+      console.log(data);
+      this.covid = data
+
+    })
+
+    this.global = true;
+   
 
     this.activatedRoute.queryParams.subscribe((urlData) => {
       console.log(urlData);
@@ -117,7 +156,8 @@ reportAbdominal: any = [];
           this.showRegister = false;
       }
     });
-  
+
+
     //cargar los datos de pruebas de la nueva tabla
    this.dtOptions = {
     pagingType: 'full_numbers',
@@ -150,7 +190,10 @@ reportAbdominal: any = [];
   };
   
   //fin de los datos de pruebas
-     
+
+
+  // covid 19
+
   }
 
 
@@ -162,7 +205,8 @@ reportAbdominal: any = [];
       this.rayos_x = rayos_x_res.resultado;
       },(error: any) => {
         console.log("ERROR ===",error);
-      })
+      });
+
   }
 
   getCount_sonografia()
@@ -207,6 +251,15 @@ getCount_odontologia()
       console.log("ERROR ===",error);
     })
    }
+
+
+
+  //  Resultado ciudades pandemia covid 19
+
+
+
+
+
  }
 
 
