@@ -70,10 +70,7 @@ getAnalisis(id_paciente){
   this._apiservice.getAnalisis(id_paciente).subscribe((res:any)=>{
     console.log("SUCCESS",res);
     this.paciente_analisis = res;
-//borra esto ya que no era necesario
-    // let paciente_analisis = res[0];
-    // this.tablaAnalisis.id_analisis = paciente_analisis.id_analisis;
-    // this.tablaAnalisis.estado = paciente_analisis.estado;
+
     
      }, (err:any)=>{
   console.log("ERROR", err)
