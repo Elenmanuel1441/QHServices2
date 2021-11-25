@@ -1,4 +1,23 @@
 
+#sidebar-container
+{
+    min-height: 100vh;
+    transition: margin .25 ease-in-out;
+    // margin-left: 18rem;
+}
+
+#sidebar-container .logo
+{
+    padding: .875rem 1.25rem;
+    font-size: 2rem;
+}
+
+#sidebar-container .menu
+{
+    width: 18rem;
+}
+
+
 li{
     cursor: pointer;
 }
@@ -11,7 +30,7 @@ li{
 
 @media screen and (max-width: 480px) {
     .aparecer{
-        margin-left: -28%;
+        margin-left: -18rem;
         transition:all 0.5s ease-in-out;
     }
     .ocultar{

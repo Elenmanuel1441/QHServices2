@@ -195,5 +195,9 @@ export class ApiService {
   {
     return this.http.get('http://localhost/proyecto/backend/completeAnalisis.php?id_paciente_analisis='+id_paciente_analisis);
   }
+  getLaboratoriosEntrega()
+  {
+    return this.http.get('http://localhost/proyecto/backend/getLaboratoriosEntrega.php');
+  }
 }
 

@@ -9,11 +9,12 @@ h3 {
 
 #header{
     margin-top: 15px;
-    // background: url('../../assets/image/background.jpg') center center no-repeat;
+    background: url('../../assets/image/background.jpg') center center no-repeat;
+    height: 70%;
     background-size: cover;
-    color: #000;
+    color: #ffff;
     // display: flex;
-    // align-items: center;
+    align-items: center;
 }
 
 #header .h1-title{
