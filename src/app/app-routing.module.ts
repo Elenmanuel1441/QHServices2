@@ -114,9 +114,15 @@ const routes: Routes = [
     path: 'laboratorio-formulario',
     loadChildren: () => import('./laboratorio-formulario/laboratorio-formulario.module').then( m => m.LaboratorioFormularioPageModule)
   },
+  {
+    path: 'paciente-resultados',
+    loadChildren: () => import('./paciente-resultados/paciente-resultados.module').then( m => m.PacienteResultadosPageModule)
+  },
   { 
     path: '**', redirectTo: 'login', pathMatch: 'full' 
   },
+
+
  
 
 
