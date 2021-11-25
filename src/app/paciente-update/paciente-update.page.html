@@ -22,7 +22,7 @@
                 <!-- Heading -->
                 <div class="sidebar-heading">
                     Area de Servicios
-                </div>                
+                </div>
                 <li class="nav-item" (click)="logout()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-lock-open"></i>
@@ -31,12 +31,12 @@
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-                <ng-container class="animated fadeIn" >
+                <ng-container class="animated fadeIn">
                     <button style="background-color: transparent;" (click)="volver()">
                        <img src="../../assets/icon/volver.png" width="150" alt="">
                        <!-- <span class="text-white">Regresar</span> -->
                     </button>
-            </ng-container>
+                </ng-container>
 
             </ul>
         </div>
@@ -207,7 +207,7 @@
                         <h1 style="text-align: center;">ACTUALIZAR DATOS DE PACIENTES</h1>
                     </div>
                     <ion-card class="datos-personales2">
-                
+
                         <ion-grid>
                             <ion-row>
                                 <ion-col>
@@ -266,6 +266,7 @@
                                     <div>
                                         <select [(ngModel)]="ars" class="form-select form-select-lg mt-2 select-ars">
                                             <option value="Nada" selected disabled>Seleccione la ARS</option>
+                                            <option  value='No Asegurado'>No Asegurado</option>
                                             <option  value='ARS BMI'>ARS BMI</option>
                                             <option value='Primera ARS Humano'>Primera ARS Humano</option>
                                             <option value='ARS Palic Salud'>ARS Palic Salud</option>
@@ -283,13 +284,13 @@
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
-                
+
                         <div>
                             <ion-button class="subtitulo2 btn_Update" type="button" (click)="updatePaciente()" color="success" shape="round" expand="block"> Actualizar pacientes </ion-button>
-                        </div>            
+                        </div>
                     </ion-card>
                 </ion-content>
-    
+
             </div>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -297,7 +298,7 @@
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; QH Services 2021</span>
                     </div>
-                </div>  
+                </div>
             </footer>
             <!-- End of Footer -->
 
@@ -307,6 +308,3 @@
     </div>
     <!-- End of Page Wrapper -->
 </body>
-
-
-
