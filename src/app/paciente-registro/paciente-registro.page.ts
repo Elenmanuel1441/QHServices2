@@ -18,6 +18,9 @@ export class PacienteRegistroPage implements OnInit {
  title = 'angulardatatables';
  dtOptions: any = {};
 
+ Seacrh01: string;
+ p: number = 1;
+
  
  //fin de datos de pruebas
 
