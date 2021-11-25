@@ -20,7 +20,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 4,currentPage:p} ;let i=index;">
-                        <th>{{i+1}}</th>
+                        <th>{{(p-1) * 5 + i + 1}}</th>
                         <td>{{laboratorios.nombre_paciente}}</td>
                         <td>{{laboratorios.apellido_paciente}}</td>
                         <td>{{laboratorios.cedula_paciente}}</td>

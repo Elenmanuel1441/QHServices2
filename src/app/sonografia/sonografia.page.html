@@ -27,7 +27,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let sonografia of sonografias | paginate:{itemsPerPage: 5, currentPage: p};let i=index;">
-                        <th>{{i+1}}</th>
+                        <th>{{(p-1) * 5 + i + 1}}</th>
                         <td>{{sonografia.nombre_paciente}}</td>
                         <td>{{sonografia.apellido_paciente}}</td>
                         <td>{{sonografia.cedula_paciente}}</td>

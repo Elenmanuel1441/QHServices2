@@ -292,6 +292,15 @@
       // this.afAuth.crearUsuario(this.email, this.contrasena)
     }
 
+    key: string = 'id';
+    reverse: boolean = false;
+    sort(key)
+    
+    {
+      this.key= key;
+      this.reverse = !this.reverse;
+    }
+
   }
 
 

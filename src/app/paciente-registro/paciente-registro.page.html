@@ -92,17 +92,17 @@
                 <table id="tabla" class="table table-hover">
                     <thead class="">
                         <tr>
-                            <th>No.</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Teléfono</th>
-                            <th>Cédula</th>
+                            <th (click)="sort('id')">No.&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Nombre')">Nombre&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Apellido')">Apellido&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Teléfono')">Teléfono&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Cédula')">Cédula&nbsp;<i class="fa fa-sort"></i> </th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of pacientes | paginate:{itemsPerPage: 5, currentPage: p}| filter: Seacrh01 ;let i=index;">
-                            <th scope="row">{{i+1}}</th>
+                        <tr *ngFor="let item of pacientes | paginate:{itemsPerPage: 5, currentPage: p}| orderBy: key: reverse |filter: Seacrh01 ;let i=index;">
+                            <th>{{(p-1) * 5 + i + 1}}</th>
                             <td>{{item.nombre_paciente}}</td>
                             <td>{{item.apellido_paciente}}</td>
                             <td>{{item.telefono_paciente}}</td>
