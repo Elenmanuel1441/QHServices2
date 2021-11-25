@@ -1,5 +1,6 @@
+<ion-content>
 <ng-container *ngIf="showRegister">
-    <ion-content>
+  
 
         <div id="wrapper" class="animated fadeIn">
             <!-- End of Sidebar -->
@@ -149,5 +150,67 @@
             <!-- End of Main Content -->
         </div>
         <!-- End of Content Wrapper -->
+    </ng-container>
+    <ng-container *ngIf="!showRegister">
+        <section id="header">
+            <div class="row">
+                <div class="col-sm-10">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800 ml-2">Dashboard</h1>
+                        <p>{{covid.Countries[49].Date | date:'longDate'}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="h1-title">CENTRO DE SEGUIMIENTO COVID 19 <br> REPUBLICA DOMINICANA</h3 >
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="static">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col text-left">
+                        <h2>ESTADISTICAS</h2>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 ">
+                        <div class="card card-infected">
+                            <div class="card-body">
+                                <h2 class="text-center infectados mr-2">INFECTADOS</h2>
+                                <p class="card-text">Nuevos Casos: {{covid.Countries[49].NewConfirmed | number}} </p>
+                                <p class="card-text"> Total Confirmados: {{covid.Countries[49].TotalConfirmed | number}} </p>
+                                <p>Numero de casos  Activos Covid 19</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-recoverd">
+                            <div class="card-body">
+                                <h2 class="card-title mr-2">RECUPERADOS</h2>
+                                <p class="card-text">Nuevos Casos: {{covid.Countries[49].NewRecovered | number}} </p>
+                                <p class="card-text"> Total Recuperados: {{covid.Countries[49].TotalRecovered | number}} </p>
+                                <p>Numero de casos Recuperados Covid 19</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-death">
+                            <div class="card-body">
+                                <h2 class="card-title mr-2">MUERTOS</h2>
+                                <p class="card-text">Nuevos Casos: {{covid.Countries[49].NewDeaths | number}} </p>
+                                <p class="card-text"> Total Muertos: {{covid.Countries[49].TotalDeaths | number}} </p>
+                                <p>Numero de casos de Muertes Covid 19</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </ng-container>
     </ion-content>
-</ng-container>
+
+
