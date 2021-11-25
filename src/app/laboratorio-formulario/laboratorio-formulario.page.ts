@@ -193,6 +193,8 @@ completeAnalisis(id_paciente_analisis){
     console.log("SUCCESS",res);
     this.presentToast('Liberado exitosamente!');
     
+
+    
     
 }, (err:any)=>{
  this.presentToastError('Error al liberar!');
