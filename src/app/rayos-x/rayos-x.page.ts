@@ -14,6 +14,8 @@ export class RayosXPage implements OnInit {
   cedula_paciente: any;
   telefono_paciente: any;
 
+  p: number = 1;
+
   display: any;
 
   rayos_x: any[];

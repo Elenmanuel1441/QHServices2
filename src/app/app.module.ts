@@ -26,9 +26,6 @@ import { environment } from 'src/environments/environment';
 
 
 
-
-
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -41,7 +38,7 @@ import { environment } from 'src/environments/environment';
       AngularFireAuthModule,
       AngularFireDatabaseModule,
       DataTablesModule,
-      MatIconModule
+      MatIconModule,
 
     ],
   providers: [{ provide: RouteReuseStrategy,

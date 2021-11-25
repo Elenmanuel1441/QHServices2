@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let odontologia of odontologia ;let i=index;">
+                    <tr *ngFor="let odontologia of odontologia | paginate:{itemsPerPage: 5, currentPage: p} ;let i=index;">
                         <th>{{i+1}}</th>
                         <td>{{odontologia.nombre_paciente}} </td>
                         <td>{{odontologia.apellido_paciente}}</td>
@@ -33,6 +33,7 @@
                     </tr>
                 </tbody>
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
     </div>
 </div>

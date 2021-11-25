@@ -14,6 +14,7 @@ export class SonografiaPage implements OnInit {
   apellido_paciente: any;
   cedula_paciente: any;
   telefono_paciente: any;
+  p: number = 1;
   
   sonografias: any[];
   

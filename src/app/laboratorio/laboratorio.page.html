@@ -29,8 +29,9 @@
                             <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
                         </td>
                 </tbody>
-                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
     </div>
 </div>
