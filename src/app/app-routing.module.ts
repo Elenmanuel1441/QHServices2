@@ -110,9 +110,15 @@ const routes: Routes = [
     path: 'laboratorio-analisis/:id_col_laboratorio',
     loadChildren: () => import('./laboratorio-analisis/laboratorio-analisis.module').then( m => m.LaboratorioAnalisisPageModule)
   },
+  {
+    path: 'laboratorio-formulario',
+    loadChildren: () => import('./laboratorio-formulario/laboratorio-formulario.module').then( m => m.LaboratorioFormularioPageModule)
+  },
   { 
     path: '**', redirectTo: 'login', pathMatch: 'full' 
   },
+ 
+
 
 
 
