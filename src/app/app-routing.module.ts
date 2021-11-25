@@ -106,13 +106,14 @@ const routes: Routes = [
     path: 'laboratorio-resultados',
     loadChildren: () => import('./laboratorio-resultados/laboratorio-resultados.module').then( m => m.LaboratorioResultadosPageModule)
   },
-  { 
-    path: '**', redirectTo: 'login', pathMatch: 'full' 
-  },
   {
     path: 'laboratorio-analisis/:id_col_laboratorio',
     loadChildren: () => import('./laboratorio-analisis/laboratorio-analisis.module').then( m => m.LaboratorioAnalisisPageModule)
   },
+  { 
+    path: '**', redirectTo: 'login', pathMatch: 'full' 
+  },
+
 
 
 
