@@ -44,7 +44,7 @@ export class PacienteResultadosPage implements OnInit {
     }
   }
   getLaboratoriosEntrega(){
-    this._apiService.getLaboratorios().subscribe((res:any) => {
+    this._apiService.getLaboratoriosEntrega().subscribe((res:any) => {
       console.log("SUCCESS ===",res);
       this.laboratorios = res;
       },(error: any) => {
