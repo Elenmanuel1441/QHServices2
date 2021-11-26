@@ -22,11 +22,11 @@ export class ReportesPage implements OnInit {
       setInterval(() => this.getCountSonoAbdoSeg(), 10000);
    }
 
-  ReportSonoAbdoNoSeg: any = [];
-  ReportSonoAbdoSeg: any = [];
-  SonoAbdoNoSeg: number = 0;
-  SonoAbdoSeg: number = 0;
-  public SumaTotalSonoAbdo: number = this.SonoAbdoNoSeg + this.SonoAbdoSeg; 
+   ReportSonoAbdoNoSeg: any = [];
+   ReportSonoAbdoSeg: any = [];
+   SonoAbdoNoSeg: number = 0;
+   SonoAbdoSeg: number = 0;
+ 
 
   ngOnInit() {
     this. getCountSonoAbdoNoAseg();
@@ -48,13 +48,18 @@ export class ReportesPage implements OnInit {
       this.condiccion = 0;
     }
   }
+ 
+
+  SumaTotalSonoAbdo(a, b):number{
+    return a + b
+  }
 
   getCountSonoAbdoNoAseg()
   {
       this._apiservice.getCountSonoAbdoNoAseg().subscribe((res:any) => {
         console.log("SUCCESS ===",res);
         let ReportSonoAbdoNoSeg = res[0];
-        this.SonoAbdoNoSeg = ReportSonoAbdoNoSeg.resultado;
+        this.SonoAbdoNoSeg = parseInt(ReportSonoAbdoNoSeg.resultado);
         },(error: any) => {
           console.log("ERROR ===",error);
         });
@@ -64,12 +69,13 @@ export class ReportesPage implements OnInit {
     this._apiservice.getCountSonoAbdoSeg().subscribe((res:any) => {
       console.log("SUCCESS ===",res);
       let ReportSonoAbdoSeg = res[0];
-      this.SonoAbdoSeg = ReportSonoAbdoSeg.resultado;
+      this.SonoAbdoSeg = parseInt(ReportSonoAbdoSeg.resultado);
       },(error: any) => {
         console.log("ERROR ===",error);
       });
   }
 
+  
 
 //   sumArray(SonoAbdoNoSeg, SonoAbdoSeg) {
 //     var SumaTotalSonoAbdo = [];
