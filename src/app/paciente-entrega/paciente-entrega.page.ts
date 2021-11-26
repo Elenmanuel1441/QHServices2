@@ -37,10 +37,11 @@ export class PacienteEntregaPage implements OnInit {
      this.id_col_laboratorio = param.id_col_laboratorio;
      console.log(this.id_col_laboratorio);
      this.getLaboratorioEntrega(this.id_col_laboratorio);
+   
    })
    
    this.getAnalisisEntrega(this.id_paciente);
-   setInterval(()=>{ this.getAnalisisEntrega(this.id_paciente)},2000)
+   setInterval(()=>{ this.getAnalisisEntrega(this.id_paciente),console.log(this.id_paciente)},2000)
   // setTimeout(() => 
    //{
       //aqui va la consulta
@@ -60,6 +61,7 @@ export class PacienteEntregaPage implements OnInit {
      this.id_paciente = laboratorio.id_paciente;
      this.nombre_paciente = laboratorio.nombre_paciente;
      this.apellido_paciente = laboratorio.apellido_paciente;
+     console.log(["Paciente",this.id_paciente])
       }, (err:any)=>{
    console.log("ERROR", err)
  })
@@ -97,9 +99,9 @@ getAnalisisEntrega(id_paciente){
 }
 
 
-cancelAnalisis(id_paciente_analisis)
+deliverAnalisis(id_paciente_analisis)
 {
-    this._apiservice.cancelAnalisis(id_paciente_analisis).subscribe((res:any)=>{
+    this._apiservice.deliverAnalisis(id_paciente_analisis).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Cancelado exitosamente!');
      this.getAnalisisEntrega(this.id_analisis);
