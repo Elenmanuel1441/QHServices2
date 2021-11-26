@@ -22,7 +22,15 @@ export class ReportesPage implements OnInit {
       setInterval(() => this.getCountSonoAbdoSeg(), 10000);
    }
 
+<<<<<<< HEAD
  
+=======
+  ReportSonoAbdoNoSeg: any = [];
+  ReportSonoAbdoSeg: any = [];
+  SonoAbdoNoSeg: number = 0;
+  SonoAbdoSeg: number = 0;
+  public SumaTotalSonoAbdo: number = this.SonoAbdoNoSeg + this.SonoAbdoSeg; 
+>>>>>>> 57e8a119a170a75dbc34f07cc581db61047e5998
 
   ngOnInit() {
     this. getCountSonoAbdoNoAseg();
