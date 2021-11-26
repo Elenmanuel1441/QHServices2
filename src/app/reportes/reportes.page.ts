@@ -20,14 +20,13 @@ export class ReportesPage implements OnInit {
 
       this.getCountSonoAbdoSeg();
       setInterval(() => this.getCountSonoAbdoSeg(), 10000);
-    }
+   }
 
   ReportSonoAbdoNoSeg: any = [];
-  SonoAbdoNoSeg: any;
-
   ReportSonoAbdoSeg: any = [];
-  SonoAbdoSeg: any;
-
+  public SonoAbdoNoSeg: number;
+  public SonoAbdoSeg: number;
+  public SumaTotalSonoAbdo: number; 
 
   ngOnInit() {
     this. getCountSonoAbdoNoAseg();
@@ -70,4 +69,14 @@ export class ReportesPage implements OnInit {
         console.log("ERROR ===",error);
       });
   }
+
+
+//   sumArray(SonoAbdoNoSeg, SonoAbdoSeg) {
+//     var SumaTotalSonoAbdo = [];
+//     for (var i = 0; i < Math.max(SonoAbdoNoSeg.length, SonoAbdoSeg.length); i++) {
+//       SumaTotalSonoAbdo.push((SonoAbdoNoSeg[i] || 0) + (SonoAbdoSeg[i] || 0));
+//     }
+//     return SumaTotalSonoAbdo;
+// }
+
 }
