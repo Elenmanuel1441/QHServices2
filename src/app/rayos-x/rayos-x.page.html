@@ -19,8 +19,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let rayos_x of rayos_x ;let i=index;">
-                        <th>{{i+1}}</th>
+                    <tr *ngFor="let rayos_x of rayos_x | paginate:{itemsPerPage: 5, currentPage: p} ;let i=index;">
+                        <th>{{(p-1) * 5 + i + 1}}</th>
                         <td>{{rayos_x.nombre_paciente}} </td>
                         <td>{{rayos_x.apellido_paciente}}</td>
                         <td>{{rayos_x.cedula_paciente}}</td>
@@ -33,6 +33,7 @@
                     </tr>
                 </tbody>
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
     </div>
 

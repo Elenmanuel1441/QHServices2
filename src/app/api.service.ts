@@ -199,5 +199,21 @@ export class ApiService {
   {
     return this.http.get('http://localhost/proyecto/backend/getLaboratoriosEntrega.php');
   }
+  getAnalisisEntrega(id_paciente)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getAnalisisEntrega.php?id_paciente='+id_paciente);
+  }
+  getLaboratorioEntrega(id_col_laboratorio)
+  {
+    return this.http.get('http://localhost/proyecto/backend/getSinglelaboratorioEntrega.php?id_col_laboratorio='+id_col_laboratorio);
+  }
+  deliverAnalisis(id_paciente_analisis)
+  {
+    return this.http.get('http://localhost/proyecto/backend/deliverAnalisis.php?id_paciente_analisis='+id_paciente_analisis);
+  }
+  updateLaboratorioEntrega(id_col_laboratorio, data)
+  {
+    return this.http.put('http://localhost/proyecto/backend/updateLaboratorioEntrega.php?id_col_laboratorio='+id_col_laboratorio,data);
+  }
 }
 

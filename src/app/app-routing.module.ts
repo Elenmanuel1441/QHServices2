@@ -118,9 +118,15 @@ const routes: Routes = [
     path: 'paciente-resultados',
     loadChildren: () => import('./paciente-resultados/paciente-resultados.module').then( m => m.PacienteResultadosPageModule)
   },
+  {
+    path: 'paciente-entrega/:id_col_laboratorio',
+    loadChildren: () => import('./paciente-entrega/paciente-entrega.module').then( m => m.PacienteEntregaPageModule)
+  },
   { 
     path: '**', redirectTo: 'login', pathMatch: 'full' 
   },
+ 
+
 
 ];
 

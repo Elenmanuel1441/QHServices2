@@ -199,44 +199,70 @@
 
               </nav>
               <!-- End of Topbar -->
-              <div class="title" style="text-align: center;">
-                  <h1>Pacientes con resultados pendientes</h1>
-              </div>
-              <div class=" mt-2 container1 animated fadeIn borde">
-                  <div class="avatar-left"></div>
-                  <div class="table-rigth">
-                      <ion-card class="card_resultados">
-                          <table id="tabla" class="table table-hover">
+              <ion-content>
+                  <div class="title">
+                      <h1>Entregar Resultados</h1>
+                  </div>
+                  <ion-card class="card_principal">
+                      <ion-card class="card_seleccion">
+                          <ion-grid>
+                              <ion-row>
+                                  <ion-col>
+                                      <div class="input-group">
+                                          <div class="input-group-prepend ">
+                                              <span class="input-group-text inputs_gris" id="basic-addon1">Nombre:</span>
+                                          </div>
+                                          <input type="text" disabled="true" class="form-control inputs" [(ngModel)]="nombre_paciente +' '+apellido_paciente" aria-label="Username" aria-describedby="basic-addon1">
+                                      </div>
+                                  </ion-col>
+                                  <!-- <ion-col>
+                                    <div>
+                                        <select [(ngModel)]="id_analisis" class="form-select form-select-lg select_analisis ">
+                                            <option value="Nada" selected disabled>Seleccione tipo analisis</option>
+                                            <option value='EXAMEN DE ORINA'>Examen de orina</option>
+                                            <option value='TIPIFICACION'>Tipificacion</option>
+                                            <option value='EXAMEN COPROLOGICO'>Examen coprologico</option>
+                                            <option value='PRUEBA ANTIGENICA CV-19'>Prueba antigenica CV-19</option>
+                                  
+                                        </select>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <button (click)="addAnalisis()" type="button" class="btn btn-success btn_guardar">Seleccionar</button>
+                                </ion-col> -->
+                              </ion-row>
+                          </ion-grid>
+                      </ion-card>
+
+                      <!--tabla para dejar funcionando el get-->
+                      <ion-card class="card_tabla mt-2">
+
+                          <table class="table table-hover">
                               <thead>
                                   <tr>
-                                      <th>No</th>
-                                      <th>Nombre</th>
-                                      <th>Apellido</th>
-                                      <th>Cédula</th>
-                                      <th>Teléfono</th>
-                                      <th>Acciones</th>
+                                      <th scope="col">No</th>
+                                      <th scope="col">Análisis</th>
+                                      <th scope="col">Estado</th>
+                                      <th scope="col">Acciones</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr *ngFor="let laboratorios of laboratorios ;let i=index;">
-                                      <th>{{i+1}}</th>
-                                      <td>{{laboratorios.nombre_paciente}}</td>
-                                      <td>{{laboratorios.apellido_paciente}}</td>
-                                      <td>{{laboratorios.cedula_paciente}}</td>
-                                      <td>{{laboratorios.telefono_paciente}}</td>
+                                  <tr *ngFor="let item of paciente_analisis ; let i=index;">
+                                      <th scope="row">{{i+1}}</th>
+                                      <td>{{item.id_analisis}}</td>
+                                      <td>{{item.estado}}</td>
                                       <td>
-                                          <ion-button [routerLink]="['/paciente-entrega/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
+                                        <button type="button" (click)="deliverAnalisis(item.id_paciente_analisis)" class="btn btn-success">Entregar</button>
                                       </td>
                                   </tr>
-                                  <tr>
-                                  </tr>
                               </tbody>
-
                           </table>
                       </ion-card>
-                  </div>
-
-              </div>
+                      <div class="mt-2">
+                          <button (click)="updateLaboratorioEntrega()" type="button" class="btn btn-success btn_siguiente">Finalizar Entrega</button>
+                      </div>
+                  </ion-card>
+              </ion-content>
           </div>
           <!-- Footer -->
           <footer class="sticky-footer bg-white">

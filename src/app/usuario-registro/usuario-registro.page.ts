@@ -3,10 +3,7 @@
   import { ApiService } from '../api.service';
   import { AuthService } from '../services/auth.service';
   import { UserData } from '../../models/auth.models';
-import { Router } from '@angular/router';
-
-
-
+  import { Router } from '@angular/router';
 
   @Component({
     selector: 'app-usuario-registro',
@@ -15,12 +12,14 @@ import { Router } from '@angular/router';
   })
   export class UsuarioRegistroPage implements OnInit, AfterViewInit{
 
+  
   //datos de prueba de la nueva tabla
   
   title = 'angulardatatables';
   dtOptions: any = {};
-  
-  //fin de datos de pruebas
+
+  Seacrh01: string;
+  p: number = 1;
 
     nombre: string;
     email: string;
@@ -94,7 +93,7 @@ import { Router } from '@angular/router';
     this.limpiarCampos();
     this.presentToast('Guardado exitosamente!');
     this.getUsuarios();
-    this.dtOptions.ajax.reload(null, false);
+    //this.dtOptions.ajax.reload(null, false);
 
     },(error: any) => {
       this.presentToastErrAdd('Error al guardar!');
@@ -293,5 +292,17 @@ import { Router } from '@angular/router';
       // this.afAuth.crearUsuario(this.email, this.contrasena)
     }
 
+    key: string = 'id';
+    reverse: boolean = false;
+    sort(key)
+    
+    {
+      this.key= key;
+      this.reverse = !this.reverse;
+    }
+
   }
+
+
+  
 

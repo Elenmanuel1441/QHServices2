@@ -77,16 +77,49 @@
             </ion-row>
         </ion-grid>
         <div>
-            <ion-button class="subtitulo2 mt-2 btn_add_paciente" type="button" (click)="addPaciente()" color="success" shape="round" expand="block"> Añadir pacientes </ion-button>
+            <button type="button" (click)="addPaciente()" class="btn btn_add_paciente btn-success">Añadir paciente</button>
+            <!-- <ion-button class="subtitulo2 mt-2 btn_add_paciente" type="button" (click)="addPaciente()" color="success" shape="round" expand="block"> Añadir pacientes </ion-button> -->
         </div>
-        <br>
-
         <!-- La verdadera datatable -->
+        <div class="mt-2">
+            <input type="text" [(ngModel)]="Seacrh01" placeholder="Buscar..." class="form-control search" is-valid id="validationServer01" value="Mark" required>
+        </div>
 
-        <ion-card class="card_tabla">
+        <ion-card class="card_tabla mt-2">
 
             <div>
-                <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions" data-page-length='5'>
+
+                <table id="tabla" class="table table-hover">
+                    <thead class="">
+                        <tr>
+                            <th (click)="sort('id')">No.&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Nombre')">Nombre&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Apellido')">Apellido&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Teléfono')">Teléfono&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Cédula')">Cédula&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of pacientes | paginate:{itemsPerPage: 5, currentPage: p}| orderBy: key: reverse |filter: Seacrh01 ;let i=index;">
+                            <th>{{(p-1) * 5 + i + 1}}</th>
+                            <td>{{item.nombre_paciente}}</td>
+                            <td>{{item.apellido_paciente}}</td>
+                            <td>{{item.telefono_paciente}}</td>
+                            <td>{{item.cedula_paciente }}</td>
+                            <td>
+                                <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',item.id_paciente]"></ion-icon>
+                                <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',item.id_paciente]"></ion-icon>
+                                <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(item.id_paciente)"></ion-icon>
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                <!-- <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions" data-page-length='5'>
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -111,7 +144,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
             </div>
 
         </ion-card>

@@ -9,6 +9,8 @@ import { PacienteRegistroPageRoutingModule } from './paciente-registro-routing.m
 import { PacienteRegistroPage } from './paciente-registro.page';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DataTablesModule } from 'angular-datatables';
+import { OrderModule} from 'ngx-order-pipe';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { DataTablesModule } from 'angular-datatables';
     IonicModule,
     PacienteRegistroPageRoutingModule,
     Ng2SearchPipeModule,
-    DataTablesModule
+    DataTablesModule,
+    NgxPaginationModule,
+    OrderModule
   ],
   declarations: [PacienteRegistroPage]
 })
