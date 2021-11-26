@@ -225,5 +225,15 @@ export class ApiService {
     return this.http.get('http://localhost/proyecto/backend/ReportSonoAbdoAseg.php');
 
   }
+  getCountSonObitoSeg()
+  {
+    return this.http.get('http://localhost/proyecto/backend/ReportSonoObitoAseg.php');
+
+  }
+  getCountSonbitoNoSeg()
+  {
+    return this.http.get('http://localhost/proyecto/backend/ReportSonoObitoNoAseg.php');
+
+  }
 }
 

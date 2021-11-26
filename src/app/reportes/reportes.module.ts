@@ -8,6 +8,7 @@ import { ReportesPageRoutingModule } from './reportes-routing.module';
 
 import { ReportesPage } from './reportes.page';
 import { MatIconModule } from '@angular/material/icon';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     IonicModule,
     ReportesPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    DataTablesModule
   ],
   declarations: [ReportesPage]
 })

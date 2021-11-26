@@ -11,6 +11,9 @@ export class ReportesPage implements OnInit {
 
   condiccion: number = 0;
 
+  title = 'angulardatatables';
+ dtOptions: any = {};
+
   constructor(private router: Router,
     private afAuth: AuthService,
     private _apiservice: ApiService,)
@@ -20,16 +23,63 @@ export class ReportesPage implements OnInit {
 
       this.getCountSonoAbdoSeg();
       setInterval(() => this.getCountSonoAbdoSeg(), 10000);
-   }
 
+      this.getCountSonbitoNoSeg();
+      setInterval(() => this.getCountSonbitoNoSeg(), 10000);
+
+      this.getCountSonObitoSeg();
+      setInterval(() => this.getCountSonObitoSeg(), 10000);
+
+   }
+ //Report sonografia abdominal
    ReportSonoAbdoNoSeg: any = [];
    ReportSonoAbdoSeg: any = [];
    SonoAbdoNoSeg: number = 0;
    SonoAbdoSeg: number = 0;
+
+    //Report sonografia Obito
+    ReportSonObitoNoSeg: any = [];
+    ReportSonObitoSeg: any = [];
+    SonoObitoNoSeg: number = 0;
+    SonoObitoSeg: number = 0;
+
  
 
   ngOnInit() {
-    this. getCountSonoAbdoNoAseg();
+
+       //cargar los datos de pruebas de la nueva tabla
+   this.dtOptions = {
+    pagingType: 'full_numbers',
+    pageLength: 5,
+    language: {
+      url: 'assets/json/idioma_esp.json'
+    } ,
+    processing: true,
+    dom: 'Bfrtip',
+      buttons: [
+          {
+            extend:'copy', "className": 'btn btn-secondary',
+            title: 'Reporte de Sonografía'
+          }, 
+          { 
+            extend:'csv',
+            title: 'Reporte de Sonografía',  "className":  'btn btn-primary' 
+          }, 
+          {
+           extend: 'excel',
+           title: 'Reporte de Sonografía', "className": 'btn btn-success'
+          },
+          {
+            extend: 'pdf',
+            title: 'Reporte de Sonografía', "className": 'btn btn-danger'
+          }
+
+      ]
+      
+  };
+  
+  //fin de los datos de pruebas
+    
   }
 
 
@@ -75,14 +125,41 @@ export class ReportesPage implements OnInit {
       });
   }
 
-  
+  SumaTotalSonObito(a, b):number{
+    return a + b
+  }
 
-//   sumArray(SonoAbdoNoSeg, SonoAbdoSeg) {
-//     var SumaTotalSonoAbdo = [];
-//     for (var i = 0; i < Math.max(SonoAbdoNoSeg.length, SonoAbdoSeg.length); i++) {
-//       SumaTotalSonoAbdo.push((SonoAbdoNoSeg[i] || 0) + (SonoAbdoSeg[i] || 0));
-//     }
-//     return SumaTotalSonoAbdo;
-// }
+  getCountSonbitoNoSeg()
+  {
+      this._apiservice.getCountSonbitoNoSeg().subscribe((res:any) => {
+        console.log("SUCCESS ===",res);
+        let ReportSonObitoNoSeg = res[0];
+        this.SonoObitoNoSeg = parseInt(ReportSonObitoNoSeg.resultado);
+        },(error: any) => {
+          console.log("ERROR ===",error);
+        });
+  }
+  getCountSonObitoSeg()
+  {
+    this._apiservice.getCountSonObitoSeg().subscribe((res:any) => {
+      console.log("SUCCESS ===",res);
+      let ReportSonObitoSeg = res[0];
+      this.SonoObitoSeg = parseInt(ReportSonObitoSeg.resultado);
+      },(error: any) => {
+        console.log("ERROR ===",error);
+      });
+  }
+  SumaTotalAseg(a, b):number{
+    return a + b
+  }
+
+  SumaTotalNoAseg(a, b):number{
+    return a + b
+  }
+
+  SumaTotal(a, b, c, d):number{
+    return a + b + c + d
+  }
+
 
 }

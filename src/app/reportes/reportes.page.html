@@ -204,29 +204,49 @@
                 </div>
 
                 <ion-card class="card_sonoAbdo_report">
-                    <table id="tabla" class="table table-hover">
+                    <table id="tabla" class="table table-hover table-bordered" datatable [dtOptions]="dtOptions">
                         <thead>
                             <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Estudio</th>
-                                <th scope="col">Asegurado</th>
-                                <th scope="col">No Asegurado</th>
-                                <th scope="col">Total</th>
+                                <th>No.</th>
+                                <th>Estudio</th>
+                                <th>Asegurado</th>
+                                <th>No Asegurado</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th>1</th>
-                                <td>Sono Abdo</td>
+                                <td>Sono Abdominal</td>
                                 <td>{{SonoAbdoSeg}}</td>
                                 <td>{{SonoAbdoNoSeg}}</td>
-                                <td> 
-                                   {{SumaTotalSonoAbdo(SonoAbdoSeg, SonoAbdoNoSeg)}}
+                                <td>
+                                    {{SumaTotalSonoAbdo(SonoAbdoSeg, SonoAbdoNoSeg)}}
                                 </td>
                             </tr>
                             <tr>
+                                <th>2</th>
+                                <td>Sono Obito</td>
+                                <td>{{SonoObitoSeg}}</td>
+                                <td>{{SonoObitoNoSeg}}</td>
+                                <td>
+                                    {{SumaTotalSonObito(SonoObitoSeg, SonoObitoNoSeg)}}
+                                </td>
                             </tr>
+
+                            <tr>
+                                <th></th>
+                                <th>Total</th>
+                                <th>{{SumaTotalAseg(SonoAbdoSeg,SonoObitoSeg)}}</th>
+                                <th>{{SumaTotalNoAseg(SonoAbdoNoSeg,SonoObitoNoSeg)}}</th>
+                                <th>
+                                    {{SumaTotal(SonoAbdoSeg,SonoObitoSeg,SonoAbdoNoSeg,SonoObitoNoSeg)}}
+                                </th>
+                            </tr>
+
+
                         </tbody>
+
                     </table>
                 </ion-card>
 

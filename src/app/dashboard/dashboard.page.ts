@@ -83,7 +83,6 @@ barChartData: any[] = [
   {data: [65,76,33], label: 'label'}
 ]
 
-
 reportAbdominal: any = [];
 //fin de los datos
 
@@ -109,18 +108,18 @@ reportAbdominal: any = [];
   showRegister: boolean
   type: string = '';
 
-  //Chart de burbujas
+  //Chart de lineas
   barChartOptions: ChartOptions = {
     responsive: true,
   };
   
   barChartLabels: Label[] = ['Rayos X', 'Sonografía', 'Laboratorio', 'Odontología'];
-  barChartType: ChartType = 'bar';
+  barChartType: ChartType = 'pie';
   barChartLegend = true;
   barChartPlugins = [];
  
   barChartData2: ChartDataSets[] = [
-    { data: [1, 0, 0, 1], label: 'Colas con más personas' }
+    { data: [1, 5, 8, 3], label: 'Colas con más personas' }
   ];
 
  
@@ -271,14 +270,11 @@ getCount_odontologia()
     })
    }
 
-
+  
 
   //  Resultado ciudades pandemia covid 19
 
 
-
-
-
- }
+  }
 
 
