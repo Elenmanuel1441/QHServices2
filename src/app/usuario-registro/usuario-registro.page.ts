@@ -79,13 +79,25 @@
         });
         toast.present();
       }
+      else if(this.email == "")
+      {
+        const toast = await this.toastController.create({
+          message: 'Ingrese un correo',
+          duration: 1500,
+        color: "danger",
+        cssClass: 'toastVal',
+        position: "top",
+        });
+        toast.present();
+      }
   else{
 
     let data = {
       nombre: this.nombre,
       contrasena: this.contrasena,
       estado: this.estado,
-      rol: this.rol
+      rol: this.rol,
+      email: this.email
     }
 
     this._apiService.addusuario(data).subscribe((res:any) => {

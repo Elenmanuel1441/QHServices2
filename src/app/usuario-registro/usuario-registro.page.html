@@ -57,6 +57,7 @@
                                     <tr>
                                         <th (click)="sort('id')">No.&nbsp;<i class="fa fa-sort"></i> </th>
                                         <th (click)="sort('Nombre')">Nombre&nbsp;<i class="fa fa-sort"></i> </th>
+                                        <th (click)="sort('Correo')">Correo&nbsp;<i class="fa fa-sort"></i> </th>
                                         <th (click)="sort('Area')">Area&nbsp;<i class="fa fa-sort"></i> </th>
                                         <th (click)="sort('Estado')">Estado&nbsp;<i class="fa fa-sort"></i> </th>
                                         <th>Acciones</th>
@@ -66,6 +67,7 @@
                                     <tr *ngFor="let item of nombres | paginate:{itemsPerPage: 5, currentPage: p} | orderBy: key: reverse | filter: Seacrh01 ;let i=index;">
                                         <th>{{(p-1) * 5 + i + 1}}</th>
                                         <td>{{item.nombre}}</td>
+                                        <td>{{item.usuario_email}}</td>
                                         <td>{{item.rol}}</td>
                                         <td>{{item.estado}}</td>
                                         <td>
