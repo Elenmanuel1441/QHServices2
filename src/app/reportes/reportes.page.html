@@ -203,28 +203,32 @@
                     <h1>Reportes</h1>
                 </div>
 
-                <table id="tabla" class="table table-hover">
-                    <thead class="">
-                        <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col">Estudio</th>
-                            <th scope="col">Asegurado</th>
-                            <th scope="col">No Asegurado</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Dato</th>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                        </tr>
-                        <tr>
-                        </tr>
-                    </tbody>
-                </table>
+                <ion-card class="card_sonoAbdo_report">
+                    <table id="tabla" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Estudio</th>
+                                <th scope="col">Asegurado</th>
+                                <th scope="col">No Asegurado</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Sono Abdo</td>
+                                <td>{{SonoAbdoSeg}}</td>
+                                <td>{{SonoAbdoNoSeg}}</td>
+                                <td>{{SumaTotalSonoAbdo}}</td>
+                            </tr>
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </ion-card>
+
+
             </div>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

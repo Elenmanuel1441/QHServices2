@@ -1,5 +1,3 @@
-
-
 <body id="page-top" class="animated fadeIn">
 
     <!-- Page Wrapper -->
@@ -25,7 +23,7 @@
                 <!-- Heading -->
                 <div class="sidebar-heading">
                     Area de Servicios
-                </div>                
+                </div>
                 <li class="nav-item" (click)="logout()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-lock-open"></i>
@@ -34,12 +32,12 @@
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-                <ng-container class="animated fadeIn" >
+                <ng-container class="animated fadeIn">
                     <button style="background-color: transparent;" (click)="volver()">
                        <img src="../../assets/icon/volver.png" width="150" alt="">
                        <!-- <span class="text-white">Regresar</span> -->
                     </button>
-            </ng-container>
+                </ng-container>
 
             </ul>
         </div>
@@ -213,7 +211,7 @@
                 <ion-row class="columnas">
                     <ion-col>
                         <ion-card class="Card_secundaria">
-            
+
                             <ion-grid>
                                 <ion-row>
                                     <ion-col class="columna_usuario">
@@ -227,10 +225,11 @@
                                             <input type="password" [(ngModel)]="contrasena" placeholder="Contraseña" class="form-control inputs">
                                             <!-- <i class="fas fa-user fa-lg fa-fw" aria-hidden="true"></i> -->
                                         </div>
-            
+
                                         <div class="mt-2 select_estado">
                                             <select [(ngModel)]="rol" class="form-select Sel_estado  placeholder-glow" aria-label="Default select example">
                                                 <option value="Nada" selected disabled>Seleccione el Área</option>
+                                                <option value='administrador'>Administrador</option>
                                                 <option value='Laboratorio'>Laboratorio</option>
                                                 <option value='Odontología'>Odontología</option>
                                                 <option value='Rayos X'>Rayos X</option>
@@ -238,24 +237,24 @@
                                                 <option value='Sonografía'>Sonografía</option>
                                               </select>
                                         </div>
-            
+
                                         <div class="mt-2 select_estado">
                                             <select [(ngModel)]="estado" class="form-select Sel_estado  placeholder-glow" aria-label="Default select example">
                                                 <option value='Activo'>Activo</option>
                                                 <option value='Inactivo'>Inactivo</option>
                                               </select>
                                         </div>
-            
+
                                         <div class=" mt-2">
                                             <ion-button class="subtitulo2 btn_update" type="button" (click)="UpdateUsuario()" color="primary" shape="round" expand="block"> Update usuarios </ion-button>
                                         </div>
-            
+
                                     </ion-col>
                                 </ion-row>
                             </ion-grid>
                         </ion-card>
                     </ion-col>
-            
+
                 </ion-row>
             </ion-grid>
 
@@ -275,4 +274,3 @@
     </div>
     <!-- End of Page Wrapper -->
 </body>
-

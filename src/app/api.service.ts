@@ -215,5 +215,15 @@ export class ApiService {
   {
     return this.http.put('http://localhost/proyecto/backend/updateLaboratorioEntrega.php?id_col_laboratorio='+id_col_laboratorio,data);
   }
+  getCountSonoAbdoNoAseg()
+  {
+    return this.http.get('http://localhost/proyecto/backend/ReportSonoAbdominalNoSeg.php');
+
+  }
+  getCountSonoAbdoSeg()
+  {
+    return this.http.get('http://localhost/proyecto/backend/ReportSonoAbdoAseg.php');
+
+  }
 }
 
