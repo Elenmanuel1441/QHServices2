@@ -24,9 +24,9 @@ export class ReportesPage implements OnInit {
 
   ReportSonoAbdoNoSeg: any = [];
   ReportSonoAbdoSeg: any = [];
-  public SonoAbdoNoSeg: number;
-  public SonoAbdoSeg: number;
-  public SumaTotalSonoAbdo: number; 
+  SonoAbdoNoSeg: number = 0;
+  SonoAbdoSeg: number = 0;
+  public SumaTotalSonoAbdo: number = this.SonoAbdoNoSeg + this.SonoAbdoSeg; 
 
   ngOnInit() {
     this. getCountSonoAbdoNoAseg();
