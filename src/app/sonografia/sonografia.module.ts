@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SonografiaPageRoutingModule } from './sonografia-routing.module';
 
 import { SonografiaPage } from './sonografia.page';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SonografiaPageRoutingModule
+    SonografiaPageRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [SonografiaPage]
 })

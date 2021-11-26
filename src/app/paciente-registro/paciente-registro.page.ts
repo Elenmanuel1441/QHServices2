@@ -18,6 +18,9 @@ export class PacienteRegistroPage implements OnInit {
  title = 'angulardatatables';
  dtOptions: any = {};
 
+ Seacrh01: string;
+ p: number = 1;
+
  
  //fin de datos de pruebas
 
@@ -357,7 +360,14 @@ else{
     toast.present();
   }
 
-
+  key: string = 'id';
+  reverse: boolean = false;
+  sort(key)
+  
+  {
+    this.key= key;
+    this.reverse = !this.reverse;
+  }
 
 }
 
