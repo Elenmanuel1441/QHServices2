@@ -4,6 +4,10 @@ import { ApiService } from '../api.service';
 import { GlobalModel } from '../models/global.model';
 import { Covid19Service } from '../services/covid19.service';
 
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Color } from 'ng2-charts';
+import { MultiDataSet, Label } from 'ng2-charts';
+
 
 
 
@@ -105,6 +109,21 @@ reportAbdominal: any = [];
   showRegister: boolean
   type: string = '';
 
+  //Chart de burbujas
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  
+  barChartLabels: Label[] = ['Rayos X', 'Sonografía', 'Laboratorio', 'Odontología'];
+  barChartType: ChartType = 'bar';
+  barChartLegend = true;
+  barChartPlugins = [];
+ 
+  barChartData2: ChartDataSets[] = [
+    { data: [1, 0, 0, 1], label: 'Colas con más personas' }
+  ];
+
+ 
 
   constructor(
     private _apiservice: ApiService,

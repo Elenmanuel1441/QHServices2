@@ -7,7 +7,7 @@ h3 {
     margin-left: 35px;
 }
 
-#header{
+#header {
     margin-top: 15px;
     background: url('../../assets/image/background.jpg') center center no-repeat;
     height: 70%;
@@ -17,35 +17,43 @@ h3 {
     align-items: center;
 }
 
-#header .h1-title{
+#header .h1-title {
     text-align: center;
     font-size: 25px;
     font-weight: bold;
 }
 
-#static{
+#static {
     padding: 5rem;
     display: block;
 }
 
-#static .card-text{
+#static .card-text {
     font-weight: bold;
     font-size: 20px;
     color: tomato
 }
-.infectados{
+
+.infectados {
     font-family: sans-serif 'Roboto';
 }
 
-#static .card-infected{
-    border-bottom-color:royalblue;
+#static .card-infected {
+    border-bottom-color: royalblue;
     border-bottom-width: 10px;
-} 
-#static .card-recoverd{
-    border-bottom-color:lightgreen;
+}
+
+#static .card-recoverd {
+    border-bottom-color: lightgreen;
     border-bottom-width: 10px;
-} 
-#static .card-death{
-    border-bottom-color:lightsalmon;
+}
+
+#static .card-death {
+    border-bottom-color: lightsalmon;
     border-bottom-width: 10px;
-} 
+}
+
+.card_chart {
+    width: 80%;
+    margin: auto;
+}
