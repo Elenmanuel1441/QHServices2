@@ -52,7 +52,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <mat-icon class="toggle" (click)="toggle()" aria-hidden="false" aria-label="Example menu icon">menu</mat-icon>
+                    <!-- <mat-icon class="toggle" (click)="toggle()" aria-hidden="false" aria-label="Example menu icon">menu</mat-icon> -->
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -200,11 +200,22 @@
                 </nav>
                 <!-- End of Topbar -->
                 <ion-content>
+                    <div class="form-row ml-5">
+                        <div class="col-1 mr-2">
+                            <button class="btn btn-outline-danger w-100">Laboratorio</button>
+                        </div>
+                        <div class="col-1 mr-2 ml-1">
+                            <button class="btn btn-outline-success">Resultados</button>
+                        </div>
+                        <div class="col-1">
+                            <button class="btn btn-outline-primary">Formularios</button>
+                        </div>
+                    </div>
                     <div class="title">
                         <h1>Seleccionar el Estado del Paciente</h1>
                     </div>
                     <ion-card class="card_principal">
-                        <ion-card class="card_seleccion">
+                        <ion-card class="card_seleccion mt-3">
                             <ion-grid>
                                 <ion-row>
                                     <ion-col>
@@ -259,7 +270,7 @@
                                 </tbody>
                             </table>
                         </ion-card>
-                        <div class="mt-2">
+                        <div class="mt-2 mb-3">
                             <button (click)="updateLaboratorioBio()" type="button" class="btn btn-success btn_siguiente">Paciente siguiente</button>
                         </div>
                     </ion-card>

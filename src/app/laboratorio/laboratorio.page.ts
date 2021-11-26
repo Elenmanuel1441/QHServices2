@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+
+
+
 @Component({
   selector: 'app-laboratorio',
   templateUrl: './laboratorio.page.html',
@@ -18,11 +22,7 @@ export class LaboratorioPage implements OnInit {
   p: number = 1;
   
   constructor(
-
-    public _apiService: ApiService
-
- 
-  ) { 
+    public _apiService: ApiService, private router: Router ) { 
 
 
     this.getLaboratorios();
@@ -47,6 +47,8 @@ export class LaboratorioPage implements OnInit {
       })
     }
 
-
+    getResultados(): void {
+      this.router.navigateByUrl('laboratorio-analisis/:id_col_laboratorio');
+    }
 }
   
