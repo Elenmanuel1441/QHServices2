@@ -62,6 +62,11 @@ export class AdminPage implements OnInit {
      this.router.navigate(['admin/paciente-registro']);
    }
 
+   ResultadosPacientes(): void{
+    this.router.navigate(['paciente-resultados']);
+  }
+
+
 
    logout(){
      this.afAuth.logout();

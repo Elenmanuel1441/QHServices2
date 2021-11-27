@@ -23,7 +23,7 @@ export class LaboratorioResultadosPage implements OnInit {
 
   ngOnInit() {
     this.getLaboratoriosBio();
-    setInterval(() => this.getLaboratoriosBio(), 10000);
+    setInterval(() => this.getLaboratoriosBio(), 3000);
   }
 
 
