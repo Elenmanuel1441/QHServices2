@@ -1,4 +1,3 @@
-
 <body id="page-top" class="animated fadeIn">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -23,7 +22,7 @@
                 <!-- Heading -->
                 <div class="sidebar-heading">
                     Area de Servicios
-                </div>                
+                </div>
                 <li class="nav-item" (click)="logout()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-lock-open"></i>
@@ -32,12 +31,12 @@
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-                <ng-container class="animated fadeIn" >
+                <ng-container class="animated fadeIn">
                     <button style="background-color: transparent;" (click)="volver()">
                        <img src="../../assets/icon/volver.png" width="150" alt="">
                        <!-- <span class="text-white">Regresar</span> -->
                     </button>
-            </ng-container>
+                </ng-container>
 
             </ul>
         </div>
@@ -200,49 +199,50 @@
 
                 </nav>
                 <!-- End of Topbar -->
-                <ion-content>
-                    <div class="title">
-                        <h1>LIBERAR AL PACIENTE</h1>
-                    </div>
-                    <ion-card class="card_datos">
-                        <ion-grid>
-                            <ion-row>
-                                <ion-col>
-                                    <ion-label>Nombre:</ion-label>
-                                    <div class="mt-2 inputIcon">
-                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                </ion-col>
-                                <ion-col>
-                                    <ion-label>Apellido:</ion-label>
-                                    <div class="mt-2 inputIcon">
-                                        <input disabled="true" type="text" [(ngModel)]="apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                </ion-col>
-                                <ion-col>
-                                    <ion-label>Cédula:</ion-label>
-                                    <div class="mt-2 inputIcon">
-                                        <input disabled="true" type="text" [(ngModel)]="cedula_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                </ion-col>
-                            </ion-row>
-                        </ion-grid>
-                        <ion-input class="subtitulo2" hidden="true" disabled [(ngModel)]="id" type="number"></ion-input>
-                        <ion-label class="label_selArea">Seleccione el Área</ion-label>
-                        <div class=" mt-2 ">
-                            <select [(ngModel)]="area" class="form-select form-select-lg select">
+
+                <div class="title">
+                    <h1>LIBERAR AL PACIENTE</h1>
+                </div>
+                <ion-card class="card_datos">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <ion-label>Nombre:</ion-label>
+                                <div class="mt-2 inputIcon">
+                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                            </ion-col>
+                            <ion-col>
+                                <ion-label>Apellido:</ion-label>
+                                <div class="mt-2 inputIcon">
+                                    <input disabled="true" type="text" [(ngModel)]="apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                            </ion-col>
+                            <ion-col>
+                                <ion-label>Cédula:</ion-label>
+                                <div class="mt-2 inputIcon">
+                                    <input disabled="true" type="text" [(ngModel)]="cedula_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <ion-input class="subtitulo2" hidden="true" disabled [(ngModel)]="id" type="number"></ion-input>
+                    <ion-label class="label_selArea">Seleccione el Área</ion-label>
+                    <div class=" mt-2 ">
+                        <select [(ngModel)]="area" class="form-select select">
+                                <option value="" disabled selected hidden>Seleccione el Área</option>
                                 <option  value='1'>Sonografia</option>
                                 <option value='2'>Laboratorio</option>
                                 <option value='3'>Odontologia</option>
                                 <option value='4'>Rayos-X</option>
                               </select>
-                        </div>
-                        <div class="mt-2">
-                            <ion-button class="subtitulo brn_siguiente" type="button" (click)="areaCheck()" color="success" shape="round" expand="block"> enviar paciente</ion-button>
-                        </div>
-                
-                    </ion-card>
-                </ion-content>
+                    </div>
+                    <div class="mt-2">
+                        <ion-button class="subtitulo brn_siguiente" type="button" (click)="areaCheck()" color="success" shape="round" expand="block"> enviar paciente</ion-button>
+                    </div>
+
+                </ion-card>
+
             </div>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

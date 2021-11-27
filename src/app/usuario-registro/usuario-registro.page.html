@@ -21,8 +21,9 @@
                                 </div>
 
                                 <div class="mt-2 select_estado">
-                                    <select [(ngModel)]="rol" class="form-select Sel_estado  placeholder-glow" aria-label="Default select example">
-                                        <option value="Nada" selected disabled>Seleccione el Área</option>
+
+                                    <select [(ngModel)]="rol" class="form-select Sel_estado placeholder-glow" aria-label="Default select example">
+                                        <option value="" disabled selected hidden>Asigne un rol</option>
                                         <option value='administrador'>Administrador</option>
                                         <option value='Laboratorio'>Laboratorio</option>
                                         <option value='Odontología'>Odontología</option>
