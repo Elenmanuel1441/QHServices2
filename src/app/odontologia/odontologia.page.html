@@ -15,7 +15,7 @@
                         <th scope="col">Apellido</th>
                         <th scope="col">Cédula</th>
                         <th scope="col">Teléfono</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col">Atender</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +26,7 @@
                         <td>{{odontologia.cedula_paciente}}</td>
                         <td>{{odontologia.telefono_paciente}}</td>
                         <td>
-                            <ion-button [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]"> Liberar</ion-button>
+                            <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Atender al paciente" [routerLink]="['/odontologia-update/',odontologia.id_col_odontologia]" style="background-color: #156de0; margin-right: 4px;" role="button"><i class="fas fa-angle-double-right"></i></a>
                         </td>
                     </tr>
                     <tr>

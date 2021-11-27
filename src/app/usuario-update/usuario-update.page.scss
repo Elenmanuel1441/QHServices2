@@ -86,6 +86,8 @@ ion-icon {
 .btn_update {
     width: 90%;
     margin: auto;
+    border-radius: 20px;
+    margin-left: 5%;
 }
 
 .select_estado {
@@ -116,13 +118,11 @@ ion-grid {
 }
 
 @media screen and (max-width: 480px) {
-    .aparecer{
+    .aparecer {
         margin-left: -28%;
-        transition:all 0.5s ease-in-out;
-    }
-    .ocultar{
         transition: all 0.5s ease-in-out;
+    }
+    .ocultar {
+        transition: all 0.5s ease-in-out;
+    }
 }
-    
-}
-    

@@ -1,15 +1,4 @@
 <div class="animated fadeIn">
-    <div class="form-row ml-5">
-        <div class="col-1">
-            <button class="btn btn-outline-danger w-100" (click)="getResultados()">Analisis</button>
-        </div>
-        <div class="col-1 mr-2">
-            <button class="btn btn-outline-success">Resultados</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-outline-primary">Formularios</button>
-        </div>
-    </div>
     <div class="title">
         <h1>Lista de Pacientes en Laboratorio</h1>
     </div>
@@ -25,7 +14,7 @@
                         <th scope="col">Apellido</th>
                         <th scope="col">Cédula</th>
                         <th scope="col">Teléfono</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col">Atender</th>
                     </tr>
                     <tr></tr>
                 </thead>
@@ -37,7 +26,7 @@
                         <td>{{laboratorios.cedula_paciente}}</td>
                         <td>{{laboratorios.telefono_paciente}}</td>
                         <td>
-                            <ion-button [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
+                            <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Atender al paciente" [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]" style="background-color: #156de0; margin-right: 4px;" role="button"><i class="fas fa-angle-double-right"></i></a>
                         </td>
                 </tbody>
 

@@ -22,7 +22,7 @@
                         <th scope="col">Apellido</th>
                         <th scope="col">Cédula</th>
                         <th scope="col">Teléfono</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col">Atender</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@
                         <td>{{sonografia.cedula_paciente}}</td>
                         <td>{{sonografia.telefono_paciente}}</td>
                         <td>
-                            <ion-button [routerLink]="['/sonografia-update/',sonografia.id_col_sonografia]"> Liberar</ion-button>
+                            <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Atender al paciente" [routerLink]="['/sonografia-update/',sonografia.id_col_sonografia]" style="background-color: #156de0; margin-right: 4px;" role="button"><i class="fas fa-angle-double-right"></i></a>
                         </td>
                     </tr>
                     <tr>

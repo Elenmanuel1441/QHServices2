@@ -15,7 +15,7 @@
                         <th scope="col">Apellido</th>
                         <th scope="col">Cédula</th>
                         <th scope="col">Teléfono</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col">Atender</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +26,7 @@
                         <td>{{rayos_x.cedula_paciente}}</td>
                         <td>{{rayos_x.telefono_paciente}}</td>
                         <td>
-                            <ion-button [routerLink]="['/rayos-x-update/',rayos_x.id_col_rayosx]"> Liberar</ion-button>
+                            <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Atender al paciente" [routerLink]="['/rayos-x-update/',rayos_x.id_col_rayosx]" style="background-color: #156de0; margin-right: 4px;" role="button"><i class="fas fa-angle-double-right"></i></a>
                         </td>
                     </tr>
                     <tr>

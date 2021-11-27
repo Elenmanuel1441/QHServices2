@@ -32,9 +32,13 @@
                                       </select>
                                 </div>
 
-                                <div class=" mt-2 btn_agregar">
-                                    <ion-button style="width: 100%;" class="subtitulo2" type="submit" (click)="nuevoUsuario()" (click)="addUsuario()" color="primary" shape="round" expand="block"> Agregar usuarios </ion-button>
+                                <div class="mt-2 ">
+                                    <button type="button" (click)="nuevoUsuario()" (click)="addUsuario()" class="btn btn_agregar btn-success">Actualizar paciente</button>
                                 </div>
+
+                                <!-- <div class=" mt-2 btn_agregar">
+                                    <ion-button style="width: 100%;" class="subtitulo2" type="submit" (click)="nuevoUsuario()" (click)="addUsuario()" color="primary" shape="round" expand="block"> Agregar usuarios </ion-button>
+                                </div> -->
                             </ion-col>
                         </ion-row>
                     </ion-grid>
@@ -49,7 +53,7 @@
                         <input type="text" [(ngModel)]="Seacrh01" placeholder="Buscar..." class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                     </div>
 
-                    <ion-card class="card_tabla">
+                    <ion-card class=" mt-2 card_tabla">
 
                         <div>
                             <table id="tabla" class="table table-hover">
@@ -71,8 +75,10 @@
                                         <td>{{item.rol}}</td>
                                         <td>{{item.estado}}</td>
                                         <td>
-                                            <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',item.id]"></ion-icon>
-                                            <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(item.id)"></ion-icon>
+                                            <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar usuario" [routerLink]="['/usuario-update/',item.id]" style="background-color: #ff6600;" role="button"><i class="far fa-edit"></i></a>
+
+                                            <!-- <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',item.id]"></ion-icon> -->
+                                            <!-- <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(item.id)"></ion-icon> -->
                                         </td>
                                     </tr>
                                     <tr>

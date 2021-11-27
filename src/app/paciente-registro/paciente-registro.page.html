@@ -108,9 +108,12 @@
                             <td>{{item.telefono_paciente}}</td>
                             <td>{{item.cedula_paciente }}</td>
                             <td>
-                                <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',item.id_paciente]"></ion-icon>
-                                <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',item.id_paciente]"></ion-icon>
-                                <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(item.id_paciente)"></ion-icon>
+                                <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar a una área" [routerLink]="['/paciente-add-area/',item.id_paciente]" style="background-color: #2ba558; margin-right: 4px;" role="button"><i class="far fa-plus-square"></i></a>
+                                <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar paciente" [routerLink]="['/paciente-update/',item.id_paciente]" style="background-color: #ff6600; margin-left: 4px;" role="button"><i class="far fa-edit"></i></a>
+                                <!-- <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',item.id_paciente]"></ion-icon>
+                                <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',item.id_paciente]"></ion-icon> -->
+
+                                <!-- <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(item.id_paciente)"></ion-icon> -->
                             </td>
                         </tr>
                         <tr>
