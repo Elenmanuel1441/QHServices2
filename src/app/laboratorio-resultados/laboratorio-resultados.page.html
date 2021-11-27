@@ -218,7 +218,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let laboratorios of laboratorios ;let i=index;">
+                                    <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 4,currentPage:p}  ;let i=index;">
                                         <th>{{i+1}}</th>
                                         <td>{{laboratorios.nombre_paciente}}</td>
                                         <td>{{laboratorios.apellido_paciente}}</td>
@@ -233,6 +233,7 @@
                                 </tbody>
 
                             </table>
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
                         </ion-card>
                     </div>
 

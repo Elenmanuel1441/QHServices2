@@ -8,6 +8,7 @@ import { LaboratorioResultadosPageRoutingModule } from './laboratorio-resultados
 
 import { LaboratorioResultadosPage } from './laboratorio-resultados.page';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     IonicModule,
     LaboratorioResultadosPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    NgxPaginationModule
   ],
   declarations: [LaboratorioResultadosPage]
 })
