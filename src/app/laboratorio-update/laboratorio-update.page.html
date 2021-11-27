@@ -199,75 +199,73 @@
 
                 </nav>
                 <!-- End of Topbar -->
-                <ion-content>
-                    <div class="title">
-                        <h1>Seleccionar los análisis</h1>
-                    </div>
-                    <ion-card class="card_principal">
 
-                        <ion-card class="card_seleccion mt-2">
-                            <ion-grid>
-                                <ion-row>
-                                    <ion-col>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend ">
-                                                <span class="input-group-text inputs_gris" id="basic-addon1">Nombre:</span>
-                                            </div>
-                                            <input type="text" disabled="true" class="form-control inputs" [(ngModel)]="nombre_paciente +' '+apellido_paciente" aria-label="Username" aria-describedby="basic-addon1">
+                <div class="title">
+                    <h1>Seleccionar los análisis</h1>
+                </div>
+                <ion-card class="card_principal">
+
+                    <ion-card class="card_seleccion mt-2">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend ">
+                                            <span class="input-group-text inputs_gris" id="basic-addon1">Nombre:</span>
                                         </div>
-                                    </ion-col>
-                                    <ion-col>
-                                        <div>
-                                            <select [(ngModel)]="id_analisis" class="form-select form-select-lg select_analisis ">
-                                                <option value="Nada" selected disabled>Seleccione tipo analisis</option>
+                                        <input type="text" disabled="true" class="form-control inputs" [(ngModel)]="nombre_paciente +' '+apellido_paciente" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div>
+                                        <select [(ngModel)]="id_analisis" class="form-select form-select-lg select_analisis ">
+                                            <option value="" disabled selected hidden>Choose Gender...</option>
                                                 <option value='EXAMEN DE ORINA'>Examen de orina</option>
                                                 <option value='TIPIFICACION'>Tipificacion</option>
                                                 <option value='EXAMEN COPROLOGICO'>Examen coprologico</option>
                                                 <option value='PRUEBA ANTIGENICA CV-19'>Prueba antigenica CV-19</option>
                                       
                                             </select>
-                                        </div>
-                                    </ion-col>
-                                    <ion-col>
-                                        <button (click)="addAnalisis()" type="button" class="btn btn-success btn_seleccionar" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir un análisis">Añadir</button>
-                                    </ion-col>
-                                </ion-row>
-                            </ion-grid>
-                        </ion-card>
-
-                        <!--tabla para dejar funcionando el get-->
-                        <ion-card class="card_tabla mt-2">
-
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Análisis</th>
-                                        <th scope="col">Estado</th>
-                                        <th scope="col">Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of paciente_analisis ; let i=index;">
-                                        <th scope="row">{{i+1}}</th>
-                                        <td>{{item.id_analisis}}</td>
-                                        <td>{{item.estado}}</td>
-                                        <td>
-                                            <ion-icon name="trash-bin-outline" (click)="cancelAnalisis(item.id_paciente_analisis)" style="zoom: 2;"></ion-icon>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </ion-card>
-                        <div class="mt-2">
-                            <button (click)="updateLaboratorio()" type="button" class="btn btn-success btn_siguiente">Paciente siguiente</button>
-                        </div>
-                        <div class="mt-2">
-
-                        </div>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <button (click)="addAnalisis()" type="button" class="btn btn-success btn_seleccionar" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir un análisis">Añadir</button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
                     </ion-card>
 
-                </ion-content>
+                    <!--tabla para dejar funcionando el get-->
+                    <ion-card class="card_tabla mt-2">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Análisis</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of paciente_analisis ; let i=index;">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{item.id_analisis}}</td>
+                                    <td>{{item.estado}}</td>
+                                    <td>
+                                        <ion-icon name="trash-bin-outline" (click)="cancelAnalisis(item.id_paciente_analisis)" style="zoom: 2;"></ion-icon>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ion-card>
+                    <div class="mt-2">
+                        <button (click)="updateLaboratorio()" type="button" class="btn btn-success btn_siguiente">Paciente siguiente</button>
+                    </div>
+                    <div class="mt-2">
+
+                    </div>
+                </ion-card>
             </div>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
