@@ -55,8 +55,8 @@ export class AdminPage implements OnInit {
     this.router.navigate(['admin/sonografia']);
   }
 
-  getOdontodologia(): void {
-    this.router.navigate(['admin/odontodologia']);
+  getOdontologia(): void {
+    this.router.navigate(['admin/odontologia']);
   }
 
   registroUsurio(): void {

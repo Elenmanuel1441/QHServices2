@@ -11,7 +11,7 @@ const routes: Routes = [
       {path: '', redirectTo: 'dashboard', pathMatch:'full'},
       { path: 'dashboard', loadChildren:() => import ('../dashboard/dashboard.module').then(m => m.DashboardPageModule)},
       { path: 'rayos-x', loadChildren:() => import ('../rayos-x/rayos-x.module').then(m => m.RayosXPageModule)},
-      { path: 'odontodologia', loadChildren: () => import ('../odontologia/odontologia.module').then(m => m.OdontologiaPageModule)},
+      { path: 'odontologia', loadChildren: () => import ('../odontologia/odontologia.module').then(m => m.OdontologiaPageModule)},
       { path: 'sonografia', loadChildren: () => import ('../sonografia/sonografia.module').then(m => m.SonografiaPageModule)},
       { path: 'usuario-registro', loadChildren: () => import ('../usuario-registro/usuario-registro.module').then(m => m.UsuarioRegistroPageModule)},
       { path: 'paciente-registro', loadChildren: () => import ('../paciente-registro/paciente-registro.module').then(m => m.PacienteRegistroPageModule)},
