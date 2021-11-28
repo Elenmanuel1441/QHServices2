@@ -40,7 +40,7 @@ export class AdminPage implements OnInit {
   }
 
   getDashboard(): void{
-    this.router.navigate(['/admin/dashboard']);
+    this.router.navigateByUrl('/admin/dashboard?type=administrador');
   }
 
   getLaboratorio(): void {

@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { PacienteResultadosPageRoutingModule } from './paciente-resultados-routing.module';
 
 import { PacienteResultadosPage } from './paciente-resultados.page';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PacienteResultadosPageRoutingModule
+    PacienteResultadosPageRoutingModule,
+    MatIconModule
   ],
   declarations: [PacienteResultadosPage]
 })

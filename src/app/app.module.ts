@@ -23,6 +23,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
@@ -38,7 +39,12 @@ import { environment } from 'src/environments/environment';
       AngularFireAuthModule,
       AngularFireDatabaseModule,
       DataTablesModule,
-      MatIconModule,
+      ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: environment.production,
+        // Register the ServiceWorker as soon as the app is stable
+        // or after 30 seconds (whichever comes first).
+        registrationStrategy: 'registerWhenStable:30000'
+      }),
 
     ],
   providers: [{ provide: RouteReuseStrategy,

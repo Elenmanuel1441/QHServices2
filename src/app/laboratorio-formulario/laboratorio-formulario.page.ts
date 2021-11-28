@@ -7,6 +7,7 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { AuthService } from '../services/auth.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
+
 @Component({
   selector: 'app-laboratorio-formulario',
   templateUrl: './laboratorio-formulario.page.html',
@@ -280,5 +281,13 @@ async presentToastErrorADD (mensaje: string) {
   toast.present();
 }
 
+logout(){
+  this.afAuth.logout()
+}
 
+volver(){
+
+}
+
+condiccion;
 }
