@@ -33,9 +33,10 @@
                 <hr class="sidebar-divider d-none d-md-block">
                 <ng-container class="animated fadeIn">
                     <button style="background-color: transparent;" (click)="volver()">
-                     <img src="../../assets/icon/volver.png" width="150" alt="">
+                        <img src="../assets/icon/back.png" width="80" alt="">
                      <!-- <span class="text-white">Regresar</span> -->
                   </button>
+                    <span style="text-align: center;" class="text-white">Regresar</span>
                 </ng-container>
 
             </ul>
@@ -237,11 +238,11 @@
 
                 <!--Sonografia abdominal-->
 
-                <ion-card class="card_abdominal" *ngIf="showTipificacion">
+                <ion-card class="card_tipificacion mt-2" *ngIf="showTipificacion">
                     <ion-grid>
-                        <ion-label class="label_toggle">Paciente:</ion-label>
+                        <ion-label class="label_toggle">Tipificación:</ion-label>
                         <ion-row>
-                            <ion-label>tipificacion</ion-label>
+
                             <ion-col>
                                 <div class="mt-2 inputIcon">
                                     <ion-label>Nombre:</ion-label>
@@ -277,11 +278,10 @@
                 </ion-card>
 
                 <!---->
-                <ion-card class="card_abdominal" *ngIf="showExamenCoprologico">
+                <ion-card class="card_Coprologico mt-2" *ngIf="showExamenCoprologico">
                     <ion-grid>
-                        <ion-label class="label_toggle">Paciente:</ion-label>
+                        <ion-label class="label_toggle">Coprológico:</ion-label>
                         <ion-row>
-                            <ion-label>Coprologico</ion-label>
                             <ion-col>
                                 <div class="mt-2 inputIcon">
                                     <ion-label>Nombre:</ion-label>
@@ -312,11 +312,11 @@
 
                 </ion-card>
 
-                <ion-card class="card_abdominal" *ngIf="showCovid19">
+                <ion-card class="card_covid19 mt'2" *ngIf="showCovid19">
                     <ion-grid>
-                        <ion-label class="label_toggle">Paciente:</ion-label>
+                        <ion-label class="label_toggle">COVID-19:</ion-label>
                         <ion-row>
-                            <ion-label>covid19</ion-label>
+
                             <ion-col>
                                 <div class="mt-2 inputIcon">
                                     <ion-label>Nombre:</ion-label>

@@ -33,9 +33,10 @@
                 <hr class="sidebar-divider d-none d-md-block">
                 <ng-container class="animated fadeIn">
                     <button style="background-color: transparent;" (click)="volver()">
-                     <img src="../../assets/icon/volver.png" width="150" alt="">
+                        <img src="../assets/icon/back.png" width="80" alt="">
                      <!-- <span class="text-white">Regresar</span> -->
                   </button>
+                    <span style="text-align: center;" class="text-white">Regresar</span>
                 </ng-container>
 
             </ul>
@@ -222,7 +223,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 4,currentPage:p} |filter: Seacrh01 ;let i=index;">
+                                    <tr *ngFor="let laboratorios of laboratorios |filter: Seacrh01  | paginate:{itemsPerPage: 4,currentPage:p} ;let i=index;">
                                         <th>{{i+1}}</th>
                                         <td>{{laboratorios.nombre_paciente}}</td>
                                         <td>{{laboratorios.apellido_paciente}}</td>
