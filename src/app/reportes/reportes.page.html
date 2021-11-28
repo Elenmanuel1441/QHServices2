@@ -201,13 +201,14 @@
                 </nav>
                 <!-- End of Topbar -->
                 <div class="title" style="text-align: center;">
-                    <h1>Reportes de Sonografías Realizadas</h1>
+                    <h1>Reporte de Sonografías Realizadas</h1>
                 </div>
                 <div class="mt-2">
                     <button (click)="exportexcel()" type="button" class="btn btn-success btn_exportar">Exportar a Excel</button>
                 </div>
+                <!-- Reporte de Sonografías Abdominal -->
                 <ion-card class="mt-2 card_sonoAbdo_report">
-                    <table id="tabla" class="table table-hover table-bordered">
+                    <table id="tabla_sono" class="table table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th>No.</th>
@@ -245,6 +246,52 @@
                                 <th>
                                     {{SumaTotal(SonoAbdoSeg,SonoObitoSeg,SonoAbdoNoSeg,SonoObitoNoSeg)}}
                                 </th>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </ion-card>
+                <div class="mt-2">
+
+                    <!-- Reporte de Laboratorio-->
+
+                </div>
+                <div class="title" style="text-align: center;">
+                    <h1>Reporte de Laboratorio</h1>
+                </div>
+                <div class="mt-2">
+                    <button (click)="exportexcel()" type="button" class="btn btn-success btn_exportar">Exportar a Excel</button>
+                </div>
+                <ion-card class="mt-2 card_sonoAbdo_report">
+                    <table id="tabla_laboratorio" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Laboratorio</th>
+                                <th>Paciente Asegurado</th>
+                                <th>Paciente no Asegurado</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Muestras Tomadas</th>
+                                <td>{{LabAseg}}</td>
+                                <td>{{LabNoAseg}}</td>
+                                <td>{{SumaTotalLabMuestrasTomadas(LabAseg,LabNoAseg)}}</td>
+                            </tr>
+                            <tr>
+                                <th>Muestras Referidas de Otros Centros</th>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>{{SumaTotalLabReferido(4,5)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total</th>
+                                <th>{{SumaTotalLabAseg(LabAseg, 4)}}</th>
+                                <th>{{SumaTotalLabNoAseg(LabNoAseg,5)}}</th>
+                                <th>{{SumaTotalLaboratorio(LabAseg,LabNoAseg,4,5)}}</th>
                             </tr>
 
                         </tbody>

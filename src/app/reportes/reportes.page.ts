@@ -36,6 +36,9 @@ export class ReportesPage implements OnInit {
       this.getCountSonObitoSeg();
       setInterval(() => this.getCountSonObitoSeg(), 10000);
 
+      this.getCountLabAseNaseg();
+      setInterval(() => this.getCountLabAseNaseg(), 10000);
+
    }
  //Report sonografia abdominal
    ReportSonoAbdoNoSeg: any = [];
@@ -49,7 +52,12 @@ export class ReportesPage implements OnInit {
     SonoObitoNoSeg: number = 0;
     SonoObitoSeg: number = 0;
 
- 
+  //Report laborratorio Aseg y No Aseg
+  ReportLabAsegNAseg: any = [];
+  LabAseg: number = 0;
+  LabNoAseg: number = 0;
+
+
 
   ngOnInit() {
 
@@ -155,6 +163,7 @@ export class ReportesPage implements OnInit {
         console.log("ERROR ===",error);
       });
   }
+  //estos son los calculos para realizar la tabla de sonografia reportes
   SumaTotalAseg(a, b):number{
     return a + b
   }
@@ -170,7 +179,7 @@ export class ReportesPage implements OnInit {
   exportexcel(): void
   {
     /* pass here the table id */
-    let element = document.getElementById('tabla');
+    let element = document.getElementById('tabla_sono');
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
  
     /* generate workbook and add the worksheet */
@@ -181,5 +190,41 @@ export class ReportesPage implements OnInit {
     XLSX.writeFile(wb, this.fileName);
  
   }
+//estos son los calculos para realizar la tabla de Laboratorio reportes
+  getCountLabAseNaseg()
+  {
+
+    this._apiservice.getCountLabAseNaseg().subscribe((res:any) => {
+      console.log("SUCCESS ===",res);
+      let ReportLabAsegNAseg = res[0];
+      this.LabAseg = parseInt(ReportLabAsegNAseg.Name_exp_1 );
+      this.LabNoAseg = parseInt(ReportLabAsegNAseg.Name_exp_2);
+      },(error: any) => {
+        console.log("ERROR ===",error);
+      });
+
+  }
+
+  //calculo para los resultados de la tabla laboratorio
+
+  SumaTotalLabAseg(a, b):number{
+    return a + b
+  }
+
+  SumaTotalLabNoAseg(a, b):number{
+    return a + b
+  }
+  SumaTotalLabMuestrasTomadas(a, b):number{
+    return a + b
+  }
+  SumaTotalLabReferido(a, b):number{
+    return a + b
+  }
+
+  SumaTotalLaboratorio(a, b, c, d):number{
+    return a + b + c + d
+  }
+  
+
 
 }

@@ -235,5 +235,10 @@ export class ApiService {
     return this.http.get('http://localhost/proyecto/backend/ReportSonoObitoNoAseg.php');
 
   }
+  getCountLabAseNaseg()
+  {
+    return this.http.get('http://localhost/proyecto/backend/ReportLabAsegNaseg.php');
+
+  }
 }
 
