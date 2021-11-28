@@ -206,7 +206,11 @@
                     <div class="avatar-left"></div>
                     <div class="table-rigth">
                         <ion-card class="card_resultados">
-                            <table id="tabla" class="table table-hover">
+                            <div class="mt-2">
+                                <input type="text" [(ngModel)]="Seacrh01" placeholder="Buscar..." class="form-control search" is-valid id="validationServer01" value="Mark" required>
+                            </div>
+
+                            <table id="tabla" class="mt-2 table table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -218,7 +222,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 4,currentPage:p}  ;let i=index;">
+                                    <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 4,currentPage:p} |filter: Seacrh01 ;let i=index;">
                                         <th>{{i+1}}</th>
                                         <td>{{laboratorios.nombre_paciente}}</td>
                                         <td>{{laboratorios.apellido_paciente}}</td>
