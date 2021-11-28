@@ -105,35 +105,34 @@
                             </div>
                         </div>
                         <!-- Content Row -->
-                        
-                    <div class="row">
 
-                        <!-- Area Chart -->
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">ESTADÍSTICAS</h6>
-                            
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="">
-                                        
-                                    <div class="chart-wrapper">
-                                        <canvas baseChart [datasets]="barChartData2" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
-                                        </canvas>
+                        <div class="row">
+
+                            <!-- Area Chart -->
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">ESTADÍSTICAS</h6>
+
                                     </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <div class="">
+
+                                            <div class="chart-wrapper">
+                                                <canvas baseChart [datasets]="barChartData2" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                                        </canvas>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
                     </div>
-                    <!-- <div>
+                </div>
+                <!-- <div>
                         <h3>Reporte de Sonografía Abdominal</h3>
                     </div>
                     <ion-card class="card_tabla">
@@ -174,18 +173,15 @@
                     </ion-card> -->
 
 
-<<<<<<< HEAD
-=======
-                    <div class="chart-wrapper">
-                        <canvas style="width: 10vh; height: 10vh;" baseChart [datasets]="barChartData2" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                <div class="chart-wrapper">
+                    <canvas style="width: 10vh; height: 10vh;" baseChart [datasets]="barChartData2" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
                           </canvas>
-                    </div>
->>>>>>> 8ceea9d141a82dd393701d6520020882a4685621
-
                 </div>
+
             </div>
-            <!-- End of Main Content -->
-     
+        </div>
+        <!-- End of Main Content -->
+
         <!-- End of Content Wrapper -->
     </ng-container>
     <ng-container *ngIf="!showRegister">

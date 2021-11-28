@@ -47,6 +47,10 @@ export class AdminPage implements OnInit {
     this.router.navigate(['admin/laboratorio']);
   }
 
+  getResultados(): void {
+    this.router.navigate(['/laboratorio-resultados']);
+  }
+
   getSonografia(): void {
     this.router.navigate(['admin/sonografia']);
   }
@@ -61,6 +65,10 @@ export class AdminPage implements OnInit {
    registroPaciente(): void{
      this.router.navigate(['admin/paciente-registro']);
    }
+
+   PacientesResultados(): void{
+    this.router.navigate(['/paciente-resultados']);
+  }
 
    ResultadosPacientes(): void{
     this.router.navigate(['paciente-resultados']);
