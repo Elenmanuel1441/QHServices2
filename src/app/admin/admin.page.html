@@ -42,8 +42,9 @@
                 </li>
                 <li class="nav-item" *ngSwitchCase="type=='Laboratorio' ? type:'administrador'" class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
+                        <i class="fas fa-vial"></i>
                         <span>Servicios Laboratorio</span>
+
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -67,7 +68,7 @@
                 </div>
                 <li class="nav-item" *ngSwitchCase="type=='Laboratorio' ? type:'administrador'" class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePaciente" aria-expanded="true" aria-controls="collapsePaciente">
-                        <i class="fas fa-fw fa-cog"></i>
+                        <i class="fas fa-user-injured"></i>
                         <span>Área de Pacientes</span>
                     </a>
                     <div id="collapsePaciente" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -91,9 +92,10 @@
             <hr class="sidebar-divider d-none d-md-block">
             <ng-container class="animated fadeIn" *ngIf="!showRegister">
                 <button style="background-color: transparent;" (click)="volver()">
-                       <img src="../../assets/icon/volver.png" width="150" alt="">
+                       <img src="../../assets/icon/Back3.png" width="80" alt="">
                        <!-- <span class="text-white">Regresar</span> -->
                     </button>
+                <span style="text-align: center;" class="text-white">Volver atrás</span>
             </ng-container>
 
         </ul>
