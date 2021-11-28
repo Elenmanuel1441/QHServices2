@@ -13,6 +13,8 @@ export class LaboratorioResultadosPage implements OnInit {
   apellido_paciente: any;
   cedula_paciente: any;
   telefono_paciente: any;
+
+  p: number = 1;
   
   laboratorios: any[];
 
@@ -23,7 +25,7 @@ export class LaboratorioResultadosPage implements OnInit {
 
   ngOnInit() {
     this.getLaboratoriosBio();
-    setInterval(() => this.getLaboratoriosBio(), 10000);
+    setInterval(() => this.getLaboratoriosBio(), 3000);
   }
 
 

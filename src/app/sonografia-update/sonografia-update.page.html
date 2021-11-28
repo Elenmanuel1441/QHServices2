@@ -206,14 +206,14 @@
 
                                     <div>
                                         <select *ngIf="showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
-                                    tipo de sonografia
+                                            <option value="" disabled selected hidden>ARS</option>
                                                     <option value='1'>OBSTETRICA OBITO</option>
                                                     <option value='2'>ABDOMINAL</option>
                                                     <option value='3'>TRANS VAGINAL</option>
                                                   </select>
 
                                         <select *ngIf="!showWoman" [(ngModel)]="tipoSonografia" class="form-select form-select-lg mb-3 select normal">
-                                                    tipo de sonografia
+                                            <option value="" disabled selected hidden>ARS</option>
                                                                     
                                                     <option value='2'>ABDOMINAL</option>
                                                    <option value='3'>TRANS VAGINAL</option>
@@ -229,8 +229,6 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="sidebar-divider d-none d-md-block">
                 <ion-content>
                     <!--Sonografia obstetrica obito-->
                     <ion-card class="card_Obit" *ngIf="showObito">
@@ -446,7 +444,8 @@
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label class="label_higado">Morfologia:</ion-label>
-                                        <select [(ngModel)]="sonoAbdominal.morfologia" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <select [(ngModel)]="sonoAbdominal.morfologia" class="form-select  select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Morfología</option>
                                        <option value='NORMAL'>NORMAL</option>
                                        <option value='HETEROGENEA'>HETEROGENEA</option>
                                       </select>

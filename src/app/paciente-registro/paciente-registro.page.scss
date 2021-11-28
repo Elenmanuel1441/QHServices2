@@ -146,6 +146,7 @@ ion-icon {
     width: 94%;
     border-radius: 20px;
     margin: auto;
+    background-color: rgb(138, 230, 173);
 }
 
 .card_tabla {
@@ -153,4 +154,8 @@ ion-icon {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+}
+
+.btn_resultados {
+    margin-left: 70%;
 }

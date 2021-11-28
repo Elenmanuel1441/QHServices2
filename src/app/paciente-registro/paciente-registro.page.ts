@@ -321,7 +321,7 @@ else{
       duration: 1500,
       color: "success",
       cssClass: 'toastAdd',
-      position: "bottom",
+      position: "top",
       
     });
     toast.present();
@@ -333,7 +333,7 @@ else{
       duration: 1500,
       color: "danger",
       cssClass: 'toastEli',
-      position: "bottom",
+      position: "top",
     });
     toast.present();
   }
@@ -344,7 +344,7 @@ else{
       duration: 1500,
       color: "danger",
       cssClass: 'toastEli',
-      position: "bottom",
+      position: "top",
     });
     toast.present();
   }
@@ -355,7 +355,7 @@ else{
       duration: 1500,
       color: "danger",
       cssClass: 'toastEli',
-      position: "bottom",
+      position: "top",
     });
     toast.present();
   }

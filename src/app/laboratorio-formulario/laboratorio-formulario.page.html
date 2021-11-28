@@ -197,175 +197,163 @@
 
                     </ul>
                 </nav>
+                <div class="btn_resultados">
+                    <a class="btn btn-sm btn-success" [routerLink]="['/admin/laboratorio']" routerLinkActive="router-link-active"><i
+                    class="far fa-file-alt text-white-50"></i> Cola laboratorio</a>
+                </div>
                 <!-- End of Topbar -->
 
+                <!--Sonografia -->
+                <ion-card class="card_orina mt-2" *ngIf="showExamenOrina">
+                    <ion-grid>
+                        <ion-label style="color: black;">Examen de orina</ion-label>
+                        <ion-row>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Nombre:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
 
-                <hr class="sidebar-divider d-none d-md-block">
-                <ion-content>
-                    <div class="form-row ml-5">
-                        <div class="col-1 mr-2">
-                            <button class="btn btn-outline-danger">Analisis</button>
-                        </div>
-                        <div class="col-1 mr-2 ml-1">
-                            <button class="btn btn-outline-success">Resultados</button>
-                        </div>
-                        <div class="col-1">
-                            <button class="btn btn-outline-primary">Laboratorio</button>
-                        </div>
-                    </div>
-                    <!--Sonografia -->
-                    <ion-card class="card_orina" *ngIf="showExamenOrina">
-                        <ion-grid>
-                            <ion-label style="color: black;">Examen de orina</ion-label>
-                            <ion-row>
-                                <ion-col>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Nombre:</ion-label>
-                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Edad:</ion-label>
-                                        <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Sexo:</ion-label>
-                                        <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                                    </div>
-                                </ion-col>
-                            </ion-row>
-                        </ion-grid>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Edad:</ion-label>
+                                    <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Sexo:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
 
 
-                    </ion-card>
+                </ion-card>
 
-                    <!--Sonografia abdominal-->
+                <!--Sonografia abdominal-->
 
-                    <ion-card class="card_abdominal" *ngIf="showTipificacion">
-                        <ion-grid>
-                            <ion-label class="label_toggle">Paciente:</ion-label>
-                            <ion-row>
-                                <ion-label>tipificacion</ion-label>
-                                <ion-col>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Nombre:</ion-label>
-                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
+                <ion-card class="card_abdominal" *ngIf="showTipificacion">
+                    <ion-grid>
+                        <ion-label class="label_toggle">Paciente:</ion-label>
+                        <ion-row>
+                            <ion-label>tipificacion</ion-label>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Nombre:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
 
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Edad:</ion-label>
-                                        <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Sexo:</ion-label>
-                                        <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                                    </div>
-                                </ion-col>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Edad:</ion-label>
+                                    <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Sexo:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                                </div>
+                            </ion-col>
 
-                            </ion-row>
+                        </ion-row>
 
-                        </ion-grid>
-                        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+                    </ion-grid>
+                    <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
 
 
 
-                        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+                    <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
 
 
-                    </ion-card>
+                </ion-card>
 
-                    <!---->
-                    <ion-card class="card_abdominal" *ngIf="showExamenCoprologico">
-                        <ion-grid>
-                            <ion-label class="label_toggle">Paciente:</ion-label>
-                            <ion-row>
-                                <ion-label>Coprologico</ion-label>
-                                <ion-col>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Nombre:</ion-label>
-                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
+                <!---->
+                <ion-card class="card_abdominal" *ngIf="showExamenCoprologico">
+                    <ion-grid>
+                        <ion-label class="label_toggle">Paciente:</ion-label>
+                        <ion-row>
+                            <ion-label>Coprologico</ion-label>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Nombre:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
 
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Edad:</ion-label>
-                                        <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Sexo:</ion-label>
-                                        <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                                    </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Edad:</ion-label>
+                                    <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Sexo:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                                </div>
 
-                                </ion-col>
+                            </ion-col>
 
-                            </ion-row>
+                        </ion-row>
 
-                        </ion-grid>
+                    </ion-grid>
 
 
-                    </ion-card>
+                </ion-card>
 
-                    <ion-card class="card_abdominal" *ngIf="showCovid19">
-                        <ion-grid>
-                            <ion-label class="label_toggle">Paciente:</ion-label>
-                            <ion-row>
-                                <ion-label>covid19</ion-label>
-                                <ion-col>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Nombre:</ion-label>
-                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
+                <ion-card class="card_abdominal" *ngIf="showCovid19">
+                    <ion-grid>
+                        <ion-label class="label_toggle">Paciente:</ion-label>
+                        <ion-row>
+                            <ion-label>covid19</ion-label>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Nombre:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
 
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Edad:</ion-label>
-                                        <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Sexo:</ion-label>
-                                        <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-label>Resultado:</ion-label>
-                                        <select [(ngModel)]="c19.resultado" class="form-select form-select-lg select_ubito subtitulo2">
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Edad:</ion-label>
+                                    <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Sexo:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-label>Resultado:</ion-label>
+                                    <select [(ngModel)]="c19.resultado" class="form-select form-select-lg select_ubito subtitulo2">
                              <option value='POSITIVO'>POSITIVO</option>
                              <option  value='NEGATIVO'>NEGATIVO</option>
                              </select>
-                                    </div>
+                                </div>
 
-                                    <div class="mt-2 inputIcon">
-                                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
-                                    </div>
-                                    <div class="mt-2 inputIcon">
-                                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                                    </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                                </div>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                                </div>
 
-                                </ion-col>
+                            </ion-col>
 
-                            </ion-row>
+                        </ion-row>
 
-                        </ion-grid>
+                    </ion-grid>
 
 
-                    </ion-card>
-
-                </ion-content>
+                </ion-card>
             </div>
 
             <!-- Footer -->

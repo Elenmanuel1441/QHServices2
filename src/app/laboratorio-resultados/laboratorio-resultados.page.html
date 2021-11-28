@@ -199,17 +199,6 @@
 
                 </nav>
                 <!-- End of Topbar -->
-                <div class="form-row ml-5">
-                    <div class="col-1">
-                        <button class="btn btn-outline-danger w-100">Analisis</button>
-                    </div>
-                    <div class="col-1 mr-3 ml-1">
-                        <button class="btn btn-outline-success">Laboratorio</button>
-                    </div>
-                    <div class="col-1">
-                        <button class="btn btn-outline-primary">Formularios</button>
-                    </div>
-                </div>
                 <div class="title" style="text-align: center;">
                     <h1>Resultados de Laboratorio</h1>
                 </div>
@@ -229,7 +218,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let laboratorios of laboratorios ;let i=index;">
+                                    <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 4,currentPage:p}  ;let i=index;">
                                         <th>{{i+1}}</th>
                                         <td>{{laboratorios.nombre_paciente}}</td>
                                         <td>{{laboratorios.apellido_paciente}}</td>
@@ -244,6 +233,7 @@
                                 </tbody>
 
                             </table>
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
                         </ion-card>
                     </div>
 

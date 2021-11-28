@@ -46,7 +46,10 @@ export class LaboratorioAnalisisPage implements OnInit {
    })
    
    this.getAnalisis(this.id_paciente);
-   setInterval(()=>{ this.getAnalisis(this.id_paciente)},2000)
+   setInterval(()=>{ this.getAnalisis(this.id_paciente)},2000);
+
+   this.getLaboratorioBio(this.id_col_laboratorio);
+
   // setTimeout(() => 
    //{
       //aqui va la consulta

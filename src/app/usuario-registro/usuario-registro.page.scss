@@ -85,7 +85,8 @@ ion-icon {
 }
 
 .Sel_estado {
-    border-radius: 20px
+    border-radius: 20px;
+    background-color: rgb(138, 230, 173);
 }
 
 .card_elementos {
@@ -117,7 +118,14 @@ ion-grid {
 
 .card_tabla {
     width: 100%;
-    height: 500px;
+    height: 450px;
     margin: auto;
     margin-top: 20px;
+}
+
+.searchbar {
+    width: 90%;
+    border-radius: 20px;
+    margin: auto;
+    background-color: rgb(138, 230, 173);
 }

@@ -48,6 +48,10 @@ export class LaboratorioUpdatePage implements OnInit {
    
    this.getAnalisis(this.id_paciente);
    setInterval(() => this.getAnalisis(this.id_paciente), 1000);
+
+   this.getLaboratorio(this.id_col_laboratorio);
+   //setInterval(() => this.getLaboratorio(this.id_col_laboratorio), 1000);
+
   }
 
  ngOnInit() {
@@ -168,7 +172,7 @@ async presentToast(mensaje: string) {
     duration: 1500,
     color: "success",
     cssClass: 'toastAdd',
-    position: "bottom",
+    position: "top",
     
   });
   toast.present();
@@ -180,7 +184,7 @@ async presentToastError(mensaje: string) {
     duration: 1500,
     color: "danger",
     cssClass: 'toastAdd',
-    position: "bottom",
+    position: "top",
     
   });
   toast.present();

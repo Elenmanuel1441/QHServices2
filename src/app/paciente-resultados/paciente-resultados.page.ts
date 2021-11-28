@@ -24,7 +24,7 @@ export class PacienteResultadosPage implements OnInit {
 
   ngOnInit() {
     this.getLaboratoriosEntrega();
-    setInterval(() => this.getLaboratoriosEntrega(), 10000);
+    setInterval(() => this.getLaboratoriosEntrega(), 5000);
   }
 
 

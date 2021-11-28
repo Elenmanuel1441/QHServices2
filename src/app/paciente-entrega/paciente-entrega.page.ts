@@ -167,7 +167,7 @@ async presentToast(mensaje: string) {
     duration: 1500,
     color: "success",
     cssClass: 'toastAdd',
-    position: "bottom",
+    position: "top",
     
   });
   toast.present();
@@ -179,7 +179,7 @@ async presentToastError(mensaje: string) {
     duration: 1500,
     color: "danger",
     cssClass: 'toastAdd',
-    position: "bottom",
+    position: "top",
     
   });
   toast.present();

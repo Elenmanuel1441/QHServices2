@@ -1,4 +1,8 @@
 <ion-content>
+    <div class="btn_resultados">
+        <a class="btn btn-sm btn-success" [routerLink]="['/paciente-resultados']" routerLinkActive="router-link-active"><i
+        class="far fa-file-alt text-white-50"></i> Resultados de pacientes</a>
+    </div>
     <ion-card class="datos-personales2">
         <ion-grid>
             <ion-row>
@@ -36,7 +40,7 @@
                     </div>
                     <div>
                         <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mt-2 select_sangre">
-                            <option value="Nada" selected disabled>Seleccione tipo de sangre</option>
+                            <option value="" disabled selected hidden>Tipo de sangre</option>
                         <option value='A Negativo'>A Negativo</option>
                         <option value='A Positivo'>A Positivo</option>
                         <option value='B Negativo'>B Negativo</option>
@@ -49,15 +53,15 @@
                     </div>
                     <div>
                         <select [(ngModel)]="sexo" class="form-select form-select-lg mt-2 select-sexo">
-                            <option value="Nada" selected disabled>Seleccione el sexo</option>
+                            <option value="" disabled selected hidden>Sexo</option>
                             <option  value='Masculino'>Masculino</option>
                             <option value='Femenino'>Femenino</option>
                             <option value='Sin especificar'>Sin especificar</option>
                           </select>
                     </div>
-                    <div>
+                    <div class="mt-2">
                         <select [(ngModel)]="ars" class="form-select form-select-lg mt-2 select-ars">
-                            <option value="Nada" selected disabled>Seleccione la ARS</option>
+                            <option value="" disabled selected hidden>ARS</option>
                             <option  value='No Asegurado'>No Asegurado</option>
                             <option  value='ARS BMI'>ARS BMI</option>
                             <option value='Primera ARS Humano'>Primera ARS Humano</option>
@@ -108,7 +112,7 @@
                             <td>{{item.telefono_paciente}}</td>
                             <td>{{item.cedula_paciente }}</td>
                             <td>
-                                <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar a una área" [routerLink]="['/paciente-add-area/',item.id_paciente]" style="background-color: #2ba558; margin-right: 4px;" role="button"><i class="far fa-plus-square"></i></a>
+                                <a class="btn btn-primary" data-toggle="tooltip" title="Enviar a una área" [routerLink]="['/paciente-add-area/',item.id_paciente]" style="background-color: #2ba558; margin-right: 4px;" role="button"><i class="far fa-plus-square"></i></a>
                                 <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar paciente" [routerLink]="['/paciente-update/',item.id_paciente]" style="background-color: #ff6600; margin-left: 4px;" role="button"><i class="far fa-edit"></i></a>
                                 <!-- <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',item.id_paciente]"></ion-icon>
                                 <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',item.id_paciente]"></ion-icon> -->
