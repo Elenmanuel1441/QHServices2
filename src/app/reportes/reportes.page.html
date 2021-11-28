@@ -33,9 +33,10 @@
                 <hr class="sidebar-divider d-none d-md-block">
                 <ng-container class="animated fadeIn">
                     <button style="background-color: transparent;" (click)="volver()">
-                       <img src="../../assets/icon/volver.png" width="150" alt="">
-                       <!-- <span class="text-white">Regresar</span> -->
-                    </button>
+                        <img src="../assets/icon/back.png" width="80" alt="">
+                        <!-- <span class="text-white">Regresar</span> -->
+                     </button>
+                    <span style="text-align: center;" class="text-white">Regresar</span>
                 </ng-container>
 
             </ul>
@@ -43,7 +44,7 @@
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column addScroll">
 
             <!-- Main Content -->
             <div id="content">
@@ -202,9 +203,12 @@
                 <div class="title" style="text-align: center;">
                     <h1>Reporte de Sonografías Realizadas</h1>
                 </div>
-
-                <ion-card class="card_sonoAbdo_report">
-                    <table id="tabla" class="table table-hover table-bordered">
+                <div class="mt-2">
+                    <button (click)="exportexcelSono()" type="button" class="btn btn-success btn_exportar">Exportar a Excel</button>
+                </div>
+                <!-- Reporte de Sonografías Abdominal -->
+                <ion-card class="mt-2 card_sonoAbdo_report">
+                    <table id="tabla_sono" class="table table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th>No.</th>
@@ -244,6 +248,109 @@
                                 </th>
                             </tr>
 
+                        </tbody>
+
+                    </table>
+                </ion-card>
+                <div class="mt-2">
+
+                    <!-- Reporte de Laboratorio-->
+
+                </div>
+                <div class="title" style="text-align: center;">
+                    <h1>Reporte de Laboratorio</h1>
+                </div>
+                <div class="mt-2">
+                    <button (click)="exportexcelLab()" type="button" class="btn btn-success btn_exportar">Exportar a Excel</button>
+                </div>
+                <ion-card class="mt-2 card_sonoAbdo_report">
+                    <table id="tabla_laboratorio" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Laboratorio</th>
+                                <th>Paciente Asegurado</th>
+                                <th>Paciente no Asegurado</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Muestras Tomadas</th>
+                                <td>{{LabAseg}}</td>
+                                <td>{{LabNoAseg}}</td>
+                                <td>{{SumaTotalLabMuestrasTomadas(LabAseg,LabNoAseg)}}</td>
+                            </tr>
+                            <tr>
+                                <th>Muestras Referidas de Otros Centros</th>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>{{SumaTotalLabReferido(4,5)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total</th>
+                                <th>{{SumaTotalLabAseg(LabAseg, 4)}}</th>
+                                <th>{{SumaTotalLabNoAseg(LabNoAseg,5)}}</th>
+                                <th>{{SumaTotalLaboratorio(LabAseg,LabNoAseg,4,5)}}</th>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </ion-card>
+                <div class="mt-2">
+
+                </div>
+
+                <div class="title" style="text-align: center;">
+                    <h1>Pruebas realizadas</h1>
+                </div>
+                <div class="mt-2">
+                    <button (click)="exportexcelAnalisis()" type="button" class="btn btn-success btn_exportar">Exportar a Excel</button>
+                </div>
+                <ion-card class="mt-2 card_sonoAbdo_report">
+                    <table id="tabla_Analisis" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Laboratorio</th>
+                                <th>Paciente Asegurado</th>
+                                <th>Paciente no Asegurado</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Examen de Orina</th>
+                                <td>{{LabOrinaAseg}}</td>
+                                <td>{{LabOrinaNoAseg}}</td>
+                                <td>{{SumaLabAnaliOrina(LabOrinaAseg,LabOrinaNoAseg)}}</td>
+                            </tr>
+                            <tr>
+                                <th>Tipificación</th>
+                                <td>{{LabTipAseg}}</td>
+                                <td>{{LabTipNoAseg}}</td>
+                                <td>{{SumaLabAnaliTipi(LabTipAseg,LabTipNoAseg)}}</td>
+                            </tr>
+                            <tr>
+                                <th>Examen Cropológico</th>
+                                <td>{{LabCropoAseg}}</td>
+                                <td>{{LabCropoNoAseg}}</td>
+                                <td>{{SumaLabAnaliCropo(LabCropoAseg,LabCropoNoAseg)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>Prueba Antigenica CV-19</th>
+                                <td>{{LabCobidAseg}}</td>
+                                <td>{{LabCobidNoAseg}}</td>
+                                <td>{{SumaLabAnaliCobid(LabCobidAseg,LabCobidNoAseg)}}</td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <th>{{SumaTotalLabAnaliAseg(LabOrinaAseg,LabTipAseg,LabCropoAseg,LabCobidAseg)}}</th>
+                                <th>{{SumaTotalLabAnaliNoAseg(LabOrinaNoAseg,LabTipNoAseg,LabCropoNoAseg,LabCobidNoAseg)}}</th>
+                                <th>{{SumaTotalLabAnalisi( LabOrinaAseg,LabOrinaNoAseg,LabTipAseg,LabTipNoAseg,LabCropoAseg,LabCropoNoAseg, LabCobidAseg,LabCobidNoAseg )}}
+                                </th>
+                            </tr>
 
                         </tbody>
 

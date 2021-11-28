@@ -68,7 +68,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item of nombres | paginate:{itemsPerPage: 5, currentPage: p} | orderBy: key: reverse | filter: Seacrh01 ;let i=index;">
+                                <tr *ngFor="let item of nombres | filter: Seacrh01  | paginate:{itemsPerPage: 5, currentPage: p} | orderBy: key: reverse ;let i=index;">
                                     <th>{{(p-1) * 5 + i + 1}}</th>
                                     <td>{{item.nombre}}</td>
                                     <td>{{item.usuario_email}}</td>

@@ -40,19 +40,23 @@ export class AdminPage implements OnInit {
   }
 
   getDashboard(): void{
-    this.router.navigate(['/admin/dashboard']);
+    this.router.navigateByUrl('/admin/dashboard?type=administrador');
   }
 
   getLaboratorio(): void {
     this.router.navigate(['admin/laboratorio']);
   }
 
+  getResultados(): void {
+    this.router.navigate(['/laboratorio-resultados']);
+  }
+
   getSonografia(): void {
     this.router.navigate(['admin/sonografia']);
   }
 
-  getOdontodologia(): void {
-    this.router.navigate(['admin/odontodologia']);
+  getOdontologia(): void {
+    this.router.navigate(['admin/odontologia']);
   }
 
   registroUsurio(): void {
@@ -61,6 +65,10 @@ export class AdminPage implements OnInit {
    registroPaciente(): void{
      this.router.navigate(['admin/paciente-registro']);
    }
+
+   PacientesResultados(): void{
+    this.router.navigate(['/paciente-resultados']);
+  }
 
    ResultadosPacientes(): void{
     this.router.navigate(['paciente-resultados']);

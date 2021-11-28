@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { ApiService } from '../api.service';
+import * as XLSX from 'xlsx';
+
+
 @Component({
   selector: 'app-reportes',
   templateUrl: './reportes.page.html',
@@ -9,9 +12,14 @@ import { ApiService } from '../api.service';
 })
 export class ReportesPage implements OnInit {
 
+
+  title = 'angular-app';
+  fileNameSono= 'Reporte Sonografía Abdominal.xlsx';
+  fileNameLab= 'Reporte de Laboratorio.xlsx';
+  fileNameAnalisis= 'Reporte de Análisis.xlsx';
   condiccion: number = 0;
 
-  title = 'angulardatatables';
+  //title = 'angulardatatables';
  dtOptions: any = {};
 
   constructor(private router: Router,
@@ -30,6 +38,12 @@ export class ReportesPage implements OnInit {
       this.getCountSonObitoSeg();
       setInterval(() => this.getCountSonObitoSeg(), 10000);
 
+      this.getCountLabAseNaseg();
+      setInterval(() => this.getCountLabAseNaseg(), 10000);
+
+      this.getCountAnalisisAseNaseg();
+      setInterval(() => this.getCountAnalisisAseNaseg(), 10000);
+
    }
  //Report sonografia abdominal
    ReportSonoAbdoNoSeg: any = [];
@@ -43,7 +57,24 @@ export class ReportesPage implements OnInit {
     SonoObitoNoSeg: number = 0;
     SonoObitoSeg: number = 0;
 
- 
+  //Report laborratorio Aseg y No Aseg
+  ReportLabAsegNAseg: any = [];
+  LabAseg: number = 0;
+  LabNoAseg: number = 0;
+
+   //Report laborratorio Aseg y No Aseg sobre los analisis
+   ReportAnalisissegNAseg: any = [];
+   LabOrinaAseg: number = 0;
+   LabOrinaNoAseg: number = 0;
+   LabTipAseg: number = 0;
+   LabTipNoAseg: number = 0;
+   LabCropoAseg: number = 0;
+   LabCropoNoAseg: number = 0;
+   LabCobidAseg: number = 0;
+   LabCobidNoAseg: number = 0;
+
+
+
 
   ngOnInit() {
 
@@ -149,6 +180,7 @@ export class ReportesPage implements OnInit {
         console.log("ERROR ===",error);
       });
   }
+  //estos son los calculos para realizar la tabla de sonografia reportes
   SumaTotalAseg(a, b):number{
     return a + b
   }
@@ -160,6 +192,136 @@ export class ReportesPage implements OnInit {
   SumaTotal(a, b, c, d):number{
     return a + b + c + d
   }
+//Exportar a excel la tabla de sonografia
+  exportexcelSono(): void
+  {
+    /* pass here the table id */
+    let element = document.getElementById('tabla_sono');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileNameSono);
+ 
+  }
+  //Exportar a excel la tabla de laboratorio
+  exportexcelLab(): void
+  {
+    /* pass here the table id */
+    let element = document.getElementById('tabla_laboratorio');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileNameLab);
+ 
+  }
+
+   //Exportar a excel la tabla de analisis
+
+   exportexcelAnalisis(): void
+  {
+    /* pass here the table id */
+    let element = document.getElementById('tabla_Analisis');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileNameAnalisis);
+ 
+  }
+
+//estos son los calculos para realizar la tabla de Laboratorio reportes
+  getCountLabAseNaseg()
+  {
+
+    this._apiservice.getCountLabAseNaseg().subscribe((res:any) => {
+      console.log("SUCCESS ===",res);
+      let ReportLabAsegNAseg = res[0];
+      this.LabAseg = parseInt(ReportLabAsegNAseg.Name_exp_1 );
+      this.LabNoAseg = parseInt(ReportLabAsegNAseg.Name_exp_2);
+      },(error: any) => {
+        console.log("ERROR ===",error);
+      });
+
+  }
+
+  //calculo para los resultados de la tabla laboratorio
+
+  SumaTotalLabAseg(a, b):number{
+    return a + b
+  }
+
+  SumaTotalLabNoAseg(a, b):number{
+    return a + b
+  }
+  SumaTotalLabMuestrasTomadas(a, b):number{
+    return a + b
+  }
+  SumaTotalLabReferido(a, b):number{
+    return a + b
+  }
+
+  SumaTotalLaboratorio(a, b, c, d):number{
+    return a + b + c + d
+  }
+
+  //estos son los calculos para realizar la tabla de Laboratorio reportes y traser los analisis
+  getCountAnalisisAseNaseg()
+  {
+    this._apiservice.getCountAnalisisAseNaseg().subscribe((res:any) => {
+      console.log("SUCCESS ===",res);
+      let ReportAnalisissegNAseg = res[0];
+      this.LabOrinaAseg = parseInt(ReportAnalisissegNAseg.OrinaAseg);
+      this.LabOrinaNoAseg = parseInt(ReportAnalisissegNAseg.OrinaNoAseg);
+      this.LabTipAseg = parseInt(ReportAnalisissegNAseg.TipAseg);
+      this.LabTipNoAseg = parseInt(ReportAnalisissegNAseg.TipNoAseg);
+      this.LabCropoAseg = parseInt(ReportAnalisissegNAseg.CropAseg);
+      this.LabCropoNoAseg = parseInt(ReportAnalisissegNAseg.CropNoAseg);
+      this.LabCobidAseg = parseInt(ReportAnalisissegNAseg.COVIDAseg);
+      this.LabCobidNoAseg = parseInt(ReportAnalisissegNAseg.COVIDNoAseg);
+      },(error: any) => {
+        console.log("ERROR ===",error);
+      });
+  }
+
+   //calculo para los resultados de la tabla laboratorio Analisis
+
+   SumaLabAnaliOrina(a, b):number{
+    return a + b
+  }
+  SumaLabAnaliTipi(a, b):number{
+    return a + b
+  }
+  SumaLabAnaliCropo(a, b):number{
+    return a + b
+  }
+  SumaLabAnaliCobid(a, b):number{
+    return a + b
+  }
+  SumaTotalLabAnaliAseg(a, b, c, d):number{
+    return a + b + c + d
+  }
+
+  SumaTotalLabAnaliNoAseg(a, b, c, d):number{
+    return a + b + c + d
+  }
+
+  SumaTotalLabAnalisi(a, b, c, d, e, f, g, h):number{
+    return a + b + c + d + e + f + g + h
+  }
+  
+  
+  
 
 
 }

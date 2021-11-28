@@ -15,6 +15,7 @@ export class LaboratorioResultadosPage implements OnInit {
   telefono_paciente: any;
 
   p: number = 1;
+  Seacrh01: string;
   
   laboratorios: any[];
 

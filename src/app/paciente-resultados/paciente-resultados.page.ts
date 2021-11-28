@@ -14,6 +14,9 @@ export class PacienteResultadosPage implements OnInit {
   apellido_paciente: any;
   cedula_paciente: any;
   telefono_paciente: any;
+
+  Seacrh01: string;
+  p: number = 1;
   
   laboratorios: any[];
 
