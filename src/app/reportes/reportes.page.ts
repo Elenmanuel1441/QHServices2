@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { ApiService } from '../api.service';
+import * as XLSX from 'xlsx';
+
+
 @Component({
   selector: 'app-reportes',
   templateUrl: './reportes.page.html',
@@ -9,9 +12,12 @@ import { ApiService } from '../api.service';
 })
 export class ReportesPage implements OnInit {
 
+
+  title = 'angular-app';
+  fileName= 'Reporte Sonografía Abdominal.xlsx';
   condiccion: number = 0;
 
-  title = 'angulardatatables';
+  //title = 'angulardatatables';
  dtOptions: any = {};
 
   constructor(private router: Router,
@@ -161,5 +167,19 @@ export class ReportesPage implements OnInit {
     return a + b + c + d
   }
 
+  exportexcel(): void
+  {
+    /* pass here the table id */
+    let element = document.getElementById('tabla');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileName);
+ 
+  }
 
 }

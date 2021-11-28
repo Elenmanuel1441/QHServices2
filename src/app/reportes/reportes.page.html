@@ -201,10 +201,12 @@
                 </nav>
                 <!-- End of Topbar -->
                 <div class="title" style="text-align: center;">
-                    <h1>Reporte de Sonografías Realizadas</h1>
+                    <h1>Reportes de Sonografías Realizadas</h1>
                 </div>
-
-                <ion-card class="card_sonoAbdo_report">
+                <div class="mt-2">
+                    <button (click)="exportexcel()" type="button" class="btn btn-success btn_exportar">Exportar a Excel</button>
+                </div>
+                <ion-card class="mt-2 card_sonoAbdo_report">
                     <table id="tabla" class="table table-hover table-bordered">
                         <thead>
                             <tr>
@@ -244,7 +246,6 @@
                                     {{SumaTotal(SonoAbdoSeg,SonoObitoSeg,SonoAbdoNoSeg,SonoObitoNoSeg)}}
                                 </th>
                             </tr>
-
 
                         </tbody>
 
