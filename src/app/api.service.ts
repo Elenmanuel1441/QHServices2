@@ -240,5 +240,10 @@ export class ApiService {
     return this.http.get('http://localhost/proyecto/backend/ReportLabAsegNaseg.php');
 
   }
+  getCountAnalisisAseNaseg()
+  {
+    return this.http.get('http://localhost/proyecto/backend/ReportLabAnalisisAsegNaseg.php');
+
+  }
 }
 
