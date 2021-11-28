@@ -241,7 +241,7 @@
                             </ion-col>
                             <ion-col>
                                 <div>
-                                    <input class="date subtitulo2" placeholder="Fecha de nacimiento" [(ngModel)]="fecha_nacimiento" type="date" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="hoy">
+                                    <input placeholder="   Fecha de nacimiento" class="date subtitulo2 textbox-n" onfocus="(this.type='date')" id="date" [(ngModel)]="fecha_nacimiento" type="text" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="2021-12-31">
                                 </div>
                                 <div>
                                     <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mt-2 select_sangre">

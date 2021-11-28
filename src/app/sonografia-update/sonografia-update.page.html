@@ -237,17 +237,18 @@
                             <ion-row>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Nombre:</ion-label>
+
                                         <input disabled="true" type="text" [(ngModel)]="sonoObito.nombre +' '+ sonoObito.apellido" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Edad:</ion-label>
+
                                         <input disabled="true" type="number" [(ngModel)]="sonoObito.edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Feto:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.feto" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Feto</option>
                                         <option value='ÚNICO'>ÚNICO</option>
                                         <option value='GEMELAR'>GEMELAR</option>
                                         <option value='TRES'>TRES</option>
@@ -255,16 +256,18 @@
                                       </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Posición:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.posicion" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Posición</option>
                                             <option  value='CEFÁLICO'>CEFÁLICO</option>
                                             <option value='PÉLVICO'>PÉLVICO</option>
                                             <option value='PODÁLICO'>PODÁLICO</option>      
                                           </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Dorso:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.dorso" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Dorso</option>
                                         <option  value='POSTERIOR DERECHO'>POSTERIOR DERECHO</option>
                                         <option value='POSTERIOR IZQUIERDO'>POSTERIOR IZQUIERDO</option>
                                         <option value='ANTERIOR DERECHO'>ANTERIOR DERECHO</option>
@@ -276,35 +279,39 @@
                                 <ion-col>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Peso:</ion-label>
-                                        <input type="number" [(ngModel)]="sonoObito.peso" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Peso" type="number" [(ngModel)]="sonoObito.peso" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Columna:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.columna" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Columna</option>
                                             <option  value='POCO VALORABLE'>POCO VALORABLE</option>
                                             <option value='MORFOLOGICAMENTE NORMAL'>MORFOLOGICAMENTE NORMAL</option>
                                             <option value='HALLAZGOS PATOLOGICOS'>HALLAZGOS PATOLOGICOS</option>
                                             </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Estómago:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.estomago" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Estómago</option>
                                             <option  value='POCO VALORABLE'>POCO VALORABLE</option>
                                             <option value='LLENO'>LLENO</option>
                                             <option value='VACIO'>VACIO</option>
                                           </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Riñones:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.rinones" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Riñones</option>
                                             <option  value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
                                             <option value='SE VISUALIZAN NORMALES'>SE VISUALIZAN NORMALES</option>
                                           </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Vejiga:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.vejiga" class="form-select form-select-lg select_ubito normal">
+                                            <option value="" disabled selected hidden>Vejiga</option>
                                        <option  value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
                                        <option value='LLENA'>LLENA</option>
                                       <option value='VACIA'>VACIA</option>
@@ -316,8 +323,9 @@
                                 <ion-col>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Cabeza:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.cabeza" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Cabeza</option>
                                         <option  value='POCO VALORABLE'>POCO VALORABLE</option>
                                         <option value='NORMOCEFALICA'>NORMOCEFALICA</option>
                                      <option value='ACABALGAMIENTO DE LOS PARIETALES'>ACABALGAMIENTO DE LOS PARIETALES</option>
@@ -325,20 +333,22 @@
                                     </div>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>FCF:</ion-label>
-                                        <input type="number" [(ngModel)]="sonoObito.fcf" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="FCF" type="number" [(ngModel)]="sonoObito.fcf" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Placenta:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.placenta" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Placenta</option>
                                             <option  value='FUNDICA'>FUNDICA</option>
                                             <option value='ANTERIOR CORPORAL'>ANTERIOR CORPORAL</option>
                                             <option value='PREVIA'>PREVIA</option>
                                          </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Grado:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.grado" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Grado</option>
                                             <option  value='CERO'>CERO</option>
                                             <option value='UNO'>UNO</option>
                                             <option value='DOS'>DOS</option>
@@ -347,8 +357,9 @@
                                     </div>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Cordon:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.cordon" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Cordon</option>
                                             <option  value='NORMAL'>NORMAL</option>
                                             <option value='NO VALORABLE'>NO VALORABLE</option>
                                           </select>
@@ -358,31 +369,33 @@
                                 <ion-col>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Líquido:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.liquido" class="form-select form-select-lg  select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Líquido</option>
                                             <option  value='AUSEMNTE'>AUSENTE</option>
                                             <option value='NORMAL'>NORMAL</option>
                                             <option value='DISMINUIDO'>DISMINUIDO</option>
                                           </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Cervix:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.cervix" class="form-select form-select-lg  select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Cervix</option>
                                             <option  value='ABIERTO'>ABIERTO</option>
                                             <option value='CERRADO'>CERRADO</option>
                                           </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Sexo:</ion-label>
+
                                         <select [(ngModel)]="sonoObito.sexo" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Sexo</option>
                                             <option  value='MASCULINO'>MASCULINO</option>
                                             <option value='FEMENINO'>FEMENINO</option>
                                             <option value='NO SE VISUALIZA'>NO SE VISUALIZA</option>
                                           </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Fecha de nacimiento:</ion-label>
-                                        <input class="date" [(ngModel)]="sonoObito.fpp" type="date" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="2021-12-31">
+                                        <input placeholder="   Fecha de nacimiento" class="date textbox-n" onfocus="(this.type='date')" id="date" [(ngModel)]="sonoObito.fpp" type="text" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="2021-12-31">
                                     </div>
                                 </ion-col>
                             </ion-row>
@@ -416,7 +429,7 @@
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_datos">Nombre:</ion-label>
+
                                         <input disabled="true" type="text" [(ngModel)]="sonoAbdominal.nombre +' '+ sonoAbdominal.apellido" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
 
@@ -426,7 +439,7 @@
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_datos">Edad:</ion-label>
+
                                         <input disabled="true" type="number" [(ngModel)]="sonoAbdominal.edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
 
@@ -444,7 +457,7 @@
                             <ion-row>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_higado">Morfologia:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.morfologia" class="form-select  select_ubito subtitulo2">
                                             <option value="" disabled selected hidden>Morfología</option>
                                        <option value='NORMAL'>NORMAL</option>
@@ -455,8 +468,9 @@
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_higado">Lesiones Focales:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.lesionesFocales" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Lesiones Focales</option>
                                             <option  value='NO SE VISUALIZAN'>NO SE VISUALIZAN</option>
                                             <option value='LIQUIDA'>LIQUIDA</option>
                                             <option value='TUMORACION SOLIDA'>TUMORACION SOLIDA</option>
@@ -467,15 +481,16 @@
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_higado">Medida:</ion-label>
-                                        <input type="number" [(ngModel)]="sonoAbdominal.medidaHigado" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Medida" type="number" [(ngModel)]="sonoAbdominal.medidaHigado" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_higado">Vias Biliares:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.viasBiliares" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Vias Biliares</option>
                                             <option  value='DILATADAS.'>DILATADA</option>
                                             <option value='SIN DILATAR.'>SIN DILATAR</option>
                                        </select>
@@ -492,42 +507,45 @@
                             <ion-row>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_pancreas">Forma:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.pancreasForma" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Forma</option>
                                             <option  value='DE FORMA NORMAL'>NORMAL</option>
                                             <option value='DE FORMA IRREGULAR'>IRREGULAR</option>
                                       </select>
 
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_pancreas">Cabeza:</ion-label>
-                                        <input type="number" [(ngModel)]="sonoAbdominal.pancreasCabeza" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Cabeza" type="number" [(ngModel)]="sonoAbdominal.pancreasCabeza" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_pancreas">Cuerpo:</ion-label>
-                                        <input type="number" [(ngModel)]="sonoAbdominal.pancreasCuerpo" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Cuerpo" type="number" [(ngModel)]="sonoAbdominal.pancreasCuerpo" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_pancreas">Cola:</ion-label>
-                                        <input type="number" [(ngModel)]="sonoAbdominal.pancreasCola" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Cola" type="number" [(ngModel)]="sonoAbdominal.pancreasCola" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_pancreas">Contorno:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.pancreasContorno" class="form-select form-select-lg  select_ubito  subtitulo2">
+                                            <option value="" disabled selected hidden>Contorno</option>
                                             <option  value=' REGULARES, '>REGULARES</option>
                                             <option value=' IRREGULAR, '>IRREGULAR</option>
                                          </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_pancreas">Ecogenecidad:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.pancreasEcogenicidad" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Ecogenecidad</option>
                                             <option  value='HOMOGENEA'>HOMOGENEA</option>
                                             <option value='HETEROGENEA'>HETEROGENEA</option>
                                             <option value='HIPERECOICA'>HIPERECOICA</option>
@@ -555,8 +573,9 @@
                             <ion-row>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_vesicular">Forma:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.vesiculaForma" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Forma</option>
                                             <option  value='DE FORMA PIRIFORME'> PIRIFORME</option>
                                             <option value='DE FORMA SEPTADA'>SEPTADA</option>
                                             <option value='DE FORMA TRABECULADA'>TRABECULADA</option>
@@ -564,8 +583,9 @@
                                             </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_vesicular">Situación:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.vesiculaSituacion" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Situación</option>
                                         <option  value='NORMAL'>NORMAL</option>
                                         <option value='ANORMAL'>ANORMAL</option>
                                         </select>
@@ -574,24 +594,25 @@
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_vesicular">Pared:</ion-label>
-                                        <input type="text" [(ngModel)]="sonoAbdominal.vesiculaPared" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Pared" type="text" [(ngModel)]="sonoAbdominal.vesiculaPared" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_vesicular">Longitud:</ion-label>
-                                        <input type="text" [(ngModel)]="sonoAbdominal.vesiculaLongitud" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Longitud" type="text" [(ngModel)]="sonoAbdominal.vesiculaLongitud" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
 
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_vesicular">Ancho:</ion-label>
-                                        <input type="text" [(ngModel)]="sonoAbdominal.vesiculaAncho" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Ancho" type="text" [(ngModel)]="sonoAbdominal.vesiculaAncho" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_vesicular">Litos:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.vesiculaLitos" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Litos</option>
                                     <option  value='NO SE VISUALIZAN '>NO SE VISUALIZAN</option>
                                       <option value='SE VISUALIZAN'>SE VISUALIZAN</option>
                                       <option value='SE VISUALIZA BARRO BILEAR  '>SE VISUALIZAN BARROS</option>
@@ -601,8 +622,9 @@
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_vesicular">Polipos:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.vesiculaPolipos" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Polipos</option>
                                                 <option  value='PRESENTES.'>PRESENTES</option>
                                                 <option value='AUSENTES.'>AUSENTES</option>
                                           </select>
@@ -624,16 +646,18 @@
                             <ion-row>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_riderecho">Situación:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinondVisualiza" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Situación</option> 
                                         <option  value=' SE VISUALIZA NORMAL'>NORMAL</option>
                                         <option  value=' NO SE VISUALIZA'>NO SE VISUALIZA</option>
                                         <option value=' ECTOPICO'>ECTOPICO</option>
                                     </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_riderecho">Forma:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinondForma" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Forma</option> 
                                             <option  value=' IRREGULAR '>IRREGULAR</option>
                                             <option value=' NORMAL '>NORMAL</option>
                                           </select>
@@ -642,15 +666,17 @@
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_riderecho">Contorno:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinondContornos" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Contorno</option> 
                                             <option  value=' REGULAR '>REGULAR</option>
                                             <option value=' IRREGULAR '>IRREGULAR</option>
                                           </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_riderecho">Corteza:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinondRelacion" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Corteza</option> 
                                                 <option  value=' CONSERVADA '>CONSERVADA</option>
                                                 <option value=' DILATADA '>DILATADA</option>
                                               </select>
@@ -659,15 +685,17 @@
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_riderecho">Evidencia:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinondEvidencia" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Evidencia</option> 
                                                 <option  value=' SI '> SI EXISTE</option>
                                                 <option value=' NO '>NO EXISTE</option>
                                               </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_riderecho">Litiasis:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinondLitiasis" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Litiasis</option> 
                                                     <option  value=' PRESENTE '>PRESENTE</option>
                                                     <option value=' AUSENTE '>AUSENTE</option>
                                                     <option value=' SEVERA '>SEVERA</option>
@@ -678,8 +706,9 @@
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_riderecho">Tumoraciones:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinondTumoraciones" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Tumoraciones</option> 
                                                 <option  value=' SOLIDAS.'>SOLIDAS</option>
                                                 <option value=' LIQUIDAS.'>LIQUIDAS</option>
                                                 <option value=' SOLIDAS Y LIQUIDAS.'>AMBAS</option>
@@ -703,16 +732,18 @@
                             <ion-row>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Situación:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinonlVisualiza" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Situación</option> 
                                     <option  value=' SE VISUALIZA NORMAL '>NORMAL</option>
                                     <option  value=' NO SE VISUALIZA '>NO SE VISUALIZA</option>
                                     <option value=' ECTOPICO '>ECTOPICO</option>
                                 </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Forma:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinonlForma" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Forma</option> 
                                         <option  value=' IRREGULAR'>IRREGULAR</option>
                                         <option value=' NORMAL '>NORMAL</option>
                                       </select>
@@ -722,15 +753,17 @@
                                 <ion-col>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Contorno:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinonlContornos" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Contorno</option> 
                                         <option  value=' REGULAR '>REGULAR</option>
                                         <option value=' IRREGULAR '>IRREGULAR</option>
                                       </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Corteza:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinonlRelacion" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Corteza</option> 
                                         <option  value=' CONSERVADA '>CONSERVADA</option>
                                         <option value=' DILATADA '>DILATADA</option>
                                       </select>
@@ -739,15 +772,17 @@
                                 <ion-col>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Evidencia:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinonlEvidencia" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Evidencia</option> 
                                             <option  value=' SI '>SI EXISTE</option>
                                             <option value=' NO '>NO EXISTE</option>
                                       </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Litiasis:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinonlLitiasis" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Litiasis</option> 
                                         <option  value=' PRESENTE'>PRESENTE</option>
                                         <option value=' AUSENTE'>AUSENTE</option>
                                         <option value=' SEVERA'>SEVERA</option>
@@ -758,8 +793,9 @@
                                 <ion-col>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label>Tumoraciones:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.rinonlTumoraciones" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Tumoraciones</option> 
                                         <option  value=' SOLIDAS.'>SOLIDAS</option>
                                         <option value=' LIQUIDAS.'>LIQUIDAS</option>
                                         <option value=' SOLIDAS Y LIQUIDAS.'>AMBAS</option>
@@ -783,16 +819,18 @@
                             <ion-row>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_bazo">Situación:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.bazoVisualiza" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Situación</option> 
                                             <option  value=' SE VISUALIZA NORMAL '>NORMAL</option>
                                             <option  value=' NO SE VISUALIZA '>NO SE VISUALIZA</option>
                                         </select>
                                     </div>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_bazo">Forma:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.bazoForma" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Forma</option> 
                                         <option  value=' REGULAR '>REGULAR</option>
                                         <option value=' IRREGULAR '>IRREGULAR</option>
                                       </select>
@@ -802,16 +840,18 @@
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_bazo">Ecotextura:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.bazoEcotextura" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Ecotextura</option> 
                                                 <option  value=' HOMOGENEA'>HOMOGENEA</option>
                                                 <option value=' HETEROGENEA'>HETEROGENEA</option>
                                                 <option value=' COLECCION DE LIQUIDOS'>COLECCION DE LIQUIDOS</option>
                                               </select>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_bazo">Tumoraciones:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.bazoTumoraciones" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Tumoraciones</option> 
                                                 <option  value=' AUSENTES'>AUSENTES</option>
                                                 <option value=' IRREGULAR'>IRREGULAR</option>
                                               </select>
@@ -821,12 +861,11 @@
 
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_bazo">Longitud:</ion-label>
-                                        <input type="text" [(ngModel)]="sonoAbdominal.bazoLongitud" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Longitud" type="text" [(ngModel)]="sonoAbdominal.bazoLongitud" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_bazo">Ancho:</ion-label>
-                                        <input type="number" [(ngModel)]="sonoAbdominal.bazoAncho" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                        <input placeholder="Ancho" type="number" [(ngModel)]="sonoAbdominal.bazoAncho" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
                             </ion-row>
@@ -842,8 +881,9 @@
                                 <ion-col>
 
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_final">Diámetro:</ion-label>
+
                                         <select [(ngModel)]="sonoAbdominal.aortaDiametro" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Diámetro</option> 
                                                 <option  value=' DENTRO DE LOS LIMITES NORMALES '>DENTRO</option>
                                                 <option value='FUERA DE LOS LIMITES NORMALES'>FUERA</option>
                                                   </select>
@@ -851,8 +891,8 @@
                                 </ion-col>
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
-                                        <ion-label class="label_final">Valor:</ion-label>
-                                        <input type="number" [(ngModel)]="sonoAbdominal.aortaValor" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+
+                                        <input placeholder="Valor" type="number" [(ngModel)]="sonoAbdominal.aortaValor" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
 
