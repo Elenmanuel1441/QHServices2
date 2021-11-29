@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class LaboratorioAnalisisPage implements OnInit {
 
+  p: number = 1;
   condiccion: number = 0;
   id_col_laboratorio: any;
   estado_laboratorio: any;

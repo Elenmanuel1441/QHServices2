@@ -249,8 +249,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let item of paciente_analisis ; let i=index;">
-                                        <th scope="row">{{i+1}}</th>
+                                    <tr *ngFor="let item of paciente_analisis | paginate:{itemsPerPage: 5,currentPage:p} ; let i=index;">
+                                        <th>{{(p-1) * 5 + i + 1}}</th>
                                         <td>{{item.id_analisis}}</td>
                                         <td>{{item.estado}}</td>
                                         <td>
@@ -260,6 +260,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
                         </ion-card>
                         <div class="mt-2 mb-3">
                             <button (click)="updateLaboratorioBio()" type="button" class="btn btn-success btn_siguiente">Paciente siguiente</button>

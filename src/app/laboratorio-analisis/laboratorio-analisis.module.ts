@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LaboratorioAnalisisPageRoutingModule } from './laboratorio-analisis-routing.module';
 
 import { LaboratorioAnalisisPage } from './laboratorio-analisis.page';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LaboratorioAnalisisPageRoutingModule
+    LaboratorioAnalisisPageRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [LaboratorioAnalisisPage]
 })

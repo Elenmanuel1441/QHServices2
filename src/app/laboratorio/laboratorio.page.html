@@ -6,32 +6,34 @@
     <div class="container1 mt-2 animated fadeIn borde">
         <div class="avatar-left"></div>
         <div class="table-rigth">
-            <table id="tabla" class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col-2">No</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Cédula</th>
-                        <th scope="col">Teléfono</th>
-                        <th scope="col">Atender</th>
-                    </tr>
-                    <tr></tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 4,currentPage:p} ;let i=index;">
-                        <th>{{(p-1) * 5 + i + 1}}</th>
-                        <td>{{laboratorios.nombre_paciente}}</td>
-                        <td>{{laboratorios.apellido_paciente}}</td>
-                        <td>{{laboratorios.cedula_paciente}}</td>
-                        <td>{{laboratorios.telefono_paciente}}</td>
-                        <td>
-                            <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Atender al paciente" [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]" style="background-color: #156de0; margin-right: 4px;" role="button"><i class="fas fa-angle-double-right"></i></a>
-                        </td>
-                </tbody>
+            <ion-card class="card_cola">
+                <table id="tabla" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col-2">No</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Cédula</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Atender</th>
+                        </tr>
+                        <tr></tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 5,currentPage:p} ;let i=index;">
+                            <th>{{(p-1) * 5 + i + 1}}</th>
+                            <td>{{laboratorios.nombre_paciente}}</td>
+                            <td>{{laboratorios.apellido_paciente}}</td>
+                            <td>{{laboratorios.cedula_paciente}}</td>
+                            <td>{{laboratorios.telefono_paciente}}</td>
+                            <td>
+                                <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Atender al paciente" [routerLink]="['/laboratorio-update/',laboratorios.id_col_laboratorio]" style="background-color: #156de0; margin-right: 4px;" role="button"><i class="fas fa-angle-double-right"></i></a>
+                            </td>
+                    </tbody>
 
-            </table>
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </table>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </ion-card>
         </div>
     </div>
 

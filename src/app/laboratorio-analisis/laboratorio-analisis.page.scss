@@ -12,7 +12,7 @@
 }
 
 .card_principal {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
@@ -31,15 +31,15 @@
 
 .card_seleccion {
     border-radius: 10px;
-    width: 90%;
+    width: 95%;
     margin: auto;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
 .card_tabla {
     border-radius: 10px;
-    width: 90%;
-    height:300px;
+    width: 95%;
+    //height:300px;
     margin: auto;
     padding: 15px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
@@ -63,17 +63,11 @@
     border-radius: 20px;
 }
 
-.btn_seleccionar {
-    border-radius: 20px;
-    width: 90%;
-    margin: auto;
-}
-
 .btn_siguiente {
     border-radius: 20px;
-    width: 90%;
+    width: 95%;
     margin: auto;
-    margin-left: 5%;
+    margin-left: 2.5%;
 }
 
 .btn-info.active {

@@ -13,9 +13,16 @@
     background-color: rgb(213, 241, 224);
 }
 
-.card_resultados {
+.card_principal {
     margin: auto;
     width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+}
+
+.card_datos {
+    width: 95%;
+    margin: auto;
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }

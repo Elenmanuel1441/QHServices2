@@ -11,12 +11,26 @@
     text-transform: uppercase;
 }
 
-.card_datos {
+.card_principal {
     width: 50%;
     height: 250px;
     margin: auto;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
     border-radius: 10px;
+}
+
+.card_datos {
+    width: 95%;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+.brn_enviar {
+    width: 94%;
+    margin: auto;
+    border-radius: 20px;
+    margin-left: 3%;
 }
 
 .brn_siguiente {
@@ -45,13 +59,11 @@ ion-label {
 }
 
 @media screen and (max-width: 480px) {
-    .aparecer{
+    .aparecer {
         margin-left: -28%;
-        transition:all 0.5s ease-in-out;
-    }
-    .ocultar{
         transition: all 0.5s ease-in-out;
+    }
+    .ocultar {
+        transition: all 0.5s ease-in-out;
+    }
 }
-    
-}
-    

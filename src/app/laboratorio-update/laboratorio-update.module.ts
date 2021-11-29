@@ -9,6 +9,7 @@ import { LaboratorioUpdatePageRoutingModule } from './laboratorio-update-routing
 import { LaboratorioUpdatePage } from './laboratorio-update.page';
 import { DataTablesModule } from 'angular-datatables';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
     IonicModule,
     LaboratorioUpdatePageRoutingModule,
     DataTablesModule,
-    MatIconModule
+    MatIconModule,
+    NgxPaginationModule
   ],
   declarations: [LaboratorioUpdatePage]
 })

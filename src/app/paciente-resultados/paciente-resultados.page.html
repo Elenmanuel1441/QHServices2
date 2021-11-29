@@ -207,39 +207,47 @@
                 <div class=" mt-2 container1 animated fadeIn borde">
                     <div class="avatar-left"></div>
                     <div class="table-rigth">
-                        <ion-card class="card_resultados">
-                            <div class="mt-2">
-                                <input type="text" [(ngModel)]="Seacrh01" placeholder="Buscar..." class="form-control search" is-valid id="validationServer01" value="Mark" required>
+                        <ion-card class="card_principal">
+                            <div class="mt-3">
+
                             </div>
+                            <ion-card class="card_datos">
+                                <div class="mt-2">
+                                    <input type="text" [(ngModel)]="Seacrh01" placeholder="Buscar..." class="form-control search" is-valid id="validationServer01" value="Mark" required>
+                                </div>
 
-                            <table id="tabla" class="mt-2 table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Cédula</th>
-                                        <th>Teléfono</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 5, currentPage: p} |filter: Seacrh01 ;let i=index;">
-                                        <th>{{i+1}}</th>
-                                        <td>{{laboratorios.nombre_paciente}}</td>
-                                        <td>{{laboratorios.apellido_paciente}}</td>
-                                        <td>{{laboratorios.cedula_paciente}}</td>
-                                        <td>{{laboratorios.telefono_paciente}}</td>
-                                        <td>
-                                            <ion-button [routerLink]="['/paciente-entrega/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                </tbody>
+                                <table id="tabla" class="mt-2 table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Cédula</th>
+                                            <th>Teléfono</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let laboratorios of laboratorios | paginate:{itemsPerPage: 5, currentPage: p} |filter: Seacrh01 ;let i=index;">
+                                            <th>{{(p-1) * 5 + i + 1}}</th>
+                                            <td>{{laboratorios.nombre_paciente}}</td>
+                                            <td>{{laboratorios.apellido_paciente}}</td>
+                                            <td>{{laboratorios.cedula_paciente}}</td>
+                                            <td>{{laboratorios.telefono_paciente}}</td>
+                                            <td>
+                                                <ion-button [routerLink]="['/paciente-entrega/',laboratorios.id_col_laboratorio]"> Liberar</ion-button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    </tbody>
 
-                            </table>
-                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                </table>
+                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </ion-card>
+                            <div class="mt-3">
+
+                            </div>
                         </ion-card>
                     </div>
 
