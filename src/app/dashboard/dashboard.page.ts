@@ -12,6 +12,8 @@ import { ajax } from 'jquery';
 
 
 
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -65,6 +67,7 @@ AortaDiametro: string;
 AortaValor: string;
 fecha: string;
 
+ChartData: any = [];
 
 // covid 19 ciudades
 global: boolean;
@@ -123,12 +126,11 @@ reportAbdominal: any = [];
     { data: [2, 5, 8, 3], label: 'Colas con más personas' }
   ];
 
- 
-
   constructor(
     private _apiservice: ApiService,
     private activatedRoute: ActivatedRoute,
-    private covid19Service: Covid19Service
+    private covid19Service: Covid19Service,
+    
 
 
   ) {
@@ -137,7 +139,7 @@ reportAbdominal: any = [];
 
 
 
-    this.ReportAbdominal();
+    //this.ReportAbdominal();
 
     this.getCount_rayos_x();
     setInterval(() => this.getCount_rayos_x(), 10000);
@@ -150,6 +152,9 @@ reportAbdominal: any = [];
 
     this.getCount_odontologia();
     setInterval(() => this.getCount_odontologia(), 10000);
+
+    // this.getChart();
+    // setInterval(() => this.getChart(), 6000);
 
   }
 covid: any;
@@ -272,7 +277,17 @@ getCount_odontologia()
    }
 
   //  Resultado ciudades pandemia covid 19
+//prueba de traer datos para el chart
 
+// getChart()
+// {
+//   this._apiservice.getChart().subscribe((res:any) => {
+//     console.log("SUCCESS ===",res);
+//     this.ChartData = res;
+//     },(error: any) => {
+//       console.log("ERROR ===",error);
+//     })
+// }
 
   }
 

@@ -245,5 +245,11 @@ export class ApiService {
     return this.http.get('http://localhost/proyecto/backend/ReportLabAnalisisAsegNaseg.php');
 
   }
+  getChart()
+  {
+    return this.http.get('http://localhost/proyecto/backend/chart.php');
+
+  }
+  
 }
 
