@@ -45,7 +45,7 @@ export class LaboratorioFormularioPage implements OnInit {
     acetona : '',
     acidoAbsorbico : '',
     pigsBiliares : '',
-    urobilogeno : '',
+    urobilinogeno : '',
     sangreOculta : '',
     nitrito : '',
     piocitos : '',
@@ -227,7 +227,7 @@ export class LaboratorioFormularioPage implements OnInit {
           ['Acetona', this.orina.acetona, 'Monilias',this.orina.monilias],
           ['Acido Ascorbico', this.orina.acidoAbsorbico, '',''],
           ['Pigs. Biliares', this.orina.pigsBiliares, '',''],
-					['Urobilinogeno', this.orina.urobilogeno, '', ''],
+					['Urobilinogeno', this.orina.urobilinogeno, '', ''],
 					['Sangre Oculta', this.orina.sangreOculta, '', ''],
 					['Nitrito', this.orina.nitrito, '', ''],
 					
@@ -250,7 +250,7 @@ export class LaboratorioFormularioPage implements OnInit {
 			}
 		},
       ,
-        { text: '________________________', style: 'header',alignment: 'center' },
+        { text: '\n\n________________________', style: 'header',alignment: 'center' },
         { text: '      BIOANALISTA',alignment: 'center' }
         
       ],

@@ -232,11 +232,16 @@
                                 </div>
                             </ion-col>
                             </ion-row>
+                            <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+
+                            <div class="mt-2 inputIcon">
+                                <ion-label class="label_toggle">Examen Quimico:</ion-label>
+                            </div>
                             <ion-row>
-                                <ion-col>
+                            <ion-col>
                                     <div class="mt-2 inputIcon">
 
-                                        <select [(ngModel)]="orina.color" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <select [(ngModel)]="orina.color"class="form-control inputs">
                                             <option value="" disabled selected hidden>Color</option>
                                         <option value='AMARILLO'>AMARILLO</option>
                                         <option value='AMBAR'>AMBAR</option>
@@ -246,7 +251,7 @@
                                     </div>
                                     <div class="mt-2 inputIcon">
 
-                                        <select [(ngModel)]="orina.aspecto" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <select [(ngModel)]="orina.aspecto" class="form-control inputs">
                                             <option value="" disabled selected hidden>Aspecto</option>
                                         <option value='CLARO'>CLARO</option>
                                         <option value='TURBIO'>TURBIO</option>
@@ -255,28 +260,245 @@
                                     <div class="mt-2 inputIcon">
 
                                         <select [(ngModel)]="orina.olor" class="form-select form-select-lg select_ubito subtitulo2">
-                                            <option value="" disabled selected hidden>OLOR</option>
+                                            <option value="" disabled selected hidden>Olor</option>
                                         <option value='FETIDO'>FETIDO</option>
                                         <option value='S.G'>S.G</option>
                                       </select>
                                     </div>
-                                </ion-col>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.nitrito" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Nitrito</option>
+                                        <option value='POSITVO'>POSITIVO</option>
+                                        <option value='NEGATIVO'>NEGATIVO</option>
+                                      </select>
+                                    </div>
+                            </ion-col>
+                            
+                            <ion-col>
+                                    <div class="mt-2 inputIcon">
+
+                                        <input placeholder="Reaccion(PH)" type="number" [(ngModel)]="orina.reaccion" class="form-control inputs" is-valid id="validationServer01" value="Mark" required max="14" min="0">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.densidad" class="form-control inputs">
+                                            <option value="" disabled selected hidden>Densidad</option>
+                                        <option value='1000'>1000</option>
+                                        <option value='1005'>1005</option>
+                                        <option value='1010'>1010</option>
+                                        <option value='1015'>1015</option>
+                                        <option value='1020'>1020</option>
+                                        <option value='1030'>1030</option>
+                                        <option value='1040'>1040</option>
+                                        <option value='1050'>1050</option>
+                                        <option value='1060'>1060</option>
+                                        <option value='1070'>1070</option>
+                                        <option value='1080'>1080</option>
+                                        <option value='1090'>1090</option>
+                                        <option value='1100'>1100</option>
+                                        </select>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.proteina" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Proteinas</option>
+                                        <option value='NEGATIVO'>Negativo</option>
+                                        <option value='+'>+</option>
+                                        <option value='++'>++</option>
+                                        <option value='+++'>+++</option>
+                                        <option value='++++'>++++</option>
+                                      </select>
+                                    </div>
+                            </ion-col>
+                          
+                          
+                            <ion-col>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.glucosa" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Glucosa</option>
+                                        <option value='NEGATIVO'>Negativo</option>
+                                        <option value='+'>+</option>
+                                        <option value='++'>++</option>
+                                        <option value='+++'>+++</option>
+                                        <option value='++++'>++++</option>
+                                      </select>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.acetona" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Acetona</option>
+                                        <option value='NEGATIVO'>Negativo</option>
+                                        <option value='+'>+</option>
+                                        <option value='++'>++</option>
+                                        <option value='+++'>+++</option>
+                                        <option value='++++'>++++</option>
+                                      </select>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.acidoAbsorbico" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Acido Ascorbico</option>
+                                        <option value='POSITVO'>POSITIVO</option>
+                                        <option value='NEGATIVO'>NEGATIVO</option>
+                                      </select>
+                                    </div>
+                            </ion-col>
+                            <ion-col>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.pigsBiliares" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Pigs Biliares</option>
+                                        <option value='NEGATIVO'>NEGATIVO</option>
+                                        <option value='TRAZAS'>TRAZAS</option>
+                                        <option value='ABUNDANTES'>ABUNDANTES</option>
+                                      </select>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.urobilinogeno" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Urobilinogeno</option>
+                                            <option value='POSITIVO'>POSITIVO</option>
+                                            <option value='NEGATIVO'>NEGATIVO</option>
+                                       
+                                   
+                                      </select>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.sangreOculta" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Sangre Oculta</option>
+                                        <option value='POSITVO'>POSITIVO</option>
+                                        <option value='NEGATIVO'>NEGATIVO</option>
+                                      </select>
+                                    </div>
+                                    
+                            </ion-col>
+                                
                             </ion-row>
+                            
+                            <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+                            
+                            <div class="mt-2 inputIcon">
+                                <ion-label class="label_toggle">Examen Microscopico:</ion-label>
+                            </div>
+                         <ion-row>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+
+                                    <input placeholder="Piocitos" type="text" [(ngModel)]="orina.piocitos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+
+                                    <input placeholder="Globulos Rojos" type="text" [(ngModel)]="orina.globulosRojos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="orina.epitelios" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <option value="" disabled selected hidden>Epitelios</option>
+                                        <option value='AUSENTES'>AUSENTES</option>
+                                        <option value='ESCASOS'>ESCASOS</option>
+                                    <option value='ALGUNOS'>ALGUNOS</option>
+                                    <option value='ABUNDANTES'>ABUNDANTES</option>
+                                      
+                                                                </select>
+                                 </div>
+                                
+
+                               
+                            </ion-col>
+                            
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="orina.fibra" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <option value="" disabled selected hidden>Fibras</option>
+                                        <option value='AUSENTES'>AUSENTES</option>
+                                        <option value='ESCASOS'>ESCASOS</option>
+                                    <option value='ALGUNOS'>ALGUNOS</option>
+                                    <option value='ABUNDANTES'>ABUNDANTES</option>
+                                      
+                                                                </select>
+                                 </div>
+                                 <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="orina.cilindros" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <option value="" disabled selected hidden>Cilindros</option>
+                                        <option value='AUSENTES'>AUSENTES</option>
+                                        <option value='ESCASOS'>ESCASOS</option>
+                                    <option value='ALGUNOS'>ALGUNOS</option>
+                                    <option value='ABUNDANTES'>ABUNDANTES</option>
+                                      
+                                                                </select>
+                                 </div>
+                                 <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="orina.cristales" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <option value="" disabled selected hidden>Cristales</option>
+                                        <option value='AUSENTES'>AUSENTES</option>
+                                        <option value='ESCASOS'>ESCASOS</option>
+                                    <option value='ALGUNOS'>ALGUNOS</option>
+                                    <option value='ABUNDANTES'>ABUNDANTES</option>
+                                      
+                                                                </select>
+                                 </div>
+                                
+                            </ion-col>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="orina.Bacteria" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <option value="" disabled selected hidden>Bacterias</option>
+                                        <option value='AUSENTES'>AUSENTES</option>
+                                        <option value='ESCASAS'>ESCASAS</option>
+                                    <option value='ALGUNAS'>ALGUNAS</option>
+                                    <option value='ABUNDANTES'>ABUNDANTES</option>
+                                      
+                                                                </select>
+                                 </div>
+                                 <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="orina.tVaginales" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <option value="" disabled selected hidden>T. Vaginales</option>
+                                        <option value='AUSENTES'>AUSENTES</option>
+                                        <option value='ESCASOS'>ESCASOS</option>
+                                    <option value='ALGUNOS'>ALGUNOS</option>
+                                    <option value='ABUNDANTES'>ABUNDANTES</option>
+                                      
+                                                                </select>
+                                 </div>
+                                 <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="orina.monilias" class="form-select form-select-lg select_ubito subtitulo2">
+                                        <option value="" disabled selected hidden>Monilias</option>
+                                        <option value='AUSENTES'>AUSENTES</option>
+                                        <option value='ESCASOS'>ESCASOS</option>
+                                    <option value='ALGUNOS'>ALGUNOS</option>
+                                    <option value='ABUNDANTES'>ABUNDANTES</option>
+                                      
+                                                                </select>
+                                 </div>
+                            </ion-col>
+
+
+
+                        </ion-row>
                           
                     </ion-grid>
-                    <ion-row>
-                        <ion-col>
-                            <div class="mt-2 inputIcon">
+                        <ion-row>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
                                 <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createOrina()">crear</ion-button>
-                            </div>
-                            <div class="mt-2 inputIcon">
+                                </div>
+                                <div class="mt-2 inputIcon">
                                 <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                            </div>
-                        </ion-col>
-                    </ion-row>
+                                </div>
+                            </ion-col>
+                        </ion-row>
 
                 </ion-card>
-
+                    
                 <!--Sonografia abdominal-->
 
                 <ion-card class="card_tipificacion mt-2" *ngIf="showTipificacion">
