@@ -43,7 +43,7 @@
                 <li class="nav-item" *ngSwitchCase="type=='Laboratorio' ? type:'administrador'" class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-vial"></i>
-                        <span>Servicios Laboratorio</span>
+                        <span>Laboratorio y Resultados</span>
 
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -60,21 +60,23 @@
                         <span>Odontodologia</span>
                     </a>
                 </li>
+
                 <!-- Divider -->
+                <hr class="sidebar-divider">
                 <!-- Area -->
                 <!-- Heading -->
                 <div *ngSwitchCase="'administrador'" class="sidebar-heading">
-                    Área de Registro
+                    Área de Pacientes y Usuarios
                 </div>
                 <li class="nav-item" *ngSwitchCase="type=='Laboratorio' ? type:'administrador'" class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePaciente" aria-expanded="true" aria-controls="collapsePaciente">
                         <i class="fas fa-user-injured"></i>
-                        <span>Área de Pacientes</span>
+                        <span>Pacientes y Resultados</span>
                     </a>
                     <div id="collapsePaciente" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Servicios:</h6>
-                            <a class="collapse-item" (click)="registroPaciente()">Registro de pacientes</a>
+                            <a class="collapse-item" (click)="registroPaciente()">Pacientes</a>
                             <a class="collapse-item" (click)="PacientesResultados()">Resultados</a>
                         </div>
                     </div>
