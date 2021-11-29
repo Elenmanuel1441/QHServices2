@@ -205,46 +205,46 @@
                     <ion-img class="imagen_paciente" src="assets/image/UserUpdate.png"></ion-img>
                 </div>
                 <div class="title">
-                    <h1 style="text-align: center;">ACTUALIZAR DATOS DE PACIENTES</h1>
+                    <h1 style="text-align: center;">ACTUALIZAR DATOS DEl PACIENTE</h1>
                 </div>
-                <ion-card class="datos-personales2">
-
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="nombre" placeholder="Nombres" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="apellido" placeholder="Apellidos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="cedula" placeholder="Identificación" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="telefono" placeholder="Teléfono" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="alergias" placeholder="Alergias" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="padecimientos" placeholder="Padecimientos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="ocupacion" placeholder="Ocupación" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <input type="text" [(ngModel)]="direccion" placeholder="Dirección" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <div>
-                                    <input placeholder="   Fecha de nacimiento" class="date subtitulo2 textbox-n" onfocus="(this.type='date')" id="date" [(ngModel)]="fecha_nacimiento" type="text" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="2021-12-31">
-                                </div>
-                                <div>
-                                    <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mt-2 select_sangre">
+                <ion-card class="card_principal">
+                    <ion-card class="card_update">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="nombre" placeholder="Nombres" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="apellido" placeholder="Apellidos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="cedula" placeholder="Identificación" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="telefono" placeholder="Teléfono" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="alergias" placeholder="Alergias" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="padecimientos" placeholder="Padecimientos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="ocupacion" placeholder="Ocupación" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="direccion" placeholder="Dirección" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div>
+                                        <input placeholder="   Fecha de nacimiento" class="date subtitulo2 textbox-n" onfocus="(this.type='date')" id="date" [(ngModel)]="fecha_nacimiento" type="text" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="2021-12-31">
+                                    </div>
+                                    <div>
+                                        <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mt-2 select_sangre">
                                             <option value="Nada" selected disabled>Seleccione tipo de sangre</option>
                                         <option value='A Negativo'>A Negativo</option>
                                         <option value='A Positivo'>A Positivo</option>
@@ -255,17 +255,17 @@
                                         <option value='O Negativo'>O Negativo</option>
                                         <option value='O Positivo'>O Positivo</option>
                                         </select>
-                                </div>
-                                <div>
-                                    <select [(ngModel)]="sexo" class="form-select form-select-lg mt-2 select-sexo">
+                                    </div>
+                                    <div>
+                                        <select [(ngModel)]="sexo" class="form-select form-select-lg mt-2 select-sexo">
                                             <option value="Nada" selected disabled>Seleccione el sexo</option>
                                             <option  value='Masculino'>Masculino</option>
                                             <option value='Femenino'>Femenino</option>
                                             <option value='Sin especificar'>Sin especificar</option>
                                           </select>
-                                </div>
-                                <div>
-                                    <select [(ngModel)]="ars" class="form-select form-select-lg mt-2 select-ars">
+                                    </div>
+                                    <div>
+                                        <select [(ngModel)]="ars" class="form-select form-select-lg mt-2 select-ars">
                                             <option value="Nada" selected disabled>Seleccione la ARS</option>
                                             <option  value='No Asegurado'>No Asegurado</option>
                                             <option  value='ARS BMI'>ARS BMI</option>
@@ -281,15 +281,18 @@
                                             <option  value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</option>
                                             <option value='ARS Futuro'>ARS Futuro</option>
                                           </select>
-                                </div>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
 
-                    <div>
-                        <button type="button" (click)="updatePaciente()" class="btn btn_Update btn-success">Actualizar paciente</button>
-                    </div>
+                        <div>
+                            <button type="button" (click)="updatePaciente()" class="btn btn_Update btn-success">Actualizar paciente</button>
+                        </div>
+                        <div class="mt-2">
 
+                        </div>
+                    </ion-card>
                 </ion-card>
 
 
