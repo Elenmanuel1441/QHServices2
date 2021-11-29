@@ -1,8 +1,9 @@
-.card-principal {
-    padding: 8px;
+.card_principal {
+    width: 60%;
+    margin-top: 15px;
     border-radius: 10px;
     margin: auto;
-    background-color: #4cf1b2;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
 ion-title {
@@ -63,7 +64,7 @@ ion-icon {
 
 .imagen_usario {
     height: 00%;
-    width: 70%;
+    width: 45%;
     margin: auto;
 }
 
@@ -124,8 +125,13 @@ ion-grid {
 }
 
 .searchbar {
-    width: 90%;
+    width: 88%;
     border-radius: 20px;
     margin: auto;
     background-color: rgb(138, 230, 173);
+}
+
+.addScroll {
+    overflow-y: auto;
+    max-height: 600px;
 }
