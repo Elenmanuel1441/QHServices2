@@ -215,24 +215,65 @@
                                     <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                 </div>
 
+                            
                                 <div class="mt-2 inputIcon">
                                     <ion-label>Edad:</ion-label>
                                     <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                 </div>
+                            </ion-col>
+                            <ion-col> 
                                 <div class="mt-2 inputIcon">
                                     <ion-label>Sexo:</ion-label>
                                     <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                 </div>
                                 <div class="mt-2 inputIcon">
-                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createOrina()">crear</ion-button>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                                    <ion-label>Telefono:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="telefono" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                 </div>
                             </ion-col>
-                        </ion-row>
-                    </ion-grid>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
+                                        <select [(ngModel)]="orina.color" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Color</option>
+                                        <option value='AMARILLO'>AMARILLO</option>
+                                        <option value='AMBAR'>AMBAR</option>
+                                        <option value='PAJA'>PAJA</option>
+                                        <option value='TRANSPARENTE'>TRANSPARENTE</option>
+                                      </select>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.aspecto" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>Aspecto</option>
+                                        <option value='CLARO'>CLARO</option>
+                                        <option value='TURBIO'>TURBIO</option>
+                                      </select>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="orina.olor" class="form-select form-select-lg select_ubito subtitulo2">
+                                            <option value="" disabled selected hidden>OLOR</option>
+                                        <option value='FETIDO'>FETIDO</option>
+                                        <option value='S.G'>S.G</option>
+                                      </select>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                          
+                    </ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <div class="mt-2 inputIcon">
+                                <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createOrina()">crear</ion-button>
+                            </div>
+                            <div class="mt-2 inputIcon">
+                                <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                            </div>
+                        </ion-col>
+                    </ion-row>
 
                 </ion-card>
 

@@ -15,7 +15,11 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 })
 export class LaboratorioFormularioPage implements OnInit {
   id_analisis: any;
+  direccion: any;
+  medico: any;
   estado: any;
+  telefono: any;
+  sexo: any;
   id_col_laboratorio: any;
   id_paciente_analisis : any;
   id_paciente : any;
@@ -104,27 +108,96 @@ export class LaboratorioFormularioPage implements OnInit {
     var orinaDefinition: any = {
       pageSize: 'LETTER',
       content:[
-  
-        { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },
+        {
+          columns: [
+              
+              {
+                image: await this.getBase64ImageFromURL(   "https://i.postimg.cc/YCSSXbM3/logoSnS.jpg",
+                ),fit: [50, 50],
+                style: 'leftme'
+              },
+              '                           ','   ','','',
+              {
+                image: await this.getBase64ImageFromURL(   "https://i.postimg.cc/sDsxW3Lb/logoLab.jpg",
+      
+                ), 
+                fit: [50, 50],
+                style: 'rightme'
+              },
+            
+            ]
+        },
+       /*
+        	{
+          image: await this.getBase64ImageFromURL(   "https://i.postimg.cc/YCSSXbM3/logoSnS.jpg",
+      
+               ), 
+          fit: [50, 50], 
+          style: 'rightme'
+          
+        },
+        {
+          image: await this.getBase64ImageFromURL(   "https://i.postimg.cc/sDsxW3Lb/logoLab.jpg",
+      
+               ), 
+          fit: [50, 50], 
+          style: 'leftme'
+          
+        }*/,
+        
+        { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },,
         { text: 'Calle Pedro Pablo Fernández, Esq. Beller, ', style: 'sub-header',alignment: 'center' },
-        { text: 'Montecristi, R.D Tel: 809-579-3314 \n\n ', style: 'sub-header',alignment: 'center' },
-        { text: 'Laboratorio \n\n', style: 'header',alignment: 'center' },
-        {
-          text:  [
-                 {text: new Date().toLocaleDateString(), alignment: 'left'}, '\n\n',
-                 ]
-        },
+        { text: 'Montecristi, R.D Tel: 809-579-3314', style: 'sub-header',alignment: 'center' },
+        { text: 'Laboratorio \n\n', style: 'subheader',alignment: 'center' },
+    {columns: [ {	type: 'none',ul: [
   
         {
           text:  [
-                 {text: 'PACIENTE:', style: 'subheader'}, this.nombre_paciente +' '+ this.apellido_paciente, '\n\n',
+                 {text: 'Nombres:', style: 'subheader'}, this.nombre_paciente, 
                 ]
         },
         {
           text:  [
-                 {text: 'EDAD:', style: 'subheader'}, this.Edad,'\n\n',
+                 {text: 'Apellidos:', style: 'subheader'},this.apellido_paciente,
                 ]
         },
+        {
+          text:  [
+            { text: 'Direccion: ', style: 'subheader'}, this.direccion,
+                ]
+        },
+       
+        {
+          text:  [
+            { text: 'Medico: ', style: 'subheader'}, this.medico,
+                ]
+        },
+        
+        
+      ],alignment:'left'},
+      {	type: 'none',ul: [{
+        text:  [
+               'Fecha:',{ text: new Date().toLocaleDateString(), alignment: 'left'}, 
+               ],
+     },
+
+         {
+        text:  [
+               {text: 'Edad:', style: 'subheader'}, this.Edad,
+              ]
+      },
+      {
+        text:  [
+          { text: 'Sexo: ', style: 'subheader'}, this.sexo_paciente,
+              ]
+      },
+      {
+        text:  [
+          { text: 'Telefono: ', style: 'subheader'}, this.telefono,
+              ]
+      },
+      
+    ],alignment:'justified'},] },
         // {
         //   image: await this.getBase64ImageFromURL(
         //     "https://images.pexels.com/photos/209640/pexels-photo-209640.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300"
@@ -132,20 +205,21 @@ export class LaboratorioFormularioPage implements OnInit {
         //   )
         // } , 
   
-        { text: 'MEDICO: A QUIEN CORRESPONDA', style: 'subheader'},
+      
         
-        { text: 'EXAMEN DE ORINA:\n\n', style: 'subheader', alignment: 'center' },
-      	{text: 'but you can provide a custom styler as well', margin: [0, 20, 0, 8]},
+        { text: 'EXAMEN DE ORINA:', style: 'subheader', alignment: 'center' },
+        
 		{
 			style: 'tableExample',
 			table: {
-        widths: [150,100 , 100,100],
+        widths: [120 ,100 , 180,100],
 				headerRows: 1,
 				body: [
 					[{text: 'EXAMEN QUIMICO', style: 'tableHeader'}, {text: '', style: 'tableHeader'}, {text: 'EXAMEN MICROSCOPICO', style: 'tableHeader'},{text: '', style: 'tableHeader'}],
 					['Color', this.orina.color, 'Piocitos',this.orina.piocitos],
          ['Aspecto', this.orina.aspecto, 'Globulos Rojos',this.orina.globulosRojos],
-        [{text:'Examen Quimico',style:'subheader'}, '', 'Fibras',this.orina.fibra],
+         ['Olor', this.orina.olor, 'Globulos Rojos',this.orina.globulosRojos],
+        [{text:'Examen Quimico',style:'bold'}, '', 'Fibras',this.orina.fibra],
           ['Reaccion(PH)', this.orina.reaccion, 'Cilindros',this.orina.cilindros],
           ['Densidad', this.orina.densidad, 'Cristales',this.orina.cristales],
           ['Proteinas', this.orina.proteina, 'Bacterias',this.orina.Bacteria],
@@ -190,6 +264,11 @@ export class LaboratorioFormularioPage implements OnInit {
           bold: true,
           margin: [0, 15, 0, 0]
         },
+        bold: {
+          fontSize: 12,
+          bold: true,
+       
+        },
         story: {
           italic: true,
           alignment: 'center',
@@ -202,6 +281,14 @@ export class LaboratorioFormularioPage implements OnInit {
           bold: true,
           fontSize: 13,
           color: 'black'
+      },
+      rightme:
+      {   
+          alignment: 'right'
+      },
+      leftme:
+      {   
+          alignment: 'left'
       }
     }
   }
@@ -218,7 +305,25 @@ export class LaboratorioFormularioPage implements OnInit {
 
   async createTipificacion(){}
 
-
+  getBase64ImageFromURL(url) {
+    return new Promise((resolve, reject) => {
+      var img = new Image();
+      img.setAttribute("crossOrigin", "anonymous");
+      img.onload = () => {
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        var dataURL = canvas.toDataURL("image/png");
+        resolve(dataURL);
+      };
+      img.onerror = error => {
+        reject(error);
+      };
+      img.src = url;
+    });
+  }
 
   getAnalisi(id_paciente_analisis)
  {
