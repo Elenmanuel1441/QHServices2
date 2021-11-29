@@ -7,7 +7,7 @@ import { Covid19Service } from '../services/covid19.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color } from 'ng2-charts';
 import { MultiDataSet, Label } from 'ng2-charts';
-import { ajax, parseJSON } from 'jquery';
+import { ajax } from 'jquery';
 
 
 
@@ -245,7 +245,7 @@ getCount_laboratorio()
   this._apiservice.getCount_laboratorio().subscribe((res:any) => {
     console.log("SUCCESS ===",res);
     let laboratorio_res = res[0];
-    this.laboratorio = parseJSON(laboratorio_res.resultado);
+    this.laboratorio = parseInt(laboratorio_res.resultado);
     },(error: any) => {
       console.log("ERROR ===",error);
     })

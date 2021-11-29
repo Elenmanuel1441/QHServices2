@@ -9,6 +9,7 @@ import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
 import { DashboardPage } from './dashboard.page';
 import { DataTablesModule } from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DataTablesModule } from 'angular-datatables';
     IonicModule,
     DashboardPageRoutingModule,
     DataTablesModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
     
   ],
   declarations: [DashboardPage]
