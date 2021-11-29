@@ -111,6 +111,7 @@ cancelAnalisis(id_paciente_analisis)
      console.log("SUCCESS",res);
      this.presentToast('Cancelado exitosamente!');
      this.getAnalisis(this.id_analisis);
+     this.getLaboratorio(this.id_col_laboratorio)
  }, (err:any)=>{
    console.log("ERROR", err);
    this.presentToastError('Error al liberar!');

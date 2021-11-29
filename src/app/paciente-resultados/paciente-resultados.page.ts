@@ -29,10 +29,14 @@ export class PacienteResultadosPage implements OnInit {
     this.getLaboratoriosEntrega();
     setInterval(() => this.getLaboratoriosEntrega(), 5000);
   }
+  
+  getDashboard(): void{
+    this.router.navigateByUrl('/admin/dashboard?type=administrador');
+  }
 
 
   volver(){
-    this.router.navigateByUrl('admin/laboratorio');
+    this.router.navigateByUrl('admin/dashboard?type=administrador');
   }
   
   logout(){

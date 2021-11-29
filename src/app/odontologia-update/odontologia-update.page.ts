@@ -63,7 +63,7 @@ export class OdontologiaUpdatePage implements OnInit {
    this._apiservice.updateOdontologia(this.id_col_odontologia,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
      this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('admin/odontodologia');
+     this.router.navigateByUrl('admin/odontologia');
      
  }, (err:any)=>{
   this.presentToastError('Error al liberar!');
@@ -123,7 +123,7 @@ async presentToastError(mensaje: string) {
  
  
 volver(){
-  this.router.navigateByUrl('/admin/odontodologia');
+  this.router.navigateByUrl('/admin/odontologia');
 }
 
 logout(){

@@ -548,9 +548,14 @@ async presentToastErrorADD (mensaje: string) {
 logout(){
   this.afAuth.logout()
 }
+  
+getDashboard(): void{
+  this.router.navigateByUrl('/admin/dashboard?type=administrador');
+}
+
 
 volver(){
-
+  this.router.navigateByUrl('laboratorio-analisis');
 }
 
 condiccion;

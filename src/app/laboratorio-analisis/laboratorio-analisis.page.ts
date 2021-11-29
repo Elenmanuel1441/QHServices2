@@ -194,8 +194,13 @@ async presentToastError(mensaje: string) {
  
  
 volver(){
-  this.router.navigateByUrl('admin/laboratorio-resultados');
+  this.router.navigateByUrl('laboratorio-resultados');
 }
+  
+getDashboard(): void{
+  this.router.navigateByUrl('/admin/dashboard?type=administrador');
+}
+
 
 logout(){
   this.afAuth.logout();

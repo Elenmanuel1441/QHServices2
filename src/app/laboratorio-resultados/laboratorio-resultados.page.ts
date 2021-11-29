@@ -31,9 +31,13 @@ export class LaboratorioResultadosPage implements OnInit {
 
 
   volver(){
-    this.router.navigateByUrl('admin/laboratorio');
+    this.router.navigateByUrl('admin/dashboard?type=administrador');
   }
-  
+    
+  getDashboard(): void{
+    this.router.navigateByUrl('/admin/dashboard?type=administrador');
+  }
+
   logout(){
     this.afAuth.logout();
   }

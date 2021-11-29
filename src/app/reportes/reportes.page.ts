@@ -321,7 +321,8 @@ export class ReportesPage implements OnInit {
   }
   
   
-  
-
+  getDashboard(): void{
+    this.router.navigateByUrl('/admin/dashboard?type=administrador');
+  }
 
 }
