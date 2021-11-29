@@ -204,32 +204,41 @@
                 <div class="title">
                     <h1>LIBERAR AL PACIENTE</h1>
                 </div>
-                <ion-card class="card_datos">
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col>
-                                <ion-label>Nombre:</ion-label>
-                                <div class="mt-2 inputIcon">
-                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <ion-label>Apellido:</ion-label>
-                                <div class="mt-2 inputIcon">
-                                    <input disabled="true" type="text" [(ngModel)]="apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <ion-label>Cédula:</ion-label>
-                                <div class="mt-2 inputIcon">
-                                    <input disabled="true" type="text" [(ngModel)]="cedula_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                    <div class="mt-2 inputIcon brn_siguiente">
-                        <ion-button class="subtitulo" type="button" (click)="updateRayosx()" color="success" shape="round" expand="block"> paciente siguiente </ion-button>
+                <ion-card class="card_principal">
+                    <div class="mt-4">
+
                     </div>
+                    <ion-card class="card_datos">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-label>Nombre:</ion-label>
+                                    <div class="mt-2 inputIcon">
+                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-label>Apellido:</ion-label>
+                                    <div class="mt-2 inputIcon">
+                                        <input disabled="true" type="text" [(ngModel)]="apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-label>Cédula:</ion-label>
+                                    <div class="mt-2 inputIcon">
+                                        <input disabled="true" type="text" [(ngModel)]="cedula_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+
+                        <div>
+                            <button type="button" (click)="updateRayosx()" class="btn brn_siguiente btn-success">Paciente Siguiente</button>
+                        </div>
+                        <div class="mt-2">
+
+                        </div>
+                    </ion-card>
 
                 </ion-card>
 

@@ -34,7 +34,6 @@
 
 .container1 .table-rigth {
     float: right;
-    padding: 40px;
     width: 70%;
     height: 400px;
     background: #fff;
@@ -45,4 +44,11 @@
 
 .borde {
     border-radius: 10px;
+}
+
+.card_cola {
+    width: 95%;
+    margin-left: 2.5%;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
