@@ -1,31 +1,31 @@
 <div class="addScroll">
     <ion-card class="card_principal mt-2">
+        <ion-card class="card_registro">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div>
+                            <ion-img class="imagen_usario" src="assets/image/User4.png"></ion-img>
+                        </div>
+                    </ion-col>
 
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <div>
-                        <ion-img class="imagen_usario" src="assets/image/User4.png"></ion-img>
-                    </div>
-                </ion-col>
+                    <ion-col>
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="nombre" placeholder="Usuario" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <input type="email" name="email" [(ngModel)]="email" placeholder="Correo Electronico" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
+                    </ion-col>
 
-                <ion-col>
-                    <div class="mt-2 inputIcon">
-                        <input type="text" [(ngModel)]="nombre" placeholder="Usuario" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                    </div>
-                    <div class="mt-2 inputIcon">
-                        <input type="email" name="email" [(ngModel)]="email" placeholder="Correo Electronico" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                    </div>
-                </ion-col>
+                    <ion-col>
 
-                <ion-col>
+                        <div class="mt-2 inputIcon">
+                            <input type="password" [(ngModel)]="contrasena" placeholder="Contraseña" class="form-control inputs">
+                        </div>
+                        <div class="mt-2 select_estado">
 
-                    <div class="mt-2 inputIcon">
-                        <input type="password" [(ngModel)]="contrasena" placeholder="Contraseña" class="form-control inputs">
-                    </div>
-                    <div class="mt-2 select_estado">
-
-                        <select [(ngModel)]="rol" class="form-select Sel_estado placeholder-glow" aria-label="Default select example">
+                            <select [(ngModel)]="rol" class="form-select Sel_estado placeholder-glow" aria-label="Default select example">
                                                 <option value="" disabled selected hidden>Asigne un rol</option>
                                                 <option value='administrador'>Administrador</option>
                                                 <option value='Laboratorio'>Laboratorio</option>
@@ -34,58 +34,62 @@
                                                 <option value='Recepción'>Recepción</option>
                                                 <option value='Sonografía'>Sonografía</option>
                                               </select>
-                    </div>
-                </ion-col>
+                        </div>
+                    </ion-col>
 
-            </ion-row>
+                </ion-row>
 
-            <ion-row>
-                <ion-col>
-                    <div>
-                        <button type="button" (click)="nuevoUsuario()" (click)="addUsuario()" class="btn btn_agregar btn-success">Añadir Usuario</button>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div>
+                            <button type="button" (click)="nuevoUsuario()" (click)="addUsuario()" class="btn btn_agregar btn-success">Añadir Usuario</button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
         <!-- La verdadera datatable -->
-
         <div>
-            <input type="text" [(ngModel)]="Seacrh01" placeholder="Buscar..." class="form-control searchbar" is-valid id="validationServer01" value="Mark" required>
-        </div>
+            <ion-card class="card_tabla">
+                <div class="mt-2">
+                    <input type="text" [(ngModel)]="Seacrh01" placeholder="Buscar..." class="form-control searchbar" is-valid id="validationServer01" value="Mark" required>
+                </div>
 
-        <div class="mt-2">
-            <table id="tabla" class="table table-hover">
-                <thead class="">
-                    <tr>
-                        <th (click)="sort('id')">No.&nbsp;<i class="fa fa-sort"></i> </th>
-                        <th (click)="sort('Nombre')">Nombre&nbsp;<i class="fa fa-sort"></i> </th>
-                        <th (click)="sort('Correo')">Correo&nbsp;<i class="fa fa-sort"></i> </th>
-                        <th (click)="sort('Area')">Area&nbsp;<i class="fa fa-sort"></i> </th>
-                        <th (click)="sort('Estado')">Estado&nbsp;<i class="fa fa-sort"></i> </th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of nombres | filter: Seacrh01  | paginate:{itemsPerPage: 5, currentPage: p} | orderBy: key: reverse ;let i=index;">
-                        <th>{{(p-1) * 5 + i + 1}}</th>
-                        <td>{{item.nombre}}</td>
-                        <td>{{item.usuario_email}}</td>
-                        <td>{{item.rol}}</td>
-                        <td>{{item.estado}}</td>
-                        <td>
-                            <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar usuario" [routerLink]="['/usuario-update/',item.id]" style="background-color: #ff6600;" role="button"><i class="far fa-edit"></i></a>
+                <table id="tabla" class="table mt-2 table-hover">
+                    <thead class="">
+                        <tr>
+                            <th (click)="sort('id')">No.&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Nombre')">Nombre&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Correo')">Correo&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Area')">Area&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Estado')">Estado&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of nombres | filter: Seacrh01  | paginate:{itemsPerPage: 5, currentPage: p} | orderBy: key: reverse ;let i=index;">
+                            <th>{{(p-1) * 5 + i + 1}}</th>
+                            <td>{{item.nombre}}</td>
+                            <td>{{item.usuario_email}}</td>
+                            <td>{{item.rol}}</td>
+                            <td>{{item.estado}}</td>
+                            <td>
+                                <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar usuario" [routerLink]="['/usuario-update/',item.id]" style="background-color: #ff6600;" role="button"><i class="far fa-edit"></i></a>
 
-                            <!-- <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',item.id]"></ion-icon> -->
-                            <!-- <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(item.id)"></ion-icon> -->
-                        </td>
-                    </tr>
-                    <tr>
-                    </tr>
-                </tbody>
+                                <!-- <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/usuario-update/',item.id]"></ion-icon> -->
+                                <!-- <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="deleUsuarios(item.id)"></ion-icon> -->
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </tbody>
 
-            </table>
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </table>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </ion-card>
+            <div class="mt-2">
 
+            </div>
             <!-- <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
                                 <thead>
                                     <tr>
