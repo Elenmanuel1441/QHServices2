@@ -126,6 +126,7 @@ reportAbdominal: any = [];
     { data: [2, 5, 8, 3], label: 'Colas con más personas' }
   ];
 
+  
   constructor(
     private _apiservice: ApiService,
     private activatedRoute: ActivatedRoute,
