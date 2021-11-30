@@ -22,11 +22,20 @@ export class AdminPage implements OnInit {
     this.activatedRoute.queryParams.subscribe((urlData) => {
       console.log(urlData);
       this.type = urlData.type;
-      if (this.type == 'Administrador' || this.type == 'administrador' || this.type == 'admin') {
+      if (
+        this.type == 'Administrador' ||
+        this.type == 'administrador' ||
+        this.type == 'admin'
+      ) {
         this.showRegister = true;
-      }      
-      else {
-          this.showRegister = false;
+      } else if (this.type == 'Sonografía') {
+        return this.getSonografia();
+      } else if (this.type == 'Laboratorio') {
+        return this.getLaboratorio();
+      } else if (this.type == 'Rayos X') {
+        return this.getRayos_x();
+      } else if (this.type == 'Odontodologia') {
+        return this.getOdontologia();
       }
     });
   }
