@@ -121,10 +121,20 @@ reportAbdominal: any = [];
   barChartType: ChartType = 'doughnut';
   barChartLegend = true;
   barChartPlugins = [];
+
+  barChartLabels2: Label[] = ['Sonografia', 'Rayos X', 'Laboratorio', 'Odontología'];
+  barChartTyp2: ChartType = 'doughnut';
+  barChartLegend2 = true;
+  barChartPlugins2 = [];
  
   barChartData2: ChartDataSets[] = [
     { data: [2, 5, 8, 3], label: 'Colas con más personas' }
   ];
+
+  barChartData3: ChartDataSets[] = [
+    { data: [2, 5, 8, 3], label: 'Colas con más personas' }
+  ];
+
 
   
   constructor(
