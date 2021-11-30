@@ -28,7 +28,7 @@
             </div>
 
             <ng-container [ngSwitch]="type">
-                <li *ngSwitchCase="type=='Rayos X' ? type:'administrador'" class="nav-item" (click)="getRayos_x()">
+                <li *ngSwitchCase="type=='Rayos X' ? type:'administrador', 'rayos-x'" class="nav-item" (click)="getRayos_x()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-x-ray"></i>
                         <span>Rayos X</span>
@@ -91,14 +91,14 @@
 
             </ng-container>
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <!-- <hr class="sidebar-divider d-none d-md-block">
             <ng-container class="animated fadeIn" *ngIf="!showRegister">
                 <button style="background-color: transparent;" (click)="volver()">
                        <img src="../../assets/icon/Back3.png" width="80" alt="">
-                       <!-- <span class="text-white">Regresar</span> -->
+                      
                     </button>
                 <span style="text-align: center;" class="text-white">Volver atrás</span>
-            </ng-container>
+            </ng-container> -->
 
         </ul>
         <!-- End of Sidebar -->
