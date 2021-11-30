@@ -53,7 +53,16 @@ h3 {
     border-bottom-width: 10px;
 }
 
-.card_chart {
-    width: 98%;
+.chart_colas {
+    width: 85%;
+    border-radius: 10px;
     margin: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+}
+
+.chart_xxx {
+    width: 85%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }

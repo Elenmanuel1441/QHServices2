@@ -47,7 +47,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content" class="addScroll">
+            <div id="content">
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -198,94 +198,96 @@
 
                     </ul>
                 </nav>
+
                 <div class="btn_resultados">
                     <a class="btn btn-sm btn-success" [routerLink]="['/admin/laboratorio']" routerLinkActive="router-link-active"><i
                     class="far fa-file-alt text-white-50"></i> Cola laboratorio</a>
                 </div>
+
                 <!-- End of Topbar -->
 
                 <!--Sonografia -->
 
 
+                <ion-content>
+                    <ion-card class="card_orina mt-2" *ngIf="showExamenOrina">
+                        <ion-grid>
+                            <ion-label style="color: black;">Examen de orina</ion-label>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Nombre:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Edad:</ion-label>
+                                        <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Sexo:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Teléfono:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="telefono" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                            <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
 
-                <ion-card class="card_orina mt-2" *ngIf="showExamenOrina">
-                    <ion-grid>
-                        <ion-label style="color: black;">Examen de orina</ion-label>
-                        <ion-row>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Nombre:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Edad:</ion-label>
-                                    <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Sexo:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Teléfono:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="telefono" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                        </ion-row>
-                        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
-
-                        <div class="mt-2 inputIcon">
-                            <ion-label style="color: black;" class="label_toggle">Examen Químico:</ion-label>
-                        </div>
-                        <ion-row>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <select [(ngModel)]="orina.color" class="form-select form-select-lg select subtitulo2">
+                            <div class="mt-2 inputIcon">
+                                <ion-label style="color: black;" class="label_toggle">Examen Químico:</ion-label>
+                            </div>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <select [(ngModel)]="orina.color" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Color</option>
                                         <option value='AMARILLO'>AMARILLO</option>
                                         <option value='AMBAR'>AMBAR</option>
                                         <option value='PAJA'>PAJA</option>
                                         <option value='TRANSPARENTE'>TRANSPARENTE</option>
                                       </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.aspecto" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.aspecto" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Aspecto</option>
                                         <option value='CLARO'>CLARO</option>
                                         <option value='TURBIO'>TURBIO</option>
                                       </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.olor" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.olor" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Olor</option>
                                         <option value='FETIDO'>FETIDO</option>
                                         <option value='S.G'>S.G</option>
                                       </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.nitrito" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.nitrito" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Nitrito</option>
                                         <option value='POSITVO'>POSITIVO</option>
                                         <option value='NEGATIVO'>NEGATIVO</option>
                                       </select>
-                                </div>
-                            </ion-col>
+                                    </div>
+                                </ion-col>
 
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
-                                    <input placeholder="Reaccion(PH)" type="number" [(ngModel)]="orina.reaccion" class="form-control inputs" is-valid id="validationServer01" value="Mark" required max="14" min="0">
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <select [(ngModel)]="orina.densidad" class="form-select form-select-lg select subtitulo2">
+                                        <input placeholder="Reaccion(PH)" type="number" [(ngModel)]="orina.reaccion" class="form-control inputs" is-valid id="validationServer01" value="Mark" required max="14" min="0">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <select [(ngModel)]="orina.densidad" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Densidad</option>
                                         <option value='1000'>1000</option>
                                         <option value='1005'>1005</option>
@@ -301,10 +303,10 @@
                                         <option value='1090'>1090</option>
                                         <option value='1100'>1100</option>
                                         </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.proteina" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.proteina" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Proteinas</option>
                                         <option value='NEGATIVO'>Negativo</option>
                                         <option value='+'>+</option>
@@ -312,14 +314,14 @@
                                         <option value='+++'>+++</option>
                                         <option value='++++'>++++</option>
                                       </select>
-                                </div>
-                            </ion-col>
+                                    </div>
+                                </ion-col>
 
 
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.glucosa" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.glucosa" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Glucosa</option>
                                         <option value='NEGATIVO'>Negativo</option>
                                         <option value='+'>+</option>
@@ -327,10 +329,10 @@
                                         <option value='+++'>+++</option>
                                         <option value='++++'>++++</option>
                                       </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.acetona" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.acetona" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Acetona</option>
                                         <option value='NEGATIVO'>Negativo</option>
                                         <option value='+'>+</option>
@@ -338,67 +340,67 @@
                                         <option value='+++'>+++</option>
                                         <option value='++++'>++++</option>
                                       </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.acidoAbsorbico" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.acidoAbsorbico" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Acido Ascorbico</option>
                                         <option value='POSITVO'>POSITIVO</option>
                                         <option value='NEGATIVO'>NEGATIVO</option>
                                       </select>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.pigsBiliares" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.pigsBiliares" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Pigs Biliares</option>
                                         <option value='NEGATIVO'>NEGATIVO</option>
                                         <option value='TRAZAS'>TRAZAS</option>
                                         <option value='ABUNDANTES'>ABUNDANTES</option>
                                       </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.urobilinogeno" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.urobilinogeno" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Urobilinogeno</option>
                                             <option value='POSITIVO'>POSITIVO</option>
                                             <option value='NEGATIVO'>NEGATIVO</option>
                                        
                                    
                                       </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.sangreOculta" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.sangreOculta" class="form-select form-select-lg select subtitulo2">
                                             <option value="" disabled selected hidden>Sangre Oculta</option>
                                         <option value='POSITVO'>POSITIVO</option>
                                         <option value='NEGATIVO'>NEGATIVO</option>
                                       </select>
-                                </div>
+                                    </div>
 
-                            </ion-col>
+                                </ion-col>
 
-                        </ion-row>
+                            </ion-row>
 
-                        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+                            <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
 
-                        <div class="mt-2 inputIcon">
-                            <ion-label style="color: black;" class="label_toggle">Examen Microscópico:</ion-label>
-                        </div>
-                        <ion-row>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
+                            <div class="mt-2 inputIcon">
+                                <ion-label style="color: black;" class="label_toggle">Examen Microscópico:</ion-label>
+                            </div>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
-                                    <input placeholder="Piocitos" type="text" [(ngModel)]="orina.piocitos" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                        <input placeholder="Piocitos" type="text" [(ngModel)]="orina.piocitos" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <input placeholder="Globulos Rojos" type="text" [(ngModel)]="orina.globulosRojos" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                        <input placeholder="Globulos Rojos" type="text" [(ngModel)]="orina.globulosRojos" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.epitelios" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.epitelios" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Epitelios</option>
                                         <option value='AUSENTES'>AUSENTES</option>
                                         <option value='ESCASOS'>ESCASOS</option>
@@ -406,16 +408,16 @@
                                     <option value='ABUNDANTES'>ABUNDANTES</option>
                                       
                                                                 </select>
-                                </div>
+                                    </div>
 
 
 
-                            </ion-col>
+                                </ion-col>
 
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.fibra" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.fibra" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Fibras</option>
                                         <option value='AUSENTES'>AUSENTES</option>
                                         <option value='ESCASOS'>ESCASOS</option>
@@ -423,10 +425,10 @@
                                     <option value='ABUNDANTES'>ABUNDANTES</option>
                                       
                                                                 </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.cilindros" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.cilindros" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Cilindros</option>
                                         <option value='AUSENTES'>AUSENTES</option>
                                         <option value='ESCASOS'>ESCASOS</option>
@@ -434,10 +436,10 @@
                                     <option value='ABUNDANTES'>ABUNDANTES</option>
                                       
                                                                 </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.cristales" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.cristales" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Cristales</option>
                                         <option value='AUSENTES'>AUSENTES</option>
                                         <option value='ESCASOS'>ESCASOS</option>
@@ -445,13 +447,13 @@
                                     <option value='ABUNDANTES'>ABUNDANTES</option>
                                       
                                                                 </select>
-                                </div>
+                                    </div>
 
-                            </ion-col>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.Bacteria" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.Bacteria" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Bacterias</option>
                                         <option value='AUSENTES'>AUSENTES</option>
                                         <option value='ESCASAS'>ESCASAS</option>
@@ -459,10 +461,10 @@
                                     <option value='ABUNDANTES'>ABUNDANTES</option>
                                       
                                                                 </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.tVaginales" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.tVaginales" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>T. Vaginales</option>
                                         <option value='AUSENTES'>AUSENTES</option>
                                         <option value='ESCASOS'>ESCASOS</option>
@@ -470,10 +472,10 @@
                                     <option value='ABUNDANTES'>ABUNDANTES</option>
                                       
                                                                 </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="orina.monilias" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="orina.monilias" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Monilias</option>
                                         <option value='AUSENTES'>AUSENTES</option>
                                         <option value='ESCASOS'>ESCASOS</option>
@@ -481,128 +483,128 @@
                                     <option value='ABUNDANTES'>ABUNDANTES</option>
                                       
                                                                 </select>
-                                </div>
-                            </ion-col>
+                                    </div>
+                                </ion-col>
 
 
 
-                        </ion-row>
+                            </ion-row>
 
-                    </ion-grid>
-                    <ion-row>
-                        <ion-col>
-                            <div class="mt-2 inputIcon">
-                                <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createOrina()">crear</ion-button>
-                            </div>
-                            <div class="mt-2 inputIcon">
-                                <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                            </div>
-                        </ion-col>
-                    </ion-row>
-
-                </ion-card>
-                <div class="mt-2">
-
-                </div>
-                <!--Sonografia abdominal-->
-
-                <ion-card class="card_tipificacion mt-2" *ngIf="showTipificacion">
-                    <ion-grid>
-                        <ion-label class="label_toggle">Tipificación:</ion-label>
+                        </ion-grid>
                         <ion-row>
-
                             <ion-col>
                                 <div class="mt-2 inputIcon">
-                                    <ion-label>Nombre:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Edad:</ion-label>
-                                    <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Sexo:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createOrina()">crear</ion-button>
                                 </div>
                                 <div class="mt-2 inputIcon">
                                     <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
                                 </div>
                             </ion-col>
-
                         </ion-row>
 
-                    </ion-grid>
-                    <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+                    </ion-card>
+                    <div class="mt-2">
+
+                    </div>
+                    <!--Sonografia abdominal-->
+
+                    <ion-card class="card_tipificacion mt-2" *ngIf="showTipificacion">
+                        <ion-grid>
+                            <ion-label class="label_toggle">Tipificación:</ion-label>
+                            <ion-row>
+
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Nombre:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Edad:</ion-label>
+                                        <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Sexo:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                                    </div>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-grid>
+                        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
 
 
 
-                    <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+                        <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
 
 
-                </ion-card>
+                    </ion-card>
 
-                <!---->
-                <ion-card class="card_Coprologico mt-2" *ngIf="showExamenCoprologico">
-                    <ion-grid>
-                        <ion-label class="label_toggle">Coprológico:</ion-label>
-                        <ion-row>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Nombre:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col> 
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Edad:</ion-label>
-                                    <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>   
-                            <ion-col>   
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Sexo:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Teléfono:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="telefono" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                            </ion-col> 
-                            
-                            <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+                    <!---->
+                    <ion-card class="card_Coprologico mt-2" *ngIf="showExamenCoprologico">
+                        <ion-grid>
+                            <ion-label class="label_toggle">Coprológico:</ion-label>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Nombre:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Edad:</ion-label>
+                                        <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Sexo:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Teléfono:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="telefono" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+
+                                <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
 
 
-                        </ion-row>
-                        <ion-row>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="coprologico.sangreOculta" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="coprologico.sangreOculta" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Sangre Oculta</option>
                                         <option value='POSITIVO'>POSITIVO</option>
                                         <option value='NEGATIVO'>NEGATIVO</option>
                                     
                                       
                                     </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <input placeholder="Globulos Rojos" type="text" [(ngModel)]="coprologico.globulosRojos" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                        <input placeholder="Globulos Rojos" type="text" [(ngModel)]="coprologico.globulosRojos" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <input placeholder="Color" type="text" [(ngModel)]="coprologico.color" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                
-                                <div class="mt-2 inputIcon">
+                                        <input placeholder="Color" type="text" [(ngModel)]="coprologico.color" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
 
-                                    <select [(ngModel)]="coprologico.mucus" class="form-select form-select-lg select subtitulo2">
+                                    <div class="mt-2 inputIcon">
+
+                                        <select [(ngModel)]="coprologico.mucus" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Mucus</option>
                                         <option value='AUSENTE'>AUSENTE</option>
                                         <option value='ESCASOS'>ESCASOS</option>
@@ -611,14 +613,14 @@
                                     
                                       
                                     </select>
-                                </div>
+                                    </div>
 
 
-                            </ion-col>
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="coprologico.celulasVeg" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="coprologico.celulasVeg" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Celulas Veg</option>
                                         <option value='AUSENTES'>AUSENTES</option>
                                         <option value='ESCASOS'>ESCASOS</option>
@@ -627,11 +629,11 @@
                                     
                                       
                                     </select>
-                                </div>
+                                    </div>
 
-                                <div class="mt-2 inputIcon">
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="coprologico.consistencia" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="coprologico.consistencia" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Consitencia</option>
                                         <option value='LIQUIDA'>LIQUIDA</option>
                                         <option value='BLANDA'>BLANDA</option>
@@ -640,10 +642,10 @@
                                     
                                       
                                     </select>
-                                </div>
-                                <div class="mt-2 inputIcon">
+                                    </div>
+                                    <div class="mt-2 inputIcon">
 
-                                    <select [(ngModel)]="coprologico.huevos" class="form-select form-select-lg select subtitulo2">
+                                        <select [(ngModel)]="coprologico.huevos" class="form-select form-select-lg select subtitulo2">
                                         <option value="" disabled selected hidden>Huevos y Quistes de Parasitos</option>
                                         <option value='LIQUIDA'>LIQUIDA</option>
                                         <option value='BLANDA'>BLANDA</option>
@@ -652,85 +654,83 @@
                                     
                                       
                                     </select>
-                                </div>
+                                    </div>
 
-                            </ion-col>
+                                </ion-col>
 
-                        </ion-row>
-                        <ion-row>
+                            </ion-row>
+                            <ion-row>
 
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createCoprologico()">crear</ion-button>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                                </div>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createCoprologico()">crear</ion-button>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                                    </div>
 
-                            </ion-col>
+                                </ion-col>
 
-                        </ion-row>
+                            </ion-row>
 
-                    </ion-grid>
+                        </ion-grid>
 
 
-                </ion-card>
+                    </ion-card>
 
-                <ion-card class="card_covid19 mt'2" *ngIf="showCovid19">
-                    <ion-grid>
-                        <ion-label class="label_toggle">COVID-19:</ion-label>
-                        <ion-row>
+                    <ion-card class="card_covid19 mt'2" *ngIf="showCovid19">
+                        <ion-grid>
+                            <ion-label class="label_toggle">COVID-19:</ion-label>
+                            <ion-row>
 
-                            <ion-col>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Nombre:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Nombre:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
 
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Edad:</ion-label>
-                                    <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Sexo:</ion-label>
-                                    <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <ion-label>Resultado:</ion-label>
-                                    <select [(ngModel)]="c19.resultado" class="form-select form-select-lg select_ubito subtitulo2">
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Edad:</ion-label>
+                                        <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Sexo:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Resultado:</ion-label>
+                                        <select [(ngModel)]="c19.resultado" class="form-select form-select-lg select_ubito subtitulo2">
                              <option value='POSITIVO'>POSITIVO</option>
                              <option  value='NEGATIVO'>NEGATIVO</option>
                              </select>
-                                </div>
+                                    </div>
 
-                                <div class="mt-2 inputIcon">
-                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
-                                </div>
-                                <div class="mt-2 inputIcon">
-                                    <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
-                                </div>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>
+                                    </div>
 
-                            </ion-col>
+                                </ion-col>
 
-                        </ion-row>
+                            </ion-row>
 
-                    </ion-grid>
+                        </ion-grid>
 
 
-                </ion-card>
-
-            </div>
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; QH Services 2021</span>
+                    </ion-card>
+                </ion-content>
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; QH Services 2021</span>
+                        </div>
                     </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
+                </footer>
+                <!-- End of Footer -->
+            </div>
         </div>
         <!-- End of Content Wrapper -->
 
