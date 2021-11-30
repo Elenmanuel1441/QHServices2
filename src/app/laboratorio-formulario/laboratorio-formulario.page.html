@@ -555,17 +555,113 @@
                                     <ion-label>Nombre:</ion-label>
                                     <input disabled="true" type="text" [(ngModel)]="nombre_paciente +' '+ apellido_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                 </div>
-
+                            </ion-col>
+                            <ion-col> 
                                 <div class="mt-2 inputIcon">
                                     <ion-label>Edad:</ion-label>
                                     <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                 </div>
+                            </ion-col>   
+                            <ion-col>   
                                 <div class="mt-2 inputIcon">
                                     <ion-label>Sexo:</ion-label>
                                     <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                 </div>
+                            </ion-col>
+                            <ion-col>
                                 <div class="mt-2 inputIcon">
-                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createPdf()">crear</ion-button>
+                                    <ion-label>Teléfono:</ion-label>
+                                    <input disabled="true" type="text" [(ngModel)]="telefono" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                            </ion-col> 
+                            
+                            <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+
+
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="coprologico.sangreOculta" class="form-select form-select-lg select subtitulo2">
+                                        <option value="" disabled selected hidden>Sangre Oculta</option>
+                                        <option value='POSITIVO'>POSITIVO</option>
+                                        <option value='NEGATIVO'>NEGATIVO</option>
+                                    
+                                      
+                                    </select>
+                                </div>
+                                <div class="mt-2 inputIcon">
+
+                                    <input placeholder="Globulos Rojos" type="text" [(ngModel)]="coprologico.globulosRojos" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                <div class="mt-2 inputIcon">
+
+                                    <input placeholder="Color" type="text" [(ngModel)]="coprologico.color" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                </div>
+                                
+                                <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="coprologico.mucus" class="form-select form-select-lg select subtitulo2">
+                                        <option value="" disabled selected hidden>Mucus</option>
+                                        <option value='AUSENTE'>AUSENTE</option>
+                                        <option value='ESCASOS'>ESCASOS</option>
+                                        <option value='ALGUNOS'>ALGUNOS</option>
+                                        <option value='ABUNDANTES'>ABUNDANTES</option>
+                                    
+                                      
+                                    </select>
+                                </div>
+
+
+                            </ion-col>
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="coprologico.celulasVeg" class="form-select form-select-lg select subtitulo2">
+                                        <option value="" disabled selected hidden>Celulas Veg</option>
+                                        <option value='AUSENTES'>AUSENTES</option>
+                                        <option value='ESCASOS'>ESCASOS</option>
+                                        <option value='ALGUNOS'>ALGUNOS</option>
+                                        <option value='ABUNDANTES'>ABUNDANTES</option>
+                                    
+                                      
+                                    </select>
+                                </div>
+
+                                <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="coprologico.consistencia" class="form-select form-select-lg select subtitulo2">
+                                        <option value="" disabled selected hidden>Consitencia</option>
+                                        <option value='LIQUIDA'>LIQUIDA</option>
+                                        <option value='BLANDA'>BLANDA</option>
+                                        <option value='SEMI-SOLIDA'>SEMI-SOLIDA</option>
+                                        <option value='SOLIDA'>SOLIDA</option>
+                                    
+                                      
+                                    </select>
+                                </div>
+                                <div class="mt-2 inputIcon">
+
+                                    <select [(ngModel)]="coprologico.huevos" class="form-select form-select-lg select subtitulo2">
+                                        <option value="" disabled selected hidden>Huevos y Quistes de Parasitos</option>
+                                        <option value='LIQUIDA'>LIQUIDA</option>
+                                        <option value='BLANDA'>BLANDA</option>
+                                        <option value='SEMI-SOLIDA'>SEMI-SOLIDA</option>
+                                        <option value='SOLIDA'>SOLIDA</option>
+                                    
+                                      
+                                    </select>
+                                </div>
+
+                            </ion-col>
+
+                        </ion-row>
+                        <ion-row>
+
+                            <ion-col>
+                                <div class="mt-2 inputIcon">
+                                    <ion-button class="subtitulo2 btn_crear" expand="block" shape="round" (click)="createCoprologico()">crear</ion-button>
                                 </div>
                                 <div class="mt-2 inputIcon">
                                     <ion-button class="subtitulo2 btn_imprimir" expand="block" shape="round" (click)="printPdf()" [disabled]="!pdfObj">imprimir </ion-button>

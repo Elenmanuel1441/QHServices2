@@ -105,7 +105,7 @@ export class LaboratorioFormularioPage implements OnInit {
   ngOnInit() {
   }
   async createOrina(){
-    var orinaDefinition: any = {
+    var coprologicoDefinition: any = {
       pageSize: 'LETTER',
       content:[
         {
@@ -218,7 +218,7 @@ export class LaboratorioFormularioPage implements OnInit {
 					[{text: 'EXAMEN QUIMICO', style: 'tableHeader'}, {text: '', style: 'tableHeader'}, {text: 'EXAMEN MICROSCOPICO', style: 'tableHeader'},{text: '', style: 'tableHeader'}],
 					['Color', this.orina.color, 'Piocitos',this.orina.piocitos],
          ['Aspecto', this.orina.aspecto, 'Globulos Rojos',this.orina.globulosRojos],
-         ['Olor', this.orina.olor, 'Globulos Rojos',this.orina.globulosRojos],
+         ['Olor', this.orina.olor, 'Epitelios',this.orina.epitelios],
         [{text:'Examen Quimico',style:'bold'}, '', 'Fibras',this.orina.fibra],
           ['Reaccion(PH)', this.orina.reaccion, 'Cilindros',this.orina.cilindros],
           ['Densidad', this.orina.densidad, 'Cristales',this.orina.cristales],
@@ -292,7 +292,7 @@ export class LaboratorioFormularioPage implements OnInit {
       }
     }
   }
-    this.pdfObj = pdfMake.createPdf(orinaDefinition);
+    this.pdfObj = pdfMake.createPdf(coprologicoDefinition);
 
 
 
@@ -301,7 +301,192 @@ export class LaboratorioFormularioPage implements OnInit {
   }
 
 
-  async createCoprologico(){}
+  async createCoprologico(){var orinaDefinition: any = {
+    pageSize: 'LETTER',
+    content:[
+      {
+        columns: [
+            
+            {
+              image: await this.getBase64ImageFromURL(   "https://i.postimg.cc/YCSSXbM3/logoSnS.jpg",
+              ),fit: [50, 50],
+              style: 'leftme'
+            },
+            '                           ','   ','','',
+            {
+              image: await this.getBase64ImageFromURL(   "https://i.postimg.cc/sDsxW3Lb/logoLab.jpg",
+    
+              ), 
+              fit: [50, 50],
+              style: 'rightme'
+            },
+          
+          ]
+      },
+     /*
+        {
+        image: await this.getBase64ImageFromURL(   "https://i.postimg.cc/YCSSXbM3/logoSnS.jpg",
+    
+             ), 
+        fit: [50, 50], 
+        style: 'rightme'
+        
+      },
+      {
+        image: await this.getBase64ImageFromURL(   "https://i.postimg.cc/sDsxW3Lb/logoLab.jpg",
+    
+             ), 
+        fit: [50, 50], 
+        style: 'leftme'
+        
+      }*/,
+      
+      { text: 'CENTRO  DIAGNOSTICO SAN FERNANDO DE MONTECRISTI \n\n', style: 'header',alignment: 'center' },,
+      { text: 'Calle Pedro Pablo Fernández, Esq. Beller, ', style: 'sub-header',alignment: 'center' },
+      { text: 'Montecristi, R.D Tel: 809-579-3314', style: 'sub-header',alignment: 'center' },
+      { text: 'Laboratorio \n\n', style: 'subheader',alignment: 'center' },
+  {columns: [ {	type: 'none',ul: [
+
+      {
+        text:  [
+               {text: 'Nombres:', style: 'subheader'}, this.nombre_paciente, 
+              ]
+      },
+      {
+        text:  [
+               {text: 'Apellidos:', style: 'subheader'},this.apellido_paciente,
+              ]
+      },
+      {
+        text:  [
+          { text: 'Direccion: ', style: 'subheader'}, this.direccion,
+              ]
+      },
+     
+      {
+        text:  [
+          { text: 'Medico: ', style: 'subheader'}, this.medico,
+              ]
+      },
+      
+      
+    ],alignment:'left'},
+    {	type: 'none',ul: [{
+      text:  [
+             'Fecha:',{ text: new Date().toLocaleDateString(), alignment: 'left'}, 
+             ],
+   },
+
+       {
+      text:  [
+             {text: 'Edad:', style: 'subheader'}, this.Edad,
+            ]
+    },
+    {
+      text:  [
+        { text: 'Sexo: ', style: 'subheader'}, this.sexo_paciente,
+            ]
+    },
+    {
+      text:  [
+        { text: 'Telefono: ', style: 'subheader'}, this.telefono,
+            ]
+    },
+    
+  ],alignment:'justified'},] },
+      // {
+      //   image: await this.getBase64ImageFromURL(
+      //     "https://images.pexels.com/photos/209640/pexels-photo-209640.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300"
+
+      //   )
+      // } , 
+
+    
+      
+      { text: 'EXAMEN DE COPROLOGICO:', style: 'subheader', alignment: 'center' },
+      
+  {
+    style: 'tableExample',
+    table: {
+      widths: [200 ,200 ],
+      headerRows: 1,
+      body: [
+        [{text: 'EXAMEN QUIMICO', style: 'tableHeader'}, {text: '', style: 'tableHeader'}],
+        ['Sangre Oculta', this.coprologico.sangreOculta],
+       ['Globulos Rojos', this.coprologico.globulosRojos],
+       ['Color', this.coprologico.color],
+      ['Mucus',this.coprologico.mucus],
+        ['Celula Veg', this.coprologico.celulasVeg],
+        ['Consitencia', this.coprologico.consistencia],
+        ['Huevos y Quistes de Parasitos', this.coprologico.huevos],
+              
+      ]
+    },
+    layout: {
+      hLineWidth: function (i, node) {
+        return (i === 0 || i === node.table.body.length) ? 2 : 1;
+      },
+      vLineWidth: function (i, node) {
+        return (i === 0 || i === node.table.widths.length) ? 2 : 1;
+      },
+      hLineColor: function (i, node) {
+        return (i === 0 || i === node.table.body.length) ? 'black' : 'gray';
+      },
+      vLineColor: function (i, node) {
+        return (i === 0 || i === node.table.widths.length) ? 'black' : 'gray';
+      },
+    
+    }
+  },
+    ,
+      { text: '\n\n\n\n________________________', style: 'header',alignment: 'center' },
+      { text: '      BIOANALISTA',alignment: 'center' }
+      
+    ],
+    styles: {
+      header: {
+        fontSize: 18,
+        bold: true,
+      },
+      subheader: {
+        fontSize: 14,
+        bold: true,
+        margin: [0, 15, 0, 0]
+      },
+      bold: {
+        fontSize: 12,
+        bold: true,
+     
+      },
+      story: {
+        italic: true,
+        alignment: 'center',
+        width: '50%',
+      },
+      tableExample: {
+        margin: [0, 5, 0, 15]
+      },
+      tableHeader: {
+        bold: true,
+        fontSize: 13,
+        color: 'black'
+    },
+    rightme:
+    {   
+        alignment: 'right'
+    },
+    leftme:
+    {   
+        alignment: 'left'
+    }
+  }
+}
+  this.pdfObj = pdfMake.createPdf(orinaDefinition);
+
+
+
+
+}
 
   async createTipificacion(){}
 

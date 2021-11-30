@@ -117,7 +117,7 @@ reportAbdominal: any = [];
     responsive: true,
   };
   
-  barChartLabels: Label[] = ['Rayos X', 'Sonografía', 'Laboratorio', 'Odontología'];
+  barChartLabels: Label[] = ['Sonografia', 'Rayos X', 'Laboratorio', 'Odontología'];
   barChartType: ChartType = 'doughnut';
   barChartLegend = true;
   barChartPlugins = [];
@@ -152,6 +152,9 @@ reportAbdominal: any = [];
 
     this.getCount_odontologia();
     setInterval(() => this.getCount_odontologia(), 10000);
+
+    this.llenarChart();
+    setInterval(() => this.llenarChart(), 10000);
 
     // this.getChart();
     // setInterval(() => this.getChart(), 6000);
@@ -245,6 +248,16 @@ covid: any;
     
   }
 
+  llenarChart(){
+    this.barChartData2 = [
+      { data: [[this.sonografia], [this.rayos_x], [this.laboratorio], [this.odontologia]], label: 'Colas con más personas' }
+    ];
+
+
+
+
+
+  }
 getCount_laboratorio()
 {
   this._apiservice.getCount_laboratorio().subscribe((res:any) => {
