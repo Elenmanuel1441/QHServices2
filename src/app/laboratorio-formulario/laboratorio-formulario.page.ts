@@ -464,7 +464,8 @@ export class LaboratorioFormularioPage implements OnInit {
         width: '50%',
       },
       tableExample: {
-        margin: [0, 5, 0, 15]
+        margin: [0, 5, 0, 15],
+        alignment: 'center'
       },
       tableHeader: {
         bold: true,

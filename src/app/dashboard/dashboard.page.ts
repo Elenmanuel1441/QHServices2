@@ -152,7 +152,7 @@ reportAbdominal: any = [];
 
     this.getCount_odontologia();
     setInterval(() => this.getCount_odontologia(), 10000);
-
+    //llena el chart
     this.llenarChart();
     setInterval(() => this.llenarChart(), 10000);
 
