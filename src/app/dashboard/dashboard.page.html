@@ -122,19 +122,30 @@
                                             <ion-grid>
                                                 <ion-row>
                                                     <ion-col>
-                                                        <ion-card class="chart_colas">
+                                                        <ion-card class="chart_pacientes_mes">
+                                                            <h6 style="text-align: center;" class="m-0 font-weight-bold text-primary">PACIENTES ATENDIDOS POR MES</h6>
                                                             <div class="chart-wrapper">
-                                                                <canvas id="miGrafico" baseChart [datasets]="barChartData2" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                                                                <canvas id="miGrafico" baseChart [datasets]="barChartData2" [labels]="barChartLabels2" [options]="barChartOptions" [plugins]="barChartPlugins2" [legend]="barChartLegend2" [chartType]="barChartType2">
                                                                 </canvas>
                                                             </div>
                                                         </ion-card>
-                                                    </ion-col>
-                                                    <ion-col>
-                                                        <ion-card class="chart_xxx">
+                                                        <ion-card class="chart_estado_resul mt-3">
+                                                            <h6 style="text-align: center;" class="m-0 font-weight-bold  text-primary">ESTADO DE RESULTADOS POR MES</h6>
                                                             <div class="chart-wrapper">
-                                                                <canvas id="miGrafico" baseChart [datasets]="barChartData3" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartTyp2">
+                                                                <canvas id="miGrafico" baseChart [datasets]="barChartData3" [labels]="barChartLabels3" [options]="barChartOptions" [plugins]="barChartPlugins3" [legend]="barChartLegend3" [chartType]="barChartTyp3">
                                                                 </canvas>
                                                             </div>
+                                                        </ion-card>
+
+                                                    </ion-col>
+                                                    <ion-col>
+                                                        <ion-card class="card_dato_01">
+                                                            <h6 style="text-align: center;" class="m-0 font-weight-bold mt-3 text-primary">DATOS 01</h6>
+                                                            <h3>Pacientes</h3>
+                                                        </ion-card>
+                                                        <ion-card class="card_dato_02 mt-3">
+                                                            <h6 style="text-align: center;" class="m-0 font-weight-bold text-primary">DATOS 02</h6>
+                                                            <h3>Pacientes</h3>
                                                         </ion-card>
 
                                                     </ion-col>

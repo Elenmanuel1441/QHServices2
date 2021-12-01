@@ -53,15 +53,31 @@ h3 {
     border-bottom-width: 10px;
 }
 
-.chart_colas {
+.chart_pacientes_mes {
     width: 90%;
     border-radius: 10px;
     margin: auto;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
-.chart_xxx {
+.chart_estado_resul {
     width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+}
+
+.card_dato_01 {
+    width: 90%;
+    height: 49%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+}
+
+.card_dato_02 {
+    width: 90%;
+    height: 49%;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
