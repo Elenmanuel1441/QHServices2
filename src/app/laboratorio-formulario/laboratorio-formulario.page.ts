@@ -849,40 +849,89 @@ export class LaboratorioFormularioPage implements OnInit {
     },
     
   ],alignment:'justified'},] },
+      // {
+      //   image: await this.getBase64ImageFromURL(
+      //     "https://images.pexels.com/photos/209640/pexels-photo-209640.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300"
 
+      //   )
+      // } , 
 
-      { text: 'PRUEBA ANTIGÉNICA DE COVID-19:\n\n\n\n\n\n\n\n', style: 'subheader', alignment: 'center' },  
-      {	type: 'none',ul: [
-      { text: 'Tipo de Muestra: NASOFARIGEA:\n\n',alignment:'justified'}, 
-      { text: 'Método: HISOPADO\n\n',alignment:'justified'},
-    {  text:[
-      { text: 'Resultado:',alignment:'justified'},this.c19.resultado,'\n\n\n\n\n\n'    
-    ]}],alignment:'center',margin: [90, 0, 0, 0],style:'bold'}
+    
+      
+      { text: 'PRUEBA ANTIGENICA DE COVID-19:', style: 'subheader', alignment: 'center' },
+      
+  {
+    style: 'tableExample',
+    table: {
+      widths: [200 ,200 ],
+      headerRows: 1,
+      body: [
+        [{text: 'TIPO DE MUESTRA'},'NASOFARIGEA'],
+        ['METODO','HISOPADO'],
+        ['RESULTADO',this.c19.resultado]
+       
+              
+      ]
+    },alignment:'center',
+    layout: {
+      hLineWidth: function (i, node) {
+        return (i === 0 || i === node.table.body.length) ? 2 : 1;
+      },
+      vLineWidth: function (i, node) {
+        return (i === 0 || i === node.table.widths.length) ? 2 : 1;
+      },
+      hLineColor: function (i, node) {
+        return (i === 0 || i === node.table.body.length) ? 'black' : 'gray';
+      },
+      vLineColor: function (i, node) {
+        return (i === 0 || i === node.table.widths.length) ? 'black' : 'gray';
+      },
+    
+    }
+  },
     ,
-      { text: '\n\n\n\n________________________', style: 'header',alignment: 'center' },
+      { text: '\n\n\n\n\n\n\n\n________________________', style: 'header',alignment: 'center' },
       { text: '      BIOANALISTA',alignment: 'center' }
       
     ],
     styles: {
       header: {
-        fontSize: 14,
-        bold: true,
-      },
-      bold: {
-        
+        fontSize: 18,
         bold: true,
       },
       subheader: {
-        fontSize: 12,
+        fontSize: 14,
         bold: true,
         margin: [0, 15, 0, 0]
+      },
+      bold: {
+        fontSize: 12,
+        bold: true,
+     
       },
       story: {
         italic: true,
         alignment: 'center',
         width: '50%',
-      }
+      },
+      tableExample: {
+        margin: [50, 5, 0, 15],
+     
+      },
+      tableHeader: {
+        bold: true,
+        fontSize: 13,
+        color: 'black'
+    },
+    rightme:
+    {   
+        alignment: 'right'
+    },
+    leftme:
+    {   
+        alignment: 'left'
     }
+  }
   }
   this.pdfObj = pdfMake.createPdf(docDefinition);
 }
