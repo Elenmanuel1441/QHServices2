@@ -123,7 +123,7 @@ reportAbdominal: any = [];
   barChartPlugins = [];
 
   barChartLabels2: Label[] = ['Sonografia', 'Rayos X', 'Laboratorio', 'Odontología'];
-  barChartTyp2: ChartType = 'doughnut';
+  barChartTyp2: ChartType = 'bar';
   barChartLegend2 = true;
   barChartPlugins2 = [];
  
@@ -259,16 +259,8 @@ covid: any;
     
   }
 
-  llenarChart(){
-    this.barChartData2 = [
-      { data: [[this.sonografia], [this.rayos_x], [this.laboratorio], [this.odontologia]], label: 'Colas con más personas' }
-    ];
+  
 
-
-
-
-
-  }
 getCount_laboratorio()
 {
   this._apiservice.getCount_laboratorio().subscribe((res:any) => {
@@ -291,27 +283,22 @@ getCount_odontologia()
     })
  }
 
- ReportAbdominal(){
-  this._apiservice.ReportAbdominal().subscribe((res:any) => {
-    console.log("SUCCESS ===",res);
-    this.reportAbdominal = res;
-    },(error: any) => {
-      console.log("ERROR ===",error);
-    })
-   }
+ llenarChart(){
+  this.barChartData2 = [
+    { data: [[this.sonografia], [this.rayos_x], [this.laboratorio], [this.odontologia]], label: 'Colas con más personas' }
+  ];
+}
 
-  //  Resultado ciudades pandemia covid 19
-//prueba de traer datos para el chart
-
-// getChart()
-// {
-//   this._apiservice.getChart().subscribe((res:any) => {
+//  ReportAbdominal(){
+//   this._apiservice.ReportAbdominal().subscribe((res:any) => {
 //     console.log("SUCCESS ===",res);
-//     this.ChartData = res;
+//     this.reportAbdominal = res;
 //     },(error: any) => {
 //       console.log("ERROR ===",error);
 //     })
-// }
+//    }
+
+  //  Resultado ciudades pandemia covid 19
 
   }
 
