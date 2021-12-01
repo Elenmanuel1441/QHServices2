@@ -250,6 +250,16 @@ export class ApiService {
     return this.http.get('http://localhost/proyecto/backend/chart.php');
 
   }
+  getCantPacAreaMes()
+  {
+    return this.http.get('http://localhost/proyecto/backend/ChartCantPacAreaMes.php');
+
+  }
+  getPacResul()
+  {
+    return this.http.get('http://localhost/proyecto/backend/CharPacResul.php');
+
+  }
   
 }
 

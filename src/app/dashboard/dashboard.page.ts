@@ -21,6 +21,8 @@ import { ajax } from 'jquery';
 })
 export class DashboardPage implements OnInit {
 
+  
+
 //datos del reporte abdominal
 nombre: string;
 apellido: string;
@@ -112,27 +114,44 @@ reportAbdominal: any = [];
   showRegister: boolean
   type: string = '';
 
+  //variables para el chart de cantidad de pacientes por mes en las areas
+
+  CantPacMesArea: any = [];
+  CantPacLab: any;
+  CantPacOdo: any;
+  CantPacSon: any;
+  CantPacRay: any;
+
+   //variables para el chart de cantidad de resultadis
+
+   CantResultados: any = [];
+   AnaliPen	: any;
+   AnaliEnt: any;
+   AnaliCan: any;
+  
+ 
+
   //Chart de lineas
   barChartOptions: ChartOptions = {
     responsive: true,
   };
   
-  barChartLabels: Label[] = ['Sonografia', 'Rayos X', 'Laboratorio', 'Odontología'];
-  barChartType: ChartType = 'doughnut';
-  barChartLegend = true;
-  barChartPlugins = [];
-
-  barChartLabels2: Label[] = ['Sonografia', 'Rayos X', 'Laboratorio', 'Odontología'];
-  barChartTyp2: ChartType = 'bar';
+  barChartLabels2: Label[] = ['Laboratorio', 'Odontología', 'Sonografía', 'Rayos X'];
+  barChartType2: ChartType = 'doughnut';
   barChartLegend2 = true;
   barChartPlugins2 = [];
+
+  barChartLabels3: Label[] = ['Entregado', 'Pendiente', 'Cencelado'];
+  barChartTyp3: ChartType = 'line';
+  barChartLegend3 = true;
+  barChartPlugins3 = [];
  
   barChartData2: ChartDataSets[] = [
-    { data: [2, 5, 8, 3], label: 'Colas con más personas' }
+    { data: []}
   ];
 
   barChartData3: ChartDataSets[] = [
-    { data: [2, 5, 8, 3], label: 'Colas con más personas' }
+    { data: []}
   ];
 
 
@@ -163,12 +182,18 @@ reportAbdominal: any = [];
 
     this.getCount_odontologia();
     setInterval(() => this.getCount_odontologia(), 10000);
+     // llamar los datos para el chart de cantidad de pacientes por mes
+     this.getCantPacAreaMes();
+     setInterval(() => this.getCantPacAreaMes(), 8000);
     //llena el chart
-    this.llenarChart();
-    setInterval(() => this.llenarChart(), 10000);
+    this.llenarChartCantPacAreaMes();
+    setInterval(() => this.llenarChartCantPacAreaMes(), 10000);
 
-    // this.getChart();
-    // setInterval(() => this.getChart(), 6000);
+   this.getPacResul();
+   setInterval(() => this.getPacResul(), 8000);
+
+   this.llenarCharAnalisis();
+   setInterval(() => this.llenarCharAnalisis(), 10000);
 
   }
 covid: any;
@@ -283,23 +308,46 @@ getCount_odontologia()
     })
  }
 
- llenarChart(){
+ llenarChartCantPacAreaMes(){
   this.barChartData2 = [
-    { data: [[this.sonografia], [this.rayos_x], [this.laboratorio], [this.odontologia]], label: 'Colas con más personas' }
+    { data: [[this.CantPacLab], [this.CantPacOdo], [this.CantPacSon], [this.CantPacRay]], label: 'Cantidad de pacientes por mes' }
   ];
 }
 
-//  ReportAbdominal(){
-//   this._apiservice.ReportAbdominal().subscribe((res:any) => {
-//     console.log("SUCCESS ===",res);
-//     this.reportAbdominal = res;
-//     },(error: any) => {
-//       console.log("ERROR ===",error);
-//     })
-//    }
+getCantPacAreaMes()
+{
+  this._apiservice.getCantPacAreaMes().subscribe((res:any) => {
+    console.log("SUCCESS ===",res);
+    let CantPacMesArea = res[0];
+    this.CantPacLab = CantPacMesArea.CantPacLab;
+    this.CantPacOdo = CantPacMesArea.CantPacOdo;
+    this.CantPacSon = CantPacMesArea.CantPacSon;
+    this.CantPacRay = CantPacMesArea.CantPacRay;
+  
+    },(error: any) => {
+      console.log("ERROR ===",error);
+    })
+}
 
-  //  Resultado ciudades pandemia covid 19
+getPacResul()
+{
+  this._apiservice.getPacResul().subscribe((res:any) => {
+    console.log("SUCCESS ===",res);
+    let CantResultados = res[0];
+    this.AnaliPen = CantResultados.AnaliPen;
+    this.AnaliEnt = CantResultados.AnaliEnt;
+    this.CantPacSon = CantResultados.AnaliCan;
+    },(error: any) => {
+      console.log("ERROR ===",error);
+    })
+}
 
-  }
+llenarCharAnalisis(){
+  this.barChartData3 = [
+    { data: [[this.AnaliPen], [this.AnaliEnt], [this.AnaliCan]], label: 'Estado de análisis' }
+  ];
+}
+
+}
 
 
