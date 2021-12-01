@@ -127,7 +127,7 @@ reportAbdominal: any = [];
     responsive: true,
   };
   
-  barChartLabels: Label[] = ['Laboratorio', 'Odontología', 'Rayos X', 'Sonografía'];
+  barChartLabels: Label[] = ['Laboratorio', 'Odontología', 'Sonografía', 'Rayos X'];
   barChartType: ChartType = 'pie';
   barChartLegend = true;
   barChartPlugins = [];
