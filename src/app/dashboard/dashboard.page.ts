@@ -128,13 +128,34 @@ reportAbdominal: any = [];
    AnaliPen	: any;
    AnaliEnt: any;
    AnaliCan: any;
-  
- 
 
+   //variables para la cantidad de resultados entregados y en espera
+
+   CantResulEspEnt: any = [];
+   PacEspResu	: any;
+   PacEntResu	: any;
+
+   //variables para la cantidad de pacientes atendidos por sexo
+
+   CantPacAtendidoSexo: any = [];
+   CanPacMac	: any;
+   CanPacFem	: any;
+
+   //cantidad de pacientes registrados
+
+   CantPacientesRegist: any =[];
+   CanPacientes: any;
+ 
   //Chart de lineas
-  barChartOptions: ChartOptions = {
+  barChartOptions2: ChartOptions = {
+    responsive: true,
+  
+  };
+
+  barChartOptions3: ChartOptions = {
     responsive: true,
   };
+  
   
   barChartLabels2: Label[] = ['Laboratorio', 'Odontología', 'Sonografía', 'Rayos X'];
   barChartType2: ChartType = 'doughnut';
@@ -142,7 +163,7 @@ reportAbdominal: any = [];
   barChartPlugins2 = [];
 
   barChartLabels3: Label[] = ['Entregado', 'Pendiente', 'Cencelado'];
-  barChartTyp3: ChartType = 'line';
+  barChartTyp3: ChartType = 'pie';
   barChartLegend3 = true;
   barChartPlugins3 = [];
  
@@ -171,6 +192,8 @@ reportAbdominal: any = [];
 
     //this.ReportAbdominal();
 
+    this.limpiarvariblesPacientes();
+
     this.getCount_rayos_x();
     setInterval(() => this.getCount_rayos_x(), 10000);
 
@@ -195,7 +218,14 @@ reportAbdominal: any = [];
    this.llenarCharAnalisis();
    setInterval(() => this.llenarCharAnalisis(), 10000);
 
- 
+   this.getCountPacEntEspResul();
+   setInterval(() => this.getCountPacEntEspResul(), 10000);
+
+   this.getCountPacSexo();
+   setInterval(() => this.getCountPacSexo(), 10000);
+
+   this.getCountCantPacRegist();
+   setInterval(() => this.getCountCantPacRegist(), 10000);
 
   }
 covid: any;
@@ -315,6 +345,14 @@ getCount_odontologia()
   ];
 }
 
+limpiarvariblesPacientes()
+{
+  this.CantPacSon = ''
+    this.CantPacLab = ''
+    this.CantPacOdo = ''
+    this.CantPacRay = ''
+}
+
 getCantPacAreaMes()
 {
   this._apiservice.getCantPacAreaMes().subscribe((res:any) => {
@@ -345,9 +383,43 @@ getPacResul()
 
 llenarCharAnalisis(){
   this.barChartData3 = [
-    { data: [[this.AnaliPen], [this.AnaliEnt], [this.AnaliCan]], label: 'Estado de análisis' }
+    { data: [[this.AnaliPen], [this.AnaliEnt], [this.AnaliCan]], label: 'Estado de los Resultados' }
   ];
 }
+
+getCountPacEntEspResul()
+{
+  this._apiservice.getCountPacEntEspResul().subscribe((res:any) => {
+    console.log("SUCCESS ===",res);
+    let CantResulEspEnt = res[0];
+    this.PacEspResu = CantResulEspEnt.PacEspResu;
+    this.PacEntResu = CantResulEspEnt.PacEntResu;
+    },(error: any) => {
+      console.log("ERROR ===",error);
+    })
+}
+getCountPacSexo()
+{
+  this._apiservice.getCountPacSexo().subscribe((res:any) => {
+    console.log("SUCCESS ===",res);
+    let CantPacAtendidoSexo = res[0];
+    this.CanPacMac = CantPacAtendidoSexo.CanPacMac;
+    this.CanPacFem = CantPacAtendidoSexo.CanPacFem;
+    },(error: any) => {
+      console.log("ERROR ===",error);
+    })
+}
+getCountCantPacRegist()
+{
+  this._apiservice.getCountCantPacRegist().subscribe((res:any) => {
+    console.log("SUCCESS ===",res);
+     let CantPacientesRegist = res[0];
+     this.CanPacientes = CantPacientesRegist.CanPacientes;
+    },(error: any) => {
+      console.log("ERROR ===",error);
+    })
+}
+
 
 }
 

@@ -260,6 +260,21 @@ export class ApiService {
     return this.http.get('http://localhost/proyecto/backend/CharPacResul.php');
 
   }
+  getCountPacEntEspResul()
+  {
+    return this.http.get('http://localhost/proyecto/backend/GetCountPacEspEntResul.php');
+
+  }
+  getCountPacSexo()
+  {
+    return this.http.get('http://localhost/proyecto/backend/getCountCanPacSexo.php');
+
+  }
+  getCountCantPacRegist()
+  {
+    return this.http.get('http://localhost/proyecto/backend/getCantPacRegistrados.php');
+
+  }
   
 }
 

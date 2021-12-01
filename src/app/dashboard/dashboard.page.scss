@@ -67,18 +67,37 @@ h3 {
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
-.card_dato_01 {
-    width: 90%;
-    height: 90%;
+.card_resulSt {
+    width: 93.5%;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
-.card_dato_02 {
-    width: 90%;
-    height: 90%;
+.card_datos01 {
+    width: 85%;
+    margin: auto;
+    border-left: 8px solid rgb(6, 6, 168);
+    border-radius: 10px;
+    background-color: rgb(170, 210, 248);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .5);
+}
+
+.card_datos02 {
+    width: 85%;
+    margin: auto;
+    border-left: 8px solid rgb(196, 178, 19);
+    background-color: rgb(248, 246, 100);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .5);
+}
+
+.card_datos03 {
+    width: 85%;
+    height: 80%;
+    border-left: 8px solid rgb(87, 214, 115);
+    background-color: rgb(208, 247, 208);
     margin: auto;
     border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .5);
 }

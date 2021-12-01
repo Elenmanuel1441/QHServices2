@@ -92,7 +92,7 @@
                                     <div class="card-body" [routerLink]="'/admin/odontologia'">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-2">
                                                     Odontodología</div>
                                                 <div class="h5 ml-3  mb-0 font-weight-bold text-gray-800">{{odontologia}}</div>
                                             </div>
@@ -122,10 +122,42 @@
                                             <ion-grid>
                                                 <ion-row>
                                                     <ion-col>
+                                                        <h5 style="text-align: center;" class="m-0 font-weight-bold  text-primary">RESULTADOS EN ESPERA Y ENTREGADOS AL MES</h5>
+                                                        <ion-card class="card_datos01">
+                                                            <H2 style="margin-left: 10px; " class="mt-2 font-weight-bold">Resultados En Espera:&nbsp;&nbsp;&nbsp;{{PacEspResu}}</H2>
+                                                            <H2 style="margin-left: 10px; " class="font-weight-bold">Resultados Entregados: {{PacEntResu}}</H2>
+                                                        </ion-card>
+                                                        <div class="mt-2">
+                                                        </div>
+                                                    </ion-col>
+                                                    <ion-col>
+                                                        <h5 style="text-align: center;" class="m-0 font-weight-bold  text-primary">SEXO DE PERSONAS ATENDIDAS POR MES</h5>
+                                                        <ion-card class="card_datos02">
+                                                            <H2 style="margin-left: 10px; " class="mt-2 font-weight-bold">Femenino:&nbsp;&nbsp;&nbsp;{{CanPacFem}}</H2>
+                                                            <H2 style="margin-left: 10px;" class="font-weight-bold">Masculino: &nbsp;{{CanPacMac}}</H2>
+                                                        </ion-card>
+                                                        <div class="mt-2">
+                                                        </div>
+                                                    </ion-col>
+                                                    <ion-col>
+                                                        <h5 style="text-align: center;" class="m-0 font-weight-bold  text-primary">CANTIDAD DE PACIENTES REGISTRADOS</h5>
+                                                        <ion-card class="card_datos03">
+                                                            <H2 style="margin-left: 10px; margin-top: 10%;" class="font-weight-bold">Pacientes Registrados: {{CanPacientes}}</H2>
+                                                        </ion-card>
+                                                        <div class="mt-2">
+                                                        </div>
+                                                    </ion-col>
+
+                                                </ion-row>
+                                            </ion-grid>
+
+                                            <ion-grid>
+                                                <ion-row>
+                                                    <ion-col>
                                                         <ion-card class="chart_pacientes_mes">
-                                                            <h6 style="text-align: center;" class="m-0 font-weight-bold text-primary">PACIENTES ATENDIDOS POR MES</h6>
+                                                            <h5 style="text-align: center;" class="m-0 font-weight-bold text-primary">PACIENTES ATENDIDOS POR MES</h5>
                                                             <div class="chart-wrapper">
-                                                                <canvas id="miGrafico" baseChart [datasets]="barChartData2" [labels]="barChartLabels2" [options]="barChartOptions" [plugins]="barChartPlugins2" [legend]="barChartLegend2" [chartType]="barChartType2">
+                                                                <canvas baseChart [datasets]="barChartData2" [labels]="barChartLabels2" [options]="barChartOptions2" [plugins]="barChartPlugins2" [legend]="barChartLegend2" [chartType]="barChartType2">
                                                                 </canvas>
                                                             </div>
                                                         </ion-card>
@@ -133,32 +165,12 @@
                                                     </ion-col>
                                                     <ion-col>
                                                         <ion-card class="chart_estado_resul">
-                                                            <h6 style="text-align: center;" class="m-0 font-weight-bold  text-primary">ESTADO DE RESULTADOS POR MES</h6>
+                                                            <h5 style="text-align: center;" class="m-0 font-weight-bold  text-primary">ESTADO DE RESULTADOS POR MES</h5>
+
                                                             <div class="chart-wrapper">
-                                                                <canvas id="miGrafico" baseChart [datasets]="barChartData3" [labels]="barChartLabels3" [options]="barChartOptions" [plugins]="barChartPlugins3" [legend]="barChartLegend3" [chartType]="barChartTyp3">
+                                                                <canvas baseChart [datasets]="barChartData3" [labels]="barChartLabels3" [options]="barChartOptions3" [plugins]="barChartPlugins3" [legend]="barChartLegend3" [chartType]="barChartTyp3">
                                                                 </canvas>
                                                             </div>
-                                                        </ion-card>
-
-
-                                                    </ion-col>
-                                                </ion-row>
-                                            </ion-grid>
-
-                                            <ion-grid>
-                                                <ion-row>
-                                                    <ion-col>
-                                                        <ion-card class="card_dato_02">
-                                                            <h6 style="text-align: center;" class="m-0 font-weight-bold text-primary">DATOS 02</h6>
-                                                            <h3>Pacientes</h3>
-                                                        </ion-card>
-
-                                                    </ion-col>
-
-                                                    <ion-col>
-                                                        <ion-card class="card_dato_01">
-                                                            <h6 style="text-align: center;" class="m-0 font-weight-bold  text-primary">DATOS 01</h6>
-                                                            <h3>Pacientes</h3>
                                                         </ion-card>
                                                     </ion-col>
                                                 </ion-row>
