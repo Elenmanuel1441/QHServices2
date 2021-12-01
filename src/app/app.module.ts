@@ -24,6 +24,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -47,8 +48,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       }),
 
     ],
-  providers: [{ provide: RouteReuseStrategy,
-     useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: LocationStrategy, useClass: HashLocationStrategy}
+    ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

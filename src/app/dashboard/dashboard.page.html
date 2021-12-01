@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-sm-2 float-right mb-2">
                                 <a class="d-sm-inline-block btn btn-sm btn-success" style="height: 40px; text-align: center;" [routerLink]="['/reportes']" routerLinkActive="router-link-active"><i
-                                        class="fas fa-download fa-sm text-white-50"></i>  Área de Reportes</a>
+                                        class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                             </div>
                         </div>
                         <!-- Content Row -->
@@ -39,7 +39,7 @@
                                                 <div class="h5 ml-2 mb-0 font-weight-bold text-gray-800">{{rayos_x}}</div>
                                             </div>
                                             <div class="col-auto">
-                                                <i class="fas fa-x-ray fa-2x text-gray-500"></i>
+                                                <i class="fas fa-x-ray fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                                                 <div class="h5 ml-2  mb-0 font-weight-bold text-gray-800">{{sonografia}}</div>
                                             </div>
                                             <div class="col-auto">
-                                                <i class="fas fa-baby fa-2x text-gray-500"></i>
+                                                <i class="fas fa-baby fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -75,12 +75,12 @@
                                                 </div>
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
-                                                        <div class="h5 ml-4  mr-3 font-weight-bold text-gray-800">{{laboratorio}}</div>
+                                                        <div class="h5 ml-3 mr-3 font-weight-bold text-gray-800">{{laboratorio}}</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-auto">
-                                                <i class="fas fa-vial fa-2x text-gray-500"></i>
+                                                <i class="fas fa-vial fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                                                 <div class="h5 ml-3  mb-0 font-weight-bold text-gray-800">{{odontologia}}</div>
                                             </div>
                                             <div class="col-auto">
-                                                <i class="fas fa-tooth fa-2x text-gray-500"></i>
+                                                <i class="fas fa-tooth fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@
                                                     <ion-col>
                                                         <ion-card class="chart_xxx">
                                                             <div class="chart-wrapper">
-                                                                <canvas id="miGrafico" baseChart [datasets]="barChartData3" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                                                                <canvas id="miGrafico" baseChart [datasets]="barChartData3" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartTyp2">
                                                                 </canvas>
                                                             </div>
                                                         </ion-card>
@@ -194,65 +194,5 @@
         <!-- End of Main Content -->
 
         <!-- End of Content Wrapper -->
-    </ng-container>
-    <ng-container *ngIf="!showRegister">
-        <div class="row">
-            <div class="col-sm-10">
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800 ml-2">Dashboard</h1>
-                    <p>{{covid.Countries[49].Date | date:'longDate'}}</p>
-                </div>
-            </div>
-        </div>
-        <section id="header" class="animated fadeIn">
-            <div class="container animated fadeIn">
-                <div class="row">
-                    <div class="col">
-                        <h3 class="h1-title">CENTRO DE SEGUIMIENTO COVID 19 <br> REPUBLICA DOMINICANA</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="static" class="animated fadeIn">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col text-left">
-                        <h2>ESTADÍSTICAS</h2>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-4 ">
-                        <div class="card card-infected">
-                            <div class="card-body">
-                                <h2 class="text-center infectados mr-2">INFECTADOS</h2>
-                                <p class="card-text">Nuevos Casos: {{covid.Countries[49].NewConfirmed | number}} </p>
-                                <p class="card-text"> Total Confirmados: {{covid.Countries[49].TotalConfirmed | number}} </p>
-                                <p>Numero de casos Activos Covid 19</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-recoverd">
-                            <div class="card-body">
-                                <h2 class="card-title mr-2">RECUPERADOS</h2>
-                                <p class="card-text">Nuevos Casos: {{covid.Countries[49].NewRecovered | number}} </p>
-                                <p class="card-text"> Total Recuperados: {{covid.Countries[49].TotalRecovered | number}} </p>
-                                <p>Numero de casos Recuperados Covid 19</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-death">
-                            <div class="card-body">
-                                <h2 class="card-title mr-2">MUERTOS</h2>
-                                <p class="card-text">Nuevos Casos: {{covid.Countries[49].NewDeaths | number}} </p>
-                                <p class="card-text"> Total Muertos: {{covid.Countries[49].TotalDeaths | number}} </p>
-                                <p>Numero de casos de Muertes Covid 19</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </ng-container>
 </ion-content>
