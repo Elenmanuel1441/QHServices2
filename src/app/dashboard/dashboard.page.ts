@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { GlobalModel } from '../models/global.model';
@@ -19,9 +19,7 @@ import { ajax, parseJSON } from 'jquery';
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
-export class DashboardPage implements OnInit {
-
-  
+export class DashboardPage implements OnInit, AfterViewInit {
 
 //datos del reporte abdominal
 nombre: string;
@@ -157,7 +155,7 @@ reportAbdominal: any = [];
   };
   
   
-  barChartLabels2: Label[] = ['Laboratorio', 'Odontología', 'Sonografía', 'Rayos X'];
+  barChartLabels2: Label[] = ['Sonografía', 'Odontología', 'Laboratorio', 'Rayos X'];
   barChartType2: ChartType = 'doughnut';
   barChartLegend2 = true;
   barChartPlugins2 = [];
@@ -192,34 +190,36 @@ reportAbdominal: any = [];
 
     //this.ReportAbdominal();
 
-    this.limpiarvariblesPacientes();
-
     this.getCount_rayos_x();
     setInterval(() => this.getCount_rayos_x(), 10000);
 
     this.getCount_sonografia();
-    setInterval(() => this.getCount_sonografia(), 10000);
+    setInterval(() => this.getCount_sonografia(), 8000);
   
      this.getCount_laboratorio();
      setInterval(() => this.getCount_laboratorio(), 10000);
 
     this.getCount_odontologia();
     setInterval(() => this.getCount_odontologia(), 10000);
+
+
      // llamar los datos para el chart de cantidad de pacientes por mes
      this.getCantPacAreaMes();
-     setInterval(() => this.getCantPacAreaMes(), 9000);
+     setInterval(() => this.getCantPacAreaMes(), 5000);
     //llena el chart
-    this.llenarChartCantPacAreaMes();
-    setInterval(() => this.llenarChartCantPacAreaMes(), 10000);
+    this.getCountPacEntEspResul();
+    setInterval(() => this.getCountPacEntEspResul(), 5000);
 
-   this.getPacResul();
-   setInterval(() => this.getPacResul(), 9000);
+  this.llenarCharAnalisis();
+  setInterval(() => this.llenarCharAnalisis(), 8000);
 
-   this.llenarCharAnalisis();
-   setInterval(() => this.llenarCharAnalisis(), 10000);
+  this.llenarChartCantPacAreaMes();
+ setInterval(() => this.llenarChartCantPacAreaMes(), 8000);
 
-   this.getCountPacEntEspResul();
-   setInterval(() => this.getCountPacEntEspResul(), 10000);
+
+  
+    this.getPacResul();
+    setInterval(() => this.getPacResul(), 9000);
 
    this.getCountPacSexo();
    setInterval(() => this.getCountPacSexo(), 10000);
@@ -228,9 +228,15 @@ reportAbdominal: any = [];
    setInterval(() => this.getCountCantPacRegist(), 10000);
 
   }
+  ngAfterViewInit(): void {
+
+   
+    
+  }
 covid: any;
   ngOnInit() 
   {
+      
 
     this.covid19Service.getResultaldosCovid().subscribe((data) => {
       console.log(data);
@@ -340,23 +346,17 @@ getCount_odontologia()
  }
 
  llenarChartCantPacAreaMes(){
+ 
   this.barChartData2 = [
-    { data: [[this.CantPacLab], [this.CantPacOdo], [this.CantPacSon], [this.CantPacRay]], label: 'Cantidad de pacientes por mes' }
+    { data: [[this.CantPacSon], [this.CantPacOdo], [this.CantPacLab], [this.CantPacRay]], label: 'Cantidad de pacientes por mes' }
   ];
-}
-
-limpiarvariblesPacientes()
-{
-  this.CantPacSon = ''
-    this.CantPacLab = ''
-    this.CantPacOdo = ''
-    this.CantPacRay = ''
 }
 
 getCantPacAreaMes()
 {
   this._apiservice.getCantPacAreaMes().subscribe((res:any) => {
     console.log("SUCCESS ===",res);
+    this.limpiarCampos();
     let CantPacMesArea = res[0];
     this.CantPacSon = CantPacMesArea.CantPacSon;
     this.CantPacLab = CantPacMesArea.CantPacLab;
@@ -419,7 +419,13 @@ getCountCantPacRegist()
       console.log("ERROR ===",error);
     })
 }
-
+ limpiarCampos()
+ {
+  this.CantPacLab='';
+  this.CantPacOdo ='';
+  this.CantPacSon ='';
+  this.CantPacRay = '';
+ }
 
 }
 

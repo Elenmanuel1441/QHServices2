@@ -47,7 +47,7 @@ export class LaboratorioUpdatePage implements OnInit {
    })
    
    this.getAnalisis(this.id_paciente);
-   setInterval(() => this.getAnalisis(this.id_paciente), 1000);
+  setInterval(() => this.getAnalisis(this.id_paciente), 1000);
 
    this.getLaboratorio(this.id_col_laboratorio);
    //setInterval(() => this.getLaboratorio(this.id_col_laboratorio), 1000);
