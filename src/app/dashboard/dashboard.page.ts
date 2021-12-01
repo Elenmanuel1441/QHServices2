@@ -7,7 +7,7 @@ import { Covid19Service } from '../services/covid19.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color } from 'ng2-charts';
 import { MultiDataSet, Label } from 'ng2-charts';
-import { ajax } from 'jquery';
+import { ajax, parseJSON } from 'jquery';
 
 
 
@@ -184,16 +184,18 @@ reportAbdominal: any = [];
     setInterval(() => this.getCount_odontologia(), 10000);
      // llamar los datos para el chart de cantidad de pacientes por mes
      this.getCantPacAreaMes();
-     setInterval(() => this.getCantPacAreaMes(), 8000);
+     setInterval(() => this.getCantPacAreaMes(), 9000);
     //llena el chart
     this.llenarChartCantPacAreaMes();
     setInterval(() => this.llenarChartCantPacAreaMes(), 10000);
 
    this.getPacResul();
-   setInterval(() => this.getPacResul(), 8000);
+   setInterval(() => this.getPacResul(), 9000);
 
    this.llenarCharAnalisis();
    setInterval(() => this.llenarCharAnalisis(), 10000);
+
+ 
 
   }
 covid: any;
@@ -253,7 +255,6 @@ covid: any;
   };
   
   //fin de los datos de pruebas
-
 
   // covid 19
 
@@ -319,9 +320,9 @@ getCantPacAreaMes()
   this._apiservice.getCantPacAreaMes().subscribe((res:any) => {
     console.log("SUCCESS ===",res);
     let CantPacMesArea = res[0];
+    this.CantPacSon = CantPacMesArea.CantPacSon;
     this.CantPacLab = CantPacMesArea.CantPacLab;
     this.CantPacOdo = CantPacMesArea.CantPacOdo;
-    this.CantPacSon = CantPacMesArea.CantPacSon;
     this.CantPacRay = CantPacMesArea.CantPacRay;
   
     },(error: any) => {
