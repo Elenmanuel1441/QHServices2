@@ -245,6 +245,11 @@ export class ApiService {
     return this.http.get('http://localhost/proyecto/backend/ReportLabAnalisisAsegNaseg.php');
 
   }
+  getCantPacAreaMes()
+  {
+    return this.http.get('http://localhost/proyecto/backend/ChartCantPacAreaMes.php');
+
+  }
   
 }
 

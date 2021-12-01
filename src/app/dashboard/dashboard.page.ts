@@ -21,6 +21,8 @@ import { ajax } from 'jquery';
 })
 export class DashboardPage implements OnInit {
 
+  
+
 //datos del reporte abdominal
 nombre: string;
 apellido: string;
@@ -112,13 +114,21 @@ reportAbdominal: any = [];
   showRegister: boolean
   type: string = '';
 
+  //variables para el chart de cantidad de pacientes por mes en las areas
+
+  CantPacMesArea: any = [];
+  CantPacLab: any;
+  CantPacOdo: any;
+  CantPacSon: any;
+  CantPacRay: any;
+
   //Chart de lineas
   barChartOptions: ChartOptions = {
     responsive: true,
   };
   
-  barChartLabels: Label[] = ['Sonografia', 'Rayos X', 'Laboratorio', 'Odontología'];
-  barChartType: ChartType = 'doughnut';
+  barChartLabels: Label[] = ['Laboratorio', 'Odontología', 'Rayos X', 'Sonografía'];
+  barChartType: ChartType = 'pie';
   barChartLegend = true;
   barChartPlugins = [];
 
@@ -128,7 +138,7 @@ reportAbdominal: any = [];
   barChartPlugins2 = [];
  
   barChartData2: ChartDataSets[] = [
-    { data: [2, 5, 8, 3], label: 'Colas con más personas' }
+    { data: []}
   ];
 
   barChartData3: ChartDataSets[] = [
@@ -164,11 +174,12 @@ reportAbdominal: any = [];
     this.getCount_odontologia();
     setInterval(() => this.getCount_odontologia(), 10000);
     //llena el chart
-    this.llenarChart();
-    setInterval(() => this.llenarChart(), 10000);
+    this.llenarChartCantPacAreaMes();
+    setInterval(() => this.llenarChartCantPacAreaMes(), 10000);
 
-    // this.getChart();
-    // setInterval(() => this.getChart(), 6000);
+    // llamar los datos para el chart de cantidad de pacientes por mes
+    this.getCantPacAreaMes();
+   setInterval(() => this.getCantPacAreaMes(), 10000);
 
   }
 covid: any;
@@ -283,23 +294,27 @@ getCount_odontologia()
     })
  }
 
- llenarChart(){
+ llenarChartCantPacAreaMes(){
   this.barChartData2 = [
-    { data: [[this.sonografia], [this.rayos_x], [this.laboratorio], [this.odontologia]], label: 'Colas con más personas' }
+    { data: [[this.CantPacLab], [this.CantPacOdo], [this.CantPacSon], [this.CantPacRay]], label: 'Cantidad de pacientes por mes' }
   ];
 }
 
-//  ReportAbdominal(){
-//   this._apiservice.ReportAbdominal().subscribe((res:any) => {
-//     console.log("SUCCESS ===",res);
-//     this.reportAbdominal = res;
-//     },(error: any) => {
-//       console.log("ERROR ===",error);
-//     })
-//    }
+getCantPacAreaMes()
+{
+  this._apiservice.getCantPacAreaMes().subscribe((res:any) => {
+    console.log("SUCCESS ===",res);
+    let CantPacMesArea = res[0];
+    this.CantPacLab = CantPacMesArea.CantPacLab;
+    this.CantPacOdo = CantPacMesArea.CantPacOdo;
+    this.CantPacSon = CantPacMesArea.CantPacSon;
+    this.CantPacRay = CantPacMesArea.CantPacRay;
+  
+    },(error: any) => {
+      console.log("ERROR ===",error);
+    })
+}
 
-  //  Resultado ciudades pandemia covid 19
-
-  }
+}
 
 
