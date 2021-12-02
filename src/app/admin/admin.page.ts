@@ -34,7 +34,7 @@ export class AdminPage implements OnInit {
         return this.getLaboratorio();
       } else if (this.type == 'Rayos X') {
         return this.getRayos_x();
-      } else if (this.type == 'Odontodologia') {
+      } else if (this.type == 'Odontología') {
         return this.getOdontologia();
       }
     });
