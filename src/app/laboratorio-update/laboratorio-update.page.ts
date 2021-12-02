@@ -23,6 +23,7 @@ export class LaboratorioUpdatePage implements OnInit {
   apellido_paciente: any;
 
   paciente_analisis: any = [];
+  estado: any;
 
  tablaAnalisis ={
   id_analisis: '',
@@ -77,8 +78,8 @@ getAnalisis(id_paciente){
     this.paciente_analisis = res;
 //borra esto ya que no era necesario
     // let paciente_analisis = res[0];
-    // this.tablaAnalisis.id_analisis = paciente_analisis.id_analisis;
-    // this.tablaAnalisis.estado = paciente_analisis.estado;
+    // this.id_analisis = paciente_analisis.id_analisis;
+    // this.estado = paciente_analisis.estado;
     
      }, (err:any)=>{
   console.log("ERROR", err)
@@ -87,21 +88,30 @@ getAnalisis(id_paciente){
 
  updateLaboratorio()
 {
- let data = {
+  if(this.paciente_analisis =="")
+  {
+    this.presentToastError('Seleccione un Análisis');
+  }
+ 
+  else{
+    let data = {
    
-   estado_laboratorio: this.estado_laboratorio,
-  
-   }
-   this._apiservice.updateLaboratorio(this.id_col_laboratorio,data).subscribe((res:any)=>{
-     console.log("SUCCESS",res);
-     this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('admin/laboratorio');
+      estado_laboratorio: this.estado_laboratorio,
      
- }, (err:any)=>{
-   console.log("ERROR", err);
-   this.presentToastError('Error al liberar!');
-   
- })
+      }
+      this._apiservice.updateLaboratorio(this.id_col_laboratorio,data).subscribe((res:any)=>{
+        console.log("SUCCESS",res);
+        this.presentToast('Liberado exitosamente!');
+        this.router.navigateByUrl('admin/laboratorio');
+        
+    }, (err:any)=>{
+      console.log("ERROR", err);
+      this.presentToastError('Error al liberar!');
+      
+    })
+
+  }
+ 
 }
 
 

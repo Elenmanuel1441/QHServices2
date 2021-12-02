@@ -81,21 +81,30 @@ getAnalisisEntrega(id_paciente){
 
  updateLaboratorioEntrega()
 {
- let data = {
+  if(this.paciente_analisis !="")
+  {
+    this.presentToastError('Debe entregar el Análisis');
+  }
+  else
+  {
+
+    let data = {
    
-   estado_laboratorio: this.estado_laboratorio,
-  
-   }
-   this._apiservice.updateLaboratorioEntrega(this.id_col_laboratorio,data).subscribe((res:any)=>{
-     console.log("SUCCESS",res);
-     this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('/paciente-resultados');
+      estado_laboratorio: this.estado_laboratorio,
      
- }, (err:any)=>{
-   console.log("ERROR", err);
-   this.presentToastError('Error al liberar!');
-   
- })
+      }
+      this._apiservice.updateLaboratorioEntrega(this.id_col_laboratorio,data).subscribe((res:any)=>{
+        console.log("SUCCESS",res);
+        this.presentToast('Liberado exitosamente!');
+        this.router.navigateByUrl('/paciente-resultados');
+        
+    }, (err:any)=>{
+      console.log("ERROR", err);
+      this.presentToastError('Error al liberar!');
+      
+    })
+  }
+
 }
 
 

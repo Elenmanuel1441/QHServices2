@@ -89,21 +89,33 @@ getAnalisis(id_paciente){
 
  updateLaboratorioBio()
 {
- let data = {
+  if(this.paciente_analisis !="")
+  {
+    this.presentToastError('Digite o Cancele el Análisis');
+  }
+  else
+  {
+
+    let data = {
    
-   estado_laboratorio: this.estado_laboratorio,
-  
-   }
-   this._apiservice.updateLaboratorioBio(this.id_col_laboratorio,data).subscribe((res:any)=>{
-     console.log("SUCCESS",res);
-     this.presentToast('Liberado exitosamente!');
-     this.router.navigateByUrl('/laboratorio-resultados');
+      estado_laboratorio: this.estado_laboratorio,
      
- }, (err:any)=>{
-   console.log("ERROR", err);
-   this.presentToastError('Error al liberar!');
-   
- })
+      }
+      this._apiservice.updateLaboratorioBio(this.id_col_laboratorio,data).subscribe((res:any)=>{
+        console.log("SUCCESS",res);
+        this.presentToast('Liberado exitosamente!');
+        this.router.navigateByUrl('/laboratorio-resultados');
+        
+    }, (err:any)=>{
+      console.log("ERROR", err);
+      this.presentToastError('Error al liberar!');
+      
+    })
+
+  }
+
+
+
 }
 
 
@@ -174,7 +186,7 @@ async presentToast(mensaje: string) {
     duration: 1500,
     color: "success",
     cssClass: 'toastAdd',
-    position: "bottom",
+    position: "top",
     
   });
   toast.present();
@@ -186,7 +198,7 @@ async presentToastError(mensaje: string) {
     duration: 1500,
     color: "danger",
     cssClass: 'toastAdd',
-    position: "bottom",
+    position: "top",
     
   });
   toast.present();
