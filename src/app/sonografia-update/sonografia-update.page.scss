@@ -2,7 +2,7 @@
     width: 90%;
     border-radius: 10px;
     margin: auto;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
     margin-top: 20px;
 }
 
@@ -10,7 +10,7 @@
     width: 90%;
     border-radius: 10px;
     margin: auto;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
     margin-top: 20px;
 }
 
@@ -151,6 +151,11 @@ ion-label {
 
 .label_final {
     margin-left: 215px;
+}
+
+.card_campos_inputs {
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(19, 107, 45, 0.507);
 }
 
 @media screen and (max-width: 480px) {

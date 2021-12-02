@@ -7,6 +7,10 @@ h3 {
     margin-left: 35px;
 }
 
+.cards {
+    box-shadow: 0 15px 15px rgba(2, 104, 33, 0.61);
+}
+
 #header {
     margin-top: 15px;
     background: url('../../assets/image/background.jpg') center center no-repeat;
@@ -57,21 +61,21 @@ h3 {
     width: 90%;
     border-radius: 10px;
     margin: auto;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
 }
 
 .chart_estado_resul {
     width: 90%;
     margin: auto;
     border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
 }
 
 .card_resulSt {
     width: 93.5%;
     margin: auto;
     border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
 }
 
 .card_datos01 {
@@ -80,7 +84,7 @@ h3 {
     border-left: 8px solid rgb(6, 6, 168);
     border-radius: 10px;
     background-color: rgb(170, 210, 248);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, .5);
+    box-shadow: 0 8px 15px rgba(2, 104, 33, 0.61);
 }
 
 .card_datos02 {
@@ -89,7 +93,7 @@ h3 {
     border-left: 8px solid rgb(196, 178, 19);
     background-color: rgb(248, 246, 100);
     border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, .5);
+    box-shadow: 0 8px 15px rgba(2, 104, 33, 0.61);
 }
 
 .card_datos03 {
@@ -99,5 +103,5 @@ h3 {
     background-color: rgb(208, 247, 208);
     margin: auto;
     border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, .5);
+    box-shadow: 0 8px 15px rgba(2, 104, 33, 0.61);
 }
