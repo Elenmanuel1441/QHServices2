@@ -155,7 +155,7 @@ reportAbdominal: any = [];
   };
   
   
-  barChartLabels2: Label[] = ['Sonografía', 'Odontología', 'Laboratorio', 'Rayos X'];
+  barChartLabels2: Label[] = ['Sonografía','Odontología', 'Laboratorio', 'Rayos X'];
   barChartType2: ChartType = 'doughnut';
   barChartLegend2 = true;
   barChartPlugins2 = [];
@@ -348,7 +348,7 @@ getCount_odontologia()
  llenarChartCantPacAreaMes(){
  
   this.barChartData2 = [
-    { data: [[this.CantPacSon], [this.CantPacOdo], [this.CantPacLab], [this.CantPacRay]], label: 'Cantidad de pacientes por mes' }
+    { data: [[this.CantPacSon],[this.CantPacOdo], [this.CantPacLab], [this.CantPacRay]], label: 'Cantidad de pacientes por mes' }
   ];
 }
 
@@ -375,7 +375,7 @@ getPacResul()
     let CantResultados = res[0];
     this.AnaliPen = CantResultados.AnaliPen;
     this.AnaliEnt = CantResultados.AnaliEnt;
-    this.CantPacSon = CantResultados.AnaliCan;
+    this.AnaliCan = CantResultados.AnaliCan;
     },(error: any) => {
       console.log("ERROR ===",error);
     })
