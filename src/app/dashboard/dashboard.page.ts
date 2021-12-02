@@ -383,7 +383,7 @@ getPacResul()
 
 llenarCharAnalisis(){
   this.barChartData3 = [
-    { data: [[this.AnaliPen], [this.AnaliEnt], [this.AnaliCan]], label: 'Estado de los Resultados' }
+    { data: [[this.AnaliEnt], [this.AnaliPen], [this.AnaliCan]], label: 'Estado de los Resultados' }
   ];
 }
 
