@@ -31,12 +31,11 @@
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
+                <ion-buttons slot="start">
+                    <ion-back-button style="color: white; margin: auto; margin-left: 38%;" defaultHref="/laboratorio-analisis"></ion-back-button>
+                </ion-buttons>
                 <ng-container class="animated fadeIn">
-                    <button style="background-color: transparent;" (click)="volver()">
-                        <img src="../../assets/icon/Back3.png" width="80" alt="">
-                       <!-- <span class="text-white">Regresar</span> -->
-                    </button>
-                    <span style="text-align: center;" class="text-white">Volver atrás</span>
+
                 </ng-container>
 
             </ul>
@@ -586,29 +585,29 @@
                                     </div>
                                 </ion-col>
 
-                                <ion-col>    
+                                <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Edad:</ion-label>
                                         <input disabled="true" type="number" [(ngModel)]="Edad" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
                                 </ion-col>
 
-                                <ion-col>    
+                                <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Sexo:</ion-label>
                                         <input disabled="true" type="text" [(ngModel)]="sexo_paciente" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
                                     </div>
-                                </ion-col>    
-                                <ion-col>
-                                        <div class="mt-2 inputIcon">
-                                            <ion-label>Teléfono:</ion-label>
-                                            <input disabled="true" type="text" [(ngModel)]="telefono" class="form-control input" is-valid id="validationServer01" value="Mark" required>
-                                        </div>
                                 </ion-col>
-    
-                                    <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
-    
-                                
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <ion-label>Teléfono:</ion-label>
+                                        <input disabled="true" type="text" [(ngModel)]="telefono" class="form-control input" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+
+                                <hr class="mt-2 inputIcon" style="width:95%; margin: auto;">
+
+
                                 <ion-col>
                                     <div class="mt-2 inputIcon">
                                         <ion-label>Resultado:</ion-label>

@@ -32,11 +32,11 @@
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
                 <ng-container class="animated fadeIn">
-                    <button style="background-color: transparent;" (click)="volver()">
-                        <img src="../../assets/icon/Back3.png" width="80" alt="">
-                        <!-- <span class="text-white">Regresar</span> -->
-                     </button>
-                    <span style="text-align: center;" class="text-white">Volver atrás</span>
+
+                    <ion-buttons slot="start">
+                        <ion-back-button style="color: white; margin: auto; margin-left: 38%;" defaultHref="/admin/rayos-x"></ion-back-button>
+                    </ion-buttons>
+
                 </ng-container>
 
             </ul>
@@ -96,9 +96,6 @@
 
                 </nav>
                 <!-- End of Topbar -->
-                <ion-buttons slot="start">
-                    <ion-back-button defaultHref="/admin/rayos-x"></ion-back-button>
-                </ion-buttons>
 
                 <div class="title">
                     <h1>LIBERAR AL PACIENTE</h1>

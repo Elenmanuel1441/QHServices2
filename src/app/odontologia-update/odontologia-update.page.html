@@ -31,12 +31,13 @@
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
+
+                <ion-buttons slot="start">
+                    <ion-back-button style="color: white; margin: auto; margin-left: 38%;" defaultHref="/admin/odontologia"></ion-back-button>
+                </ion-buttons>
+
                 <ng-container class="animated fadeIn">
-                    <button style="background-color: transparent;" (click)="volver()">
-                        <img src="../../assets/icon/Back3.png" width="80" alt="">
-                        <!-- <span class="text-white">Regresar</span> -->
-                     </button>
-                    <span style="text-align: center;" class="text-white">Volver atrás</span>
+
                 </ng-container>
 
             </ul>
@@ -96,9 +97,7 @@
 
                 </nav>
                 <!-- End of Topbar -->
-                <ion-buttons slot="start">
-                    <ion-back-button defaultHref="/admin/odontologia"></ion-back-button>
-                </ion-buttons>
+
 
                 <div class="title">
                     <h1>LIBERAR AL PACIENTE</h1>
