@@ -27,6 +27,8 @@ export class LaboratorioFormularioPage implements OnInit {
   apellido_paciente : any;
   sexo_paciente : any;
   Edad : any;
+  doctor: any;
+  unap: any;
   showExamenOrina: boolean;
   showExamenCoprologico: boolean;
   showCovid19: boolean;
@@ -172,6 +174,11 @@ export class LaboratorioFormularioPage implements OnInit {
             { text: 'Medico: ', style: 'subheader'}, this.medico,
                 ]
         },
+        {
+          text:  [
+            { text: 'UNAP: ', style: 'subheader'}, this.unap,
+                ]
+        }
         
         
       ],alignment:'left'},
@@ -365,10 +372,14 @@ export class LaboratorioFormularioPage implements OnInit {
      
       {
         text:  [
-          { text: 'Medico: ', style: 'subheader'}, this.medico,
+          { text: 'Medico: ', style: 'subheader'}, this.doctor,
               ]
       },
-      
+      {
+        text:  [
+          { text: 'UNAP: ', style: 'subheader'}, this.unap,
+              ]
+      }
       
     ],alignment:'left'},
     {	type: 'none',ul: [{
@@ -556,7 +567,11 @@ export class LaboratorioFormularioPage implements OnInit {
           { text: 'Medico: ', style: 'subheader'}, this.medico,
               ]
       },
-      
+      {
+        text:  [
+          { text: 'UNAP: ', style: 'subheader'}, this.unap,
+              ]
+      }
       
     ],alignment:'left'},
     {	type: 'none',ul: [{
@@ -706,6 +721,10 @@ export class LaboratorioFormularioPage implements OnInit {
       this.sexo_paciente= analisis.sexo_paciente ;
       this.id_col_laboratorio = analisis.id_col_laboratorio;
       this.Edad =analisis.EDAD ;
+      this.telefono = analisis.telefono_paciente;
+      this.doctor = analisis.doctor;
+      this.unap = analisis.unap;
+
  
      
      
@@ -820,10 +839,14 @@ export class LaboratorioFormularioPage implements OnInit {
      
       {
         text:  [
-          { text: 'Medico: ', style: 'subheader'}, this.medico,
+          { text: 'Medico: ', style: 'subheader'}, this.doctor,
               ]
       },
-      
+      {
+        text:  [
+          { text: 'UNAP: ', style: 'subheader'}, this.unap,
+              ]
+      }
       
     ],alignment:'left'},
     {	type: 'none',ul: [{
@@ -964,8 +987,8 @@ printPdf() {
   } else {*/
     // On a browser simply use download!
     this.pdfObj.print();
-    this.completeAnalisis(this.id_paciente_analisis);
-    this.router.navigate(['/laboratorio-analisis/',this.id_col_laboratorio])
+ //   this.completeAnalisis(this.id_paciente_analisis);
+  //  this.router.navigate(['/laboratorio-analisis/',this.id_col_laboratorio])
     this.pdfObj = null;
 }
 

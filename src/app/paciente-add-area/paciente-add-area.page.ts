@@ -14,7 +14,8 @@ export class PacienteAddAreaPage implements OnInit {
   id: any;
   estados= 1;
   area: any;
-
+  doctor: any;
+  unap: any;
   nombre_paciente: any;
   apellido_paciente: any;
   cedula_paciente: any;
@@ -96,6 +97,7 @@ export class PacienteAddAreaPage implements OnInit {
         let data = {
       id: this.id,
       estados: this.estados
+      
    
           }
           this._apiservice.addOdontologia(data).subscribe((res:any) => {
@@ -114,8 +116,11 @@ export class PacienteAddAreaPage implements OnInit {
       {
         let data = {
       id: this.id,
-      estados: this.estados
-   
+      estados: this.estados,
+      doctor: this.doctor
+      ,
+      unap: this.unap,
+
           }
           this._apiservice.addLaboratorio(data).subscribe((res:any) => {
             console.log("SUCCESS ===",res);
