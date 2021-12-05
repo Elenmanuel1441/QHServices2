@@ -18,6 +18,9 @@ export class LaboratorioUpdatePage implements OnInit {
   estado_laboratorio: any;
   id_paciente: any;
   id_analisis: any;
+  doctor: any;
+  unap: any;
+
   id_paciente_analisis: any;
   nombre_paciente: any;
   apellido_paciente: any;
@@ -66,6 +69,8 @@ export class LaboratorioUpdatePage implements OnInit {
      this.id_paciente = laboratorio.id_paciente;
      this.nombre_paciente = laboratorio.nombre_paciente;
      this.apellido_paciente = laboratorio.apellido_paciente;
+     this.doctor =  laboratorio.doctor;
+     this.unap = laboratorio.unap;
       }, (err:any)=>{
    console.log("ERROR", err)
  })
@@ -157,7 +162,9 @@ addAnalisis(){
   let data = {
     id_paciente: this.id_paciente,
     id_analisis: this.id_analisis,
-    id_col_laboratorio: this.id_col_laboratorio
+    id_col_laboratorio: this.id_col_laboratorio,
+    doctor : this.doctor,
+    unap : this.unap
  
         }
         this._apiservice.addAnalisis(data).subscribe((res:any) => {
