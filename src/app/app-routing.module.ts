@@ -122,9 +122,15 @@ const routes: Routes = [
     path: 'paciente-entrega/:id_col_laboratorio',
     loadChildren: () => import('./paciente-entrega/paciente-entrega.module').then( m => m.PacienteEntregaPageModule)
   },
-  { 
-    path: '**', redirectTo: 'login', pathMatch: 'full' 
+  {
+    path: 'pages404',
+    loadChildren: () => import('./pages/pages404/pages404.module').then( m => m.Pages404PageModule)
   },
+  { 
+    path: '**', redirectTo: 'pages404', pathMatch: 'full' 
+  },
+
+
  
 
 

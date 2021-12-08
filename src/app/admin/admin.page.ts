@@ -14,11 +14,13 @@ export class AdminPage implements OnInit {
   type: string = '';
   showRegister: boolean;
   prueba: true;
+  isAdmin:boolean;
 
   constructor(private router: Router, private afAuth: AuthService, private activatedRoute: ActivatedRoute) { }
 
 
   ngOnInit() {
+    localStorage.getItem('type') == 'administrador' ? this.isAdmin = false : this.isAdmin = true;
     this.activatedRoute.queryParams.subscribe((urlData) => {
       console.log(urlData);
       this.type = urlData.type;
@@ -39,6 +41,7 @@ export class AdminPage implements OnInit {
       }
     });
   }
+
 
   volver(){
     this.router.navigateByUrl('admin/dashboard?type=administrador');
