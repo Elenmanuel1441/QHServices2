@@ -15,7 +15,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
-            <li routerLink="" class="nav-item" (click)="getDashboard()">
+            <li class="nav-item">
                 <a class="nav-link">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -33,7 +33,7 @@
                         <span>Rayos X</span>
                     </a>
                 </li>
-                <li *ngSwitchCase="type=='Sonografía' ? type:'administrador'" class="nav-item" (click)="getSonografia()">
+                <li *ngSwitchCase="type=='Sonografía' ? type:'administrador', 'sonografia'" class="nav-item" (click)="getSonografia()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-baby"></i>
                         <span>Sonografía</span>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </li>
-                <li *ngSwitchCase=" type=='Odontologia' ? type:'administrador'" class="nav-item" (click)="getOdontologia()">
+                <li *ngSwitchCase=" type=='Odontologia' ? type:'administrador', 'odontologia'" class="nav-item" (click)="getOdontologia()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-tooth"></i>
                         <span>Odontodologia</span>
@@ -87,16 +87,11 @@
                         <span>Registro de Usuario</span>
                     </a>
                 </li>
-
-                <ion-buttons slot="start">
+                <ion-buttons slot="start" *ngIf="isAdmin">
                     <ion-back-button style="color: white; margin: auto; margin-left: 38%;" defaultHref="/admin/dashboard?type=administrador"></ion-back-button>
                 </ion-buttons>
-
             </ng-container>
             <!-- Divider -->
-
-
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -169,7 +164,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Qh Services 2021</span>
                     </div>
                 </div>
             </footer>
