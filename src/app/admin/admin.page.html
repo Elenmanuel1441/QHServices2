@@ -39,7 +39,7 @@
                         <span>Sonografía</span>
                     </a>
                 </li>
-                <li class="nav-item" *ngSwitchCase="type=='Laboratorio' ? type:'administrador'" class="nav-item">
+                <li class="nav-item" *ngSwitchCase="type=='Laboratorio' ? type:'administrador', 'laboratorio'" class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-vial"></i>
                         <span>Laboratorio y Resultados</span>
@@ -67,7 +67,7 @@
                 <div *ngSwitchCase="'administrador'" class="sidebar-heading">
                     Área de Pacientes y Usuarios
                 </div>
-                <li class="nav-item" *ngSwitchCase="type=='Laboratorio' ? type:'administrador'" class="nav-item">
+                <li class="nav-item" *ngSwitchCase="type=='Laboratorio' ? type:'administrador', 'laboratorio'" class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePaciente" aria-expanded="true" aria-controls="collapsePaciente">
                         <i class="fas fa-user-injured"></i>
                         <span>Pacientes y Resultados</span>
