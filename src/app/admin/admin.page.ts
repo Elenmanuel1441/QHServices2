@@ -13,7 +13,7 @@ export class AdminPage implements OnInit {
   condiccion: number = 0;
   type: string = '';
   showRegister: boolean;
-  prueba: true;
+  prueba: boolean;
   isAdmin:boolean;
 
   constructor(private router: Router, private afAuth: AuthService, private activatedRoute: ActivatedRoute) { }
@@ -30,7 +30,8 @@ export class AdminPage implements OnInit {
         this.type == 'admin'
       ) {
         this.showRegister = true;
-      } else if (this.type == 'Sonografía') {
+        } 
+      else if (this.type == 'Sonografía') {
         return this.getSonografia();
       } else if (this.type == 'Laboratorio') {
         return this.getLaboratorio();
@@ -40,6 +41,7 @@ export class AdminPage implements OnInit {
         return this.getOdontologia();
       }
     });
+  
   }
 
 

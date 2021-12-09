@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
       map(user => {
         if(!user){
           // Te enviara a la ruta principal
-          this.router.navigate(['/login'])
+          this.router.navigate(['/pages404'])
           return false;
         }
 

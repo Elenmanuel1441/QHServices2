@@ -104,27 +104,34 @@ const routes: Routes = [
   },
   {
     path: 'laboratorio-resultados',
-    loadChildren: () => import('./laboratorio-resultados/laboratorio-resultados.module').then( m => m.LaboratorioResultadosPageModule)
+    loadChildren: () => import('./laboratorio-resultados/laboratorio-resultados.module').then( m => m.LaboratorioResultadosPageModule),
+    canActivate: [AuthGuard],
+    
   },
   {
     path: 'laboratorio-analisis/:id_col_laboratorio',
-    loadChildren: () => import('./laboratorio-analisis/laboratorio-analisis.module').then( m => m.LaboratorioAnalisisPageModule)
+    loadChildren: () => import('./laboratorio-analisis/laboratorio-analisis.module').then( m => m.LaboratorioAnalisisPageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'laboratorio-formulario/:id_paciente_analisis',
-    loadChildren: () => import('./laboratorio-formulario/laboratorio-formulario.module').then( m => m.LaboratorioFormularioPageModule)
+    loadChildren: () => import('./laboratorio-formulario/laboratorio-formulario.module').then( m => m.LaboratorioFormularioPageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'paciente-resultados',
-    loadChildren: () => import('./paciente-resultados/paciente-resultados.module').then( m => m.PacienteResultadosPageModule)
+    loadChildren: () => import('./paciente-resultados/paciente-resultados.module').then( m => m.PacienteResultadosPageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'paciente-entrega/:id_col_laboratorio',
-    loadChildren: () => import('./paciente-entrega/paciente-entrega.module').then( m => m.PacienteEntregaPageModule)
+    loadChildren: () => import('./paciente-entrega/paciente-entrega.module').then( m => m.PacienteEntregaPageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'pages404',
-    loadChildren: () => import('./pages/pages404/pages404.module').then( m => m.Pages404PageModule)
+    loadChildren: () => import('./pages/pages404/pages404.module').then( m => m.Pages404PageModule),
+    canActivate: [AuthGuard],
   },
   { 
     path: '**', redirectTo: 'pages404', pathMatch: 'full' 

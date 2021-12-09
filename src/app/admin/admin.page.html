@@ -4,7 +4,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul [ngClass]="{ocultar: condiccion === 1, aparecer: condiccion === 0}" class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul  [ngClass]="{ocultar: condiccion === 1, aparecer: condiccion === 0}" class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon rotate-n-360">
@@ -25,7 +25,7 @@
             <!-- Heading -->
             <div class="sidebar-heading mb-2">
                 Area de Servicios
-            </div>
+            </div>          
             <ng-container [ngSwitch]="type">
                 <li *ngSwitchCase="type=='Rayos X' ? type:'administrador', 'rayos-x'" class="nav-item" (click)="getRayos_x()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -33,7 +33,7 @@
                         <span>Rayos X</span>
                     </a>
                 </li>
-                <li *ngSwitchCase="type=='Sonografía' ? type:'administrador', 'sonografia'" class="nav-item" (click)="getSonografia()">
+                <li  *ngSwitchCase="type=='Sonografía' ? type:'administrador', 'sonografia'" class="nav-item" (click)="getSonografia()">
                     <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-baby"></i>
                         <span>Sonografía</span>
