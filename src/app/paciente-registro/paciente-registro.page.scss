@@ -37,12 +37,6 @@ ion-input {
     color: black;
 }
 
-.card_list_select {
-    border-radius: 10px;
-    width: 830px;
-    margin: auto;
-}
-
 .date {
     background-color: white;
     border-radius: 20px;
@@ -89,27 +83,6 @@ ion-icon {
     margin: auto;
 }
 
-.card_lista_paciente {
-    width: 830px;
-    margin: auto;
-    border-radius: 10px;
-}
-
-.row {
-    width: 540px;
-}
-
-.table_export {
-    margin: auto;
-    width: 600px;
-}
-
-.tabla_pacientes {
-    width: 830px;
-    margin: auto;
-    border-radius: 10px;
-}
-
 .btn_add_paciente {
     width: 94%;
     margin: auto;
@@ -151,5 +124,5 @@ ion-icon {
 
 .addScroll {
     overflow-y: auto;
-    max-height: 80%;
+    max-height: 70%;
 }
