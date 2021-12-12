@@ -23,7 +23,7 @@ export class RayosXPage implements OnInit {
   constructor(
 
     public _apiService: ApiService,
-
+   
   ) { 
 
     this.getRayosx();
@@ -38,6 +38,7 @@ export class RayosXPage implements OnInit {
 
   }
 
+ 
 
   getRayosx(){
     this._apiService.getRayosx().subscribe((res:any) => {

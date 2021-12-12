@@ -2,9 +2,11 @@
     <div class="title">
         <h1>Lista de Pacientes en Rayos X</h1>
     </div>
+
     <div class="container1 animated fadeIn borde">
         <div class="avatar-left"></div>
         <div class="table-rigth">
+
             <ion-card class="card_cola">
                 <table id="tabla" class="table table-hover">
                     <thead class="">
@@ -34,6 +36,12 @@
                 </table>
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </ion-card>
+
+            <!-- <div>
+                <ion-button *ngSwitchCase="'administrador'">
+                    Prueba de admin
+                </ion-button>
+            </div> -->
         </div>
     </div>
 
