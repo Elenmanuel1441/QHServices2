@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../services/auth.service';
+
 
 
 @Component({
@@ -23,11 +26,14 @@ export class PacienteUpdatePage implements OnInit {
   ars: any;
   direccion: any;
   rol: any;
+  condiccion: number = 0;
 
   constructor(
    private route: ActivatedRoute,
    private router: Router,
-   private _apiservice: ApiService
+   private _apiservice: ApiService,
+   public toastController: ToastController,
+   private afAuth: AuthService
   ) { 
     this.route.params.subscribe((param:any) =>{
       this.id = param.id;
@@ -80,11 +86,78 @@ export class PacienteUpdatePage implements OnInit {
     }
     this._apiservice.updatePaciente(this.id,data).subscribe((res:any)=>{
       console.log("SUCCESS",res);
-      this.router.navigateByUrl('/registro-paciente');
+      this.presentToast('Actualizado exitosamente!');
+      this.router.navigateByUrl('admin/paciente-registro');
   }, (err:any)=>{
+    this.presentToastError('Error al actualizar!');
     console.log("ERROR", err)
   })
     }
+
+    async presentToastWithOptions() {
+      const toast = await this.toastController.create({
+        header: 'Toast header',
+        message: 'Click to Close',
+        position: 'top',
+        buttons: [
+          {
+            side: 'start',
+            icon: 'star',
+            text: 'Favorite',
+            handler: () => {
+              console.log('Favorite clicked');
+            }
+          }, {
+            text: 'Done',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+        ]
+      });
+    
+    }
+    async presentToast(mensaje: string) {
+      const toast = await this.toastController.create({
+        message: mensaje,
+        duration: 1500,
+        color: "success",
+        cssClass: 'toastAdd',
+        position: "top",
+        
+      });
+      toast.present();
+    }
+    
+    async presentToastError(mensaje: string) {
+      const toast = await this.toastController.create({
+        message: mensaje,
+        duration: 1500,
+        color: "danger",
+        cssClass: 'toastAdd',
+        position: "top",
+        
+      });
+      toast.present();
+    }
+
+    volver(){
+      this.router.navigateByUrl('admin/paciente-registro');
+    }
+    
+    logout(){
+      this.afAuth.logout();
+    }
+    toggle(){
+      if(this.condiccion === 0){
+        this.condiccion = 1;
+      }
+      else{
+        this.condiccion = 0;
+      }
+    }
+    
 
     }
   

@@ -1,12 +1,96 @@
-ion-card {
-    width: 400px;
-    height: 330px;
-    padding: 30px;
+.rayos-x {
+    width: 250px;
+    height: 100px;
+    padding: 20px;
     border-radius: 10px;
+    border-left: 8px solid rgb(255, 6, 6);
     margin: auto;
-    background-color: rgb(147, 243, 152);
+}
+
+.sonografia {
+    width: 250px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 8px solid rgb(25, 0, 247);
+    margin: auto;
+}
+
+.laboratorio {
+    width: 250px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 8px solid rgb(229, 255, 0);
+    margin: auto;
+}
+
+.odontologia {
+    width: 250px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 8px solid rgb(0, 255, 34);
+    margin: auto;
 }
 
 ion-title {
     text-align: center;
+    height: 80px;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.h5_rayos_x {
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.h5_sonografia {
+    margin-right: 10px;
+    margin-bottom: 16px;
+}
+
+.h5_laboratorio {
+    margin-right: 8px;
+    margin-bottom: 16px;
+}
+
+.h5_odontologia {
+    margin-right: 6px;
+    margin-bottom: 16px;
+}
+
+.card-lista {
+    width: 1100px;
+    margin: auto;
+    border-radius: 10px;
+    text-align: left;
+}
+
+ion-searchbar {
+    width: 500px;
+    text-align: left;
+}
+
+.form {
+    background-color: white;
+}
+
+.tabla_dashboard {
+    width: 1000px;
+    margin: auto;
+}
+
+.chart_container {
+    position: relative;
+    margin: auto;
+}
+
+.table_export {
+    margin: auto;
+    width: 900px;
 }

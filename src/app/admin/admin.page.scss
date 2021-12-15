@@ -1,0 +1,41 @@
+
+#sidebar-container
+{
+    min-height: 100vh;
+    transition: margin .25 ease-in-out;
+    // margin-left: 18rem;
+}
+
+#sidebar-container .logo
+{
+    padding: .875rem 1.25rem;
+    font-size: 2rem;
+}
+
+#sidebar-container .menu
+{
+    width: 18rem;
+}
+
+.shadow1 {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(216, 3, 3, 0.15) !important;
+  }
+
+li{
+    cursor: pointer;
+}
+.toggle{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .aparecer{
+        margin-left: -28%;
+        transition:all 0.5s ease-in-out;
+    }
+    .ocultar{
+        transition: all 0.5s ease-in-out;
+    }
+    
+}
+

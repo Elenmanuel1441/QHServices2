@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-usuario-update',
@@ -10,15 +13,19 @@ import { ApiService } from '../api.service';
 export class UsuarioUpdatePage implements OnInit {
   id: any;
   nombre: any;
+  contrasena: any;
   estado: any;
   rol: any;
+  condiccion: number = 0;
 
 
 
  constructor(
   private route: ActivatedRoute,
   private router: Router,
-  private _apiservice: ApiService
+  private _apiservice: ApiService,
+  public toastController: ToastController,
+  private afAuth: AuthService
 
  ) { 
 
@@ -37,6 +44,7 @@ export class UsuarioUpdatePage implements OnInit {
      console.log("SUCCESS",res);
      let nombres = res[0];
      this.nombre = nombres.nombre;
+     this.contrasena = nombres.contraseña;
      this.estado = nombres.estado;
      this.rol = nombres.rol;
  }, (err:any)=>{
@@ -49,18 +57,86 @@ export class UsuarioUpdatePage implements OnInit {
 {
  let data = {
    nombre: this.nombre,
+   contrasena: this.contrasena,
    estado: this.estado,
    rol: this.rol
    }
    this._apiservice.UpdateUsuario(this.id,data).subscribe((res:any)=>{
      console.log("SUCCESS",res);
-     this.router.navigateByUrl('/usuario-registro');
+     this.presentToast('Actualizado exitosamente!');
+    //  this.router.navigate(['admin/usuario-registro']);
+    this.router.navigateByUrl('admin/usuario-registro');
      
  }, (err:any)=>{
+  this.presentToastError('Error al actualizar!');
    console.log("ERROR", err)
  })
 }
  
- 
+async presentToastWithOptions() {
+  const toast = await this.toastController.create({
+    header: 'Toast header',
+    message: 'Click to Close',
+    position: 'top',
+    buttons: [
+      {
+        side: 'start',
+        icon: 'star',
+        text: 'Favorite',
+        handler: () => {
+          console.log('Favorite clicked');
+        }
+      }, {
+        text: 'Done',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+    ]
+  });
+
 }
+async presentToast(mensaje: string) {
+  const toast = await this.toastController.create({
+    message: mensaje,
+    duration: 1500,
+    color: "success",
+    cssClass: 'toastAdd',
+    position: "top",
+    
+  });
+  toast.present();
+}
+
+async presentToastError(mensaje: string) {
+  const toast = await this.toastController.create({
+    message: mensaje,
+    duration: 1500,
+    color: "danger",
+    cssClass: 'toastAdd',
+    position: "top",
+    
+  });
+  toast.present();
+}
+
+volver(){
+  this.router.navigateByUrl('admin/usuario-registro');
+}
+
+logout(){
+  this.afAuth.logout();
+}
+toggle(){
+  if(this.condiccion === 0){
+    this.condiccion = 1;
+  }
+  else{
+    this.condiccion = 0;
+  }
+}
+
+}
+
 

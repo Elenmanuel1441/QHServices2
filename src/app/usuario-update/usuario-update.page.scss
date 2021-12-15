@@ -1,21 +1,117 @@
 .card-principal {
-    width: 400px;
-    height: 300px;
-    padding: 30px;
+    width: 600px;
+    padding: 8px;
     border-radius: 10px;
     margin: auto;
-    background-color: rgb(94, 243, 101);
-    left: 0em;
+    margin-bottom: 15px;
+    background-color: #4cf1b2;
 }
 
-.list-usuarios {
-    border-radius: 10px;
-}
-
-.list-lista-usuarios {
-    border-radius: 10px;
+.title h1 {
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    font-size: 1.5rem;
+    color: #262626;
+    text-transform: uppercase;
 }
 
 ion-title {
     text-align: center;
+}
+
+.label {
+    margin-left: 10px;
+}
+
+ion-button {
+    width: 520px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+ion-searchbar {
+    width: 93%;
+    margin: auto;
+}
+
+.selectFiltoArea {
+    // height: 35px;
+    border-radius: 20px;
+    //font-size: 13px;
+    width: 100%;
+    margin: auto;
+}
+
+.h5 {
+    margin-left: 20px;
+}
+
+ion-icon {
+    margin: 0 0 0 5px;
+}
+
+.Card_secundaria {
+    height: 460px;
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
+    border-radius: 10px;
+}
+
+.inputs {
+    width: 90%;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.imagen_usario {
+    height: 00%;
+    width: 50%;
+    margin: auto;
+}
+
+.btn_update {
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    margin-left: 5%;
+}
+
+.select_estado {
+    width: 90%;
+    //margin-left: 40px;
+    margin: auto;
+}
+
+.Sel_estado {
+    border-radius: 20px
+}
+
+.card_elementos {
+    height: 460px;
+    width: 100%;
+    margin: auto;
+    margin-left: -60px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+ion-grid {
+    --ion-grid-width: 600px
+}
+
+.columnas {
+    width: 95%;
+}
+
+@media screen and (max-width: 480px) {
+    .aparecer {
+        margin-left: -28%;
+        transition: all 0.5s ease-in-out;
+    }
+    .ocultar {
+        transition: all 0.5s ease-in-out;
+    }
 }

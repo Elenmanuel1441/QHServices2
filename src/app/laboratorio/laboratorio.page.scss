@@ -1,0 +1,58 @@
+.title {
+    text-align: center;
+    padding: 50px 0 20px;
+}
+
+.title h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: #262626;
+    text-transform: uppercase;
+}
+
+.container1 {
+    width: 80%;
+    height: 400px;
+    background: #fff;
+    margin: 0 auto;
+    border: 2px solid #ffff;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
+    margin-bottom: 50px;
+}
+
+.container1 .avatar-left {
+    float: left;
+    width: 30%;
+    height: 400px;
+    background: url('https://centromedicoabc.com/wp-content/uploads/2021/04/lab_clinico_sangre.png');
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    border-radius: 10px 0 0 10px;
+}
+
+.container1 .table-rigth {
+    float: right;
+    width: 70%;
+    height: 400px;
+    background: #fff;
+    background-size: cover;
+    box-sizing: border-box;
+    border-radius: 0 10px 10px 0;
+}
+
+.borde {
+    border-radius: 10px;
+}
+
+.btn_resultados {
+    margin-left: 76%;
+}
+
+.card_cola {
+    width: 95%;
+    margin-left: 2.5%;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(2, 104, 33, 0.61);
+}

@@ -1,22 +1,169 @@
-ion-card {
-    width: 650px;
-    height: 200px;
-    padding: 25px;
+.card_Obit {
+    width: 90%;
     border-radius: 10px;
-    margin: 15px 0 0 365px;
-    background-color: rgb(151, 247, 156);
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
+    margin-top: 20px;
 }
 
-ion-item {
+.card_abdominal {
+    width: 90%;
     border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
+    margin-top: 20px;
 }
 
-ion-button {
-    margin: 10px;
-    width: 600px;
-    margin: 15px 0 0 0;
+ion-grid {
+    width: 100%;
 }
 
 ion-title {
     text-align: center;
+    height: 80px;
+}
+
+ion-toggle {
+    margin: auto;
+    margin-left: 40px;
+    --background: rgb(240, 234, 151);
+    --background-checked: #ebd93c;
+    --handle-background: #ebd93c;
+    --handle-background-checked: #000;
+}
+
+.select {
+    width: 140%;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 8%;
+    //margin-top: 10px;
+}
+
+.btn_continuar {
+    height: 35px;
+    width: 25%;
+    margin-right: 790px;
+    margin-bottom: 2%;
+    //margin-bottom: 8px;
+}
+
+.date {
+    background-color: white;
+    border-radius: 20px;
+    width: 250px;
+    height: 38px;
+    border: solid 1px rgb(62, 199, 130);
+    margin: auto;
+    margin-left: 5%;
+}
+
+.textarea {
+    background-color: white;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    border: solid 1px rgb(74, 241, 116);
+    color: rgb(0, 0, 0);
+}
+
+.inputs {
+    width: 250px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.input_gris {
+    width: 5%;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.inputs_gris {
+    border-radius: 20px;
+}
+
+.select_ubito {
+    height: 38px;
+    font-size: 13px;
+    width: 250px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.borde_gris_input {
+    border-radius: 20px;
+    width: 80px;
+}
+
+.input_borde_gris {
+    border-radius: 20px;
+    width: 100px;
+}
+
+.btn_crear {
+    width: 95%;
+    margin: auto;
+}
+
+.btn_imprimir {
+    width: 95%;
+    margin: auto;
+}
+
+ion-label {
+    margin-left: 50px;
+    color: black;
+}
+
+.label_datos {
+    margin-left: 215px;
+}
+
+.label_higado {
+    margin-left: 50px;
+}
+
+.label_pancreas {
+    margin-left: 100px;
+}
+
+.label_toggle {
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.label_vesicular {
+    margin-left: 50px;
+}
+
+.label_riderecho {
+    margin-left: 50px;
+}
+
+.label_rizquiero {
+    margin-left: 100px;
+}
+
+.label_bazo {
+    margin-left: 100px;
+}
+
+.label_final {
+    margin-left: 215px;
+}
+
+.card_campos_inputs {
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(19, 107, 45, 0.507);
+}
+
+@media screen and (max-width: 480px) {
+    .aparecer {
+        margin-left: -28%;
+        transition: all 0.5s ease-in-out;
+    }
+    .ocultar {
+        transition: all 0.5s ease-in-out;
+    }
 }

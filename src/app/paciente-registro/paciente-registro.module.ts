@@ -7,13 +7,21 @@ import { IonicModule } from '@ionic/angular';
 import { PacienteRegistroPageRoutingModule } from './paciente-registro-routing.module';
 
 import { PacienteRegistroPage } from './paciente-registro.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DataTablesModule } from 'angular-datatables';
+import { OrderModule} from 'ngx-order-pipe';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PacienteRegistroPageRoutingModule
+    PacienteRegistroPageRoutingModule,
+    Ng2SearchPipeModule,
+    DataTablesModule,
+    NgxPaginationModule,
+    OrderModule
   ],
   declarations: [PacienteRegistroPage]
 })

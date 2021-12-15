@@ -1,170 +1,146 @@
-<ion-header>
-
-    <ion-toolbar>
-        <ion-buttons slot="end">
-            <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title class="titulo">Registro de pacientes</ion-title>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<ion-content>
 
 
+    <ion-card class="card_principal">
 
-    <ion-card class="datos-personales2">
-
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Nombres</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="nombre"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Apellidos</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="apellido"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Cédula</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="cedula"></ion-input>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Teléfono</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="telefono"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Alergias</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="alergias"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Padecimientos</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="padecimientos"></ion-input>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Ocupación</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="ocupacion"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Dirección</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="direccion"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Fecha de nacimiento:</ion-label>
-                    <ion-datetime class="subtitulo" [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-
-        <br>
-
-        <ion-list class="card-list">
-
-            <ion-item>
-                <ion-label class="subtitulo">Tipo de sangre:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="tipo_sangre" type="text">
-                    <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
-                    <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
-                    <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
-                    <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
-                    <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
-                    <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
-                    <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
-                    <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
-                </ion-select>
-            </ion-item>
-
-            <ion-item>
-                <ion-label class="subtitulo">Sexo:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="sexo" type="text">
-                    <ion-select-option value='Masculino'>Masculino</ion-select-option>
-                    <ion-select-option value='Femenino'>Femenino</ion-select-option>
-                    <ion-select-option value='Sin especificar'>Sin especificar</ion-select-option>
-                </ion-select>
-            </ion-item>
-            <ion-item>
-                <ion-label class="subtitulo">ARS:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="ars" type="text">
-                    <ion-select-option value='ARS BMI'>ARS BMI</ion-select-option>
-                    <ion-select-option value='Primera ARS Humano'>Primera ARS Humano</ion-select-option>
-                    <ion-select-option value='ARS Palic Salud'>ARS Palic Salud</ion-select-option>
-                    <ion-select-option value='ARS La Colonial'>ARS La Colonial</ion-select-option>
-                    <ion-select-option value='ARS Monumental'>ARS Monumental</ion-select-option>
-                    <ion-select-option value='ARS Renacer'>ARS Renacer</ion-select-option>
-                    <ion-select-option value='ARS Simag'>ARS Simag</ion-select-option>
-                    <ion-select-option value='ARS Universal'>ARS Universal</ion-select-option>
-                    <ion-select-option value='ARS Yunén'>ARS Yunén</ion-select-option>
-                    <ion-select-option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</ion-select-option>
-                    <ion-select-option value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</ion-select-option>
-                    <ion-select-option value='ARS Futuro'>ARS Futuro</ion-select-option>
-                </ion-select>
-            </ion-item>
-
-            <ion-row>
-                <ion-col>
-                    <ion-button class="subtitulo" type="button" (click)="addPaciente()" color="success" shape="shape" expand="block"> Añadir pacientes </ion-button>
-                </ion-col>
-            </ion-row>
-
-        </ion-list>
-        <br>
-
-        <ion-item class="tabla-titulos">
-            <ion-grid class="tabla-paciente">
+        <ion-card class="card_registro mt-4">
+            <ion-grid>
                 <ion-row>
                     <ion-col>
-                        Nombre
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="nombre" placeholder="Nombres" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="apellido" placeholder="Apellidos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="cedula" placeholder="Identificación" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="telefono" placeholder="Teléfono" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
                     </ion-col>
                     <ion-col>
-                        Apellido
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="alergias" placeholder="Alergias" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="padecimientos" placeholder="Padecimientos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="ocupacion" placeholder="Ocupación" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
+                        <div class="mt-2 inputIcon">
+                            <input type="text" [(ngModel)]="direccion" placeholder="Dirección" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                        </div>
                     </ion-col>
                     <ion-col>
-                        Telefono
-                    </ion-col>
-                    <ion-col>
-                        Cedula
-                    </ion-col>
-                    <ion-col>
-                        Acciones
+                        <div class="mt-2 inputIcon">
+                            <input placeholder="   Fecha de nacimiento" class="date subtitulo2 textbox-n" onfocus="(this.type='date')" id="date" [(ngModel)]="fecha_nacimiento" type="text" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="2021-12-31">
+                        </div>
+                        <div>
+                            <select [(ngModel)]="tipo_sangre" class="form-select mt-2 select_sangre">
+                            <option value="" disabled selected hidden>Tipo de sangre</option>
+                        <option value='A Negativo'>A Negativo</option>
+                        <option value='A Positivo'>A Positivo</option>
+                        <option value='B Negativo'>B Negativo</option>
+                        <option value='B Positivo'>B Positivo</option>
+                        <option value='AB Negativo'>AB Negativo</option>
+                        <option value='AB Positivo'>AB Positivo</option>
+                        <option value='O Negativo'>O Negativo</option>
+                        <option value='O Positivo'>O Positivo</option>
+                        </select>
+                        </div>
+                        <div>
+                            <select [(ngModel)]="sexo" class="form-select  mt-2 select-sexo">
+                            <option value="" disabled selected hidden>Sexo</option>
+                            <option  value='Masculino'>Masculino</option>
+                            <option value='Femenino'>Femenino</option>
+                            <option value='Sin especificar'>Sin especificar</option>
+                          </select>
+                        </div>
+                        <div class="mt-2">
+                            <select [(ngModel)]="ars" class="form-select mt-2 select-ars">
+                            <option value="" disabled selected hidden>ARS</option>
+                            <option  value='No Asegurado'>No Asegurado</option>
+                            <option  value='ARS BMI'>ARS BMI</option>
+                            <option value='Primera ARS Humano'>Primera ARS Humano</option>
+                            <option value='ARS Palic Salud'>ARS Palic Salud</option>
+                            <option value='ARS La Colonial'>ARS La Colonial</option>
+                            <option  value='ARS Monumental'>ARS Monumental</option>
+                            <option value='ARS Renacer'>ARS Renacer</option>
+                            <option value='ARS Simag'>ARS Simag</option>
+                            <option value='ARS Universal'>ARS Universal</option>
+                            <option value='ARS Yunén'>ARS Yunén</option>
+                            <option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</option>
+                            <option  value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</option>
+                            <option value='ARS Futuro'>ARS Futuro</option>
+                          </select>
+                        </div>
                     </ion-col>
                 </ion-row>
             </ion-grid>
-        </ion-item>
+            <div>
+                <button type="button" (click)="addPaciente()" class="btn btn_add_paciente btn-success">Añadir paciente</button>
+                <!-- <ion-button class="subtitulo2 mt-2 btn_add_paciente" type="button" (click)="addPaciente()" color="success" shape="round" expand="block"> Añadir pacientes </ion-button> -->
+            </div>
+            <!-- La verdadera datatable -->
+            <div class="mt-2">
 
-        <ion-item class="tabla-datos" lines="inset" *ngFor="let pacientes of pacientes">
-            <ion-grid class="tabla-paciente">
-                <ion-row>
-                    <ion-col>
-                        <h6>{{pacientes.nombre_paciente}}</h6>
-                    </ion-col>
-                    <ion-col>
-                        <h6>{{pacientes.apellido_paciente}}</h6>
-                    </ion-col>
-                    <ion-col>
-                        <h6>{{pacientes.telefono_paciente}}</h6>
-                    </ion-col>
-                    <ion-col>
-                        <h6>{{pacientes.cedula_paciente}}</h6>
-                    </ion-col>
-                    <ion-col>
-                        <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',pacientes.id_paciente]"></ion-icon>
-                        <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(pacientes.id_paciente)"></ion-icon>
-                        <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',pacientes.id_paciente]"></ion-icon>
+            </div>
+        </ion-card>
 
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-item>
+        <ion-card class="card_tabla mt-3">
+
+            <div>
+                <div class="mt-2">
+                    <input type="text" [(ngModel)]="Seacrh01" placeholder="Buscar..." class="form-control search" is-valid id="validationServer01" value="Mark" required>
+                </div>
+                <table id="tabla" class="table mt-2 table-hover">
+                    <thead class="">
+                        <tr>
+                            <th (click)="sort('id')">No.&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Nombre')">Nombre&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Apellido')">Apellido&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Teléfono')">Teléfono&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th (click)="sort('Cédula')">Cédula&nbsp;<i class="fa fa-sort"></i> </th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of pacientes |filter: Seacrh01 | paginate:{itemsPerPage: 5, currentPage: p}| orderBy: key: reverse ;let i=index;">
+                            <th>{{(p-1) * 5 + i + 1}}</th>
+                            <td>{{item.nombre_paciente}}</td>
+                            <td>{{item.apellido_paciente}}</td>
+                            <td>{{item.telefono_paciente}}</td>
+                            <td>{{item.cedula_paciente }}</td>
+                            <td>
+                                <a class="btn btn-primary" data-toggle="tooltip" title="Enviar a una área" [routerLink]="['/paciente-add-area/',item.id_paciente]" style="background-color: #2ba558; margin-right: 4px;" role="button"><i class="far fa-plus-square"></i></a>
+                                <a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar paciente" [routerLink]="['/paciente-update/',item.id_paciente]" style="background-color: #ff6600; margin-left: 4px;" role="button"><i class="far fa-edit"></i></a>
+                                <!-- <ion-icon name="create-outline" style="zoom: 2;" [routerLink]="['/paciente-update/',item.id_paciente]"></ion-icon>
+                                <ion-icon name="add-circle-outline" style="zoom: 2;" [routerLink]="['/paciente-add-area/',item.id_paciente]"></ion-icon> -->
+
+                                <!-- <ion-icon name="trash-bin-outline" style="zoom: 2;" (click)="delePaciente(item.id_paciente)"></ion-icon> -->
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+            </div>
+
+        </ion-card>
+
+        <div class="mt-3">
+
+        </div>
 
     </ion-card>
 
+    <div class="mt-4">
+
+    </div>
 </ion-content>

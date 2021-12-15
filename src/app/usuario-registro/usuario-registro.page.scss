@@ -1,21 +1,79 @@
-.card-principal {
-    width: 400px;
-    height: 600px;
-    padding: 20px;
+.card_principal {
+    width: 60%;
+    margin-top: 15px;
     border-radius: 10px;
     margin: auto;
-    background-color: rgb(94, 243, 101);
-    left: 0em;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
 }
 
-.list-usuarios {
+.h5 {
+    margin-left: 20px;
+}
+
+.tabla_usaurios {
+    width: 520px;
+    margin: auto;
     border-radius: 10px;
 }
 
-.list-lista-usuarios {
-    border-radius: 10px;
+.inputs {
+    width: 90%;
+    border-radius: 20px;
+    margin: auto;
 }
 
-ion-title {
-    text-align: center;
+.imagen_usario {
+    height: 00%;
+    width: 45%;
+    margin: auto;
+}
+
+.btn_agregar {
+    width: 98%;
+    margin: auto;
+    border-radius: 20px;
+    margin-left: 1%;
+}
+
+.btn_exportar {
+    width: 86%;
+}
+
+.select_estado {
+    width: 90%;
+    //margin-left: 40px;
+    margin: auto;
+}
+
+.Sel_estado {
+    border-radius: 20px;
+    background-color: rgb(213, 241, 224);
+}
+
+.card_tabla {
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(2, 104, 33, 0.61);
+}
+
+.card_registro {
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(2, 104, 33, 0.61);
+}
+
+.searchbar {
+    width: 95%;
+    border-radius: 20px;
+    margin: auto;
+    background-color: rgb(213, 241, 224);
+}
+
+.addScroll {
+    overflow-y: auto;
+    max-height: 600px;
 }

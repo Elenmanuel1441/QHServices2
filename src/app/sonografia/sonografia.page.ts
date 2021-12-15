@@ -14,6 +14,7 @@ export class SonografiaPage implements OnInit {
   apellido_paciente: any;
   cedula_paciente: any;
   telefono_paciente: any;
+  p: number = 1;
   
   sonografias: any[];
   
@@ -27,16 +28,11 @@ export class SonografiaPage implements OnInit {
 
     this.getSonografias();
 
-
-   /* this.route.params.subscribe((param:any) =>{
-      this.nombre = param.nombre;
-      console.log(this.nombre);
-      this.getPaciente(this.nombre);      
-    })*/
   }
 
   ngOnInit() {
     this.getSonografias();
+    setInterval(() => this.getSonografias(), 10000);
   }
 
 
@@ -48,31 +44,8 @@ export class SonografiaPage implements OnInit {
         console.log("ERROR ===",error);
       })
     }
-/*
-  getPaciente(id){
-    this._apiservice.getPaciente(id).subscribe((res:any) => {
-      console.log("SUCCESS",res);
-      let pacientes = res[0];
-      this.nombre = pacientes.nombre_paciente;
-     
-      },(error: any) => {
-        console.log("ERROR ===",error);
-      })
 
-    }
-    updatePaciente()
-    {
-      let data = {
-        nombre: this.nombre,
-      
-    }
-    this._apiservice.updatePaciente(this.nombre,data).subscribe((res:any)=>{
-      console.log("SUCCESS",res);
-      this.router.navigateByUrl('/registro-paciente');
-  }, (err:any)=>{
-    console.log("ERROR", err)
-   })
-  }*/
+  
 
 }
   

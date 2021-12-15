@@ -1,0 +1,103 @@
+.card_tabla {
+    width: 95%;
+    margin: auto;
+}
+
+h3 {
+    margin-left: 35px;
+}
+
+#header {
+    margin-top: 15px;
+    background: url('../../assets/image/background.jpg') center center no-repeat;
+    height: 70%;
+    background-size: cover;
+    color: #ffff;
+    // display: flex;
+    align-items: center;
+}
+
+#header .h1-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#static {
+    padding: 5rem;
+    display: block;
+}
+
+#static .card-text {
+    font-weight: bold;
+    font-size: 20px;
+    color: tomato
+}
+
+.infectados {
+    font-family: sans-serif 'Roboto';
+}
+
+#static .card-infected {
+    border-bottom-color: royalblue;
+    border-bottom-width: 10px;
+}
+
+#static .card-recoverd {
+    border-bottom-color: lightgreen;
+    border-bottom-width: 10px;
+}
+
+#static .card-death {
+    border-bottom-color: lightsalmon;
+    border-bottom-width: 10px;
+}
+
+.chart_pacientes_mes {
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
+}
+
+.chart_estado_resul {
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
+}
+
+.card_resulSt {
+    width: 93.5%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
+}
+
+.card_datos01 {
+    width: 85%;
+    margin: auto;
+    border-left: 8px solid rgb(6, 6, 168);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 8px 15px rgba(2, 104, 33, 0.61);
+}
+
+.card_datos02 {
+    width: 85%;
+    margin: auto;
+    border-left: 8px solid rgb(196, 178, 19);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(21, 110, 48, 0.61);
+}
+
+.card_datos03 {
+    width: 85%;
+    height: 80%;
+    border-left: 8px solid rgb(87, 214, 115);
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(2, 104, 33, 0.61);
+}

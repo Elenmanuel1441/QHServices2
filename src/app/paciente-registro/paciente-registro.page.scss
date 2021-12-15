@@ -1,74 +1,128 @@
-.datos-personales2 {
-    width: 1000px;
-    height: 780px;
-    padding: 10px;
+.card_principal {
+    width: 70%;
     border-radius: 10px;
     margin: auto;
-    background-color: #ccf8e7;
+    margin-top: 15px;
+    box-shadow: 0 15px 40px rgba(2, 104, 33, 0.61);
+}
+
+.title h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: #262626;
+    text-transform: uppercase;
 }
 
 ion-label {
     color: black;
+    margin: 0 0 0 15px;
 }
 
 ion-input {
-    width: 300px;
+    width: 250px;
     height: 35px;
     padding: 16px;
     background-color: #ccc;
     border-color: var(--ion-color-medium-shade);
     border-radius: 8px;
     border-width: 1px;
-    box-shadow: 2px gray;
+    margin: auto;
+    box-shadow: 2px rgb(255, 255, 255);
     background: #f8f9fa;
-}
-
-input {
-    background-color: white;
 }
 
 .h1 title {
     color: black;
 }
 
-.card-list {
-    border-radius: 10px;
-    width: 935px;
-    margin: 0 0 0 10px;
-}
-
-.tabla-paciente {
-    border-radius: 10px;
-    width: 935px;
-    margin: 0 0 0 10px;
-}
-
-ion-datetime {
+.date {
     background-color: white;
-    border-radius: 8px;
-    width: 300px;
-    height: 30px;
+    border-radius: 20px;
+    width: 250px;
+    height: 38px;
+    margin-left: 10px;
+    border: solid 1px rgb(62, 199, 130);
 }
 
 ion-title {
     text-align: center;
 }
 
-.tabla-titulos {
-    border-radius: 10px;
-    text-align: center;
-    width: 935px;
-    margin: 0 0 0 10px;
-}
-
-.tabla-datos {
-    border-radius: 10px;
-    text-align: center;
-    width: 935px;
-    margin: 0 0 0 10px;
-}
-
 ion-icon {
-    margin: 0 0 0 8px;
-    padding: 4px 0 0 0;
+    margin: 0 0 0 5px;
+}
+
+.select_sangre {
+    height: 38px;
+    font-size: 13px;
+    width: 250px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.select-ars {
+    height: 38px;
+    width: 250px;
+    font-size: 13px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.select-sexo {
+    height: 38px;
+    width: 250px;
+    font-size: 13px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.list_item_titulos {
+    width: 830px;
+    margin: auto;
+}
+
+.btn_add_paciente {
+    width: 94%;
+    margin: auto;
+    border-radius: 20px;
+    margin-left: 3%;
+}
+
+.inputs {
+    width: 90%;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.search {
+    width: 94%;
+    border-radius: 20px;
+    margin: auto;
+    background-color: rgb(213, 241, 224);
+}
+
+.card_tabla {
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(2, 104, 33, 0.61);
+}
+
+.card_registro {
+    margin-top: 20px;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(2, 104, 33, 0.61);
+}
+
+.btn_resultados {
+    margin-left: 70%;
+}
+
+.addScroll {
+    overflow-y: auto;
+    max-height: 70%;
 }

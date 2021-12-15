@@ -7,13 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { LaboratorioUpdatePageRoutingModule } from './laboratorio-update-routing.module';
 
 import { LaboratorioUpdatePage } from './laboratorio-update.page';
+import { DataTablesModule } from 'angular-datatables';
+import { MatIconModule } from '@angular/material/icon';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LaboratorioUpdatePageRoutingModule
+    LaboratorioUpdatePageRoutingModule,
+    DataTablesModule,
+    MatIconModule,
+    NgxPaginationModule
   ],
   declarations: [LaboratorioUpdatePage]
 })

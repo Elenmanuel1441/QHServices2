@@ -1,12 +1,14 @@
-select {
-    height: 30px;
-    width: 130px;
-}
-
-label {
-    position: relative;
-}
-
-ion-card {
-    background-color: #383a3e;
+ion-menu {
+    width: 200px;
+    --ion-background-color: var(--ion-color-success);
+    --ion-text-color: var(--ion-color-secondary-contrast: #ffffff;
+    );
+    ion-title {
+        height: 80px;
+    }
+    ion-img {
+        width: 80px;
+        height: 80px;
+        margin-left: 70PX;
+    }
 }

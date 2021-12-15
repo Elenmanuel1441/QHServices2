@@ -1,38 +1,112 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
         <ion-title class="titulo">
-            Módulos
+            <div>
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                        <form class="d-flex ">
+                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+                            <button style="background-color: rgb(59, 221, 121);" class="btn btn-outline-success" type="submit"><ion-icon style="color: white;" name="search"></ion-icon></button>
+                        </form>
+                        <h5 class="subtitulo" style="margin: 0 0 0 560px;">Administrador</h5>
+                        <ion-icon style="margin:auto; margin-right: 15px; color: rgb(87, 46, 236) ;" name="person"></ion-icon>
+                    </div>
+                </nav>
+            </div>
+
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-    <ion-card>
-        <ion-row>
-            <ion-col>
-                <ion-button class="subtitulo" [routerLink]="['/usuario-registro']" type="button" color="primary" shape="round" expand="block"> usuario registro </ion-button>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <ion-button class="subtitulo" [routerLink]="['/paciente-registro']" type="button" color="primary" shape="round" expand="block"> paciente registro </ion-button>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <ion-button class="subtitulo" [routerLink]="['/rayos-x']" type="button" color="primary" shape="round" expand="block"> rayos x </ion-button>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <ion-button class="subtitulo" [routerLink]="['/sonografia']" type="button" color="primary" shape="round" expand="block"> sonografia </ion-button>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <ion-button class="subtitulo" [routerLink]="['/login']" type="button" color="primary" shape="round" expand="block"> Login </ion-button>
-            </ion-col>
-        </ion-row>
+<ion-content>
+    <h1 class="titulo">Dashboard</h1>
 
-    </ion-card>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card class="rayos-x">
+                    <ion-item>
+                        <ion-label class="normal">Rayos X:</ion-label>
+                        <ion-icon slot="start" name="pulse-outline"></ion-icon>
+                        <h5 class="h5_rayos_x subtitulo"> {{rayos_x}} </h5>
+
+                    </ion-item>
+                </ion-card>
+            </ion-col>
+            <ion-col>
+                <ion-card class="sonografia">
+                    <ion-item>
+                        <ion-label class="normal">Sonografía:</ion-label>
+                        <ion-icon slot="start" name="tv-outline"></ion-icon>
+                        <h5 class="h5_sonografia subtitulo"> {{sonografia}} </h5>
+                    </ion-item>
+                </ion-card>
+            </ion-col>
+            <ion-col>
+                <ion-card class="laboratorio">
+                    <ion-item>
+                        <ion-label class="normal">Laboratorio:</ion-label>
+                        <ion-icon slot="start" [routerLink]="['/usuario-update']" name="flask-outline"></ion-icon>
+                        <h5 class="h5_laboratorio subtitulo"> {{laboratorio}} </h5>
+                    </ion-item>
+
+                </ion-card>
+            </ion-col>
+            <ion-col>
+                <ion-card class="odontologia">
+                    <ion-item>
+                        <ion-label class="normal">Odontología:</ion-label>
+                        <ion-icon slot="start" name="happy-outline"></ion-icon>
+                        <h5 class="h5_odontologia subtitulo"> {{odontologia}} </h5>
+                    </ion-item>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <h1 class="titulo">Lista de Pacientes</h1>
+    <table class="table tabla_dashboard">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Turno</th>
+                <th scope="col">Condicion</th>
+                <th scope="col">Area de atencion</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Elenmanuel</td>
+                <td>MG-8</td>
+                <td>Estable</td>
+                <td>Laboratorio</td>
+                <ion-button color="warning">Espera</ion-button>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Ericcson</td>
+                <td>MG-9</td>
+                <td>Estable</td>
+                <td>Odontologia</td>
+                <ion-button color="warning">Espera</ion-button>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Luisa</td>
+                <td>MG-10</td>
+                <td>Estable</td>
+                <td>Sonografia</td>
+                <ion-button color="warning">Espera</ion-button>
+            </tr>
+
+        </tbody>
+    </table>
+
+
 </ion-content>

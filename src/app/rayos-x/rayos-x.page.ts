@@ -7,29 +7,47 @@ import { ApiService } from '../api.service';
   styleUrls: ['./rayos-x.page.scss'],
 })
 export class RayosXPage implements OnInit {
-  nombre: any;
-  estado: any;
-  rol: any;
 
-   
-  nombres: any = [];
 
+  nombre_paciente: any;
+  apellido_paciente: any;
+  cedula_paciente: any;
+  telefono_paciente: any;
+
+  p: number = 1;
+
+  display: any;
+
+  rayos_x: any[];
+  
   constructor(
-    public _apiService: ApiService
-  ) { 
-    this.getUsuarios();
 
-    }
+    public _apiService: ApiService,
+   
+  ) { 
+
+    this.getRayosx();
+  
+  }
 
   ngOnInit() {
+    
+
+    this.getRayosx();
+    setInterval(() => this.getRayosx(), 10000);
+
   }
-  getUsuarios(){
-    this._apiService.getUsuarios().subscribe((res:any) => {
+
+ 
+
+  getRayosx(){
+    this._apiService.getRayosx().subscribe((res:any) => {
       console.log("SUCCESS ===",res);
-      this.nombres = res;
+      this.rayos_x = res;
       },(error: any) => {
         console.log("ERROR ===",error);
       })
+    }
 
- }
-} 
+}
+  

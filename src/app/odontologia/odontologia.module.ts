@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { OdontologiaPageRoutingModule } from './odontologia-routing.module';
 
 import { OdontologiaPage } from './odontologia.page';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OdontologiaPageRoutingModule
+    OdontologiaPageRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [OdontologiaPage]
 })

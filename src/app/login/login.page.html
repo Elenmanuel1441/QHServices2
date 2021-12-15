@@ -1,38 +1,33 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title class="titulo">Inicio de Sesión</ion-title>
-    </ion-toolbar>
-</ion-header>
+<div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="../../assets/image/QHServices_1.png" width="500" class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="divider d-flex align-items-center my-4">
+                    <p class="text-center fw-bold mx-3 mb-0">
+                        <i class="fa fa-universal-access" aria-hidden="true"></i>
+                    </p>
+                </div>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">Nombre de Usuario</label>
+                    <input type="email" name="mail" autocomplete="off" formControlName="email" id="form3Example3" class="form-control form-control-lg" placeholder="Introduzca el nombre de usuario" />
 
-<ion-content>
-    <section id="menulogin">
+                </div>
 
-        <br>
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="form3Example4">Contraseña</label>
+                    <input type="password" autocomplete="off" name="pass" formControlName="contrasena" id="form3Example4" class="form-control form-control-lg" placeholder="*******" />
 
-        <ion-card id="cardlogin">
-            <ion-card-header>
-                <ion-card-title class="titulo">Login</ion-card-title>
-            </ion-card-header>
+                </div>
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="submit" class="btn btn-primary btn-lg btn_ingresar" style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
+                </div>
 
-            <ion-card-content>
-
-
-                <ion-label class="subtitulo" position="floating">Usuario</ion-label>
-                <ion-input type="text" [(ngModel)]="usuario"></ion-input>
-                <br>
-                <ion-label class="subtitulo" position="floating">Contraseña</ion-label>
-                <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
-                <br>
-                <ion-button class="subtitulo" id="btnacceder" shape="shape" color="danger" expand="block" routerLink="/home">Acceder</ion-button>
-                <br>
-                <ion-button class="subtitulo" id="btnregistrar" shape="shape" color="warning" expand="block" routerLink="/usuario-registro">Registrate</ion-button>
-
-            </ion-card-content>
-        </ion-card>
-
-
-
-
-    </section>
-
-</ion-content>
+            </form>
+        </div>
+    </div>
+</div>

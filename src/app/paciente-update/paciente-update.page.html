@@ -1,114 +1,313 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="end">
-            <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title class="titulo">Actualizar datos de paciente</ion-title>
-    </ion-toolbar>
-</ion-header>
+<body id="page-top" class="animated fadeIn">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div [ngClass]="{ocultar: condiccion === 1, aparecer: condiccion === 0}">
+            <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark">
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-icon rotate-n-360">
+                        <img src="../../assets/image/QHServices_3.png" class="mt-4" width="100" alt="">
+                    </div>
+                </a>
+                <br><br>
+                <!-- Nav Item - Dashboard -->
+                <li routerLink="" class="nav-item">
+                    <a class="nav-link">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Area de Servicios
+                </div>
+                <li class="nav-item" (click)="logout()">
+                    <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fas fa-fw fa-lock-open"></i>
+                        <span>Cerrar sesion</span>
+                    </a>
+                </li>
+                <hr class="sidebar-divider d-none d-md-block">
+                <ion-buttons slot="start">
+                    <ion-back-button style="color: white; margin: auto; margin-left: 38%;" defaultHref="/admin/paciente-registro"></ion-back-button>
+                </ion-buttons>
+                <ng-container class="animated fadeIn">
 
-<ion-content>
-    <ion-card class="datos-personales">
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Nombres</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="nombre"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Apellidos</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="apellido"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Cédula</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="cedula"></ion-input>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+                </ng-container>
 
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Teléfono</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="telefono"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Alergias</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="alergias"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Padecimientos</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="padecimientos"></ion-input>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+            </ul>
+        </div>
+        <!-- End of Sidebar -->
 
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Ocupación</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="ocupacion"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Dirección</ion-label>
-                    <ion-input class="subtitulo" type="text" [(ngModel)]="direccion"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-label class="subtitulo" position="floating">Fecha de nacimiento:</ion-label>
-                    <ion-datetime class="subtitulo" [(ngModel)]="fecha_nacimiento" type="text" displayFormat="MM/DD/YYYY" min="1900-01-14" max="2099-12-09"></ion-datetime>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-        <br>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
-        <ion-list class="card-list">
+            <!-- Main Content -->
+            <div id="content">
 
-            <ion-item>
-                <ion-label class="subtitulo">Tipo de sangre:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="tipo_sangre" type="text">
-                    <ion-select-option value='A Negativo'>A Negativo</ion-select-option>
-                    <ion-select-option value='A Positivo'>A Positivo</ion-select-option>
-                    <ion-select-option value='B Negativo'>B Negativo</ion-select-option>
-                    <ion-select-option value='B Positivo'>B Positivo</ion-select-option>
-                    <ion-select-option value='AB Negativo'>AB Negativo</ion-select-option>
-                    <ion-select-option value='AB Positivo'>AB Positivo</ion-select-option>
-                    <ion-select-option value='O Negativo'>O Negativo</ion-select-option>
-                    <ion-select-option value='O Positivo'>O Positivo</ion-select-option>
-                </ion-select>
-            </ion-item>
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-            <ion-item>
-                <ion-label class="subtitulo">Sexo:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="sexo" type="text">
-                    <ion-select-option value='Masculino'>Masculino</ion-select-option>
-                    <ion-select-option value='Femenino'>Femenino</ion-select-option>
-                    <ion-select-option value='Sin especificar'>Sin especificar</ion-select-option>
-                </ion-select>
-            </ion-item>
-            <ion-item>
-                <ion-label class="subtitulo">ARS:</ion-label>
-                <ion-select class="subtitulo" [(ngModel)]="ars" type="text">
-                    <ion-select-option value='ARS BMI'>ARS BMI</ion-select-option>
-                    <ion-select-option value='Primera ARS Humano'>Primera ARS Humano</ion-select-option>
-                    <ion-select-option value='ARS Palic Salud'>ARS Palic Salud</ion-select-option>
-                    <ion-select-option value='ARS La Colonial'>ARS La Colonial</ion-select-option>
-                    <ion-select-option value='ARS Monumental'>ARS Monumental</ion-select-option>
-                    <ion-select-option value='ARS Renacer'>ARS Renacer</ion-select-option>
-                    <ion-select-option value='ARS Simag'>ARS Simag</ion-select-option>
-                    <ion-select-option value='ARS Universal'>ARS Universal</ion-select-option>
-                    <ion-select-option value='ARS Yunén'>ARS Yunén</ion-select-option>
-                    <ion-select-option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</ion-select-option>
-                    <ion-select-option value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</ion-select-option>
-                    <ion-select-option value='ARS Futuro'>ARS Futuro</ion-select-option>
-                </ion-select>
-            </ion-item>
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <mat-icon class="toggle" (click)="toggle()" aria-hidden="false" aria-label="Example menu icon">menu</mat-icon>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
 
-            <ion-row>
-                <ion-col>
-                    <ion-button class="subtitulo" type="button" (click)="updatePaciente()" color="success" shape="shape" expand="block"> Actualizar pacientes </ion-button>
-                </ion-col>
-            </ion-row>
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <!-- Nav Item - Alerts -->
+                        <!-- <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                               
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                         
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500">Show All Alerts</a>
+                            </div>
+                        </li> -->
 
-        </ion-list>
-    </ion-card>
-</ion-content>
+                        <!-- Nav Item - Messages -->
+                        <!-- <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                             
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                          
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="assets/img/undraw_profile_1.svg" alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="assets/img/undraw_profile_2.svg" alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="assets/img/undraw_profile_3.svg" alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500">Read More Messages</a>
+                            </div>
+                        </li> -->
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" (click)="logout()" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar Sesión
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <div>
+                    <ion-img class="imagen_paciente" src="assets/image/UserUpdate.png"></ion-img>
+                </div>
+                <div class="title">
+                    <h1 style="text-align: center;">ACTUALIZAR DATOS DEl PACIENTE</h1>
+                </div>
+                <ion-card class="card_principal">
+                    <ion-card class="card_update">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="nombre" placeholder="Nombres" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="apellido" placeholder="Apellidos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="cedula" placeholder="Identificación" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="telefono" placeholder="Teléfono" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="alergias" placeholder="Alergias" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="padecimientos" placeholder="Padecimientos" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="ocupacion" placeholder="Ocupación" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                    <div class="mt-2 inputIcon">
+                                        <input type="text" [(ngModel)]="direccion" placeholder="Dirección" class="form-control inputs" is-valid id="validationServer01" value="Mark" required>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div>
+                                        <input placeholder="   Fecha de nacimiento" class="date subtitulo2 textbox-n" onfocus="(this.type='date')" id="date" [(ngModel)]="fecha_nacimiento" type="text" id="start" name="trip-start" value="2018-07-22" min="1910-01-01" max="2021-12-31">
+                                    </div>
+                                    <div>
+                                        <select [(ngModel)]="tipo_sangre" class="form-select form-select-lg mt-2 select_sangre">
+                                            <option value="Nada" selected disabled>Seleccione tipo de sangre</option>
+                                        <option value='A Negativo'>A Negativo</option>
+                                        <option value='A Positivo'>A Positivo</option>
+                                        <option value='B Negativo'>B Negativo</option>
+                                        <option value='B Positivo'>B Positivo</option>
+                                        <option value='AB Negativo'>AB Negativo</option>
+                                        <option value='AB Positivo'>AB Positivo</option>
+                                        <option value='O Negativo'>O Negativo</option>
+                                        <option value='O Positivo'>O Positivo</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <select [(ngModel)]="sexo" class="form-select form-select-lg mt-2 select-sexo">
+                                            <option value="Nada" selected disabled>Seleccione el sexo</option>
+                                            <option  value='Masculino'>Masculino</option>
+                                            <option value='Femenino'>Femenino</option>
+                                            <option value='Sin especificar'>Sin especificar</option>
+                                          </select>
+                                    </div>
+                                    <div>
+                                        <select [(ngModel)]="ars" class="form-select form-select-lg mt-2 select-ars">
+                                            <option value="Nada" selected disabled>Seleccione la ARS</option>
+                                            <option  value='No Asegurado'>No Asegurado</option>
+                                            <option  value='ARS BMI'>ARS BMI</option>
+                                            <option value='Primera ARS Humano'>Primera ARS Humano</option>
+                                            <option value='ARS Palic Salud'>ARS Palic Salud</option>
+                                            <option value='ARS La Colonial'>ARS La Colonial</option>
+                                            <option  value='ARS Monumental'>ARS Monumental</option>
+                                            <option value='ARS Renacer'>ARS Renacer</option>
+                                            <option value='ARS Simag'>ARS Simag</option>
+                                            <option value='ARS Universal'>ARS Universal</option>
+                                            <option value='ARS Yunén'>ARS Yunén</option>
+                                            <option value='Seguro Nacional de Salud -SENASA-'>Seguro Nacional de Salud -SENASA-</option>
+                                            <option  value='ARS Grupo Médico Asociado -ARS GMA-'>ARS Grupo Médico Asociado -ARS GMA-</option>
+                                            <option value='ARS Futuro'>ARS Futuro</option>
+                                          </select>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+
+                        <div>
+                            <button type="button" (click)="updatePaciente()" class="btn btn_Update btn-success">Actualizar paciente</button>
+                        </div>
+                        <div class="mt-2">
+
+                        </div>
+                    </ion-card>
+                </ion-card>
+
+
+            </div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; QH Services 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+</body>

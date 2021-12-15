@@ -36,9 +36,20 @@
     color: #044c03 !important;
 }
 
+// Esta es la clase para las sombras que los card, solo cambia los colores que quieras
+.shadow1 {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(216, 3, 3, 0.15) !important;
+}
+
 .subtitulo {
     font-family: 'Raleway', sans-serif !important;
     font-size: 18px !important;
+    font-weight: bold !important;
+}
+
+.subtitulo2 {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 16px !important;
     font-weight: bold !important;
 }
 
@@ -47,3 +58,71 @@
     font-size: 14px !important;
     color: black !important;
 }
+
+.normalW {
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.normalWIcono {
+    color: rgb(255, 255, 255) !important;
+}
+
+.toastAdd {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 14px !important;
+    color: rgb(255, 255, 255) !important;
+    margin-left: 150px !important;
+    margin-bottom: 100px !important;
+}
+
+.toastEli {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 14px !important;
+    color: rgb(255, 255, 255) !important;
+    margin-left: 150px !important;
+    margin-bottom: 100px !important;
+}
+
+.toastVal {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 14px !important;
+    color: rgb(255, 255, 255) !important;
+    margin-left: 150px !important;
+    margin-bottom: 100px !important;
+}
+
+.menucontent {
+    --background: linear-gradient(197deg, rgba(100, 100, 100, 1) 0%, rgba(63, 63, 63, 1) 13.5%, rgba(29, 29, 29, 1) 33.33%, rgba(0, 0, 0, 1) 100%) !important;
+}
+
+// Animaciones personalizadas
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }

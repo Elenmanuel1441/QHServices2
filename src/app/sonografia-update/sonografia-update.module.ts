@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SonografiaUpdatePageRoutingModule } from './sonografia-update-routing.module';
 
 import { SonografiaUpdatePage } from './sonografia-update.page';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SonografiaUpdatePageRoutingModule
+    SonografiaUpdatePageRoutingModule,
+    MatIconModule
   ],
   declarations: [SonografiaUpdatePage]
 })
