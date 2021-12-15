@@ -31,9 +31,7 @@
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-                <ion-buttons slot="start">
-                    <ion-back-button style="color: white; margin: auto; margin-left: 38%;" defaultHref="/admin/paciente-registro"></ion-back-button>
-                </ion-buttons>
+                <ion-icon style="zoom: 3; color: rgb(226, 225, 225); margin: auto; margin-bottom: 200px;" name="return-up-back-outline" (click)="volver()"></ion-icon>
                 <ng-container class="animated fadeIn">
 
                 </ng-container>
@@ -129,9 +127,9 @@
                         </ion-grid>
                         <div class="mt-2">
                             <ion-label class="label_selArea">Doctor:</ion-label>
-                              <ion-input class="form-control inputs" [(ngModel)]="doctor" type="text"></ion-input>
-                              <ion-label class="label_selArea">UNAP:</ion-label>
-                              <ion-input class="form-control inputs" [(ngModel)]="unap" type="text"></ion-input>
+                            <ion-input class="form-control inputs" [(ngModel)]="doctor" type="text"></ion-input>
+                            <ion-label class="label_selArea">UNAP:</ion-label>
+                            <ion-input class="form-control inputs" [(ngModel)]="unap" type="text"></ion-input>
                         </div>
                         <ion-input class="subtitulo2" hidden="true" disabled [(ngModel)]="id" type="number"></ion-input>
                         <ion-label class="label_selArea">Seleccione el Área:</ion-label>
@@ -143,9 +141,9 @@
                                 <option value='3'>Odontologia</option>
                                 <option value='4'>Rayos-X</option>
                               </select>
-                              
+
                         </div>
-                     
+
                         <div class="mt-2">
                             <button type="button" (click)="areaCheck()" class="btn brn_enviar btn-success">Enviar Paciente</button>
                         </div>

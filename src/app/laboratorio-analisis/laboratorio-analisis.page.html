@@ -32,10 +32,7 @@
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
 
-                <ion-buttons slot="start">
-                    <ion-back-button style="color: white; margin: auto; margin-left: 38%;" defaultHref="/laboratorio-resultados"></ion-back-button>
-                </ion-buttons>
-
+                <ion-icon style="zoom: 3; color: rgb(226, 225, 225); margin: auto; margin-bottom: 200px;" name="return-up-back-outline" (click)="volver()"></ion-icon>
                 <ng-container class="animated fadeIn">
 
                 </ng-container>
@@ -153,8 +150,8 @@
                                         <td>{{item.id_analisis}}</td>
                                         <td>{{item.estado}}</td>
                                         <td>
-                                            <button [routerLink]="['/laboratorio-formulario/',item.id_paciente_analisis]" type="button" class="btn btn-success">Digitar</button>
-                                            <button type="button" (click)="cancelAnalisis(item.id_paciente_analisis)" class="btn btn-danger">Cancelar</button>
+                                            <button style="margin-right: 2px;" [routerLink]="['/laboratorio-formulario/',item.id_paciente_analisis]" type="button" class="btn btn-success">Digitar</button>
+                                            <button style="margin-left: 2px;" type="button" (click)="cancelAnalisis(item.id_paciente_analisis)" class="btn btn-danger">Cancelar</button>
                                         </td>
                                     </tr>
                                 </tbody>
